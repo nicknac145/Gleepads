@@ -16,9 +16,5 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func back_action(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 
 }
