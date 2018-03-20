@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68CE9A1E747552A07537520D /* Pods_Gleepads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F17D0E846C551737A35A1D60 /* Pods_Gleepads.framework */; };
 		F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2142B82205C064100B381E8 /* NewAccountVC.swift */; };
 		F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2142B84205C1E1100B381E8 /* emailVC.swift */; };
 		F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226FB79205A39B100F14CB0 /* Custom_Button.swift */; };
@@ -14,14 +15,40 @@
 		F226FB7E205A566F00F14CB0 /* SignUpOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */; };
 		F26B34F1205B89F10082FAFD /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F26B34EF205B89F00082FAFD /* logo.png */; };
 		F26B34F2205B89F10082FAFD /* Gleepads.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F26B34F0205B89F10082FAFD /* Gleepads.jpg */; };
+		F28D908F205FE75A00AE2A5D /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D908E205FE75A00AE2A5D /* SignInVC.swift */; };
+		F28D9091205FECBA00AE2A5D /* ForgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D9090205FECBA00AE2A5D /* ForgetVC.swift */; };
+		F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28D9092205FF6F700AE2A5D /* Function.storyboard */; };
+		F28D90952060017000AE2A5D /* FunctionMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90942060017000AE2A5D /* FunctionMainVC.swift */; };
+		F28D90A120600F1800AE2A5D /* Explore.png in Resources */ = {isa = PBXBuildFile; fileRef = F28D90A020600F1800AE2A5D /* Explore.png */; };
+		F28D90A520600F2900AE2A5D /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F28D90A220600F2900AE2A5D /* Profile.png */; };
+		F28D90A720600F2900AE2A5D /* Inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F28D90A420600F2900AE2A5D /* Inbox.png */; };
+		F28D90A920600F5F00AE2A5D /* Saved.png in Resources */ = {isa = PBXBuildFile; fileRef = F28D90A820600F5E00AE2A5D /* Saved.png */; };
+		F28D90AD2060162200AE2A5D /* tom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F28D90AC2060162200AE2A5D /* tom.jpg */; };
+		F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90AE206016FB00AE2A5D /* Custom_View.swift */; };
+		F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */; };
+		F2C06D6F206145B10033B3DE /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D6E206145B10033B3DE /* border.png */; };
+		F2C06D77206157BA0033B3DE /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D70206157B90033B3DE /* gift.png */; };
+		F2C06D78206157BA0033B3DE /* notify.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D71206157B90033B3DE /* notify.png */; };
+		F2C06D79206157BA0033B3DE /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D72206157B90033B3DE /* feedback.png */; };
+		F2C06D7A206157BA0033B3DE /* credit.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D73206157B90033B3DE /* credit.png */; };
+		F2C06D7B206157BA0033B3DE /* host.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D74206157B90033B3DE /* host.png */; };
+		F2C06D7C206157BA0033B3DE /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D75206157BA0033B3DE /* setting.png */; };
+		F2C06D7D206157BA0033B3DE /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D76206157BA0033B3DE /* help.png */; };
+		F2C06D7F20615E470033B3DE /* upside_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D7E20615E460033B3DE /* upside_border.png */; };
+		F2C06D8120615E500033B3DE /* bottomside_border.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C06D8020615E4F0033B3DE /* bottomside_border.png */; };
 		F2EBBB9920597EA600DD03A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBBB9820597EA600DD03A9 /* AppDelegate.swift */; };
 		F2EBBB9B20597EA600DD03A9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBBB9A20597EA600DD03A9 /* MainVC.swift */; };
 		F2EBBB9E20597EA600DD03A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EBBB9C20597EA600DD03A9 /* Main.storyboard */; };
 		F2EBBBA020597EA600DD03A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EBBB9F20597EA600DD03A9 /* Assets.xcassets */; };
 		F2EBBBA320597EA600DD03A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */; };
+		F2F7AABF2061636600348BAD /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7AABE2061636600348BAD /* testVC.swift */; };
+		F2F7AAC2206165F200348BAD /* myVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2F7AAC12061657800348BAD /* myVideo.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58E84263B236808B7DA16B8B /* Pods-Gleepads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleepads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads.debug.xcconfig"; sourceTree = "<group>"; };
+		9ECA5A1A268A109A61342E33 /* Pods-Gleepads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleepads.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads.release.xcconfig"; sourceTree = "<group>"; };
+		F17D0E846C551737A35A1D60 /* Pods_Gleepads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gleepads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2142B82205C064100B381E8 /* NewAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountVC.swift; sourceTree = "<group>"; };
 		F2142B84205C1E1100B381E8 /* emailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailVC.swift; sourceTree = "<group>"; };
 		F226FB79205A39B100F14CB0 /* Custom_Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
@@ -29,6 +56,27 @@
 		F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOptionVC.swift; sourceTree = "<group>"; };
 		F26B34EF205B89F00082FAFD /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../../images & icon/logo.png"; sourceTree = "<group>"; };
 		F26B34F0205B89F10082FAFD /* Gleepads.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Gleepads.jpg; path = "../../../../images & icon/Gleepads.jpg"; sourceTree = "<group>"; };
+		F28D908E205FE75A00AE2A5D /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		F28D9090205FECBA00AE2A5D /* ForgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetVC.swift; sourceTree = "<group>"; };
+		F28D9092205FF6F700AE2A5D /* Function.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Function.storyboard; sourceTree = "<group>"; };
+		F28D90942060017000AE2A5D /* FunctionMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionMainVC.swift; sourceTree = "<group>"; };
+		F28D90A020600F1800AE2A5D /* Explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Explore.png; path = "../../../../images & icon/Explore.png"; sourceTree = "<group>"; };
+		F28D90A220600F2900AE2A5D /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Profile.png; path = "../../../../images & icon/Profile.png"; sourceTree = "<group>"; };
+		F28D90A420600F2900AE2A5D /* Inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inbox.png; path = "../../../../images & icon/Inbox.png"; sourceTree = "<group>"; };
+		F28D90A820600F5E00AE2A5D /* Saved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Saved.png; path = "../../../../images & icon/Saved.png"; sourceTree = "<group>"; };
+		F28D90AC2060162200AE2A5D /* tom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tom.jpg; path = "../../../../images & icon/tom.jpg"; sourceTree = "<group>"; };
+		F28D90AE206016FB00AE2A5D /* Custom_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
+		F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_ImageView.swift; sourceTree = "<group>"; };
+		F2C06D6E206145B10033B3DE /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
+		F2C06D70206157B90033B3DE /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gift.png; path = "../../../../images & icon/gift.png"; sourceTree = "<group>"; };
+		F2C06D71206157B90033B3DE /* notify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notify.png; path = "../../../../images & icon/notify.png"; sourceTree = "<group>"; };
+		F2C06D72206157B90033B3DE /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = feedback.png; path = "../../../../images & icon/feedback.png"; sourceTree = "<group>"; };
+		F2C06D73206157B90033B3DE /* credit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = credit.png; path = "../../../../images & icon/credit.png"; sourceTree = "<group>"; };
+		F2C06D74206157B90033B3DE /* host.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = host.png; path = "../../../../images & icon/host.png"; sourceTree = "<group>"; };
+		F2C06D75206157BA0033B3DE /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = "../../../../images & icon/setting.png"; sourceTree = "<group>"; };
+		F2C06D76206157BA0033B3DE /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = help.png; path = "../../../../images & icon/help.png"; sourceTree = "<group>"; };
+		F2C06D7E20615E460033B3DE /* upside_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upside_border.png; sourceTree = "<group>"; };
+		F2C06D8020615E4F0033B3DE /* bottomside_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomside_border.png; sourceTree = "<group>"; };
 		F2EBBB9520597EA600DD03A9 /* Gleepads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gleepads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EBBB9820597EA600DD03A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EBBB9A20597EA600DD03A9 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -36,6 +84,8 @@
 		F2EBBB9F20597EA600DD03A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2EBBBA220597EA600DD03A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2EBBBA420597EA600DD03A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F7AABE2061636600348BAD /* testVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
+		F2F7AAC12061657800348BAD /* myVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = myVideo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +93,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68CE9A1E747552A07537520D /* Pods_Gleepads.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EEA63DA8FC3FA8DB0232F52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58E84263B236808B7DA16B8B /* Pods-Gleepads.debug.xcconfig */,
+				9ECA5A1A268A109A61342E33 /* Pods-Gleepads.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC0354B86B5093739110D026 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F17D0E846C551737A35A1D60 /* Pods_Gleepads.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F226FB75205A395400F14CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +127,14 @@
 		F226FB76205A395F00F14CB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F2EBBB9A20597EA600DD03A9 /* MainVC.swift */,
+				F226FB7B205A53C900F14CB0 /* LoginVC.swift */,
+				F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */,
+				F2142B82205C064100B381E8 /* NewAccountVC.swift */,
+				F2142B84205C1E1100B381E8 /* emailVC.swift */,
+				F28D908E205FE75A00AE2A5D /* SignInVC.swift */,
+				F28D9090205FECBA00AE2A5D /* ForgetVC.swift */,
+				F28D90942060017000AE2A5D /* FunctionMainVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -66,11 +142,8 @@
 		F226FB77205A396D00F14CB0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F2EBBB9A20597EA600DD03A9 /* MainVC.swift */,
-				F226FB7B205A53C900F14CB0 /* LoginVC.swift */,
-				F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */,
-				F2142B82205C064100B381E8 /* NewAccountVC.swift */,
-				F2142B84205C1E1100B381E8 /* emailVC.swift */,
+				F2EBBB9C20597EA600DD03A9 /* Main.storyboard */,
+				F28D9092205FF6F700AE2A5D /* Function.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				F226FB79205A39B100F14CB0 /* Custom_Button.swift */,
+				F28D90AE206016FB00AE2A5D /* Custom_View.swift */,
+				F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */,
 			);
 			path = Customize;
 			sourceTree = "<group>";
@@ -86,7 +161,22 @@
 		F26B34EE205B89D50082FAFD /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				F2C06D73206157B90033B3DE /* credit.png */,
+				F2C06D72206157B90033B3DE /* feedback.png */,
+				F2C06D70206157B90033B3DE /* gift.png */,
+				F2C06D76206157BA0033B3DE /* help.png */,
+				F2C06D74206157B90033B3DE /* host.png */,
+				F2C06D71206157B90033B3DE /* notify.png */,
+				F2C06D75206157BA0033B3DE /* setting.png */,
+				F2C06D6E206145B10033B3DE /* border.png */,
+				F28D90AC2060162200AE2A5D /* tom.jpg */,
+				F28D90A020600F1800AE2A5D /* Explore.png */,
+				F28D90A420600F2900AE2A5D /* Inbox.png */,
+				F28D90A820600F5E00AE2A5D /* Saved.png */,
+				F28D90A220600F2900AE2A5D /* Profile.png */,
 				F26B34EF205B89F00082FAFD /* logo.png */,
+				F2C06D7E20615E460033B3DE /* upside_border.png */,
+				F2C06D8020615E4F0033B3DE /* bottomside_border.png */,
 				F26B34F0205B89F10082FAFD /* Gleepads.jpg */,
 			);
 			path = Image;
@@ -97,6 +187,8 @@
 			children = (
 				F2EBBB9720597EA600DD03A9 /* Gleepads */,
 				F2EBBB9620597EA600DD03A9 /* Products */,
+				5EEA63DA8FC3FA8DB0232F52 /* Pods */,
+				AC0354B86B5093739110D026 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,18 +203,27 @@
 		F2EBBB9720597EA600DD03A9 /* Gleepads */ = {
 			isa = PBXGroup;
 			children = (
+				F2F7AAC02061656D00348BAD /* video */,
 				F26B34EE205B89D50082FAFD /* Image */,
 				F226FB78205A397E00F14CB0 /* Customize */,
 				F226FB77205A396D00F14CB0 /* View */,
 				F226FB76205A395F00F14CB0 /* Controller */,
 				F226FB75205A395400F14CB0 /* Model */,
 				F2EBBB9820597EA600DD03A9 /* AppDelegate.swift */,
-				F2EBBB9C20597EA600DD03A9 /* Main.storyboard */,
 				F2EBBB9F20597EA600DD03A9 /* Assets.xcassets */,
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
+				F2F7AABE2061636600348BAD /* testVC.swift */,
 			);
 			path = Gleepads;
+			sourceTree = "<group>";
+		};
+		F2F7AAC02061656D00348BAD /* video */ = {
+			isa = PBXGroup;
+			children = (
+				F2F7AAC12061657800348BAD /* myVideo.mp4 */,
+			);
+			path = video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EBBBA720597EA600DD03A9 /* Build configuration list for PBXNativeTarget "Gleepads" */;
 			buildPhases = (
+				DC2F9C85DA9EBA1215B5EFC7 /* [CP] Check Pods Manifest.lock */,
 				F2EBBB9120597EA600DD03A9 /* Sources */,
 				F2EBBB9220597EA600DD03A9 /* Frameworks */,
 				F2EBBB9320597EA600DD03A9 /* Resources */,
+				5DA77CBB514CB3255AC60D98 /* [CP] Embed Pods Frameworks */,
+				5C300C7670C19C4AC7991CE8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,28 +288,105 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F7AAC2206165F200348BAD /* myVideo.mp4 in Resources */,
+				F2C06D7B206157BA0033B3DE /* host.png in Resources */,
+				F2C06D78206157BA0033B3DE /* notify.png in Resources */,
 				F26B34F1205B89F10082FAFD /* logo.png in Resources */,
+				F28D90A120600F1800AE2A5D /* Explore.png in Resources */,
 				F2EBBBA320597EA600DD03A9 /* LaunchScreen.storyboard in Resources */,
+				F2C06D77206157BA0033B3DE /* gift.png in Resources */,
 				F26B34F2205B89F10082FAFD /* Gleepads.jpg in Resources */,
 				F2EBBBA020597EA600DD03A9 /* Assets.xcassets in Resources */,
+				F28D90AD2060162200AE2A5D /* tom.jpg in Resources */,
+				F2C06D7A206157BA0033B3DE /* credit.png in Resources */,
+				F2C06D8120615E500033B3DE /* bottomside_border.png in Resources */,
+				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
+				F2C06D7F20615E470033B3DE /* upside_border.png in Resources */,
+				F2C06D6F206145B10033B3DE /* border.png in Resources */,
+				F2C06D7D206157BA0033B3DE /* help.png in Resources */,
 				F2EBBB9E20597EA600DD03A9 /* Main.storyboard in Resources */,
+				F28D90A920600F5F00AE2A5D /* Saved.png in Resources */,
+				F2C06D7C206157BA0033B3DE /* setting.png in Resources */,
+				F28D90A720600F2900AE2A5D /* Inbox.png in Resources */,
+				F2C06D79206157BA0033B3DE /* feedback.png in Resources */,
+				F28D90A520600F2900AE2A5D /* Profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C300C7670C19C4AC7991CE8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DA77CBB514CB3255AC60D98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC2F9C85DA9EBA1215B5EFC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gleepads-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2EBBB9120597EA600DD03A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */,
 				F2EBBB9B20597EA600DD03A9 /* MainVC.swift in Sources */,
 				F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */,
+				F28D9091205FECBA00AE2A5D /* ForgetVC.swift in Sources */,
+				F28D908F205FE75A00AE2A5D /* SignInVC.swift in Sources */,
+				F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */,
 				F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */,
 				F226FB7E205A566F00F14CB0 /* SignUpOptionVC.swift in Sources */,
+				F2F7AABF2061636600348BAD /* testVC.swift in Sources */,
 				F226FB7C205A53C900F14CB0 /* LoginVC.swift in Sources */,
 				F2EBBB9920597EA600DD03A9 /* AppDelegate.swift in Sources */,
 				F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */,
+				F28D90952060017000AE2A5D /* FunctionMainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +521,7 @@
 		};
 		F2EBBBA820597EA600DD03A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58E84263B236808B7DA16B8B /* Pods-Gleepads.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,6 +537,7 @@
 		};
 		F2EBBBA920597EA600DD03A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ECA5A1A268A109A61342E33 /* Pods-Gleepads.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
