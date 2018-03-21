@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class emailVC: UIViewController {
 
@@ -16,6 +17,10 @@ class emailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
+        
         // ************ remove Navigator bar Border *************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -25,6 +30,13 @@ class emailVC: UIViewController {
         nextButton.alpha = 0.5
         
         emailTF.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        
     }
     
     @IBAction func backButton(_ sender: Any) {

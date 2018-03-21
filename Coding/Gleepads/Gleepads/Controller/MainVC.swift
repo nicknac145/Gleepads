@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import SwiftVideoBackground
 
 class MainVC: UIViewController {
 
@@ -16,6 +17,9 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
 
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -25,6 +29,13 @@ class MainVC: UIViewController {
         bottomLabel.addGestureRecognizer(labelTapped)
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        
+    }
     
     @IBAction func login_action(_ sender: Any) {
         performSegue(withIdentifier: "NewAccountSegue", sender: self)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class LoginVC: UIViewController {
 
@@ -14,6 +15,14 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        
     }
 
 

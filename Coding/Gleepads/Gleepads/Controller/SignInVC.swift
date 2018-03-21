@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class SignInVC: UIViewController {
 
@@ -16,9 +17,19 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
 
     }
-
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        
+    }
     
     @IBAction func showPassword(_ sender: Any) {
         

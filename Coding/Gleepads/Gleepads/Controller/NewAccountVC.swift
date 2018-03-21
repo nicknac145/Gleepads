@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class NewAccountVC: UIViewController {
 
@@ -17,6 +18,9 @@ class NewAccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
         
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -32,7 +36,12 @@ class NewAccountVC: UIViewController {
         lastNameTF.addTarget(self, action: #selector(enableButton), for: .editingChanged)
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        
+    }
     
     
     

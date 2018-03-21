@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class ForgetVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
     }
 
     @IBAction func nextButton(_ sender: Any) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class SignUpOptionVC: UIViewController {
 
@@ -14,6 +15,14 @@ class SignUpOptionVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        
     }
 
     @IBAction func cancel_action(_ sender: Any) {
