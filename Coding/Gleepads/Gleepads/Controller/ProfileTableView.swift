@@ -16,6 +16,8 @@ class ProfileTableView: UIViewController,UITableViewDelegate,UITableViewDataSour
         let Title : String?
         let Sub_Title  : String
     }
+    
+    var vcNAme = [String]()
 
     @IBOutlet weak var profileTableView: UITableView!
     
@@ -34,6 +36,15 @@ class ProfileTableView: UIViewController,UITableViewDelegate,UITableViewDataSour
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "host.png"), Title: nil, Sub_Title: "Become a Host"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "feedback.png"), Title: nil, Sub_Title: "Give us feedback"),
         ]
+        
+        vcNAme = ["Notification",
+                  "Invite",
+                  "Credit",
+                  "Setting",
+                  "Help",
+                  "Host",
+                  "Feedback"]
+        
         profileTableView.delegate = self
         profileTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -87,6 +98,8 @@ class ProfileTableView: UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let VC = vcNAme[(indexPath.row)-2]
+        let controller = storyboard?.instantiateViewController(withIdentifier: VC)
+        self.navigationController?.pushViewController(controller!, animated: true)
     }
 }
