@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,12 +19,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FvW-IO-qgw">
-                                <rect key="frame" x="33" y="238" width="308" height="191"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upside_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="kWS-hf-J87">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomside_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="k36-ga-UwY">
+                                <rect key="frame" x="0.0" y="333" width="375" height="334"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gleepads.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-KM-J5t">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kWS-hf-J87" secondAttribute="bottom" constant="333" id="1zA-9n-Rc3"/>
+                            <constraint firstItem="k36-ga-UwY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5Xw-9P-Zgv"/>
+                            <constraint firstItem="P0Q-KM-J5t" firstAttribute="height" secondItem="kWS-hf-J87" secondAttribute="height" multiplier="0.385" id="G4o-fJ-mqV"/>
+                            <constraint firstItem="k36-ga-UwY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uew-os-S6G"/>
+                            <constraint firstItem="P0Q-KM-J5t" firstAttribute="centerX" secondItem="kWS-hf-J87" secondAttribute="centerX" id="WhV-eL-kNJ"/>
+                            <constraint firstItem="k36-ga-UwY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bqk-qA-v9v"/>
+                            <constraint firstItem="kWS-hf-J87" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c1y-F6-9ln"/>
+                            <constraint firstItem="kWS-hf-J87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fsA-96-v8u"/>
+                            <constraint firstItem="P0Q-KM-J5t" firstAttribute="centerY" secondItem="kWS-hf-J87" secondAttribute="centerY" multiplier="1.99" id="quE-sf-M3d"/>
+                            <constraint firstItem="P0Q-KM-J5t" firstAttribute="width" secondItem="kWS-hf-J87" secondAttribute="width" multiplier="0.635" constant="1" id="tuO-C6-AZq"/>
+                            <constraint firstItem="kWS-hf-J87" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ut7-wb-zz3"/>
+                            <constraint firstItem="k36-ga-UwY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="313" id="zcm-2Z-a0v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -34,5 +54,7 @@
     </scenes>
     <resources>
         <image name="Gleepads.jpg" width="1355" height="1084"/>
+        <image name="bottomside_border.png" width="820" height="817"/>
+        <image name="upside_border.png" width="820" height="817"/>
     </resources>
 </document>

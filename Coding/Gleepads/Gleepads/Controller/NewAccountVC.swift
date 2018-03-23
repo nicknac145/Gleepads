@@ -39,7 +39,7 @@ class NewAccountVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "intro", videoType: "mp4")
         
     }
     

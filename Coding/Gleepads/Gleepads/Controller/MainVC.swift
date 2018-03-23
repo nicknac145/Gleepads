@@ -33,12 +33,12 @@ class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "launched_screen", videoType: "mp4")
         
     }
     
     @IBAction func login_action(_ sender: Any) {
-        performSegue(withIdentifier: "NewAccountSegue", sender: self)
+        performSegue(withIdentifier: "LoginSegue", sender: self)
     }
     
     @objc func labelTouch(reccog: UIGestureRecognizer){
