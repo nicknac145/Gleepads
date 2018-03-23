@@ -26,6 +26,10 @@ class ProfileTableView: UIViewController,UITableViewDelegate,UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
         dataArray = [Cell_info(cell: 1, image: #imageLiteral(resourceName: "tom.jpg"), Title: "Tom Cruise", Sub_Title: "view & edit"),
                      Cell_info(cell: 2, image: nil, Title: nil, Sub_Title: "Just 4 steps left"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "notify.png"), Title: nil, Sub_Title: "Notification"),
