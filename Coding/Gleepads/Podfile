@@ -8,8 +8,6 @@ target 'Gleepads' do
   # Pods for Gleepads
 pod 'SwiftVideoBackground', '~> 3.0'
 
-#pod 'VideoSplashKit', :git => 'https://github.com/svtek/VideoSplashKit/VideoSplashKit.git', :branch => 'swift4'
-
-
+pod 'BubbleTransition'
 
 end

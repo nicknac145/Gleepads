@@ -18,20 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="kWS-hf-J87">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firstpage.png" translatesAutoresizingMaskIntoConstraints="NO" id="BMI-g1-3nz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-KM-J5t">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gleepads.png" translatesAutoresizingMaskIntoConstraints="NO" id="u2m-Jr-mhl">
                                 <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kWS-hf-J87" secondAttribute="bottom" id="Run-mO-1Hl"/>
-                            <constraint firstItem="kWS-hf-J87" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RvQ-Mu-91N"/>
-                            <constraint firstItem="kWS-hf-J87" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="XSv-O2-f5O"/>
-                            <constraint firstItem="kWS-hf-J87" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zju-ck-Qqf"/>
+                            <constraint firstItem="u2m-Jr-mhl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="QaP-Rb-EMV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u2m-Jr-mhl" secondAttribute="bottom" constant="270" id="Tgi-Ph-lRh"/>
+                            <constraint firstItem="u2m-Jr-mhl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="UVI-f9-y5t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u2m-Jr-mhl" secondAttribute="trailing" constant="68" id="V4f-VP-GH6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BMI-g1-3nz" secondAttribute="bottom" id="Ypm-Bp-9oL"/>
+                            <constraint firstItem="BMI-g1-3nz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cbA-pZ-MvV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BMI-g1-3nz" secondAttribute="trailing" id="dQ7-CC-Df6"/>
+                            <constraint firstItem="BMI-g1-3nz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u9D-Nd-jUV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -42,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Gleepads.jpg" width="1355" height="1084"/>
-        <image name="border_image.png" width="1002" height="1680"/>
+        <image name="Gleepads.png" width="1600" height="520"/>
+        <image name="firstpage.png" width="2556" height="1439"/>
     </resources>
 </document>

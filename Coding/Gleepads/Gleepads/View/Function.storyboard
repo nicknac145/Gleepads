@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1153" y="1095"/>
         </scene>
-        <!--Profile Table View-->
+        <!--ProfileVC-->
         <scene sceneID="TFy-Jp-58a">
             <objects>
-                <viewController id="oqW-QK-ABb" customClass="ProfileTableView" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oqW-QK-ABb" customClass="ProfileVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Pd-IW-v2o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,58 +105,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bi3-FZ-AUh">
                                 <rect key="frame" x="15" y="64" width="345" height="539"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="113" id="I0N-0N-MvS">
-                                        <rect key="frame" x="0.0" y="28" width="345" height="113"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I0N-0N-MvS" id="AOQ-Hc-33p">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="112.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tom.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x7w-1P-fGk" customClass="Custom_ImageView" customModule="Gleepads" customModuleProvider="target">
-                                                    <rect key="frame" x="240" y="0.0" width="90" height="90"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
-                                                            <real key="value" value="45"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tom Cruise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgE-1H-PHQ">
-                                                    <rect key="frame" x="15" y="11" width="205" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View and edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-7u-vyr">
-                                                    <rect key="frame" x="15" y="46" width="156" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="XYj-mi-5Gg">
-                                        <rect key="frame" x="0.0" y="141" width="345" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XYj-mi-5Gg" id="4Tv-wD-5Nq">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="74.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kr8-oM-fPZ">
-                                        <rect key="frame" x="0.0" y="216" width="345" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kr8-oM-fPZ" id="p0f-e8-R9t">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,7 +133,7 @@
         <!--Notification-->
         <scene sceneID="glC-PF-ENA">
             <objects>
-                <viewController storyboardIdentifier="Notification" title="Notification" id="tKV-m6-48g" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Notification" title="Notification" id="tKV-m6-48g" customClass="NotificationVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzG-5S-vJb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,25 +141,36 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qjz-h8-P9Q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xyG-fN-piQ">
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qjz-h8-P9Q" firstAttribute="leading" secondItem="h10-zk-tcl" secondAttribute="leading" id="J9j-yd-Spm"/>
+                            <constraint firstItem="xyG-fN-piQ" firstAttribute="leading" secondItem="h10-zk-tcl" secondAttribute="leading" constant="15" id="b1g-fI-rzn"/>
                             <constraint firstItem="h10-zk-tcl" firstAttribute="trailing" secondItem="Qjz-h8-P9Q" secondAttribute="trailing" id="cAW-Qa-jVk"/>
                             <constraint firstItem="h10-zk-tcl" firstAttribute="bottom" secondItem="Qjz-h8-P9Q" secondAttribute="bottom" id="gEX-Rq-hAR"/>
+                            <constraint firstItem="xyG-fN-piQ" firstAttribute="top" secondItem="h10-zk-tcl" secondAttribute="top" constant="15" id="hiL-Hi-jC0"/>
+                            <constraint firstItem="h10-zk-tcl" firstAttribute="bottom" secondItem="xyG-fN-piQ" secondAttribute="bottom" constant="15" id="k2u-6u-xNJ"/>
+                            <constraint firstItem="h10-zk-tcl" firstAttribute="trailing" secondItem="xyG-fN-piQ" secondAttribute="trailing" constant="15" id="qVb-F1-hfi"/>
                             <constraint firstItem="Qjz-h8-P9Q" firstAttribute="top" secondItem="jzG-5S-vJb" secondAttribute="top" id="tiv-Cd-3ns"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h10-zk-tcl"/>
                     </view>
+                    <connections>
+                        <outlet property="NotifyTable" destination="xyG-fN-piQ" id="dxw-TY-en5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQM-zg-Uel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3686" y="-304"/>
+            <point key="canvasLocation" x="3685.5999999999999" y="-304.4977511244378"/>
         </scene>
         <!--Credit-->
         <scene sceneID="IFZ-99-cMr">
             <objects>
-                <viewController storyboardIdentifier="Credit" title="Credit" id="j7D-sA-1aP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Credit" title="Credit" id="j7D-sA-1aP" customClass="CrediitVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yOz-zS-BNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +196,7 @@
         <!--Setting-->
         <scene sceneID="S7J-k4-7y5">
             <objects>
-                <viewController storyboardIdentifier="Setting" title="Setting" id="PkK-kN-BFt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" title="Setting" id="PkK-kN-BFt" customClass="SettingVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d52-pP-vFj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,25 +204,70 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="F7Q-is-cmU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-D1-7Vr">
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2d8-Tn-lPA" firstAttribute="trailing" secondItem="gBn-D1-7Vr" secondAttribute="trailing" constant="15" id="1Mt-Gp-GDc"/>
                             <constraint firstItem="F7Q-is-cmU" firstAttribute="top" secondItem="d52-pP-vFj" secondAttribute="top" id="Pve-Rw-3c4"/>
+                            <constraint firstItem="gBn-D1-7Vr" firstAttribute="top" secondItem="2d8-Tn-lPA" secondAttribute="top" constant="15" id="SpB-xh-YVJ"/>
                             <constraint firstItem="2d8-Tn-lPA" firstAttribute="trailing" secondItem="F7Q-is-cmU" secondAttribute="trailing" id="a9z-dW-UMO"/>
+                            <constraint firstItem="gBn-D1-7Vr" firstAttribute="leading" secondItem="2d8-Tn-lPA" secondAttribute="leading" constant="15" id="jUJ-My-KfX"/>
                             <constraint firstItem="F7Q-is-cmU" firstAttribute="leading" secondItem="d52-pP-vFj" secondAttribute="leading" id="oBE-4v-bKd"/>
+                            <constraint firstItem="2d8-Tn-lPA" firstAttribute="bottom" secondItem="gBn-D1-7Vr" secondAttribute="bottom" constant="15" id="sZE-Y7-vDx"/>
                             <constraint firstItem="2d8-Tn-lPA" firstAttribute="bottom" secondItem="F7Q-is-cmU" secondAttribute="bottom" id="v8x-a3-0Yb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2d8-Tn-lPA"/>
                     </view>
+                    <connections>
+                        <outlet property="settingTable" destination="gBn-D1-7Vr" id="QGE-3a-QqP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0q-Lr-3zH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4894" y="1330"/>
         </scene>
+        <!--Notification_Setting-->
+        <scene sceneID="h9c-8b-A7R">
+            <objects>
+                <viewController storyboardIdentifier="Notification_Setting" title="Notification_Setting" id="uD3-Hg-U9t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6lI-q8-osH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="xdo-J9-zPk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ro-W1-STc">
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nzf-4e-6Cf" firstAttribute="bottom" secondItem="3ro-W1-STc" secondAttribute="bottom" constant="15" id="4hI-2v-hGR"/>
+                            <constraint firstItem="Nzf-4e-6Cf" firstAttribute="trailing" secondItem="3ro-W1-STc" secondAttribute="trailing" constant="15" id="PCj-i6-kGB"/>
+                            <constraint firstAttribute="trailing" secondItem="xdo-J9-zPk" secondAttribute="trailing" id="VeQ-Kb-j2D"/>
+                            <constraint firstItem="xdo-J9-zPk" firstAttribute="top" secondItem="6lI-q8-osH" secondAttribute="top" id="Ze5-WN-hoS"/>
+                            <constraint firstItem="3ro-W1-STc" firstAttribute="leading" secondItem="Nzf-4e-6Cf" secondAttribute="leading" constant="15" id="jGU-Lp-UfL"/>
+                            <constraint firstItem="3ro-W1-STc" firstAttribute="top" secondItem="Nzf-4e-6Cf" secondAttribute="top" constant="15" id="w7D-Br-okH"/>
+                            <constraint firstItem="xdo-J9-zPk" firstAttribute="leading" secondItem="Nzf-4e-6Cf" secondAttribute="leading" id="xFs-6u-EOH"/>
+                            <constraint firstItem="Nzf-4e-6Cf" firstAttribute="bottom" secondItem="xdo-J9-zPk" secondAttribute="bottom" id="yGD-WO-nci"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nzf-4e-6Cf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uiC-7f-blW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5764" y="1330"/>
+        </scene>
         <!--Help-->
         <scene sceneID="vwd-a8-jTf">
             <objects>
-                <viewController storyboardIdentifier="Help" title="Help" id="m1J-sM-sNO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Help" title="Help" id="m1J-sM-sNO" customClass="HelpVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jY0-dW-rwg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +293,7 @@
         <!--Host-->
         <scene sceneID="znD-W5-P70">
             <objects>
-                <viewController storyboardIdentifier="Host" title="Host" id="x31-6E-AwD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Host" title="Host" id="x31-6E-AwD" customClass="HostVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8mp-wp-cD1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +319,7 @@
         <!--Feedback-->
         <scene sceneID="9tD-as-zO5">
             <objects>
-                <viewController storyboardIdentifier="Feedback" title="Feedback" id="rSv-Iz-mpH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feedback" title="Feedback" id="rSv-Iz-mpH" customClass="FeedbackVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PtP-NT-KXl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,12 +340,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhC-oy-LNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3686" y="2934"/>
+            <point key="canvasLocation" x="3698" y="2866"/>
         </scene>
         <!--Invite-->
         <scene sceneID="R0d-qg-eVG">
             <objects>
-                <viewController storyboardIdentifier="Invite" title="Invite" id="vGe-7Z-6i1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Invite" title="Invite" id="vGe-7Z-6i1" customClass="InviteVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ud0-hE-J65">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,16 +353,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="vf1-js-9Hj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-i4-OXR">
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="4bn-i4-OXR" firstAttribute="leading" secondItem="oXx-dS-F9T" secondAttribute="leading" constant="15" id="AZu-HO-NaY"/>
+                            <constraint firstItem="4bn-i4-OXR" firstAttribute="top" secondItem="oXx-dS-F9T" secondAttribute="top" constant="15" id="CQ9-lk-hRl"/>
                             <constraint firstItem="vf1-js-9Hj" firstAttribute="leading" secondItem="oXx-dS-F9T" secondAttribute="leading" id="N3U-nh-Oy0"/>
                             <constraint firstItem="vf1-js-9Hj" firstAttribute="bottom" secondItem="oXx-dS-F9T" secondAttribute="bottom" id="T4r-97-RHE"/>
+                            <constraint firstItem="oXx-dS-F9T" firstAttribute="trailing" secondItem="4bn-i4-OXR" secondAttribute="trailing" constant="15" id="W6v-Ge-80e"/>
+                            <constraint firstItem="oXx-dS-F9T" firstAttribute="bottom" secondItem="4bn-i4-OXR" secondAttribute="bottom" constant="15" id="WHv-jw-4GT"/>
                             <constraint firstItem="vf1-js-9Hj" firstAttribute="trailing" secondItem="oXx-dS-F9T" secondAttribute="trailing" id="of7-wp-mep"/>
                             <constraint firstItem="vf1-js-9Hj" firstAttribute="top" secondItem="Ud0-hE-J65" secondAttribute="top" id="vvT-7b-aaM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oXx-dS-F9T"/>
                     </view>
+                    <connections>
+                        <outlet property="inviteTable" destination="4bn-i4-OXR" id="j5M-vA-KEo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDm-4b-Vok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -443,6 +459,5 @@
         <image name="Profile.png" width="34" height="34"/>
         <image name="Saved.png" width="25" height="25"/>
         <image name="border_image.png" width="1002" height="1680"/>
-        <image name="tom.jpg" width="297" height="396"/>
     </resources>
 </document>

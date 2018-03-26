@@ -13,5 +13,6 @@ class ButtonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var buttonTitle: UILabel!
     @IBOutlet weak var buttonImage: UIImageView!
+    @IBOutlet weak var buttonSubTitle: UILabel!
     
 }

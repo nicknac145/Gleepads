@@ -15,4 +15,6 @@ class MiddleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bottomLabel: UILabel!
     
+    
+    
 }

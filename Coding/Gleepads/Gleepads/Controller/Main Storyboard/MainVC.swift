@@ -18,7 +18,6 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
 
 
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -33,7 +32,7 @@ class MainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        try? VideoBackground.shared.play(view: view, videoName: "launched_screen", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "intro", videoType: "mp4")
         
     }
     

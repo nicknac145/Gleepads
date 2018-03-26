@@ -1,5 +1,5 @@
 //
-//  ProfileTableView.swift
+//  ProfileVC.swift
 //  Gleepads
 //
 //  Created by Syed ShahRukh Haider on 23/03/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableView: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     struct Cell_info {
         let cell : Int
@@ -97,7 +97,7 @@ class ProfileTableView: UIViewController,UITableViewDelegate,UITableViewDataSour
         }
             
         else{
-            return 65
+            return 75
         }
     }
     
