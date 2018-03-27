@@ -14,21 +14,23 @@ class ForgetVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
 
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+    // **************  BACKGROUND VIDEO PLAYER ***************
         try? VideoBackground.shared.play(view: view, videoName: "forget", videoType: "mp4")
 
     }
 
     @IBAction func nextButton(_ sender: Any) {
     
+        
+        // ************** SEGUE TO INITIAL VIEW CONTROLLER  ***************
+
         let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
 
         let navController = UINavigationController(rootViewController: mainVC)

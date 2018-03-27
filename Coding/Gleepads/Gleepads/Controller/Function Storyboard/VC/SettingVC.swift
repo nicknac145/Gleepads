@@ -12,7 +12,7 @@ import SafariServices
 
 class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
+    //*********** STRUCT TO MANAGE DATA IN CELL WILL HOLD *************
     struct Cell_info {
         let cell : Int
         let image : UIImage?
@@ -20,6 +20,10 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let Sub_Title  : String?
     }
     
+    
+    
+    // ********** VARIABLE ***********
+
     var vcName = [String]()
     
     @IBOutlet weak var settingTable: UITableView!
@@ -34,6 +38,9 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         settingTable.delegate = self
         settingTable.dataSource = self
 
+        
+        // ********** DATA FOR TABLEVIEW CELL ***********
+
         dataArray = [Cell_info(cell: 1, image: nil, Title: nil, Sub_Title: nil),
                      Cell_info(cell: 2, image: #imageLiteral(resourceName: "right_pointer.png"), Title: "Notification", Sub_Title: nil),
                      Cell_info(cell: 3, image: nil, Title: "Currency", Sub_Title: "USD($)"),
@@ -44,6 +51,9 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ]
         
         
+        
+        // *********  NAME OF VIEW-CONTROLLER THAT WILL OPEN SELECTING TABLE CELL *************
+
         vcName = ["Notification_Setting",
                   "Currency",
                   "Payment",
@@ -52,10 +62,13 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                   "logout"]
     }
 
+    // HANDLE NUMBER OF CELL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
+    
+    // HANDLE WHAT DATA TO BE SHOWN TO WHICH CELL.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if dataArray[indexPath.row].cell == 1{
@@ -81,6 +94,8 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
+    // SETTING HEIGHT OF RESPECTIVE CELL
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if dataArray[indexPath.row].cell == 1{
          
@@ -99,6 +114,9 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
+    
+    // ENABLE "SELECT CELL" FEATURE
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= 1 && indexPath.row  <= 3{
             

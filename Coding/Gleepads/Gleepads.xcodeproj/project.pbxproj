@@ -264,6 +264,8 @@
 				F27B516F2065960100599F82 /* MiddleTableViewCell.swift */,
 				F27B51752065A68E00599F82 /* ButtonTableViewCell.swift */,
 				F29C057B2066417C00EC802F /* InviteTableViewCell.swift */,
+				F258154F206953FB00045DCF /* NotifySettingLabelCell.swift */,
+				F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */,
 				F29C059D2066660D00EC802F /* HeadingCell.swift */,
 			);
 			path = "Table Cell";
@@ -292,6 +294,8 @@
 				F27B51702065960100599F82 /* MiddleTableViewCell.xib */,
 				F27B51762065A68E00599F82 /* ButtonTableViewCell.xib */,
 				F29C057C2066417C00EC802F /* InviteTableViewCell.xib */,
+				F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */,
+				F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */,
 				F29C059C2066660D00EC802F /* HeadingCell.xib */,
 			);
 			path = "XIB file";
@@ -329,10 +333,6 @@
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
 				F2CA65D22068C8DD005577D9 /* testVC.swift */,
-				F258154F206953FB00045DCF /* NotifySettingLabelCell.swift */,
-				F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */,
-				F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */,
-				F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";

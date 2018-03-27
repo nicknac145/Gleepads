@@ -10,12 +10,17 @@ import UIKit
 
 class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    //*********** STRUCT TO MANAGE DATA IN CELL WILL HOLD *************
+    
     struct Cell_info {
         let cell : Int
         let image : UIImage?
         let Title : String?
         let Sub_Title  : String
     }
+    
+    // ********** VARIABLE ***********
+
     
     var vcNAme = [String]()
 
@@ -29,7 +34,10 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+       
         
+        // ********** DATA FOR TABLEVIEW CELL ***********
+
         dataArray = [Cell_info(cell: 1, image: #imageLiteral(resourceName: "tom.jpg"), Title: "Tom Cruise", Sub_Title: "view & edit"),
                      Cell_info(cell: 2, image: nil, Title: nil, Sub_Title: "Just 4 steps left"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "notify.png"), Title: nil, Sub_Title: "Notification"),
@@ -41,6 +49,8 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "feedback.png"), Title: nil, Sub_Title: "Give us feedback"),
         ]
         
+        
+        // *********  NAME OF VIEW-CONTROLLER THAT WILL OPEN SELECTING TABLE CELL *************
         vcNAme = ["Notification",
                   "Invite",
                   "Credit",
@@ -51,14 +61,16 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         profileTableView.delegate = self
         profileTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
-    
+    // HANDLE NUMBER OF CELL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
+    
+    
+    // HANDLE WHAT DATA TO BE SHOWN TO WHICH CELL.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if dataArray[indexPath.row].cell == 1{
@@ -85,6 +97,8 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     }
     
+    // SETTING HEIGHT OF RESPECTIVE CELL
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if dataArray[indexPath.row].cell == 1{
@@ -101,6 +115,7 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }
     }
     
+    // ENABLE "SELECT CELL" FEATURE
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
         if indexPath.row >= 2 {

@@ -10,12 +10,17 @@ import UIKit
 
 class NotificationSettingVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
 
+    
+    //*********** STRUCT TO MANAGE DATA IN CELL WILL HOLD *************
     struct Cell_info {
         let cell : Int
         let Title : String?
         let Sub_Title  : String?
     }
     
+    
+    // ********** VARIABLE ***********
+
     @IBOutlet weak var notificationSettingTable: UITableView!
     var dataArray = [Cell_info]()
    
@@ -26,7 +31,10 @@ class NotificationSettingVC: UIViewController, UITableViewDataSource,UITableView
         notificationSettingTable.dataSource = self
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        
+        // ********** DATA FOR TABLEVIEW CELL ***********
         
         dataArray = [Cell_info(cell: 1,  Title: "Notification", Sub_Title: nil),
                      Cell_info(cell: 3,  Title: "Push notification", Sub_Title: nil),
@@ -51,9 +59,13 @@ class NotificationSettingVC: UIViewController, UITableViewDataSource,UITableView
 
     }
 
+    // HANDLE NUMBER OF CELL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
+
+    
+    // HANDLE WHAT DATA TO BE SHOWN TO WHICH CELL.
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if dataArray[indexPath.row].cell == 1{
@@ -81,6 +93,9 @@ class NotificationSettingVC: UIViewController, UITableViewDataSource,UITableView
         
     }
     
+    
+    
+    // SETTING HEIGHT OF RESPECTIVE CELL
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if dataArray[indexPath.row].cell == 1{
             return 108

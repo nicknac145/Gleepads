@@ -12,6 +12,7 @@ import SwiftVideoBackground
 
 class MainVC: UIViewController {
 
+ // ***********  variable ***************
     @IBOutlet weak var bottomLabel: UILabel!
     
     
@@ -19,11 +20,11 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         
 
-
+ // ***********  Configuration Navigation bar setting ***************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        
+ // *********** Initialize Tapped function and add to bottomLabel  ***************
         let labelTapped = UITapGestureRecognizer(target: self, action: #selector(labelTouch))
         bottomLabel.addGestureRecognizer(labelTapped)
     }
@@ -31,15 +32,23 @@ class MainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
+        // *********** BACKGROUND VIDEO PLAYER   ***************
+
         try? VideoBackground.shared.play(view: view, videoName: "intro", videoType: "mp4")
         
     }
     
+    
+    // *********** LOGIN BUTTON ACTION FUNCTION  ***************
+
     @IBAction func login_action(_ sender: Any) {
         performSegue(withIdentifier: "LoginSegue", sender: self)
     }
     
+    
+    // ***********   FUNCTION THAT DEFINE ACTION ON TAPPING ***************
+
     @objc func labelTouch(reccog: UIGestureRecognizer){
 
         let url = URL(string: "https://www.google.com")

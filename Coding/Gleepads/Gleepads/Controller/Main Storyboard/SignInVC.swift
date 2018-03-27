@@ -17,9 +17,6 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
-
 
     }
     
@@ -27,10 +24,15 @@ class SignInVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // ***********  BACKGROUND VIDEO PLAYER ***************
+
         try? VideoBackground.shared.play(view: view, videoName: "login", videoType: "mp4")
         
     }
     
+    
+    // *********** FUNCTION THAT ENABLE SECURE TEXT  ***************
+
     @IBAction func showPassword(_ sender: Any) {
         
         if   passwordTF.isSecureTextEntry == true{

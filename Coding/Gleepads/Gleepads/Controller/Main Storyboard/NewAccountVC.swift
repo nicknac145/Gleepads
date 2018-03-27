@@ -19,10 +19,8 @@ class NewAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+        // *********** CONFIGURE NAVIGATOIN BAR SETTING  ***************
 
-        
-        
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -39,6 +37,9 @@ class NewAccountVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        // *********** BACKGROUND VIDEO PLAYER  ***************
+
         try? VideoBackground.shared.play(view: view, videoName: " signup", videoType: "mp4")
         
     }

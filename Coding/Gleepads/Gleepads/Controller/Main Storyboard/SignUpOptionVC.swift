@@ -14,13 +14,15 @@ class SignUpOptionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
+
 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+    
+        // *********** BACKGROUND VIDEO PLAYER  ***************
+
         try? VideoBackground.shared.play(view: view, videoName: "Social", videoType: "mp4")
     }
 

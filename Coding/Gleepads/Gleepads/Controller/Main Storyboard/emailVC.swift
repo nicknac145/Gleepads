@@ -18,9 +18,6 @@ class emailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        try? VideoBackground.shared.play(view: view, videoName: "myVideo", videoType: "mp4")
-
-        
         // ************ remove Navigator bar Border *************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -35,6 +32,9 @@ class emailVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        // *********** BACKGORUND VIDEO PLAYER  ***************
+
         try? VideoBackground.shared.play(view: view, videoName: " signup", videoType: "mp4")
         
     }
@@ -43,6 +43,8 @@ class emailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    // FUNCTION THAT CHECK WHEN TO ENABLE BUTTON
     @objc func enableButton(_ textField : UITextField){
         
         if (emailTF.isEditing == true && emailTF.text?.isEmpty == false){

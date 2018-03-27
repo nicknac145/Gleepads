@@ -12,7 +12,7 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var inviteTable: UITableView!
     
-    
+    //*********** STRUCT TO MANAGE DATA IN CELL WILL HOLD *************
     struct Cell_info {
         let cell : Int
         let image : UIImage?
@@ -20,6 +20,9 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let Sub_Title  : String?
     }
     
+    
+    // ********** VARIABLE ***********
+
     var dataArray = [Cell_info]()
 
     
@@ -29,16 +32,23 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         inviteTable.delegate = self
         inviteTable.dataSource = self
 
-        
-         dataArray = [ Cell_info(cell: 1, image: nil, Title: nil, Sub_Title: "Just 4 steps left"), Cell_info(cell: 2, image: #imageLiteral(resourceName: "right_pointer.png"), Title: nil, Sub_Title: "Your travel credit"), Cell_info(cell: 2, image: #imageLiteral(resourceName: "right_pointer.png"), Title: nil, Sub_Title: "Read terms and conditions"), ]
+        // ********** DATA FOR TABLEVIEW CELL ***********
+
+         dataArray = [ Cell_info(cell: 1, image: nil, Title: nil, Sub_Title: "Just 4 steps left"),
+                       Cell_info(cell: 2, image: #imageLiteral(resourceName: "right_pointer.png"), Title: nil, Sub_Title: "Your travel credit"),
+                       Cell_info(cell: 2, image: #imageLiteral(resourceName: "right_pointer.png"), Title: nil, Sub_Title: "Read terms and conditions"), ]
 
         
     }
 
+
+    // HANDLE NUMBER OF CELL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
  
+    
+    // HANDLE WHAT DATA TO BE SHOWN TO WHICH CELL.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if dataArray[indexPath.row].cell == 1{
             let cell = Bundle.main.loadNibNamed("InviteTableViewCell", owner: self, options: nil)?.first as! InviteTableViewCell
@@ -53,6 +63,8 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    
+    // SETTING HEIGHT OF RESPECTIVE CELL
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if dataArray[indexPath.row].cell == 1{
            
