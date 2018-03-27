@@ -102,8 +102,12 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let VC = vcNAme[(indexPath.row)-2]
-        let controller = storyboard?.instantiateViewController(withIdentifier: VC)
-        self.navigationController?.pushViewController(controller!, animated: true)
+      
+        if indexPath.row >= 2 {
+            let VC = vcNAme[(indexPath.row)-2]
+            let controller = storyboard?.instantiateViewController(withIdentifier: VC)
+            self.navigationController?.pushViewController(controller!, animated: true)
+        }
+       
     }
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -26,6 +28,8 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem?.title = "<"
+        
         
         settingTable.delegate = self
         settingTable.dataSource = self
@@ -96,12 +100,34 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row >= 1 && indexPath.row  <= 4{
+        if indexPath.row >= 1 && indexPath.row  <= 3{
             
             let VC = vcName[(indexPath.row)-1]
             let controller = storyboard?.instantiateViewController(withIdentifier: VC)
             self.navigationController?.pushViewController(controller!, animated: true)
         }
+        
+        else if indexPath.row == 4{
+            let url = URL(string: "https://www.google.com")
+            
+            let svc = SFSafariViewController(url: url!)
+            self.present(svc, animated: true, completion: nil)
+        }
+        
+        else if indexPath.row == 6{
+            
+            let VC = UIAlertController(title:nil, message: nil, preferredStyle: .actionSheet)
+            let logoutAction = UIAlertAction(title: "Log Out", style: .default, handler: { (action) in
+                self.parent?.parent?.navigationController?.popViewController(animated: true)
+                print(self.parent)
+            })
+            let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            VC.addAction(logoutAction)
+            VC.addAction(CancelAction)
+
+            present(VC, animated: true, completion: nil)
+        }
+        
          }
 
 

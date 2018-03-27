@@ -23,7 +23,7 @@ class ForgetVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        try? VideoBackground.shared.play(view: view, videoName: "login", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "forget", videoType: "mp4")
 
     }
 
