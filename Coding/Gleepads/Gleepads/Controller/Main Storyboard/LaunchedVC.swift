@@ -13,6 +13,8 @@ import BubbleTransition
 class LaunchedVC: UIViewController,UIViewControllerTransitioningDelegate {
 
     
+    @IBOutlet weak var gleepadIncImage: UIImageView!
+    @IBOutlet weak var gleepad: UIImageView!
     
     // ***********  Background initializa variable ***************
     @IBOutlet weak var background: UIImageView!
@@ -26,7 +28,7 @@ class LaunchedVC: UIViewController,UIViewControllerTransitioningDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.gleepadIncImage.alpha = 0
 // ***********  variable that store time Video commence ***************
         var current_time = DispatchTime.now()
         
@@ -39,10 +41,28 @@ class LaunchedVC: UIViewController,UIViewControllerTransitioningDelegate {
         
         
  // ***********  Video Player ***************
-        try? VideoBackground.shared.play(view: view, videoName: "launched_screen", videoType: "mp4")
- 
-        DispatchQueue.main.asyncAfter(deadline: current_time + 9.5) {
-            self.performSegue(withIdentifier: "Enter", sender: self)
+        try? VideoBackground.shared.play(view: view, videoName: "couple", videoType: "mp4")
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            UIView.animate(withDuration: 5) {
+                self.gleepad.alpha = 0
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 13) {
+            UIView.animate(withDuration: 5) {
+                self.gleepadIncImage.alpha = 1
+            }
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: current_time + 16) {
+//            VideoBackground.shared.pause()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.performSegue(withIdentifier: "Enter", sender: self)
+
+            })
 
         }
     }

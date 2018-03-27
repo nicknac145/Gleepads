@@ -35,7 +35,7 @@ class emailVC: UIViewController {
         
         // *********** BACKGORUND VIDEO PLAYER  ***************
 
-        try? VideoBackground.shared.play(view: view, videoName: " signup", videoType: "mp4")
+        try? VideoBackground.shared.play(view: view, videoName: "Email", videoType: "mp4")
         
     }
     

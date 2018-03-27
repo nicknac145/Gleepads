@@ -15,12 +15,16 @@
 		F226FB7E205A566F00F14CB0 /* SignUpOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
-		F258154820692AA500045DCF /*  signup.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154520692AA500045DCF /*  signup.mp4 */; };
 		F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F258154920692D9800045DCF /* Gleepads_witout_BG.png */; };
 		F2581551206953FB00045DCF /* NotifySettingLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258154F206953FB00045DCF /* NotifySettingLabelCell.swift */; };
 		F2581552206953FB00045DCF /* NotifySettingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */; };
 		F25815552069542C00045DCF /* NotifySettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */; };
 		F25815562069542C00045DCF /* NotifySettingSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */; };
+		F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F26CFC3E206A85DB00A9DD20 /* couple.mp4 */; };
+		F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154520692AA500045DCF /*  signup.mp4 */; };
+		F26CFC42206A883900A9DD20 /* Email.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F26CFC3D206A85DB00A9DD20 /* Email.mp4 */; };
+		F26CFC44206A8A0300A9DD20 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = F26CFC43206A8A0300A9DD20 /* start.png */; };
+		F26CFC49206A92F100A9DD20 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = F26CFC48206A92F100A9DD20 /* Start.png */; };
 		F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B514B20652B0200599F82 /* ProfileVC.swift */; };
 		F27B514E206585FF00599F82 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F27B514D206585FF00599F82 /* intro.mp4 */; };
 		F27B516D206595E700599F82 /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B516B206595E700599F82 /* TopTableViewCell.swift */; };
@@ -90,6 +94,10 @@
 		F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingLabelCell.xib; sourceTree = "<group>"; };
 		F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingSwitchCell.swift; sourceTree = "<group>"; };
 		F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingSwitchCell.xib; sourceTree = "<group>"; };
+		F26CFC3D206A85DB00A9DD20 /* Email.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Email.mp4; sourceTree = "<group>"; };
+		F26CFC3E206A85DB00A9DD20 /* couple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = couple.mp4; sourceTree = "<group>"; };
+		F26CFC43206A8A0300A9DD20 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
+		F26CFC48206A92F100A9DD20 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Start.png; path = ../../../../../../../Desktop/Start.png; sourceTree = "<group>"; };
 		F27B514B20652B0200599F82 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F27B514D206585FF00599F82 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
 		F27B516B206595E700599F82 /* TopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				F2129B3F206A2DE800D6D276 /* firstpage.png */,
+				F26CFC43206A8A0300A9DD20 /* start.png */,
 				F2EF76C82068EAA100B378BB /* border_image.png */,
 				F2EF76C72068EAA100B378BB /* credit.png */,
 				F2EF76CA2068EAA100B378BB /* Explore.png */,
@@ -220,6 +229,7 @@
 				F258154920692D9800045DCF /* Gleepads_witout_BG.png */,
 				F2EF76C92068EAA100B378BB /* gift.png */,
 				F2EF76D42068EAA100B378BB /* Gleepads.png */,
+				F26CFC48206A92F100A9DD20 /* Start.png */,
 				F2EF76C62068EAA100B378BB /* help.png */,
 				F2EF76CD2068EAA100B378BB /* host.png */,
 				F2EF76CC2068EAA100B378BB /* Inbox.png */,
@@ -341,6 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				F258154520692AA500045DCF /*  signup.mp4 */,
+				F26CFC3E206A85DB00A9DD20 /* couple.mp4 */,
+				F26CFC3D206A85DB00A9DD20 /* Email.mp4 */,
 				F258154320692AA500045DCF /* forget.mp4 */,
 				F258154420692AA500045DCF /* login.mp4 */,
 				F2EF76A02068E89C00B378BB /* launched_screen.mp4 */,
@@ -412,10 +424,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F258154820692AA500045DCF /*  signup.mp4 in Resources */,
+				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
+				F26CFC42206A883900A9DD20 /* Email.mp4 in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
+				F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */,
 				F2EF76E12068EAA100B378BB /* setting.png in Resources */,
 				F27B51722065960100599F82 /* MiddleTableViewCell.xib in Resources */,
+				F26CFC44206A8A0300A9DD20 /* start.png in Resources */,
 				F2EF76E42068EAA100B378BB /* tom.jpg in Resources */,
 				F2EF76A52068E89C00B378BB /* Social.mp4 in Resources */,
 				F2EF76D72068EAA100B378BB /* help.png in Resources */,
@@ -438,6 +453,7 @@
 				F2EF76E02068EAA100B378BB /* right_pointer.png in Resources */,
 				F2EBBBA020597EA600DD03A9 /* Assets.xcassets in Resources */,
 				F2129B40206A2DE800D6D276 /* firstpage.png in Resources */,
+				F26CFC49206A92F100A9DD20 /* Start.png in Resources */,
 				F2EF76DE2068EAA100B378BB /* host.png in Resources */,
 				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
 				F2EF76D92068EAA100B378BB /* border_image.png in Resources */,

@@ -273,7 +273,7 @@
                                 <color key="textColor" red="1" green="1" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pav-93-8PS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads_witout_BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="pav-93-8PS">
                                 <rect key="frame" x="140" y="98" width="134" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -575,29 +575,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firstpage.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Mg-DU-V9u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Start.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Mg-DU-V9u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads_witout_BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Ih-Vw-5VJ">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5d-P1-akh">
                                 <rect key="frame" x="161" y="418" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Ih-Vw-5VJ">
+                                <rect key="frame" x="85" y="285" width="204" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads_witout_BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="YjC-ND-jhD">
+                                <rect key="frame" x="140" y="98" width="134" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="leading" secondItem="WhC-f1-kh1" secondAttribute="leading" id="JIo-hF-bL1"/>
-                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="bottom" secondItem="WhC-f1-kh1" secondAttribute="bottom" id="ir5-Xp-hmQ"/>
-                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="top" secondItem="cIv-9W-2EZ" secondAttribute="top" id="waY-oL-3vB"/>
-                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="trailing" secondItem="WhC-f1-kh1" secondAttribute="trailing" id="x1n-Ub-wMl"/>
+                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="trailing" secondItem="WhC-f1-kh1" secondAttribute="trailing" id="KPi-gD-xhp"/>
+                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="bottom" secondItem="WhC-f1-kh1" secondAttribute="bottom" id="SOd-Or-gVT"/>
+                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="leading" secondItem="WhC-f1-kh1" secondAttribute="leading" id="e8y-rB-gKt"/>
+                            <constraint firstItem="4Mg-DU-V9u" firstAttribute="top" secondItem="cIv-9W-2EZ" secondAttribute="top" id="xA3-NC-zRN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WhC-f1-kh1"/>
                     </view>
                     <connections>
                         <outlet property="background" destination="4Mg-DU-V9u" id="r0g-NS-qr0"/>
+                        <outlet property="gleepad" destination="7Ih-Vw-5VJ" id="tgO-B2-Pwi"/>
+                        <outlet property="gleepadIncImage" destination="YjC-ND-jhD" id="DW1-pO-yqw"/>
                         <outlet property="segueButton" destination="H5d-P1-akh" id="R5X-TZ-Ftr"/>
                         <segue destination="NmZ-lM-pJi" kind="show" identifier="Enter" id="C3j-ai-kxm"/>
                     </connections>
@@ -628,7 +634,7 @@
     </scenes>
     <resources>
         <image name="Gleepads_witout_BG.png" width="1069" height="334"/>
-        <image name="firstpage.png" width="2556" height="1439"/>
+        <image name="Start.png" width="2188" height="1230"/>
         <image name="logo.png" width="349" height="412"/>
     </resources>
     <inferredMetricsTieBreakers>
