@@ -231,7 +231,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="95w-Y1-1DN" kind="show" id="voi-Re-fWi"/>
+                                    <segue destination="95w-Y1-1DN" kind="popoverPresentation" popoverAnchorView="mtG-53-OYo" id="voi-Re-fWi">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsS-z3-iva" customClass="Custom_Button" customModule="Gleepads" customModuleProvider="target">
@@ -379,20 +381,50 @@
             </objects>
             <point key="canvasLocation" x="172" y="1116"/>
         </scene>
-        <!--TestVC-->
-        <scene sceneID="E6c-oe-8L1">
+        <!--Root View Controller-->
+        <scene sceneID="vWU-hE-gzd">
             <objects>
-                <viewController id="LZ2-Zp-fwY" customClass="testVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3rB-3j-qoc">
+                <tableViewController id="RMZ-LA-aW1" customClass="SearchBarTableViewController" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ieO-xh-NNP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.55585640670000003" blue="0.31434017419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="qin-Ut-wxy"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4UO-bl-MDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0K0-RO-Jc1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0K0-RO-Jc1" id="KPu-UX-G9V">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RMZ-LA-aW1" id="vba-7N-ZGI"/>
+                            <outlet property="delegate" destination="RMZ-LA-aW1" id="zZy-Yw-0d6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="w4H-ek-4cS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGG-w0-e6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2474.4000000000001" y="2038.8305847076463"/>
+            <point key="canvasLocation" x="-1321" y="2068"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FAG-MZ-dQ1">
+            <objects>
+                <navigationController id="tlM-1W-dVh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qcn-6f-gZw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RMZ-LA-aW1" kind="relationship" relationship="rootViewController" id="Ebi-ix-ajM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGA-gq-QRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2275" y="2068"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="zb3-vj-uEi">
@@ -587,7 +619,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads_witout_BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="YjC-ND-jhD">
-                                <rect key="frame" x="140" y="98" width="134" height="80"/>
+                                <rect key="frame" x="120" y="301" width="134" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
