@@ -13,7 +13,6 @@ import BubbleTransition
 class LaunchedVC: UIViewController,UIViewControllerTransitioningDelegate {
 
     
-    @IBOutlet weak var gleepadIncImage: UIImageView!
     @IBOutlet weak var gleepad: UIImageView!
     
     // ***********  Background initializa variable ***************
@@ -28,7 +27,7 @@ class LaunchedVC: UIViewController,UIViewControllerTransitioningDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.gleepadIncImage.alpha = 0
+//        self.gleepadIncImage.alpha = 0
 // ***********  variable that store time Video commence ***************
         var current_time = DispatchTime.now()
         
@@ -49,10 +48,15 @@ class LaunchedVC: UIViewController,UIViewControllerTransitioningDelegate {
                 self.gleepad.alpha = 0
             }
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 13) {
-            UIView.animate(withDuration: 5) {
-                self.gleepadIncImage.alpha = 1
+            self.gleepad.image = UIImage(named: "Gleepads_witout_BG")
+
+            UIView.animate(withDuration: 3) {
+
+//                self.gleepadIncImage.alpha = 1
+                self.gleepad.alpha = 1
+
             }
         }
         

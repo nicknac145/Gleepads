@@ -11,8 +11,11 @@
 		F2129B40206A2DE800D6D276 /* firstpage.png in Resources */ = {isa = PBXBuildFile; fileRef = F2129B3F206A2DE800D6D276 /* firstpage.png */; };
 		F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2142B82205C064100B381E8 /* NewAccountVC.swift */; };
 		F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2142B84205C1E1100B381E8 /* emailVC.swift */; };
+		F21B9A40206B6AA700D2A783 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B9A3E206B6AA700D2A783 /* TopCollectionViewCell.swift */; };
+		F21B9A41206B6AA700D2A783 /* TopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21B9A3F206B6AA700D2A783 /* TopCollectionViewCell.xib */; };
+		F21B9A43206B7CCB00D2A783 /* traveller.png in Resources */ = {isa = PBXBuildFile; fileRef = F21B9A42206B7CCA00D2A783 /* traveller.png */; };
+		F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B9A46206B7DC400D2A783 /* TripVC.swift */; };
 		F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226FB79205A39B100F14CB0 /* Custom_Button.swift */; };
-		F226FB7E205A566F00F14CB0 /* SignUpOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
 		F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F258154920692D9800045DCF /* Gleepads_witout_BG.png */; };
@@ -83,8 +86,11 @@
 		F2129B3F206A2DE800D6D276 /* firstpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstpage.png; sourceTree = "<group>"; };
 		F2142B82205C064100B381E8 /* NewAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountVC.swift; sourceTree = "<group>"; };
 		F2142B84205C1E1100B381E8 /* emailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailVC.swift; sourceTree = "<group>"; };
+		F21B9A3E206B6AA700D2A783 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
+		F21B9A3F206B6AA700D2A783 /* TopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCollectionViewCell.xib; sourceTree = "<group>"; };
+		F21B9A42206B7CCA00D2A783 /* traveller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = traveller.png; path = "../../../../images & icon/icon/traveller.png"; sourceTree = "<group>"; };
+		F21B9A46206B7DC400D2A783 /* TripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripVC.swift; sourceTree = "<group>"; };
 		F226FB79205A39B100F14CB0 /* Custom_Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
-		F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOptionVC.swift; sourceTree = "<group>"; };
 		F258154320692AA500045DCF /* forget.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = forget.mp4; sourceTree = "<group>"; };
 		F258154420692AA500045DCF /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
 		F258154520692AA500045DCF /*  signup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = " signup.mp4"; sourceTree = "<group>"; };
@@ -179,6 +185,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F21B9A44206B7D9600D2A783 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F27B514B20652B0200599F82 /* ProfileVC.swift */,
+				F29C057F206645B100EC802F /* NotificationVC.swift */,
+				F29C0581206645D200EC802F /* InviteVC.swift */,
+				F29C0583206645FB00EC802F /* CrediitVC.swift */,
+				F29C0587206646FC00EC802F /* SettingVC.swift */,
+				F29C05892066471700EC802F /* HelpVC.swift */,
+				F29C058B2066472B00EC802F /* HostVC.swift */,
+				F29C058D2066473F00EC802F /* FeedbackVC.swift */,
+				F29C05A02066702500EC802F /* NotificationSettingVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F21B9A45206B7DA200D2A783 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				F21B9A46206B7DC400D2A783 /* TripVC.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
 		F226FB75205A395400F14CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +254,7 @@
 				F2EF76CA2068EAA100B378BB /* Explore.png */,
 				F2EF76D22068EAA100B378BB /* feedback.png */,
 				F258154920692D9800045DCF /* Gleepads_witout_BG.png */,
+				F21B9A42206B7CCA00D2A783 /* traveller.png */,
 				F2EF76C92068EAA100B378BB /* gift.png */,
 				F2EF76D42068EAA100B378BB /* Gleepads.png */,
 				F2EF76C62068EAA100B378BB /* help.png */,
@@ -246,7 +277,6 @@
 			children = (
 				F29C05A82066BC6600EC802F /* LaunchedVC.swift */,
 				F2EBBB9A20597EA600DD03A9 /* MainVC.swift */,
-				F226FB7D205A566F00F14CB0 /* SignUpOptionVC.swift */,
 				F2142B82205C064100B381E8 /* NewAccountVC.swift */,
 				F2142B84205C1E1100B381E8 /* emailVC.swift */,
 				F28D908E205FE75A00AE2A5D /* SignInVC.swift */,
@@ -281,15 +311,8 @@
 		F29C0596206658FE00EC802F /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				F27B514B20652B0200599F82 /* ProfileVC.swift */,
-				F29C057F206645B100EC802F /* NotificationVC.swift */,
-				F29C0581206645D200EC802F /* InviteVC.swift */,
-				F29C0583206645FB00EC802F /* CrediitVC.swift */,
-				F29C0587206646FC00EC802F /* SettingVC.swift */,
-				F29C05892066471700EC802F /* HelpVC.swift */,
-				F29C058B2066472B00EC802F /* HostVC.swift */,
-				F29C058D2066473F00EC802F /* FeedbackVC.swift */,
-				F29C05A02066702500EC802F /* NotificationSettingVC.swift */,
+				F21B9A45206B7DA200D2A783 /* Trip */,
+				F21B9A44206B7D9600D2A783 /* Profile */,
 				F26CFC4A206AA88D00A9DD20 /* SearchBarTableViewController.swift */,
 			);
 			path = VC;
@@ -340,6 +363,8 @@
 				F2EBBB9F20597EA600DD03A9 /* Assets.xcassets */,
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
+				F21B9A3E206B6AA700D2A783 /* TopCollectionViewCell.swift */,
+				F21B9A3F206B6AA700D2A783 /* TopCollectionViewCell.xib */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";
@@ -422,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
+				F21B9A43206B7CCB00D2A783 /* traveller.png in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
 				F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */,
 				F2EF76E12068EAA100B378BB /* setting.png in Resources */,
@@ -439,6 +465,7 @@
 				F25815562069542C00045DCF /* NotifySettingSwitchCell.xib in Resources */,
 				F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */,
 				F2EBBBA320597EA600DD03A9 /* LaunchScreen.storyboard in Resources */,
+				F21B9A41206B6AA700D2A783 /* TopCollectionViewCell.xib in Resources */,
 				F2EF76DC2068EAA100B378BB /* logo.png in Resources */,
 				F2EF76A32068E89C00B378BB /* launched_screen.mp4 in Resources */,
 				F2EF76DA2068EAA100B378BB /* gift.png in Resources */,
@@ -528,6 +555,7 @@
 				F29C0580206645B100EC802F /* NotificationVC.swift in Sources */,
 				F29C058E2066473F00EC802F /* FeedbackVC.swift in Sources */,
 				F29C058A2066471700EC802F /* HelpVC.swift in Sources */,
+				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
 				F29C0582206645D200EC802F /* InviteVC.swift in Sources */,
 				F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */,
@@ -544,7 +572,6 @@
 				F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */,
 				F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */,
 				F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */,
-				F226FB7E205A566F00F14CB0 /* SignUpOptionVC.swift in Sources */,
 				F2EBBB9920597EA600DD03A9 /* AppDelegate.swift in Sources */,
 				F29C0584206645FB00EC802F /* CrediitVC.swift in Sources */,
 				F27B51712065960100599F82 /* MiddleTableViewCell.swift in Sources */,
@@ -553,6 +580,7 @@
 				F26CFC4B206AA88D00A9DD20 /* SearchBarTableViewController.swift in Sources */,
 				F2581551206953FB00045DCF /* NotifySettingLabelCell.swift in Sources */,
 				F27B516D206595E700599F82 /* TopTableViewCell.swift in Sources */,
+				F21B9A40206B6AA700D2A783 /* TopCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
