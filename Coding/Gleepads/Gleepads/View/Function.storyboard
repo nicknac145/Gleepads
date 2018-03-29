@@ -13,22 +13,11 @@
         <!--SAVED-->
         <scene sceneID="tY6-1K-oo5">
             <objects>
-                <viewController id="oZt-qW-fwR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t8M-NR-Hcd">
+                <viewController id="oZt-qW-fwR" customClass="SavedVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t8M-NR-Hcd" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-MP-Azp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="zbh-MP-Azp" firstAttribute="leading" secondItem="tQb-9d-AGP" secondAttribute="leading" id="7nI-1e-hDs"/>
-                            <constraint firstItem="zbh-MP-Azp" firstAttribute="top" secondItem="t8M-NR-Hcd" secondAttribute="top" constant="20" id="CJG-x5-wfG"/>
-                            <constraint firstItem="zbh-MP-Azp" firstAttribute="bottom" secondItem="tQb-9d-AGP" secondAttribute="bottom" id="SdD-Gp-PzB"/>
-                            <constraint firstItem="zbh-MP-Azp" firstAttribute="trailing" secondItem="tQb-9d-AGP" secondAttribute="trailing" id="eap-75-rJN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tQb-9d-AGP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="SAVED" image="Saved.png" id="I6c-vO-9Sm"/>
@@ -41,13 +30,10 @@
         <scene sceneID="7c7-CM-Rjw">
             <objects>
                 <viewController id="1XJ-k8-Gc9" customClass="TripVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wii-M1-C0S">
+                    <view key="view" contentMode="scaleToFill" id="wii-M1-C0S" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="NMk-tg-xW8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="traveller.png" translatesAutoresizingMaskIntoConstraints="NO" id="D0u-vn-U36">
                                 <rect key="frame" x="138" y="289" width="99" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,12 +63,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="NMk-tg-xW8" firstAttribute="leading" secondItem="dhO-Dn-c0l" secondAttribute="leading" id="FWA-CO-xdn"/>
-                            <constraint firstItem="NMk-tg-xW8" firstAttribute="bottom" secondItem="dhO-Dn-c0l" secondAttribute="bottom" id="fzp-kR-BHf"/>
-                            <constraint firstItem="NMk-tg-xW8" firstAttribute="top" secondItem="wii-M1-C0S" secondAttribute="top" constant="20" id="jyA-DP-fDh"/>
-                            <constraint firstItem="NMk-tg-xW8" firstAttribute="trailing" secondItem="dhO-Dn-c0l" secondAttribute="trailing" id="sai-kf-deC"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dhO-Dn-c0l"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="TRIPS" id="uqU-pr-m4q"/>
@@ -94,22 +74,11 @@
         <!--INBOX-->
         <scene sceneID="436-sg-VNV">
             <objects>
-                <viewController id="gfr-dT-lLN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rXr-LK-AcF">
+                <viewController id="gfr-dT-lLN" customClass="ChatVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rXr-LK-AcF" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="MuU-Rn-l80">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="MuU-Rn-l80" firstAttribute="leading" secondItem="NQh-p8-ppI" secondAttribute="leading" id="O0j-Dt-Yur"/>
-                            <constraint firstItem="MuU-Rn-l80" firstAttribute="top" secondItem="rXr-LK-AcF" secondAttribute="top" constant="20" id="TAl-cr-48r"/>
-                            <constraint firstItem="MuU-Rn-l80" firstAttribute="trailing" secondItem="NQh-p8-ppI" secondAttribute="trailing" id="e2d-NI-pgQ"/>
-                            <constraint firstItem="MuU-Rn-l80" firstAttribute="bottom" secondItem="NQh-p8-ppI" secondAttribute="bottom" id="hMd-9f-WPT"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NQh-p8-ppI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="INBOX" image="Inbox.png" id="lWX-gK-2AP"/>
@@ -123,13 +92,10 @@
         <scene sceneID="TFy-Jp-58a">
             <objects>
                 <viewController id="oqW-QK-ABb" customClass="ProfileVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1Pd-IW-v2o">
+                    <view key="view" contentMode="scaleToFill" id="1Pd-IW-v2o" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="g1g-sL-ehl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bi3-FZ-AUh">
                                 <rect key="frame" x="15" y="35" width="345" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,11 +106,7 @@
                             <constraint firstItem="5Ee-ud-RDZ" firstAttribute="trailing" secondItem="bi3-FZ-AUh" secondAttribute="trailing" constant="15" id="IoF-sS-wME"/>
                             <constraint firstItem="bi3-FZ-AUh" firstAttribute="top" secondItem="5Ee-ud-RDZ" secondAttribute="top" constant="15" id="JFV-Ql-7HE"/>
                             <constraint firstItem="5Ee-ud-RDZ" firstAttribute="bottom" secondItem="bi3-FZ-AUh" secondAttribute="bottom" constant="15" id="MWI-6j-osz"/>
-                            <constraint firstItem="g1g-sL-ehl" firstAttribute="trailing" secondItem="5Ee-ud-RDZ" secondAttribute="trailing" id="acY-vO-Mzp"/>
-                            <constraint firstItem="g1g-sL-ehl" firstAttribute="leading" secondItem="5Ee-ud-RDZ" secondAttribute="leading" id="cY7-LP-COQ"/>
-                            <constraint firstItem="g1g-sL-ehl" firstAttribute="bottom" secondItem="5Ee-ud-RDZ" secondAttribute="bottom" id="oTA-0v-Ot7"/>
                             <constraint firstItem="bi3-FZ-AUh" firstAttribute="leading" secondItem="5Ee-ud-RDZ" secondAttribute="leading" constant="15" id="vLO-v7-EYs"/>
-                            <constraint firstItem="g1g-sL-ehl" firstAttribute="top" secondItem="1Pd-IW-v2o" secondAttribute="top" constant="20" id="x1U-S1-443"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ee-ud-RDZ"/>
                     </view>
@@ -162,13 +124,10 @@
         <scene sceneID="glC-PF-ENA">
             <objects>
                 <viewController storyboardIdentifier="Notification" title="Notification" id="tKV-m6-48g" customClass="NotificationVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jzG-5S-vJb">
+                    <view key="view" contentMode="scaleToFill" id="jzG-5S-vJb" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qjz-h8-P9Q">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xyG-fN-piQ">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,14 +135,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Qjz-h8-P9Q" firstAttribute="leading" secondItem="h10-zk-tcl" secondAttribute="leading" id="J9j-yd-Spm"/>
                             <constraint firstItem="xyG-fN-piQ" firstAttribute="leading" secondItem="h10-zk-tcl" secondAttribute="leading" constant="15" id="b1g-fI-rzn"/>
-                            <constraint firstItem="h10-zk-tcl" firstAttribute="trailing" secondItem="Qjz-h8-P9Q" secondAttribute="trailing" id="cAW-Qa-jVk"/>
-                            <constraint firstItem="h10-zk-tcl" firstAttribute="bottom" secondItem="Qjz-h8-P9Q" secondAttribute="bottom" id="gEX-Rq-hAR"/>
                             <constraint firstItem="xyG-fN-piQ" firstAttribute="top" secondItem="h10-zk-tcl" secondAttribute="top" constant="15" id="hiL-Hi-jC0"/>
                             <constraint firstItem="h10-zk-tcl" firstAttribute="bottom" secondItem="xyG-fN-piQ" secondAttribute="bottom" constant="15" id="k2u-6u-xNJ"/>
                             <constraint firstItem="h10-zk-tcl" firstAttribute="trailing" secondItem="xyG-fN-piQ" secondAttribute="trailing" constant="15" id="qVb-F1-hfi"/>
-                            <constraint firstItem="Qjz-h8-P9Q" firstAttribute="top" secondItem="jzG-5S-vJb" secondAttribute="top" constant="20" id="tiv-Cd-3ns"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h10-zk-tcl"/>
                     </view>
@@ -199,21 +154,10 @@
         <scene sceneID="IFZ-99-cMr">
             <objects>
                 <viewController storyboardIdentifier="Credit" title="Credit" id="j7D-sA-1aP" customClass="CrediitVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yOz-zS-BNS">
+                    <view key="view" contentMode="scaleToFill" id="yOz-zS-BNS" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="l5x-JA-Fi5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="l5x-JA-Fi5" firstAttribute="top" secondItem="yOz-zS-BNS" secondAttribute="top" constant="20" id="Ir3-ng-pA3"/>
-                            <constraint firstAttribute="trailing" secondItem="l5x-JA-Fi5" secondAttribute="trailing" id="LGb-ZX-dgG"/>
-                            <constraint firstItem="l5x-JA-Fi5" firstAttribute="leading" secondItem="Gqo-rf-ePu" secondAttribute="leading" id="eon-AD-Ydk"/>
-                            <constraint firstItem="l5x-JA-Fi5" firstAttribute="bottom" secondItem="Gqo-rf-ePu" secondAttribute="bottom" id="iOe-cV-MH5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gqo-rf-ePu"/>
                     </view>
                 </viewController>
@@ -225,13 +169,10 @@
         <scene sceneID="S7J-k4-7y5">
             <objects>
                 <viewController storyboardIdentifier="Setting" title="Setting" id="PkK-kN-BFt" customClass="SettingVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d52-pP-vFj">
+                    <view key="view" contentMode="scaleToFill" id="d52-pP-vFj" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="F7Q-is-cmU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-D1-7Vr">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -240,13 +181,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2d8-Tn-lPA" firstAttribute="trailing" secondItem="gBn-D1-7Vr" secondAttribute="trailing" constant="15" id="1Mt-Gp-GDc"/>
-                            <constraint firstItem="F7Q-is-cmU" firstAttribute="top" secondItem="d52-pP-vFj" secondAttribute="top" constant="20" id="Pve-Rw-3c4"/>
                             <constraint firstItem="gBn-D1-7Vr" firstAttribute="top" secondItem="2d8-Tn-lPA" secondAttribute="top" constant="15" id="SpB-xh-YVJ"/>
-                            <constraint firstItem="2d8-Tn-lPA" firstAttribute="trailing" secondItem="F7Q-is-cmU" secondAttribute="trailing" id="a9z-dW-UMO"/>
                             <constraint firstItem="gBn-D1-7Vr" firstAttribute="leading" secondItem="2d8-Tn-lPA" secondAttribute="leading" constant="15" id="jUJ-My-KfX"/>
-                            <constraint firstItem="F7Q-is-cmU" firstAttribute="leading" secondItem="d52-pP-vFj" secondAttribute="leading" id="oBE-4v-bKd"/>
                             <constraint firstItem="2d8-Tn-lPA" firstAttribute="bottom" secondItem="gBn-D1-7Vr" secondAttribute="bottom" constant="15" id="sZE-Y7-vDx"/>
-                            <constraint firstItem="2d8-Tn-lPA" firstAttribute="bottom" secondItem="F7Q-is-cmU" secondAttribute="bottom" id="v8x-a3-0Yb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2d8-Tn-lPA"/>
                     </view>
@@ -262,13 +199,10 @@
         <scene sceneID="h9c-8b-A7R">
             <objects>
                 <viewController storyboardIdentifier="Notification_Setting" title="Notification_Setting" id="uD3-Hg-U9t" customClass="NotificationSettingVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6lI-q8-osH">
+                    <view key="view" contentMode="scaleToFill" id="6lI-q8-osH" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="xdo-J9-zPk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ro-W1-STc">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,12 +212,8 @@
                         <constraints>
                             <constraint firstItem="Nzf-4e-6Cf" firstAttribute="bottom" secondItem="3ro-W1-STc" secondAttribute="bottom" constant="15" id="4hI-2v-hGR"/>
                             <constraint firstItem="Nzf-4e-6Cf" firstAttribute="trailing" secondItem="3ro-W1-STc" secondAttribute="trailing" constant="15" id="PCj-i6-kGB"/>
-                            <constraint firstAttribute="trailing" secondItem="xdo-J9-zPk" secondAttribute="trailing" id="VeQ-Kb-j2D"/>
-                            <constraint firstItem="xdo-J9-zPk" firstAttribute="top" secondItem="6lI-q8-osH" secondAttribute="top" constant="20" id="Ze5-WN-hoS"/>
                             <constraint firstItem="3ro-W1-STc" firstAttribute="leading" secondItem="Nzf-4e-6Cf" secondAttribute="leading" constant="15" id="jGU-Lp-UfL"/>
                             <constraint firstItem="3ro-W1-STc" firstAttribute="top" secondItem="Nzf-4e-6Cf" secondAttribute="top" constant="15" id="w7D-Br-okH"/>
-                            <constraint firstItem="xdo-J9-zPk" firstAttribute="leading" secondItem="Nzf-4e-6Cf" secondAttribute="leading" id="xFs-6u-EOH"/>
-                            <constraint firstItem="Nzf-4e-6Cf" firstAttribute="bottom" secondItem="xdo-J9-zPk" secondAttribute="bottom" id="yGD-WO-nci"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nzf-4e-6Cf"/>
                     </view>
@@ -299,13 +229,10 @@
         <scene sceneID="N7N-pl-ZFv">
             <objects>
                 <viewController storyboardIdentifier="Currency" title="Currency" id="MI0-NY-2Ts" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UUD-93-ROR">
+                    <view key="view" contentMode="scaleToFill" id="UUD-93-ROR" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Bu-yh-3Xp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-YH-L6P">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -313,14 +240,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2Bu-yh-3Xp" firstAttribute="leading" secondItem="NAp-UC-Ata" secondAttribute="leading" id="01i-JP-SSN"/>
                             <constraint firstItem="NAp-UC-Ata" firstAttribute="trailing" secondItem="Fmq-YH-L6P" secondAttribute="trailing" constant="15" id="Mwc-W7-JhQ"/>
                             <constraint firstItem="Fmq-YH-L6P" firstAttribute="top" secondItem="NAp-UC-Ata" secondAttribute="top" constant="15" id="NlB-zd-B5t"/>
-                            <constraint firstItem="2Bu-yh-3Xp" firstAttribute="trailing" secondItem="NAp-UC-Ata" secondAttribute="trailing" id="PYH-S7-QgQ"/>
                             <constraint firstItem="NAp-UC-Ata" firstAttribute="bottom" secondItem="Fmq-YH-L6P" secondAttribute="bottom" constant="15" id="YNF-Vs-dWB"/>
                             <constraint firstItem="Fmq-YH-L6P" firstAttribute="leading" secondItem="NAp-UC-Ata" secondAttribute="leading" constant="15" id="qvm-vQ-p6T"/>
-                            <constraint firstItem="2Bu-yh-3Xp" firstAttribute="top" secondItem="UUD-93-ROR" secondAttribute="top" constant="20" id="xyg-Fq-byv"/>
-                            <constraint firstItem="2Bu-yh-3Xp" firstAttribute="bottom" secondItem="NAp-UC-Ata" secondAttribute="bottom" id="ymj-kL-S7m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAp-UC-Ata"/>
                     </view>
@@ -333,21 +256,10 @@
         <scene sceneID="3TG-bD-Vaf">
             <objects>
                 <viewController storyboardIdentifier="Payment" id="7oK-ky-T9p" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3y7-4B-Pwq">
+                    <view key="view" contentMode="scaleToFill" id="3y7-4B-Pwq" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="9g1-oc-rkC">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="EUB-Mg-CI1" firstAttribute="bottom" secondItem="9g1-oc-rkC" secondAttribute="bottom" id="FXu-E3-FvC"/>
-                            <constraint firstItem="9g1-oc-rkC" firstAttribute="top" secondItem="EUB-Mg-CI1" secondAttribute="top" id="TDv-PT-xyZ"/>
-                            <constraint firstItem="EUB-Mg-CI1" firstAttribute="trailing" secondItem="9g1-oc-rkC" secondAttribute="trailing" id="uaW-Re-56X"/>
-                            <constraint firstItem="9g1-oc-rkC" firstAttribute="leading" secondItem="EUB-Mg-CI1" secondAttribute="leading" id="zmP-0e-ZFb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EUB-Mg-CI1"/>
                     </view>
                 </viewController>
@@ -359,21 +271,10 @@
         <scene sceneID="vwd-a8-jTf">
             <objects>
                 <viewController storyboardIdentifier="Help" title="Help" id="m1J-sM-sNO" customClass="HelpVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jY0-dW-rwg">
+                    <view key="view" contentMode="scaleToFill" id="jY0-dW-rwg" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZSo-pb-p70">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ZSo-pb-p70" firstAttribute="bottom" secondItem="St4-Xo-VUA" secondAttribute="bottom" id="jxj-VM-Zkh"/>
-                            <constraint firstItem="ZSo-pb-p70" firstAttribute="trailing" secondItem="St4-Xo-VUA" secondAttribute="trailing" id="n54-12-fwk"/>
-                            <constraint firstItem="ZSo-pb-p70" firstAttribute="top" secondItem="St4-Xo-VUA" secondAttribute="top" id="p0t-Ot-R7d"/>
-                            <constraint firstItem="ZSo-pb-p70" firstAttribute="leading" secondItem="St4-Xo-VUA" secondAttribute="leading" id="vL3-qm-a6B"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="St4-Xo-VUA"/>
                     </view>
                 </viewController>
@@ -385,21 +286,10 @@
         <scene sceneID="znD-W5-P70">
             <objects>
                 <viewController storyboardIdentifier="Host" title="Host" id="x31-6E-AwD" customClass="HostVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8mp-wp-cD1">
+                    <view key="view" contentMode="scaleToFill" id="8mp-wp-cD1" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="CnS-0E-qaw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="CnS-0E-qaw" secondAttribute="trailing" id="cT5-R2-zyn"/>
-                            <constraint firstItem="CnS-0E-qaw" firstAttribute="leading" secondItem="oOu-48-Kx8" secondAttribute="leading" id="crX-zm-col"/>
-                            <constraint firstItem="oOu-48-Kx8" firstAttribute="bottom" secondItem="CnS-0E-qaw" secondAttribute="bottom" id="mlQ-h3-Oe5"/>
-                            <constraint firstItem="CnS-0E-qaw" firstAttribute="top" secondItem="8mp-wp-cD1" secondAttribute="top" constant="20" id="rl6-5I-YQ5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oOu-48-Kx8"/>
                     </view>
                 </viewController>
@@ -411,21 +301,10 @@
         <scene sceneID="9tD-as-zO5">
             <objects>
                 <viewController storyboardIdentifier="Feedback" title="Feedback" id="rSv-Iz-mpH" customClass="FeedbackVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PtP-NT-KXl">
+                    <view key="view" contentMode="scaleToFill" id="PtP-NT-KXl" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="19t-LS-eRE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="19t-LS-eRE" firstAttribute="leading" secondItem="zOz-rR-3dj" secondAttribute="leading" id="NTJ-L8-z39"/>
-                            <constraint firstItem="19t-LS-eRE" firstAttribute="top" secondItem="PtP-NT-KXl" secondAttribute="top" constant="20" id="Zpk-Tb-vI3"/>
-                            <constraint firstItem="zOz-rR-3dj" firstAttribute="bottom" secondItem="19t-LS-eRE" secondAttribute="bottom" id="iqA-tz-of7"/>
-                            <constraint firstAttribute="trailing" secondItem="19t-LS-eRE" secondAttribute="trailing" id="qTn-Bb-Zy2"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zOz-rR-3dj"/>
                     </view>
                 </viewController>
@@ -437,13 +316,10 @@
         <scene sceneID="R0d-qg-eVG">
             <objects>
                 <viewController storyboardIdentifier="Invite" title="Invite" id="vGe-7Z-6i1" customClass="InviteVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ud0-hE-J65">
+                    <view key="view" contentMode="scaleToFill" id="Ud0-hE-J65" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="vf1-js-9Hj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-i4-OXR">
                                 <rect key="frame" x="15" y="35" width="345" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -453,12 +329,8 @@
                         <constraints>
                             <constraint firstItem="4bn-i4-OXR" firstAttribute="leading" secondItem="oXx-dS-F9T" secondAttribute="leading" constant="15" id="AZu-HO-NaY"/>
                             <constraint firstItem="4bn-i4-OXR" firstAttribute="top" secondItem="oXx-dS-F9T" secondAttribute="top" constant="15" id="CQ9-lk-hRl"/>
-                            <constraint firstItem="vf1-js-9Hj" firstAttribute="leading" secondItem="oXx-dS-F9T" secondAttribute="leading" id="N3U-nh-Oy0"/>
-                            <constraint firstItem="vf1-js-9Hj" firstAttribute="bottom" secondItem="oXx-dS-F9T" secondAttribute="bottom" id="T4r-97-RHE"/>
                             <constraint firstItem="oXx-dS-F9T" firstAttribute="trailing" secondItem="4bn-i4-OXR" secondAttribute="trailing" constant="15" id="W6v-Ge-80e"/>
                             <constraint firstItem="oXx-dS-F9T" firstAttribute="bottom" secondItem="4bn-i4-OXR" secondAttribute="bottom" constant="15" id="WHv-jw-4GT"/>
-                            <constraint firstItem="vf1-js-9Hj" firstAttribute="trailing" secondItem="oXx-dS-F9T" secondAttribute="trailing" id="of7-wp-mep"/>
-                            <constraint firstItem="vf1-js-9Hj" firstAttribute="top" secondItem="Ud0-hE-J65" secondAttribute="top" constant="20" id="vvT-7b-aaM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oXx-dS-F9T"/>
                     </view>
@@ -473,27 +345,31 @@
         <!--Explore-->
         <scene sceneID="87u-ZX-B31">
             <objects>
-                <viewController storyboardIdentifier="ExploreVC" id="ZIj-8Z-9OM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zUv-zX-voi">
+                <viewController storyboardIdentifier="ExploreVC" id="ZIj-8Z-9OM" customClass="ExploreVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zUv-zX-voi" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="6hP-HZ-qiq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P0V-Kc-6rf">
+                                <rect key="frame" x="15" y="35" width="345" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6hP-HZ-qiq" firstAttribute="trailing" secondItem="XeQ-oM-sw2" secondAttribute="trailing" id="TdX-Wk-4Bj"/>
-                            <constraint firstItem="6hP-HZ-qiq" firstAttribute="top" secondItem="zUv-zX-voi" secondAttribute="top" constant="20" id="ZeN-7T-CVk"/>
-                            <constraint firstItem="6hP-HZ-qiq" firstAttribute="leading" secondItem="XeQ-oM-sw2" secondAttribute="leading" id="fKl-xp-Fet"/>
-                            <constraint firstItem="6hP-HZ-qiq" firstAttribute="bottom" secondItem="XeQ-oM-sw2" secondAttribute="bottom" id="i0y-gK-rsM"/>
+                            <constraint firstItem="XeQ-oM-sw2" firstAttribute="bottom" secondItem="P0V-Kc-6rf" secondAttribute="bottom" constant="15" id="D7p-Ey-la3"/>
+                            <constraint firstItem="XeQ-oM-sw2" firstAttribute="trailing" secondItem="P0V-Kc-6rf" secondAttribute="trailing" constant="15" id="b9t-b8-unA"/>
+                            <constraint firstItem="P0V-Kc-6rf" firstAttribute="leading" secondItem="XeQ-oM-sw2" secondAttribute="leading" constant="15" id="qrg-ZC-Z4q"/>
+                            <constraint firstItem="P0V-Kc-6rf" firstAttribute="top" secondItem="XeQ-oM-sw2" secondAttribute="top" constant="15" id="yE2-Nj-wZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XeQ-oM-sw2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="Explore.png" id="NAD-C2-asU"/>
                     <navigationItem key="navigationItem" id="NGI-wi-750"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="exploreTable" destination="P0V-Kc-6rf" id="ff2-A0-D08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQa-ld-VhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -527,7 +403,6 @@
         <image name="Inbox.png" width="34" height="34"/>
         <image name="Profile.png" width="34" height="34"/>
         <image name="Saved.png" width="25" height="25"/>
-        <image name="border_image.png" width="1002" height="1680"/>
         <image name="traveller.png" width="64" height="64"/>
     </resources>
 </document>

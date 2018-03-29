@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Shift
 
 class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -30,6 +31,22 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let view = self.view as! ShiftView
+        view.setColors([UIColor.yellow,
+                        UIColor.brown,
+                        UIColor.orange,
+                        UIColor.red,
+                        UIColor.blue,
+                        UIColor.purple,
+                        UIColor.cyan,
+                        UIColor.green,
+                        //                        UIColor.lightGray,
+            ])
+        view.startTimedAnimation()
+        
+        
         
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

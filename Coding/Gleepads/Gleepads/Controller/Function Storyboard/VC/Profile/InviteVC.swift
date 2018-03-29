@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Shift
 
 class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -32,6 +33,21 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         inviteTable.delegate = self
         inviteTable.dataSource = self
 
+        
+        let view = self.view as! ShiftView
+        view.setColors([UIColor.yellow,
+                        UIColor.brown,
+                        UIColor.orange,
+                        UIColor.red,
+                        UIColor.blue,
+                        UIColor.purple,
+                        UIColor.cyan,
+                        UIColor.green,
+                        //                        UIColor.lightGray,
+            ])
+        view.startTimedAnimation()
+        
+        
         // ********** DATA FOR TABLEVIEW CELL ***********
 
          dataArray = [ Cell_info(cell: 1, image: nil, Title: nil, Sub_Title: "Just 4 steps left"),

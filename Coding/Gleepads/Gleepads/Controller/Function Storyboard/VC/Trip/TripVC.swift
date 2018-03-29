@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import  Shift
 
 class TripVC: UIViewController {
 
     @IBOutlet weak var exploreButton: Custom_Button!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let view = self.view as! ShiftView
+        view.setColors([UIColor.yellow,
+                        UIColor.brown,
+                        UIColor.orange,
+                        UIColor.red,
+                        UIColor.blue,
+                        UIColor.purple,
+                        UIColor.cyan,
+                        UIColor.green,
+                        //                        UIColor.lightGray,
+            ])
+        view.startTimedAnimation()
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func exploreButton(_ sender: Any) {

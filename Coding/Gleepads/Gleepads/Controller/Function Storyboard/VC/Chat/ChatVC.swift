@@ -1,15 +1,15 @@
 //
-//  CrediitVC.swift
+//  ChatVC.swift
 //  Gleepads
 //
-//  Created by Syed ShahRukh Haider on 24/03/2018.
+//  Created by Syed ShahRukh Haider on 29/03/2018.
 //  Copyright © 2018 Syed ShahRukh Haider. All rights reserved.
 //
 
 import UIKit
 import Shift
 
-class CrediitVC: UIViewController {
+class ChatVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,11 @@ class CrediitVC: UIViewController {
                         UIColor.purple,
                         UIColor.cyan,
                         UIColor.green,
-                        //                        UIColor.lightGray,
             ])
         view.startTimedAnimation()
     
     }
 
-    
+ 
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Shift
 
 class NotificationSettingVC: UIViewController, UITableViewDataSource,UITableViewDelegate{
 
@@ -32,6 +33,23 @@ class NotificationSettingVC: UIViewController, UITableViewDataSource,UITableView
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        
+        
+        let view = self.view as! ShiftView
+        view.setColors([UIColor.yellow,
+                        UIColor.brown,
+                        UIColor.orange,
+                        UIColor.red,
+                        UIColor.blue,
+                        UIColor.purple,
+                        UIColor.cyan,
+                        UIColor.green,
+                        //                        UIColor.lightGray,
+            ])
+        view.startTimedAnimation()
+        
+        
         
         
         // ********** DATA FOR TABLEVIEW CELL ***********

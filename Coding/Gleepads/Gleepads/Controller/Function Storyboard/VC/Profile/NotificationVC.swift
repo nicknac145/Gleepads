@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Shift
 
 class NotificationVC: UIViewController {
 
@@ -14,7 +15,18 @@ class NotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let view = self.view as! ShiftView
+        view.setColors([UIColor.yellow,
+                        UIColor.brown,
+                        UIColor.orange,
+                        UIColor.red,
+                        UIColor.blue,
+                        UIColor.purple,
+                        UIColor.cyan,
+                        UIColor.green,
+                        //                        UIColor.lightGray,
+            ])
+        view.startTimedAnimation()
     }
 
  
