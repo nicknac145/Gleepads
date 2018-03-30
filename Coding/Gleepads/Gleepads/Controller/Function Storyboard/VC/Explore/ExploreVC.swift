@@ -31,6 +31,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         super.viewDidLoad()
         
         
+        
         exploreTable.delegate = self
         exploreTable.dataSource = self
         
@@ -47,8 +48,14 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                         ])
         view.startTimedAnimation()
         
-        let nib = UINib(nibName: "smallCollectionTC", bundle: nil)
-        self.exploreTable.register(nib, forCellReuseIdentifier: "smallCollection")
+        let One_nib = UINib(nibName: "TypeOne_TableCell", bundle: nil)
+        self.exploreTable.register(One_nib, forCellReuseIdentifier: "TypeOne_TableCell")
+        
+        let Two_nib = UINib(nibName: "TypeTwo_TableCell", bundle: nil)
+        self.exploreTable.register(Two_nib, forCellReuseIdentifier: "TypeTwo_TableCell")
+        
+        let Three_nib = UINib(nibName: "TypeThree_TableCell", bundle: nil)
+        self.exploreTable.register(Three_nib, forCellReuseIdentifier: "TypeThree_TableCell")
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,16 +63,46 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "smallCollection") as! smallCollectionTC
-
-//        cell.collectionView
-        return cell
         
+        
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TypeOne_TableCell") as! TypeOne_TableCell
+            
+            //        cell.collectionView
+            
+            return cell
+        }
+        
+        else if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTwo_TableCell") as! TypeTwo_TableCell
+//            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
+            //        cell.collectionView
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
+            
+            //        cell.collectionView
+            return cell
+        }
+    
      
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 106
+        if indexPath.row == 0{
+            return UITableViewAutomaticDimension
+            
+            
+        }
+        else if indexPath.row == 1{
+            
+           return UITableViewAutomaticDimension
+
+        }
+        return UITableViewAutomaticDimension
+
     }
     
 }
