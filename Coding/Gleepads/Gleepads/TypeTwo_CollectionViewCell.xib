@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,54 +14,57 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TypeTwo_CollectionViewCell" customModule="Gleepads" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="526" height="294"/>
+            <rect key="frame" x="0.0" y="0.0" width="526" height="370"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="526" height="294"/>
+                <rect key="frame" x="0.0" y="0.0" width="526" height="370"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hyper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DsZ-kZ-BRF">
-                        <rect key="frame" x="20" y="20" width="486" height="167"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="DsZ-kZ-BRF" secondAttribute="height" multiplier="486:167" id="79t-wu-52u"/>
-                        </constraints>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dxb.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DsZ-kZ-BRF" customClass="Custom_ImageView" customModule="Gleepads" customModuleProvider="target">
+                        <rect key="frame" x="15" y="15" width="496" height="259"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-78-EII">
-                        <rect key="frame" x="20" y="197" width="486" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Xq-ZDz">
-                        <rect key="frame" x="20" y="227.5" width="486" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Xq-ZDz">
+                        <rect key="frame" x="10" y="329.5" width="506" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-78-EII">
+                        <rect key="frame" x="10" y="284" width="506" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="xrT-78-EII" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="95x-Oy-jAM"/>
-                <constraint firstItem="Sqh-Xq-ZDz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="EAz-Lx-5OI"/>
-                <constraint firstAttribute="trailing" secondItem="DsZ-kZ-BRF" secondAttribute="trailing" constant="20" id="KB8-Cg-R4m"/>
-                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Wf4-Qk-TE5"/>
-                <constraint firstAttribute="trailing" secondItem="xrT-78-EII" secondAttribute="trailing" constant="20" id="Wlu-Ca-cfj"/>
-                <constraint firstItem="Sqh-Xq-ZDz" firstAttribute="top" secondItem="xrT-78-EII" secondAttribute="bottom" constant="10" id="YYJ-f2-xeR"/>
-                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="mDl-Fe-eTU"/>
-                <constraint firstAttribute="trailing" secondItem="Sqh-Xq-ZDz" secondAttribute="trailing" constant="20" id="tRQ-nr-Qi4"/>
-                <constraint firstItem="xrT-78-EII" firstAttribute="top" secondItem="DsZ-kZ-BRF" secondAttribute="bottom" constant="10" id="xM6-Xr-VcR"/>
+                <constraint firstItem="Sqh-Xq-ZDz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="2S4-ra-VHf"/>
+                <constraint firstAttribute="bottom" secondItem="Sqh-Xq-ZDz" secondAttribute="bottom" constant="20" id="5F3-ln-6H0"/>
+                <constraint firstItem="xrT-78-EII" firstAttribute="top" secondItem="DsZ-kZ-BRF" secondAttribute="bottom" constant="10" id="GdN-0f-kWw"/>
+                <constraint firstAttribute="trailing" secondItem="DsZ-kZ-BRF" secondAttribute="trailing" constant="15" id="I25-6p-Rme"/>
+                <constraint firstItem="xrT-78-EII" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="IgH-EQ-9X3"/>
+                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Xuw-1K-1dN"/>
+                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="bTn-cl-aAt"/>
+                <constraint firstAttribute="trailing" secondItem="xrT-78-EII" secondAttribute="trailing" constant="10" id="kvv-EJ-Jmu"/>
+                <constraint firstAttribute="trailing" secondItem="Sqh-Xq-ZDz" secondAttribute="trailing" constant="10" id="oPP-SE-4R2"/>
+                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" multiplier="0.7" id="zc4-PX-aUY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="526" height="294"/>
+            <size key="customSize" width="526" height="370"/>
             <connections>
                 <outlet property="TypeTwo_Caption" destination="xrT-78-EII" id="s7e-Pf-NRb"/>
                 <outlet property="TypeTwo_Descrip" destination="Sqh-Xq-ZDz" id="O8q-Hl-5hA"/>
                 <outlet property="TypeTwo_Image" destination="DsZ-kZ-BRF" id="ayQ-Hp-cP8"/>
             </connections>
-            <point key="canvasLocation" x="110" y="48"/>
+            <point key="canvasLocation" x="103" y="71"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="hyper.jpg" width="959" height="527"/>
+        <image name="dxb.jpg" width="1000" height="667"/>
     </resources>
 </document>

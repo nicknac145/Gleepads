@@ -36,6 +36,10 @@
 		F2581552206953FB00045DCF /* NotifySettingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */; };
 		F25815552069542C00045DCF /* NotifySettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */; };
 		F25815562069542C00045DCF /* NotifySettingSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */; };
+		F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2648482206E76B2008271BE /* BebasNeue-Regular.otf */; };
+		F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */; };
+		F2648488206E94F9008271BE /* karachi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2648486206E94F9008271BE /* karachi.jpg */; };
+		F2648489206E94F9008271BE /* dxb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2648487206E94F9008271BE /* dxb.jpg */; };
 		F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F26CFC3E206A85DB00A9DD20 /* couple.mp4 */; };
 		F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154520692AA500045DCF /*  signup.mp4 */; };
 		F26CFC4B206AA88D00A9DD20 /* SearchBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CFC4A206AA88D00A9DD20 /* SearchBarTableViewController.swift */; };
@@ -131,6 +135,10 @@
 		F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingLabelCell.xib; sourceTree = "<group>"; };
 		F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingSwitchCell.swift; sourceTree = "<group>"; };
 		F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingSwitchCell.xib; sourceTree = "<group>"; };
+		F2648482206E76B2008271BE /* BebasNeue-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.otf"; sourceTree = "<group>"; };
+		F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
+		F2648486206E94F9008271BE /* karachi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = karachi.jpg; path = "../../../../images & icon/karachi.jpg"; sourceTree = "<group>"; };
+		F2648487206E94F9008271BE /* dxb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dxb.jpg; path = "../../../../images & icon/dxb.jpg"; sourceTree = "<group>"; };
 		F26CFC3E206A85DB00A9DD20 /* couple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = couple.mp4; sourceTree = "<group>"; };
 		F26CFC4A206AA88D00A9DD20 /* SearchBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewController.swift; sourceTree = "<group>"; };
 		F26CFC4C206AAAAE00A9DD20 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Start.png; path = "../../../../images & icon/Start.png"; sourceTree = "<group>"; };
@@ -283,6 +291,15 @@
 			path = Customize;
 			sourceTree = "<group>";
 		};
+		F2648481206E7698008271BE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2648482206E76B2008271BE /* BebasNeue-Regular.otf */,
+				F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F26B34EE205B89D50082FAFD /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +307,8 @@
 				F2330F00206E0FC200D328AA /* black_star.png */,
 				F2330EFF206E0FC200D328AA /* golden_star.png */,
 				F2C10258206D2EF100B4DA6B /* facebook.png */,
+				F2648487206E94F9008271BE /* dxb.jpg */,
+				F2648486206E94F9008271BE /* karachi.jpg */,
 				F2129B3F206A2DE800D6D276 /* firstpage.png */,
 				F2EF76C82068EAA100B378BB /* border_image.png */,
 				F2EF76C72068EAA100B378BB /* credit.png */,
@@ -431,6 +450,7 @@
 		F2EBBB9720597EA600DD03A9 /* Gleepads */ = {
 			isa = PBXGroup;
 			children = (
+				F2648481206E7698008271BE /* Fonts */,
 				F2F7AAC02061656D00348BAD /* video */,
 				F26B34EE205B89D50082FAFD /* Image */,
 				F226FB78205A397E00F14CB0 /* Customize */,
@@ -537,6 +557,7 @@
 			files = (
 				F2330EF6206DFF8700D328AA /* TypeThree_CollectionViewCell.xib in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
+				F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */,
 				F21B9A43206B7CCB00D2A783 /* traveller.png in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
 				F2330EF2206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib in Resources */,
@@ -570,15 +591,18 @@
 				F2EF76E02068EAA100B378BB /* right_pointer.png in Resources */,
 				F2EBBBA020597EA600DD03A9 /* Assets.xcassets in Resources */,
 				F2129B40206A2DE800D6D276 /* firstpage.png in Resources */,
+				F2648489206E94F9008271BE /* dxb.jpg in Resources */,
 				F26CFC4D206AAAAE00A9DD20 /* Start.png in Resources */,
 				F2330EEE206DF9C200D328AA /* hyper.jpg in Resources */,
 				F2EF76DE2068EAA100B378BB /* host.png in Resources */,
 				F2330EEC206DF53600D328AA /* TypeOne_CollectionViewCell.xib in Resources */,
+				F2648488206E94F9008271BE /* karachi.jpg in Resources */,
 				F2C10259206D2EF200B4DA6B /* facebook.png in Resources */,
 				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
 				F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */,
 				F2EF76D92068EAA100B378BB /* border_image.png in Resources */,
 				F2330F01206E0FC200D328AA /* golden_star.png in Resources */,
+				F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */,
 				F258154720692AA500045DCF /* login.mp4 in Resources */,
 				F2EF76E52068EAA100B378BB /* Gleepads.png in Resources */,
 				F27B516E206595E700599F82 /* TopTableViewCell.xib in Resources */,

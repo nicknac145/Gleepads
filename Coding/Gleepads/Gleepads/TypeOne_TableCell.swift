@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TypeOne_TableCell: UITableViewCell, UICollectionViewDataSource,UICollectionViewDelegate {
+class TypeOne_TableCell: UITableViewCell, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
  
     @IBOutlet weak var TypeOne_Label: UILabel!
@@ -36,8 +36,8 @@ class TypeOne_TableCell: UITableViewCell, UICollectionViewDataSource,UICollectio
 
     
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    return CGSize(width: 100, height: 100)
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: 150, height: 175)
     }
     
     

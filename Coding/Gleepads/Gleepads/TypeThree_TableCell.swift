@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollectionViewDelegate{
+class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
  
 
     @IBOutlet weak var TypeThree_Title: UILabel!
@@ -35,7 +35,7 @@ class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,7 +43,9 @@ class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollec
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width:150, height: 230)
+    }
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {

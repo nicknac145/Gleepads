@@ -80,28 +80,28 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             //        cell.collectionView
             return cell
         }
-        else{
+        else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
             
             //        cell.collectionView
             return cell
         }
-    
+      
      
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
-            return UITableViewAutomaticDimension
+            return 240
             
             
         }
         else if indexPath.row == 1{
             
-           return UITableViewAutomaticDimension
-
+           return 375
+            
         }
-        return UITableViewAutomaticDimension
+        return 575
 
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TypeTwo_TableCell: UITableViewCell,UICollectionViewDataSource,UICollectionViewDelegate {
+class TypeTwo_TableCell: UITableViewCell,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     
 
@@ -41,6 +41,11 @@ class TypeTwo_TableCell: UITableViewCell,UICollectionViewDataSource,UICollection
     }
   
     
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 365, height:285)
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

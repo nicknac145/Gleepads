@@ -15,11 +15,14 @@ class MainVC: UIViewController {
  // ***********  variable ***************
     @IBOutlet weak var bottomLabel: UILabel!
     
+    @IBOutlet weak var Phrase_Label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+Phrase_Label.font = UIFont(name: "BebasNeue-Regular", size: 15.0)
+        
+bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
  // ***********  Configuration Navigation bar setting ***************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
