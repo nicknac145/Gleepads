@@ -359,6 +359,12 @@
 		F29C0595206658EA00EC802F /* Table Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F2330EE5206DF4FD00D328AA /* TypeOne_TableCell.swift */,
+				F2330EE9206DF53600D328AA /* TypeOne_CollectionViewCell.swift */,
+				F2330EF7206DFFAB00D328AA /* TypeTwo_TableCell.swift */,
+				F2330EEF206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift */,
+				F2330EFB206DFFBE00D328AA /* TypeThree_TableCell.swift */,
+				F2330EF3206DFF8700D328AA /* TypeThree_CollectionViewCell.swift */,
 				F27B516B206595E700599F82 /* TopTableViewCell.swift */,
 				F27B516F2065960100599F82 /* MiddleTableViewCell.swift */,
 				F27B51752065A68E00599F82 /* ButtonTableViewCell.swift */,
@@ -392,6 +398,12 @@
 				F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */,
 				F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */,
 				F29C059C2066660D00EC802F /* HeadingCell.xib */,
+				F2330EE6206DF4FD00D328AA /* TypeOne_TableCell.xib */,
+				F2330EEA206DF53600D328AA /* TypeOne_CollectionViewCell.xib */,
+				F2330EF8206DFFAB00D328AA /* TypeTwo_TableCell.xib */,
+				F2330EF0206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib */,
+				F2330EFC206DFFBE00D328AA /* TypeThree_TableCell.xib */,
+				F2330EF4206DFF8700D328AA /* TypeThree_CollectionViewCell.xib */,
 			);
 			path = "XIB file";
 			sourceTree = "<group>";
@@ -462,18 +474,6 @@
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
 				F2C1025D206D359A00B4DA6B /* TEST SWIFT */,
-				F2330EE5206DF4FD00D328AA /* TypeOne_TableCell.swift */,
-				F2330EE6206DF4FD00D328AA /* TypeOne_TableCell.xib */,
-				F2330EE9206DF53600D328AA /* TypeOne_CollectionViewCell.swift */,
-				F2330EEA206DF53600D328AA /* TypeOne_CollectionViewCell.xib */,
-				F2330EF7206DFFAB00D328AA /* TypeTwo_TableCell.swift */,
-				F2330EF8206DFFAB00D328AA /* TypeTwo_TableCell.xib */,
-				F2330EEF206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift */,
-				F2330EF0206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib */,
-				F2330EFB206DFFBE00D328AA /* TypeThree_TableCell.swift */,
-				F2330EFC206DFFBE00D328AA /* TypeThree_TableCell.xib */,
-				F2330EF3206DFF8700D328AA /* TypeThree_CollectionViewCell.swift */,
-				F2330EF4206DFF8700D328AA /* TypeThree_CollectionViewCell.xib */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";

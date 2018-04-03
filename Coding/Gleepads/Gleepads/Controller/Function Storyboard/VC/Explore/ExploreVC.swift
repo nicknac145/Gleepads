@@ -9,7 +9,7 @@
 import UIKit
 import Shift
 
-class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
 //    struct celldata{
 //
@@ -30,6 +30,12 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let searchBar = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = searchBar
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        
+//        self.navigationController?.navigationItem.searchController = searchBar
+//        self.navigationController?.navigationItem.hidesSearchBarWhenScrolling = false
         
         
         exploreTable.delegate = self
@@ -68,7 +74,6 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeOne_TableCell") as! TypeOne_TableCell
             
-            //        cell.collectionView
             
             return cell
         }

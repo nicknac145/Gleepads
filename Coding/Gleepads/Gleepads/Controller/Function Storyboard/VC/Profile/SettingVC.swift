@@ -39,7 +39,7 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         settingTable.delegate = self
         settingTable.dataSource = self
         
-        
+    
         
         let view = self.view as! ShiftView
         view.setColors([UIColor.yellow,
@@ -89,12 +89,15 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if dataArray[indexPath.row].cell == 1{
             let cell =  Bundle.main.loadNibNamed("HeadingCell", owner: self, options: nil)?.first as! HeadingCell
-           
-            
+           cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
             return cell
         }
         else if dataArray[indexPath.row].cell == 2{
             let cell =  Bundle.main.loadNibNamed("ButtonTableViewCell", owner: self, options: nil)?.first as! ButtonTableViewCell
+            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
             cell.buttonImage.image = dataArray[indexPath.row].image
             cell.buttonTitle.text = dataArray[indexPath.row].Title
             
@@ -102,6 +105,8 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         else{
             let cell =  Bundle.main.loadNibNamed("ButtonTableViewCell", owner: self, options: nil)?.first as! ButtonTableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
             cell.buttonTitle.text = dataArray[indexPath.row].Title
             cell.buttonSubTitle.text = dataArray[indexPath.row].Sub_Title
 
@@ -152,8 +157,12 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             let VC = UIAlertController(title:nil, message: nil, preferredStyle: .actionSheet)
             let logoutAction = UIAlertAction(title: "Log Out", style: .default, handler: { (action) in
-                self.parent?.parent?.navigationController?.popViewController(animated: true)
-                print(self.parent)
+                
+//                self.parent?.parent?.navigationController?.popViewController(animated: true)
+//                print(self.parent)
+                
+                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as UIViewController, animated: true, completion: nil)
+
             })
             let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             VC.addAction(logoutAction)

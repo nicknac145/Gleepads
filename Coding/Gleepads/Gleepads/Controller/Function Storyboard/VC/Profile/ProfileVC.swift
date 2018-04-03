@@ -99,6 +99,9 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         if dataArray[indexPath.row].cell == 1{
             let cell = Bundle.main.loadNibNamed("TopTableViewCell", owner: self, options: nil)?.first as! TopTableViewCell
+            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
             cell.TitleLabel.text = dataArray[indexPath.row].Title
             cell.subTitleLabel.text = dataArray[indexPath.row].Sub_Title
             cell.imageCell.image = dataArray[indexPath.row].image
@@ -109,11 +112,17 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         else if dataArray[indexPath.row].cell == 2{
             
             let cell = Bundle.main.loadNibNamed("MiddleTableViewCell", owner: self, options: nil)?.first as! MiddleTableViewCell
+            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
             cell.StepsLabel.text = dataArray[indexPath.row].Sub_Title
             return cell
         }
         else{
             let cell = Bundle.main.loadNibNamed("ButtonTableViewCell", owner: self, options: nil)?.first as! ButtonTableViewCell
+            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
             cell.buttonImage.image = dataArray[indexPath.row].image
             cell.buttonTitle.text = dataArray[indexPath.row].Sub_Title
             return cell
