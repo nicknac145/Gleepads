@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		68CE9A1E747552A07537520D /* Pods_Gleepads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F17D0E846C551737A35A1D60 /* Pods_Gleepads.framework */; };
+		F2015762207524140053F02F /* facebook_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2015760207524130053F02F /* facebook_button.png */; };
+		F2015763207524140053F02F /* google_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2015761207524130053F02F /* google_button.png */; };
+		F201576520752ECB0053F02F /* CalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201576420752ECB0053F02F /* CalenderVC.swift */; };
 		F2129B40206A2DE800D6D276 /* firstpage.png in Resources */ = {isa = PBXBuildFile; fileRef = F2129B3F206A2DE800D6D276 /* firstpage.png */; };
 		F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2142B82205C064100B381E8 /* NewAccountVC.swift */; };
 		F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2142B84205C1E1100B381E8 /* emailVC.swift */; };
@@ -29,6 +32,10 @@
 		F2330EFE206DFFBE00D328AA /* TypeThree_TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2330EFC206DFFBE00D328AA /* TypeThree_TableCell.xib */; };
 		F2330F01206E0FC200D328AA /* golden_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F2330EFF206E0FC200D328AA /* golden_star.png */; };
 		F2330F02206E0FC200D328AA /* black_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F2330F00206E0FC200D328AA /* black_star.png */; };
+		F235ACA12073B1FF00CD20E6 /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F235ACA02073B1FF00CD20E6 /* SearchBar.xib */; };
+		F235ACA32073B3A200CD20E6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F235ACA22073B3A200CD20E6 /* search.png */; };
+		F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235ACA42073B51B00CD20E6 /* SearchBar.swift */; };
+		F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
 		F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F258154920692D9800045DCF /* Gleepads_witout_BG.png */; };
@@ -106,6 +113,9 @@
 		58E84263B236808B7DA16B8B /* Pods-Gleepads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleepads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads.debug.xcconfig"; sourceTree = "<group>"; };
 		9ECA5A1A268A109A61342E33 /* Pods-Gleepads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleepads.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads.release.xcconfig"; sourceTree = "<group>"; };
 		F17D0E846C551737A35A1D60 /* Pods_Gleepads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gleepads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2015760207524130053F02F /* facebook_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_button.png; sourceTree = "<group>"; };
+		F2015761207524130053F02F /* google_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_button.png; sourceTree = "<group>"; };
+		F201576420752ECB0053F02F /* CalenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderVC.swift; sourceTree = "<group>"; };
 		F2129B3F206A2DE800D6D276 /* firstpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstpage.png; sourceTree = "<group>"; };
 		F2142B82205C064100B381E8 /* NewAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountVC.swift; sourceTree = "<group>"; };
 		F2142B84205C1E1100B381E8 /* emailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailVC.swift; sourceTree = "<group>"; };
@@ -127,6 +137,10 @@
 		F2330EFC206DFFBE00D328AA /* TypeThree_TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeThree_TableCell.xib; sourceTree = "<group>"; };
 		F2330EFF206E0FC200D328AA /* golden_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golden_star.png; sourceTree = "<group>"; };
 		F2330F00206E0FC200D328AA /* black_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_star.png; sourceTree = "<group>"; };
+		F235ACA02073B1FF00CD20E6 /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
+		F235ACA22073B3A200CD20E6 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		F235ACA42073B51B00CD20E6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarVC.swift; sourceTree = "<group>"; };
 		F258154320692AA500045DCF /* forget.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = forget.mp4; sourceTree = "<group>"; };
 		F258154420692AA500045DCF /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
 		F258154520692AA500045DCF /*  signup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = " signup.mp4"; sourceTree = "<group>"; };
@@ -306,7 +320,10 @@
 				F2330EED206DF9C200D328AA /* hyper.jpg */,
 				F2330F00206E0FC200D328AA /* black_star.png */,
 				F2330EFF206E0FC200D328AA /* golden_star.png */,
+				F235ACA22073B3A200CD20E6 /* search.png */,
 				F2C10258206D2EF100B4DA6B /* facebook.png */,
+				F2015760207524130053F02F /* facebook_button.png */,
+				F2015761207524130053F02F /* google_button.png */,
 				F2648487206E94F9008271BE /* dxb.jpg */,
 				F2648486206E94F9008271BE /* karachi.jpg */,
 				F2129B3F206A2DE800D6D276 /* firstpage.png */,
@@ -474,6 +491,10 @@
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
 				F2C1025D206D359A00B4DA6B /* TEST SWIFT */,
+				F235ACA02073B1FF00CD20E6 /* SearchBar.xib */,
+				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
+				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
+				F201576420752ECB0053F02F /* CalenderVC.swift */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";
@@ -558,18 +579,22 @@
 				F2330EF6206DFF8700D328AA /* TypeThree_CollectionViewCell.xib in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
 				F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */,
+				F235ACA32073B3A200CD20E6 /* search.png in Resources */,
 				F21B9A43206B7CCB00D2A783 /* traveller.png in Resources */,
+				F2015762207524140053F02F /* facebook_button.png in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
 				F2330EF2206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib in Resources */,
 				F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */,
 				F2EF76E12068EAA100B378BB /* setting.png in Resources */,
 				F27B51722065960100599F82 /* MiddleTableViewCell.xib in Resources */,
 				F2EF76E42068EAA100B378BB /* tom.jpg in Resources */,
+				F235ACA12073B1FF00CD20E6 /* SearchBar.xib in Resources */,
 				F2330F02206E0FC200D328AA /* black_star.png in Resources */,
 				F2EF76A52068E89C00B378BB /* Social.mp4 in Resources */,
 				F2EF76D72068EAA100B378BB /* help.png in Resources */,
 				F2EF76D62068EAA100B378BB /* Profile.png in Resources */,
 				F2581552206953FB00045DCF /* NotifySettingLabelCell.xib in Resources */,
+				F2015763207524140053F02F /* google_button.png in Resources */,
 				F27B514E206585FF00599F82 /* intro.mp4 in Resources */,
 				F2330EE8206DF4FD00D328AA /* TypeOne_TableCell.xib in Resources */,
 				F2C10257206D2C5A00B4DA6B /* google.png in Resources */,
@@ -638,12 +663,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Shift/Shift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
 			);
@@ -685,6 +712,7 @@
 				F2330EEB206DF53600D328AA /* TypeOne_CollectionViewCell.swift in Sources */,
 				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
+				F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */,
 				F29C0582206645D200EC802F /* InviteVC.swift in Sources */,
 				F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */,
 				F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */,
@@ -702,7 +730,9 @@
 				F27B51772065A68E00599F82 /* ButtonTableViewCell.swift in Sources */,
 				F28D908F205FE75A00AE2A5D /* SignInVC.swift in Sources */,
 				F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */,
+				F201576520752ECB0053F02F /* CalenderVC.swift in Sources */,
 				F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */,
+				F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */,
 				F2330EF9206DFFAB00D328AA /* TypeTwo_TableCell.swift in Sources */,
 				F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */,
 				F2EBBB9920597EA600DD03A9 /* AppDelegate.swift in Sources */,

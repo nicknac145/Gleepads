@@ -11,5 +11,5 @@ pod 'SwiftVideoBackground', '~> 3.0'
 pod 'BubbleTransition'
 
 pod "Shift"
-
+pod 'CVCalendar'
 end

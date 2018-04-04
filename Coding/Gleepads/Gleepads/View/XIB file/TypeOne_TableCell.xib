@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-Zr-1az">
-                        <rect key="frame" x="10" y="55" width="341" height="147"/>
+                        <rect key="frame" x="10" y="85" width="341" height="117"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wuy-ym-kX3">
                             <size key="itemSize" width="50" height="50"/>
@@ -31,7 +31,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore Gleepads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQb-tU-DEI">
-                        <rect key="frame" x="16" y="11" width="329" height="29"/>
+                        <rect key="frame" x="16" y="41" width="329" height="29"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                     <constraint firstItem="xbh-Zr-1az" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="FxA-zM-Qo8"/>
                     <constraint firstAttribute="trailing" secondItem="xbh-Zr-1az" secondAttribute="trailing" constant="10" id="Nr4-fK-JJv"/>
                     <constraint firstItem="VQb-tU-DEI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Vv8-az-ys5"/>
-                    <constraint firstItem="VQb-tU-DEI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="icA-qr-JP7"/>
+                    <constraint firstItem="VQb-tU-DEI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="30" id="icA-qr-JP7"/>
                     <constraint firstAttribute="bottom" secondItem="xbh-Zr-1az" secondAttribute="bottom" constant="10" id="xcZ-83-m8P"/>
                 </constraints>
             </tableViewCellContentView>

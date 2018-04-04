@@ -7,52 +7,54 @@
 //
 
 import UIKit
-import Shift
+//import Shift
 
 class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
-//    struct celldata{
-//
-//        var Image : UIImage?
-//        var Title : String?
-//        var Sub-Title1: String?
-//        var Sub-Title2: String?
-//        var Sub-Title3: String?
-//
-//
-//    }
-    
-//    var data = [celldata]()
+
     
     @IBOutlet weak var exploreTable: UITableView!
     
+    @IBOutlet weak var buttonView: NSLayoutConstraint!
+    @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
+    
+    var endingOffset : CGFloat = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchBar = UISearchController(searchResultsController: nil)
-        self.navigationItem.searchController = searchBar
-        self.navigationItem.hidesSearchBarWhenScrolling = false
         
-//        self.navigationController?.navigationItem.searchController = searchBar
-//        self.navigationController?.navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        let SearchNib = Bundle.main.loadNibNamed("SearchBar", owner: self, options: nil)?.first as! SearchBar
+        
+        self.navigationItem.titleView = SearchNib
+        
+        let searchTap = UITapGestureRecognizer(target: self, action: #selector(searchVC))
+        SearchNib.addGestureRecognizer(searchTap)
+
+
         
         
         exploreTable.delegate = self
         exploreTable.dataSource = self
         
-        let view = self.view as! ShiftView
-        view.setColors([UIColor.yellow,
-                        UIColor.brown,
-                        UIColor.orange,
-                        UIColor.red,
-                        UIColor.blue,
-                        UIColor.purple,
-                         UIColor.cyan,
-                        UIColor.green,
-//                        UIColor.lightGray,
-                        ])
-        view.startTimedAnimation()
+//        let view = self.view as! ShiftView
+//        view.setColors([UIColor.yellow,
+//                        UIColor.brown,
+//                        UIColor.orange,
+//                        UIColor.red,
+//                        UIColor.blue,
+//                        UIColor.purple,
+//                         UIColor.cyan,
+//                        UIColor.green,
+////                        UIColor.lightGray,
+//                        ])
+//
+//
+//        view.startTimedAnimation()
         
         let One_nib = UINib(nibName: "TypeOne_TableCell", bundle: nil)
         self.exploreTable.register(One_nib, forCellReuseIdentifier: "TypeOne_TableCell")
@@ -64,6 +66,18 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         self.exploreTable.register(Three_nib, forCellReuseIdentifier: "TypeThree_TableCell")
 
     }
+    
+    
+    @objc func searchVC(recog : UIGestureRecognizer){
+        
+        let searchBarVC = storyboard?.instantiateViewController(withIdentifier: "SearchBarVC")
+        
+        self.present(searchBarVC!, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(searchBarVC!, animated: true)
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -82,13 +96,11 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTwo_TableCell") as! TypeTwo_TableCell
 //            cell.selectionStyle = UITableViewCellSelectionStyle.none
 
-            //        cell.collectionView
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
             
-            //        cell.collectionView
             return cell
         }
       
@@ -108,6 +120,73 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         }
         return 575
 
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+     
+        let startingOffset = scrollView.contentOffset.y
+        
+        
+
+        
+        
+        print("s:\(startingOffset)")
+       
+        
+   
+
+        // *************** REACH THREADHOLD POSITION *******************
+        if    startingOffset > 15 {
+            
+
+         if (self.buttonBottomConstraint.constant <= 555){
+                
+                self.buttonBottomConstraint.constant += 1
+            
+            print ("*")
+
+                }
+    
+            
+            
+            
+            
+          else if (startingOffset > self.endingOffset){
+                self.endingOffset = startingOffset
+            print("e:\(self.endingOffset)")
+            
+    
+            }
+           else if (startingOffset < self.endingOffset){
+            
+            print("open")
+//
+//            if self.buttonBottomConstraint.constant >= 530{
+                self.buttonBottomConstraint.constant -= 1
+//
+//                
+//                self.endingOffset = 0
+//
+//            }
+            }
+         
+        }
+            
+            
+            
+            
+            
+            
+        // ************** REACH BELOW THREADHOLD POSITION ****************
+        else  {
+                if self.buttonBottomConstraint.constant >= 530{
+            self.buttonBottomConstraint.constant -= 1
+                    
+                    
+                    self.endingOffset = 0
+                  
+            }
+        }
     }
     
 }
