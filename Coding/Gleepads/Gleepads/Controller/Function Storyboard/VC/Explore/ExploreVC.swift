@@ -122,71 +122,38 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
     }
     
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.endingOffset = scrollView.contentOffset.y
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
      
-        let startingOffset = scrollView.contentOffset.y
+ 
         
-        
+        // ************* MOVE TO TOP ********************
 
-        
-        
-        print("s:\(startingOffset)")
-       
-        
-   
+        if (self.endingOffset < scrollView.contentOffset.y) {
+                if (self.buttonBottomConstraint.constant <= 555)
+                        {
+                            self.buttonBottomConstraint.constant += 1
+                        }
+        }
 
-        // *************** REACH THREADHOLD POSITION *******************
-        if    startingOffset > 15 {
             
+            // ************* MOVE TO BOTTOM ********************
 
-         if (self.buttonBottomConstraint.constant <= 555){
-                
-                self.buttonBottomConstraint.constant += 1
+        else if (self.endingOffset > scrollView.contentOffset.y) {
             
-            print ("*")
-
-                }
-    
-            
-            
-            
-            
-          else if (startingOffset > self.endingOffset){
-                self.endingOffset = startingOffset
-            print("e:\(self.endingOffset)")
-            
-    
-            }
-           else if (startingOffset < self.endingOffset){
-            
-            print("open")
-//
-//            if self.buttonBottomConstraint.constant >= 530{
-                self.buttonBottomConstraint.constant -= 1
-//
-//                
-//                self.endingOffset = 0
-//
-//            }
-            }
-         
+                if self.buttonBottomConstraint.constant >= 530
+                    {
+                        self.buttonBottomConstraint.constant -= 1
+                    }
         }
             
             
             
-            
-            
-            
-        // ************** REACH BELOW THREADHOLD POSITION ****************
-        else  {
-                if self.buttonBottomConstraint.constant >= 530{
-            self.buttonBottomConstraint.constant -= 1
-                    
-                    
-                    self.endingOffset = 0
-                  
-            }
-        }
+  
     }
     
 }

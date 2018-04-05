@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-import Shift
+//import Shift
 
 
 class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -40,19 +40,19 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         settingTable.dataSource = self
         
     
-        
-        let view = self.view as! ShiftView
-        view.setColors([UIColor.yellow,
-                        UIColor.brown,
-                        UIColor.orange,
-                        UIColor.red,
-                        UIColor.blue,
-                        UIColor.purple,
-                        UIColor.cyan,
-                        UIColor.green,
-                        //                        UIColor.lightGray,
-            ])
-        view.startTimedAnimation()
+//
+//        let view = self.view as! ShiftView
+//        view.setColors([UIColor.yellow,
+//                        UIColor.brown,
+//                        UIColor.orange,
+//                        UIColor.red,
+//                        UIColor.blue,
+//                        UIColor.purple,
+//                        UIColor.cyan,
+//                        UIColor.green,
+//                        //                        UIColor.lightGray,
+//            ])
+//        view.startTimedAnimation()
 
         
         // ********** DATA FOR TABLEVIEW CELL ***********

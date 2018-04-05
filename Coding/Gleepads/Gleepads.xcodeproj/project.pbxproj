@@ -64,6 +64,7 @@
 		F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28D9092205FF6F700AE2A5D /* Function.storyboard */; };
 		F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90AE206016FB00AE2A5D /* Custom_View.swift */; };
 		F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */; };
+		F298C37A20763B1D006E9F09 /* GuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298C37920763B1D006E9F09 /* GuestVC.swift */; };
 		F29C057D2066417C00EC802F /* InviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C057B2066417C00EC802F /* InviteTableViewCell.swift */; };
 		F29C057E2066417C00EC802F /* InviteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29C057C2066417C00EC802F /* InviteTableViewCell.xib */; };
 		F29C0580206645B100EC802F /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C057F206645B100EC802F /* NotificationVC.swift */; };
@@ -169,6 +170,7 @@
 		F28D9092205FF6F700AE2A5D /* Function.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Function.storyboard; sourceTree = "<group>"; };
 		F28D90AE206016FB00AE2A5D /* Custom_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
 		F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_ImageView.swift; sourceTree = "<group>"; };
+		F298C37920763B1D006E9F09 /* GuestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestVC.swift; sourceTree = "<group>"; };
 		F29C057B2066417C00EC802F /* InviteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteTableViewCell.swift; sourceTree = "<group>"; };
 		F29C057C2066417C00EC802F /* InviteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteTableViewCell.xib; sourceTree = "<group>"; };
 		F29C057F206645B100EC802F /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
 				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
 				F201576420752ECB0053F02F /* CalenderVC.swift */,
+				F298C37920763B1D006E9F09 /* GuestVC.swift */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */,
 				F2C1024F206D236F00B4DA6B /* ExploreVC.swift in Sources */,
 				F29C0588206646FC00EC802F /* SettingVC.swift in Sources */,
+				F298C37A20763B1D006E9F09 /* GuestVC.swift in Sources */,
 				F2330EF5206DFF8700D328AA /* TypeThree_CollectionViewCell.swift in Sources */,
 				F28D9091205FECBA00AE2A5D /* ForgetVC.swift in Sources */,
 				F2C1024D206D1D5F00B4DA6B /* testVC.swift in Sources */,
