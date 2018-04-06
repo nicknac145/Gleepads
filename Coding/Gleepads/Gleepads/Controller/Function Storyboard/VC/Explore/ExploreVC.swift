@@ -88,6 +88,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeOne_TableCell") as! TypeOne_TableCell
             
+//            cell.TypeOne_Collection.
             
             return cell
         }

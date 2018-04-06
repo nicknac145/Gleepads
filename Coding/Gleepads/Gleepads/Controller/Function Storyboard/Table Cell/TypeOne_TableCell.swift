@@ -21,6 +21,7 @@ class TypeOne_TableCell: UITableViewCell, UICollectionViewDataSource,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as! TypeOne_CollectionViewCell
+        
         return cell
     }
     
