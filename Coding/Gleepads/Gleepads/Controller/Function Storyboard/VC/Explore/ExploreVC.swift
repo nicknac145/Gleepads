@@ -151,10 +151,12 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
                         self.buttonBottomConstraint.constant -= 1
                     }
         }
-            
-            
-            
-  
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PropertyVC")
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 }

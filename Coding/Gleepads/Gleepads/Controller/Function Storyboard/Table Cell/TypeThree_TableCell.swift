@@ -54,4 +54,11 @@ class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollec
         // Configure the view for the selected state
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("HITTTTTT")
+        
+     
+    }
+    
 }

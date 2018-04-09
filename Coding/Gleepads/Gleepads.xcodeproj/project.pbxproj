@@ -41,6 +41,13 @@
 		F235ACA32073B3A200CD20E6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F235ACA22073B3A200CD20E6 /* search.png */; };
 		F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235ACA42073B51B00CD20E6 /* SearchBar.swift */; };
 		F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */; };
+		F244C804207BA379000316FE /* PropertyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244C803207BA379000316FE /* PropertyTableVC.swift */; };
+		F244C808207BC039000316FE /* television.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C805207BC039000316FE /* television.png */; };
+		F244C809207BC039000316FE /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C806207BC039000316FE /* wifi.png */; };
+		F244C80A207BC039000316FE /* dine.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C807207BC039000316FE /* dine.png */; };
+		F244C80C207BC114000316FE /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C80B207BC114000316FE /* pool.png */; };
+		F244C80E207BC5FD000316FE /* PropertyBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F244C80D207BC5FD000316FE /* PropertyBottomView.xib */; };
+		F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244C80F207BC616000316FE /* PropertyBottomView.swift */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
 		F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F258154920692D9800045DCF /* Gleepads_witout_BG.png */; };
@@ -154,6 +161,13 @@
 		F235ACA22073B3A200CD20E6 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		F235ACA42073B51B00CD20E6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarVC.swift; sourceTree = "<group>"; };
+		F244C803207BA379000316FE /* PropertyTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTableVC.swift; sourceTree = "<group>"; };
+		F244C805207BC039000316FE /* television.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = television.png; sourceTree = "<group>"; };
+		F244C806207BC039000316FE /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
+		F244C807207BC039000316FE /* dine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dine.png; sourceTree = "<group>"; };
+		F244C80B207BC114000316FE /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
+		F244C80D207BC5FD000316FE /* PropertyBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyBottomView.xib; sourceTree = "<group>"; };
+		F244C80F207BC616000316FE /* PropertyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBottomView.swift; sourceTree = "<group>"; };
 		F258154320692AA500045DCF /* forget.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = forget.mp4; sourceTree = "<group>"; };
 		F258154420692AA500045DCF /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
 		F258154520692AA500045DCF /*  signup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = " signup.mp4"; sourceTree = "<group>"; };
@@ -333,6 +347,9 @@
 		F26B34EE205B89D50082FAFD /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				F244C807207BC039000316FE /* dine.png */,
+				F244C805207BC039000316FE /* television.png */,
+				F244C806207BC039000316FE /* wifi.png */,
 				F2DE9CFC2077B15600920040 /* Share.png */,
 				F2330EED206DF9C200D328AA /* hyper.jpg */,
 				F2066BDA2076854500FB0621 /* Explore.png */,
@@ -355,6 +372,7 @@
 				F2EF76D22068EAA100B378BB /* feedback.png */,
 				F258154920692D9800045DCF /* Gleepads_witout_BG.png */,
 				F21B9A42206B7CCA00D2A783 /* traveller.png */,
+				F244C80B207BC114000316FE /* pool.png */,
 				F2EF76C92068EAA100B378BB /* gift.png */,
 				F2EF76D42068EAA100B378BB /* Gleepads.png */,
 				F2C10256206D2C5900B4DA6B /* google.png */,
@@ -386,6 +404,7 @@
 		F29C0586206646AA00EC802F /* Function Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				F244C803207BA379000316FE /* PropertyTableVC.swift */,
 				F29C0595206658EA00EC802F /* Table Cell */,
 				F29C0596206658FE00EC802F /* VC */,
 			);
@@ -434,6 +453,7 @@
 				F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */,
 				F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */,
 				F29C059C2066660D00EC802F /* HeadingCell.xib */,
+				F235ACA02073B1FF00CD20E6 /* SearchBar.xib */,
 				F2330EE6206DF4FD00D328AA /* TypeOne_TableCell.xib */,
 				F2330EEA206DF53600D328AA /* TypeOne_CollectionViewCell.xib */,
 				F2330EF8206DFFAB00D328AA /* TypeTwo_TableCell.xib */,
@@ -464,6 +484,10 @@
 			isa = PBXGroup;
 			children = (
 				F2C1024E206D236F00B4DA6B /* ExploreVC.swift */,
+				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
+				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
+				F201576420752ECB0053F02F /* CalenderVC.swift */,
+				F298C37920763B1D006E9F09 /* GuestVC.swift */,
 				F2DE9D012077C05E00920040 /* ImageScrollVC.swift */,
 				F2DE9D032077C08F00920040 /* PropertyVC.swift */,
 				F2DE9D052077C84300920040 /* imageScrollCell.swift */,
@@ -522,11 +546,8 @@
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
 				F2C1025D206D359A00B4DA6B /* TEST SWIFT */,
-				F235ACA02073B1FF00CD20E6 /* SearchBar.xib */,
-				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
-				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
-				F201576420752ECB0053F02F /* CalenderVC.swift */,
-				F298C37920763B1D006E9F09 /* GuestVC.swift */,
+				F244C80D207BC5FD000316FE /* PropertyBottomView.xib */,
+				F244C80F207BC616000316FE /* PropertyBottomView.swift */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";
@@ -609,7 +630,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2330EF6206DFF8700D328AA /* TypeThree_CollectionViewCell.xib in Resources */,
+				F244C80C207BC114000316FE /* pool.png in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
+				F244C809207BC039000316FE /* wifi.png in Resources */,
 				F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */,
 				F235ACA32073B3A200CD20E6 /* search.png in Resources */,
 				F21B9A43206B7CCB00D2A783 /* traveller.png in Resources */,
@@ -623,6 +646,7 @@
 				F2EF76E12068EAA100B378BB /* setting.png in Resources */,
 				F27B51722065960100599F82 /* MiddleTableViewCell.xib in Resources */,
 				F2EF76E42068EAA100B378BB /* tom.jpg in Resources */,
+				F244C808207BC039000316FE /* television.png in Resources */,
 				F235ACA12073B1FF00CD20E6 /* SearchBar.xib in Resources */,
 				F2330F02206E0FC200D328AA /* black_star.png in Resources */,
 				F2EF76A52068E89C00B378BB /* Social.mp4 in Resources */,
@@ -633,6 +657,7 @@
 				F27B514E206585FF00599F82 /* intro.mp4 in Resources */,
 				F2330EE8206DF4FD00D328AA /* TypeOne_TableCell.xib in Resources */,
 				F2C10257206D2C5A00B4DA6B /* google.png in Resources */,
+				F244C80A207BC039000316FE /* dine.png in Resources */,
 				F2EF76E32068EAA100B378BB /* feedback.png in Resources */,
 				F2EF76D82068EAA100B378BB /* credit.png in Resources */,
 				F29C059E2066660D00EC802F /* HeadingCell.xib in Resources */,
@@ -652,6 +677,7 @@
 				F2129B40206A2DE800D6D276 /* firstpage.png in Resources */,
 				F2648489206E94F9008271BE /* dxb.jpg in Resources */,
 				F26CFC4D206AAAAE00A9DD20 /* Start.png in Resources */,
+				F244C80E207BC5FD000316FE /* PropertyBottomView.xib in Resources */,
 				F2330EEE206DF9C200D328AA /* hyper.jpg in Resources */,
 				F2EF76DE2068EAA100B378BB /* host.png in Resources */,
 				F2330EEC206DF53600D328AA /* TypeOne_CollectionViewCell.xib in Resources */,
@@ -779,6 +805,8 @@
 				F27B51712065960100599F82 /* MiddleTableViewCell.swift in Sources */,
 				F2DE9D002077C01D00920040 /* ZGCarousel.swift in Sources */,
 				F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */,
+				F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */,
+				F244C804207BA379000316FE /* PropertyTableVC.swift in Sources */,
 				F29C057D2066417C00EC802F /* InviteTableViewCell.swift in Sources */,
 				F26CFC4B206AA88D00A9DD20 /* SearchBarTableViewController.swift in Sources */,
 				F2DE9D062077C84300920040 /* imageScrollCell.swift in Sources */,

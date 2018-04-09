@@ -8,10 +8,11 @@
 
 import UIKit
 
-class PropertyVC: UIViewController, UITableViewDataSource,UITableViewDelegate,ZGCarouselDelegate {
+class PropertyVC: UIViewController,ZGCarouselDelegate {
     
     
-
+    @IBOutlet weak var ImageScroll: ZGCarousel!
+    
     @IBOutlet weak var propertyTable: UITableView!
   
     
@@ -19,10 +20,15 @@ class PropertyVC: UIViewController, UITableViewDataSource,UITableViewDelegate,ZG
    
     var timer:Timer!
     var count = 0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.propertyTable.delegate=self
-        self.propertyTable.dataSource=self
+     
+        
+        self.ImageScroll.zgDelegate = self
+        
         
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.updateImage), userInfo: nil, repeats: true)
     }
@@ -37,19 +43,13 @@ class PropertyVC: UIViewController, UITableViewDataSource,UITableViewDelegate,ZG
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+  
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageScroll") as! imageScrollCell
-        cell.ScrolledImage.zgDelegate = self
-        return cell
-    }
+  
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
+  
+    
+    
     func ZGitemData() -> [UIViewController] {
         
         
