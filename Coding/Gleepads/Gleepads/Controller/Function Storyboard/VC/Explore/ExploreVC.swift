@@ -16,6 +16,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     @IBOutlet weak var exploreTable: UITableView!
     
     @IBOutlet weak var buttonView: NSLayoutConstraint!
+   
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     
     var endingOffset : CGFloat = 0
@@ -130,7 +131,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
      
- 
+        
         
         // ************* MOVE TO TOP ********************
 
@@ -141,11 +142,11 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
                         }
         }
 
-            
+
             // ************* MOVE TO BOTTOM ********************
 
         else if (self.endingOffset > scrollView.contentOffset.y) {
-            
+
                 if self.buttonBottomConstraint.constant >= 530
                     {
                         self.buttonBottomConstraint.constant -= 1

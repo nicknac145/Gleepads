@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NmZ-lM-pJi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aek-wZ-O2o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -217,77 +218,130 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtG-53-OYo" customClass="Custom_Button" customModule="Gleepads" customModuleProvider="target">
-                                <rect key="frame" x="62" y="275" width="250" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="facebook_button.png">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="95w-Y1-1DN" kind="presentation" id="voi-Re-fWi"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK1-4F-MPg">
-                                <rect key="frame" x="16" y="539" width="343" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">By tapping Continue, Create account to More options, I agree to Gleepads's Term of Service, Payments Terms of Service, Privacy Policy, and Nondiscrimination Policy</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gleepads_witout_BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="pav-93-8PS">
-                                <rect key="frame" x="120" y="115" width="134" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfV-wx-BRH">
-                                <rect key="frame" x="62" y="329" width="250" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="google_button.png">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsS-z3-iva" customClass="Custom_Button" customModule="Gleepads" customModuleProvider="target">
-                                <rect key="frame" x="62" y="383" width="250" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRy-W0-6WO" userLabel="upper part">
+                                <rect key="frame" x="0.0" y="64" width="375" height="173.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gleepads_witout_BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="pav-93-8PS">
+                                        <rect key="frame" x="94" y="26" width="187.5" height="69"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent happy homes for your events!." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sP-l9-pZm">
+                                        <rect key="frame" x="63" y="63" width="285" height="102"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
-                                <state key="normal" title="Create account">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="Axv-k9-IUT" kind="presentation" id="WFz-Rc-CTC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rent happy homes for your events!." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sP-l9-pZm">
-                                <rect key="frame" x="62" y="217" width="285" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstItem="7sP-l9-pZm" firstAttribute="leading" secondItem="TRy-W0-6WO" secondAttribute="leading" constant="63" id="C6G-ki-0g4"/>
+                                    <constraint firstItem="7sP-l9-pZm" firstAttribute="top" secondItem="pav-93-8PS" secondAttribute="bottom" multiplier="0.5" constant="15.5" id="DoC-nf-u90"/>
+                                    <constraint firstAttribute="bottom" secondItem="7sP-l9-pZm" secondAttribute="bottom" constant="8.5" id="Gjn-nq-HoU"/>
+                                    <constraint firstItem="pav-93-8PS" firstAttribute="width" secondItem="TRy-W0-6WO" secondAttribute="width" multiplier="0.5" id="aqv-iv-lib"/>
+                                    <constraint firstItem="pav-93-8PS" firstAttribute="height" secondItem="TRy-W0-6WO" secondAttribute="height" multiplier="0.4" id="fK1-CR-4D1"/>
+                                    <constraint firstItem="pav-93-8PS" firstAttribute="centerY" secondItem="TRy-W0-6WO" secondAttribute="centerY" multiplier="0.7" id="htL-xH-Tnl"/>
+                                    <constraint firstItem="pav-93-8PS" firstAttribute="centerX" secondItem="TRy-W0-6WO" secondAttribute="centerX" id="pnE-F0-ygR"/>
+                                    <constraint firstAttribute="trailing" secondItem="7sP-l9-pZm" secondAttribute="trailing" constant="27" id="q1u-mT-fPR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1us-Gs-hwr" userLabel="lower part">
+                                <rect key="frame" x="0.0" y="533.5" width="375" height="133.5"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK1-4F-MPg">
+                                        <rect key="frame" x="19" y="0.0" width="337.5" height="133.5"/>
+                                        <string key="text">By tapping Continue, Create account to More options, I agree to Gleepads's Term of Service, Payments Terms of Service, Privacy Policy, and Nondiscrimination Policy</string>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bK1-4F-MPg" firstAttribute="width" secondItem="1us-Gs-hwr" secondAttribute="width" multiplier="0.9" id="CPU-Bw-hkq"/>
+                                    <constraint firstItem="bK1-4F-MPg" firstAttribute="centerX" secondItem="1us-Gs-hwr" secondAttribute="centerX" id="NFb-hq-Mw9"/>
+                                    <constraint firstItem="bK1-4F-MPg" firstAttribute="centerY" secondItem="1us-Gs-hwr" secondAttribute="centerY" id="Yop-zN-fYF"/>
+                                    <constraint firstItem="bK1-4F-MPg" firstAttribute="height" secondItem="1us-Gs-hwr" secondAttribute="height" id="sqa-B6-KCL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiQ-NL-Qhg" userLabel="middle part">
+                                <rect key="frame" x="0.0" y="237.5" width="375" height="296"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zT7-oi-zzl">
+                                        <rect key="frame" x="66" y="15" width="244" height="148"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtG-53-OYo" customClass="Custom_Button" customModule="Gleepads" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="41.5"/>
+                                                <state key="normal" image="facebook_button.png">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="95w-Y1-1DN" kind="presentation" id="voi-Re-fWi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfV-wx-BRH">
+                                                <rect key="frame" x="0.0" y="53.5" width="244" height="41"/>
+                                                <state key="normal" image="google_button.png">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsS-z3-iva" customClass="Custom_Button" customModule="Gleepads" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="106.5" width="244" height="41.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
+                                                <state key="normal" title="Create account">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="Axv-k9-IUT" kind="show" id="WFz-Rc-CTC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="zT7-oi-zzl" firstAttribute="height" secondItem="aiQ-NL-Qhg" secondAttribute="height" multiplier="0.5" id="0Ye-oK-q2U"/>
+                                    <constraint firstItem="zT7-oi-zzl" firstAttribute="centerX" secondItem="aiQ-NL-Qhg" secondAttribute="centerX" id="H4q-LG-Zqo"/>
+                                    <constraint firstItem="zT7-oi-zzl" firstAttribute="width" secondItem="aiQ-NL-Qhg" secondAttribute="width" multiplier="0.65" id="OrA-f6-Qr1"/>
+                                    <constraint firstItem="zT7-oi-zzl" firstAttribute="centerY" secondItem="aiQ-NL-Qhg" secondAttribute="centerY" multiplier="0.6" id="axt-lP-jrn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1us-Gs-hwr" firstAttribute="top" secondItem="aiQ-NL-Qhg" secondAttribute="bottom" id="1PR-wj-tu6"/>
+                            <constraint firstItem="aiQ-NL-Qhg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3bQ-6p-EiZ"/>
+                            <constraint firstItem="1us-Gs-hwr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5Za-Q8-Qjp"/>
+                            <constraint firstItem="1us-Gs-hwr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jsa-wh-b3d"/>
+                            <constraint firstItem="aiQ-NL-Qhg" firstAttribute="top" secondItem="TRy-W0-6WO" secondAttribute="bottom" id="Ncm-J0-lf2"/>
+                            <constraint firstItem="aiQ-NL-Qhg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uda-8E-j9m"/>
+                            <constraint firstItem="TRy-W0-6WO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YJ3-xS-MbU"/>
+                            <constraint firstItem="TRy-W0-6WO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pF1-h5-i1s"/>
+                            <constraint firstItem="TRy-W0-6WO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rHK-PG-Xz9"/>
+                            <constraint firstItem="1us-Gs-hwr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sHb-Sq-CYB"/>
+                            <constraint firstItem="1us-Gs-hwr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="ykt-Qy-NW7"/>
+                            <constraint firstItem="TRy-W0-6WO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.26" id="zPR-KN-M3F"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="S98-pm-8dl">
@@ -501,16 +555,19 @@
                                 <rect key="frame" x="161" y="418" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Ih-Vw-5VJ">
-                                <rect key="frame" x="85" y="285" width="204" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Ih-Vw-5VJ">
+                                <rect key="frame" x="94" y="283" width="187.5" height="100.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7Ih-Vw-5VJ" firstAttribute="height" secondItem="4Mg-DU-V9u" secondAttribute="height" multiplier="0.15" id="7YV-Op-hvc"/>
+                            <constraint firstItem="7Ih-Vw-5VJ" firstAttribute="width" secondItem="4Mg-DU-V9u" secondAttribute="width" multiplier="0.5" id="8Go-MQ-zUa"/>
                             <constraint firstItem="4Mg-DU-V9u" firstAttribute="trailing" secondItem="WhC-f1-kh1" secondAttribute="trailing" id="KPi-gD-xhp"/>
                             <constraint firstItem="4Mg-DU-V9u" firstAttribute="bottom" secondItem="WhC-f1-kh1" secondAttribute="bottom" id="SOd-Or-gVT"/>
+                            <constraint firstItem="7Ih-Vw-5VJ" firstAttribute="centerX" secondItem="4Mg-DU-V9u" secondAttribute="centerX" id="W7f-Si-9hk"/>
                             <constraint firstItem="4Mg-DU-V9u" firstAttribute="leading" secondItem="WhC-f1-kh1" secondAttribute="leading" id="e8y-rB-gKt"/>
+                            <constraint firstItem="7Ih-Vw-5VJ" firstAttribute="centerY" secondItem="4Mg-DU-V9u" secondAttribute="centerY" id="hgC-f5-mDW"/>
                             <constraint firstItem="4Mg-DU-V9u" firstAttribute="top" secondItem="cIv-9W-2EZ" secondAttribute="top" id="xA3-NC-zRN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WhC-f1-kh1"/>
