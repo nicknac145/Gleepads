@@ -102,8 +102,8 @@
 		F2DE9CFD2077B15600920040 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = F2DE9CFC2077B15600920040 /* Share.png */; };
 		F2DE9D002077C01D00920040 /* ZGCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE9CFF2077C01D00920040 /* ZGCarousel.swift */; };
 		F2DE9D022077C05E00920040 /* ImageScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE9D012077C05E00920040 /* ImageScrollVC.swift */; };
-		F2DE9D042077C08F00920040 /* PropertyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE9D032077C08F00920040 /* PropertyVC.swift */; };
 		F2DE9D062077C84300920040 /* imageScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE9D052077C84300920040 /* imageScrollCell.swift */; };
+		F2EB47A0207E7AD700084652 /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB479F207E7AD700084652 /* CheckOutVC.swift */; };
 		F2EBBB9920597EA600DD03A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBBB9820597EA600DD03A9 /* AppDelegate.swift */; };
 		F2EBBB9B20597EA600DD03A9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBBB9A20597EA600DD03A9 /* MainVC.swift */; };
 		F2EBBB9E20597EA600DD03A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EBBB9C20597EA600DD03A9 /* Main.storyboard */; };
@@ -224,8 +224,8 @@
 		F2DE9CFC2077B15600920040 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
 		F2DE9CFF2077C01D00920040 /* ZGCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZGCarousel.swift; sourceTree = "<group>"; };
 		F2DE9D012077C05E00920040 /* ImageScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollVC.swift; sourceTree = "<group>"; };
-		F2DE9D032077C08F00920040 /* PropertyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyVC.swift; sourceTree = "<group>"; };
 		F2DE9D052077C84300920040 /* imageScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageScrollCell.swift; sourceTree = "<group>"; };
+		F2EB479F207E7AD700084652 /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		F2EBBB9520597EA600DD03A9 /* Gleepads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gleepads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EBBB9820597EA600DD03A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EBBB9A20597EA600DD03A9 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -503,7 +503,6 @@
 				F201576420752ECB0053F02F /* CalenderVC.swift */,
 				F298C37920763B1D006E9F09 /* GuestVC.swift */,
 				F2DE9D012077C05E00920040 /* ImageScrollVC.swift */,
-				F2DE9D032077C08F00920040 /* PropertyVC.swift */,
 				F2DE9D052077C84300920040 /* imageScrollCell.swift */,
 				F244C803207BA379000316FE /* PropertyTableVC.swift */,
 			);
@@ -530,6 +529,7 @@
 		F2EBBB8C20597EA600DD03A9 = {
 			isa = PBXGroup;
 			children = (
+				F2EB479F207E7AD700084652 /* CheckOutVC.swift */,
 				F2EBBB9720597EA600DD03A9 /* Gleepads */,
 				F2EBBB9620597EA600DD03A9 /* Products */,
 				5EEA63DA8FC3FA8DB0232F52 /* Pods */,
@@ -789,6 +789,7 @@
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
 				F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */,
 				F29C0582206645D200EC802F /* InviteVC.swift in Sources */,
+				F2EB47A0207E7AD700084652 /* CheckOutVC.swift in Sources */,
 				F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */,
 				F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */,
 				F2330EFD206DFFBE00D328AA /* TypeThree_TableCell.swift in Sources */,
@@ -796,7 +797,6 @@
 				F2EBBB9B20597EA600DD03A9 /* MainVC.swift in Sources */,
 				F2203850207DCA2700C7CA4F /* Similar_CollectionCell.swift in Sources */,
 				F25815552069542C00045DCF /* NotifySettingSwitchCell.swift in Sources */,
-				F2DE9D042077C08F00920040 /* PropertyVC.swift in Sources */,
 				F29C059F2066660D00EC802F /* HeadingCell.swift in Sources */,
 				F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */,
 				F2C1024F206D236F00B4DA6B /* ExploreVC.swift in Sources */,

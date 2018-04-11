@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="601" height="357.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNi-Oc-dHC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNi-Oc-dHC">
                         <rect key="frame" x="20" y="11" width="561" height="29"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <nil key="textColor"/>
@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SKD-GZ-y8H">
-                        <rect key="frame" x="19" y="70.5" width="563" height="238.5"/>
+                        <rect key="frame" x="19" y="70.5" width="563" height="266.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z2Z-m5-2ya">
                             <size key="itemSize" width="50" height="50"/>
@@ -45,7 +45,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="MNi-Oc-dHC" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2jp-7C-sGv"/>
-                    <constraint firstAttribute="bottom" secondItem="SKD-GZ-y8H" secondAttribute="bottom" constant="48.5" id="7sF-UO-tbh"/>
+                    <constraint firstAttribute="bottom" secondItem="SKD-GZ-y8H" secondAttribute="bottom" constant="20.5" id="7sF-UO-tbh"/>
                     <constraint firstItem="MNi-Oc-dHC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="G1e-vq-UuK"/>
                     <constraint firstItem="HqP-yR-4lI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="SGU-Fn-ug6"/>
                     <constraint firstItem="HqP-yR-4lI" firstAttribute="top" secondItem="MNi-Oc-dHC" secondAttribute="bottom" id="duI-iJ-47O"/>

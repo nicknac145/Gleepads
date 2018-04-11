@@ -11,6 +11,14 @@ import UIKit
 class GuestVC: UIViewController {
 
     
+    @IBOutlet var button_value: [Custom_Button]!
+    @IBOutlet weak var adult_value_label: UILabel!
+    @IBOutlet weak var children_value_label: UILabel!
+    @IBOutlet weak var infant_value_label: UILabel!
+    
+    var adultQuantity = 1
+    var childrenQuantity = 0
+    var infantQuantity = 0
     
     @IBOutlet weak var BGView: UIView!
 
@@ -26,14 +34,44 @@ class GuestVC: UIViewController {
     @objc func exit(recog : UIGestureRecognizer){
         self.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  
+   
+    @IBAction func button_actions(_ sender: Custom_Button) {
+        
+        if sender.tag == 0 && adultQuantity > 0{
+            
+            adultQuantity -= 1
+             adult_value_label.text = String(adultQuantity)
+            
+        }
+        
+        else if sender.tag == 1 {
+            
+            adultQuantity += 1
+            adult_value_label.text = String(adultQuantity)
+        }
+        
+        else if sender.tag == 2 && childrenQuantity > 0 {
+            
+            childrenQuantity -= 1
+            children_value_label.text = String(childrenQuantity)
+        }
+        else if sender.tag == 3 {
+            
+            childrenQuantity += 1
+            children_value_label.text = String(childrenQuantity)
+        }
+        else if sender.tag == 4 && infantQuantity > 0 {
+            
+            infantQuantity -= 1
+            infant_value_label.text = String(infantQuantity)
+        }
+        else if sender.tag == 5 {
+            
+            infantQuantity += 1
+            infant_value_label.text = String(infantQuantity)
+        }
     }
-    */
+    
 
 }

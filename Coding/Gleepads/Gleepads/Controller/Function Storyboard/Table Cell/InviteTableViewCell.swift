@@ -11,5 +11,7 @@ import UIKit
 class InviteTableViewCell: UITableViewCell {
 
    
+    @IBOutlet weak var inviteButton: UIButton!
+    
     
 }

@@ -161,7 +161,7 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //                self.parent?.parent?.navigationController?.popViewController(animated: true)
 //                print(self.parent)
                 
-                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as UIViewController, animated: true, completion: nil)
+                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main_Nav") as UIViewController, animated: true, completion: nil)
 
             })
             let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

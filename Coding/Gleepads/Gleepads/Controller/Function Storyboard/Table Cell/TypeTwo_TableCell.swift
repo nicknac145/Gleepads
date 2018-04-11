@@ -44,7 +44,7 @@ class TypeTwo_TableCell: UITableViewCell,UICollectionViewDataSource,UICollection
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 365, height:285)
+        return CGSize(width: 350, height:250)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gleepads/Controller/Function Storyboard/VC/Explore/PropertyVC.swift"
-            timestampString = "545121587.808827"
+            timestampString = "545148586.515502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "ZGitemData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gleepads/Controller/Function Storyboard/VC/Explore/GuestVC.swift"
+            timestampString = "545161211.746492"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "button_actions(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

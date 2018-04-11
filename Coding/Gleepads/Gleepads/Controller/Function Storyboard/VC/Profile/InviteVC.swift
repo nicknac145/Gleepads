@@ -69,6 +69,8 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if dataArray[indexPath.row].cell == 1{
             let cell = Bundle.main.loadNibNamed("InviteTableViewCell", owner: self, options: nil)?.first as! InviteTableViewCell
             
+            let invite = UITapGestureRecognizer(target: self, action: #selector(invitation))
+            cell.inviteButton.addGestureRecognizer(invite)
             return cell
         }
         else{
@@ -79,6 +81,13 @@ class InviteVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    @objc func invitation (recog : UIGestureRecognizer){
+        
+        let inviteActivity = UIActivityViewController(activityItems: ["Invite you to sign up on gleepads: https://gleepads.com"], applicationActivities: nil)
+        
+        inviteActivity.popoverPresentationController?.sourceView = self.view
+        self.present(inviteActivity, animated: true, completion: nil)
+    }
     
     // SETTING HEIGHT OF RESPECTIVE CELL
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

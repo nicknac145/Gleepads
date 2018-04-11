@@ -20,7 +20,8 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
 
     @IBOutlet weak var Similar_collection: UICollectionView!
     
-    
+    var bottomViewNib : UIView!
+    var final = UIApplication.shared.keyWindow
     var timer:Timer!
     var count = 0
     
@@ -42,10 +43,10 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.updateImage), userInfo: nil, repeats: true)
         
         
-        let bottomViewNib = Bundle.main.loadNibNamed("PropertyBottomView", owner: nil, options: nil)?.first as! PropertyBottomView
-        bottomViewNib.frame.origin.y = self.view.frame.size.height - bottomViewNib.frame.size.height
-        bottomViewNib.frame.size.width = self.view.frame.size.width
-         UIApplication.shared.keyWindow?.addSubview(bottomViewNib)
+         self.bottomViewNib = Bundle.main.loadNibNamed("PropertyBottomView", owner: nil, options: nil)?.first as! PropertyBottomView
+        self.bottomViewNib.frame.origin.y = self.view.frame.size.height - bottomViewNib.frame.size.height
+        self.bottomViewNib.frame.size.width = self.view.frame.size.width
+        UIApplication.shared.keyWindow?.addSubview(self.bottomViewNib)
         
         
 
@@ -105,7 +106,9 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     }
     
     @IBAction func dismiss_Action(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+
+        self.navigationController?.popViewController(animated: true)
+        self.bottomViewNib.removeFromSuperview()
     }
     
     
@@ -115,7 +118,6 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         shareActivity.popoverPresentationController?.sourceView = self.view
         self.present(shareActivity, animated: true, completion: nil)
-        
         
         
     }

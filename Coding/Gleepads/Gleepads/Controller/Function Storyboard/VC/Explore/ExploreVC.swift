@@ -91,15 +91,16 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeOne_TableCell") as! TypeOne_TableCell
-            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
 //            cell.TypeOne_Collection.
             
             return cell
         }
         
-        else if indexPath.row == 1{
+        else if indexPath.row == 1 || indexPath.row % 3 == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTwo_TableCell") as! TypeTwo_TableCell
-//            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
 
             return cell
         }
@@ -108,7 +109,8 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
             let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
             
-            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+
             cell.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
             cell.TypeThree_Collection.delegate=self
             cell.TypeThree_Collection.dataSource=self
@@ -124,10 +126,9 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             
             
         }
-        else if indexPath.row == 1{
+        else if indexPath.row == 1 || indexPath.row % 3 == 0{
             
            return 375
-            
         }
         return 575
 
@@ -140,7 +141,6 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
      
-        print(self.buttonView.frame.origin.y)
 //         ************* MOVE TO TOP ********************
 
         if (self.endingOffset < scrollView.contentOffset.y) {
@@ -170,10 +170,10 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PropertyVC")
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "PropertyVC")
+//        self.navigationController?.pushViewController(vc!, animated: true)
+//    }
     
 }
 
@@ -199,7 +199,7 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print("HITTTTTT")
+        
         self.performSegue(withIdentifier: "detail", sender: nil)
         
     }
