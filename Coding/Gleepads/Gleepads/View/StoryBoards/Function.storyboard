@@ -865,7 +865,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
+                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </scrollView>
@@ -1717,7 +1717,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Y3-fZr" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
-                                        <rect key="frame" x="327.5" y="193.5" width="50" height="50"/>
+                                        <rect key="frame" x="320.5" y="193.5" width="50" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pq9-qa-Zt8" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="5" width="40" height="40"/>
@@ -1764,6 +1764,7 @@
                                             <constraint firstItem="pq9-qa-Zt8" firstAttribute="top" secondItem="XMG-Y3-fZr" secondAttribute="top" constant="5" id="UZm-A8-tzx"/>
                                             <constraint firstAttribute="trailing" secondItem="pq9-qa-Zt8" secondAttribute="trailing" constant="5" id="eUG-C3-Bum"/>
                                             <constraint firstItem="pq9-qa-Zt8" firstAttribute="leading" secondItem="XMG-Y3-fZr" secondAttribute="leading" constant="5" id="ixp-jG-lPX"/>
+                                            <constraint firstAttribute="width" secondItem="XMG-Y3-fZr" secondAttribute="height" multiplier="1:1" id="nbB-jj-Yjv"/>
                                             <constraint firstAttribute="bottom" secondItem="pq9-qa-Zt8" secondAttribute="bottom" constant="5" id="vrf-fO-nft"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -1776,7 +1777,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.8026273544520548" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6ER-KJ-5wj" firstAttribute="centerY" secondItem="MZg-rH-gXt" secondAttribute="centerY" id="6om-pN-nzA"/>
-                                    <constraint firstItem="XMG-Y3-fZr" firstAttribute="centerX" secondItem="MZg-rH-gXt" secondAttribute="centerX" constant="165" id="Um8-Je-T4f"/>
+                                    <constraint firstItem="XMG-Y3-fZr" firstAttribute="centerX" secondItem="MZg-rH-gXt" secondAttribute="centerX" constant="158" id="Um8-Je-T4f"/>
                                     <constraint firstItem="6ER-KJ-5wj" firstAttribute="centerX" secondItem="MZg-rH-gXt" secondAttribute="centerX" id="UsT-Od-A94"/>
                                     <constraint firstItem="XMG-Y3-fZr" firstAttribute="height" secondItem="MZg-rH-gXt" secondAttribute="height" multiplier="0.15" constant="-47.049999999999997" id="aFu-cJ-LDU"/>
                                     <constraint firstItem="6ER-KJ-5wj" firstAttribute="height" secondItem="MZg-rH-gXt" secondAttribute="height" multiplier="0.3" id="ma0-71-Pf9"/>
