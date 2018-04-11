@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PropertyBottomView" customModule="Gleepads" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="99"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQt-jg-LpC" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="5" width="386" height="89"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X25-rt-3t8">
+                            <rect key="frame" x="22" y="22" width="107.5" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$88 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nve-tH-4Si">
+                                    <rect key="frame" x="0.0" y="0.0" width="38.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="per night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvn-rK-LhI">
+                                    <rect key="frame" x="38.5" y="0.0" width="69" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4B-mC-UQZ" customClass="Custom_Button" customModule="Gleepads" customModuleProvider="target">
+                            <rect key="frame" x="240" y="22" width="126" height="45"/>
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="126" id="3Wj-3z-olY"/>
+                                <constraint firstAttribute="height" constant="45" id="myO-m2-fUD"/>
+                            </constraints>
+                            <state key="normal" title="Check Availabilty">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LNj-Vp-9c6">
+                            <rect key="frame" x="8" y="49" width="170" height="32"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="I9M-Cz-WBl">
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="32"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-e8-AFE">
+                                    <rect key="frame" x="34" y="0.0" width="34" height="32"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-rg-Sf8">
+                                    <rect key="frame" x="68" y="0.0" width="34" height="32"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQj-kg-keM">
+                                    <rect key="frame" x="102" y="0.0" width="34" height="32"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-ra-hQ7">
+                                    <rect key="frame" x="136" y="0.0" width="34" height="32"/>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="X25-rt-3t8" firstAttribute="top" secondItem="MQt-jg-LpC" secondAttribute="top" constant="22" id="Abp-0f-KpH"/>
+                        <constraint firstItem="LNj-Vp-9c6" firstAttribute="top" secondItem="X25-rt-3t8" secondAttribute="bottom" constant="6.5" id="CA6-n9-QqR"/>
+                        <constraint firstItem="X25-rt-3t8" firstAttribute="leading" secondItem="MQt-jg-LpC" secondAttribute="leading" constant="22" id="Y2d-bX-Z03"/>
+                        <constraint firstAttribute="trailing" secondItem="X4B-mC-UQZ" secondAttribute="trailing" constant="20" id="aId-2T-o9s"/>
+                        <constraint firstItem="X4B-mC-UQZ" firstAttribute="leading" secondItem="LNj-Vp-9c6" secondAttribute="trailing" constant="62" id="aff-re-Q02"/>
+                        <constraint firstItem="LNj-Vp-9c6" firstAttribute="leading" secondItem="MQt-jg-LpC" secondAttribute="leading" constant="8" id="gEu-6S-myw"/>
+                        <constraint firstItem="X4B-mC-UQZ" firstAttribute="top" secondItem="MQt-jg-LpC" secondAttribute="top" constant="22" id="lBr-0V-Fvi"/>
+                        <constraint firstAttribute="bottom" secondItem="X4B-mC-UQZ" secondAttribute="bottom" constant="22" id="pCa-OK-C2i"/>
+                        <constraint firstAttribute="bottom" secondItem="LNj-Vp-9c6" secondAttribute="bottom" constant="8" id="sZC-zV-ra8"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MQt-jg-LpC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0qR-04-Lj5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MQt-jg-LpC" secondAttribute="trailing" id="Ii8-6C-Gxq"/>
+                <constraint firstItem="MQt-jg-LpC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="Xe7-03-esB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MQt-jg-LpC" secondAttribute="bottom" constant="5" id="yOI-xR-3lK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="rent" destination="nve-tH-4Si" id="5WI-zO-2w8"/>
+            </connections>
+            <point key="canvasLocation" x="-224" y="-241.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="black_star.png" width="32" height="32"/>
+        <image name="golden_star.png" width="30" height="30"/>
+    </resources>
+</document>

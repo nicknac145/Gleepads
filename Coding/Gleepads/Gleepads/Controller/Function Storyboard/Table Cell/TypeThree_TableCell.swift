@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+class TypeThree_TableCell: UITableViewCell {
  
 
     @IBOutlet weak var TypeThree_Title: UILabel!
@@ -22,11 +22,11 @@ class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollec
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        TypeThree_Collection.delegate = self
-        TypeThree_Collection.dataSource = self
-        let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
-        self.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
-    
+//        TypeThree_Collection.delegate = self
+//        TypeThree_Collection.dataSource = self
+//        let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
+//        self.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
+//    
     }
     
     
@@ -34,31 +34,30 @@ class TypeThree_TableCell: UITableViewCell , UICollectionViewDataSource,UICollec
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:150, height: 230)
-    }
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print("HITTTTTT")
-        
-     
-    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 4
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath)
+//        return cell
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width:150, height: 230)
+//    }
+//    
+//    
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        
+//        print("HITTTTTT")
+//     
+//    }
     
 }

@@ -15,9 +15,11 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     @IBOutlet weak var exploreTable: UITableView!
     
-    @IBOutlet weak var buttonView: NSLayoutConstraint!
-   
-    @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonView: UIView!
+    
+    @IBOutlet weak var dateButton: Custom_Button!
+    
+    @IBOutlet weak var guestButton: UIButton!
     
     var endingOffset : CGFloat = 0
 
@@ -84,6 +86,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         
         
         if indexPath.row == 0{
@@ -100,9 +103,15 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
             return cell
         }
+       
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
+            let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
             
+            
+            cell.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
+            cell.TypeThree_Collection.delegate=self
+            cell.TypeThree_Collection.dataSource=self
             return cell
         }
       
@@ -131,15 +140,18 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
      
-        
-        
-        // ************* MOVE TO TOP ********************
+        print(self.buttonView.frame.origin.y)
+//         ************* MOVE TO TOP ********************
 
         if (self.endingOffset < scrollView.contentOffset.y) {
-                if (self.buttonBottomConstraint.constant <= 555)
-                        {
-                            self.buttonBottomConstraint.constant += 1
-                        }
+//
+            UIView.animate(withDuration: 0.7) {
+                self.buttonView.frame.origin.y = -28
+                
+                self.dateButton.alpha = 0
+                self.guestButton.alpha = 0
+
+            }
         }
 
 
@@ -147,10 +159,13 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
         else if (self.endingOffset > scrollView.contentOffset.y) {
 
-                if self.buttonBottomConstraint.constant >= 530
-                    {
-                        self.buttonBottomConstraint.constant -= 1
-                    }
+
+            UIView.animate(withDuration: 0.7) {
+                self.buttonView.frame.origin.y = 0
+                self.dateButton.alpha = 1
+                self.guestButton.alpha = 1
+                
+            }
         }
         
     }
@@ -160,4 +175,32 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
+}
+
+
+extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+   
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width:150, height: 230)
+    }
+    
+
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("HITTTTTT")
+        self.performSegue(withIdentifier: "detail", sender: nil)
+        
+    }
 }

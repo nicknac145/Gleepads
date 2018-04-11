@@ -23,17 +23,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="juV-ao-NvW">
-                                <rect key="frame" x="93.5" y="283" width="187.5" height="100"/>
+                                <rect key="frame" x="93.5" y="283" width="180" height="90"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="juV-ao-NvW" firstAttribute="width" secondItem="uEX-8j-zZ6" secondAttribute="width" multiplier="0.5" id="1fY-VB-5yh"/>
+                            <constraint firstItem="juV-ao-NvW" firstAttribute="width" secondItem="uEX-8j-zZ6" secondAttribute="width" multiplier="0.5" constant="-7.5" id="1fY-VB-5yh"/>
                             <constraint firstItem="uEX-8j-zZ6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Rg-SC-O0Q"/>
-                            <constraint firstItem="juV-ao-NvW" firstAttribute="centerX" secondItem="uEX-8j-zZ6" secondAttribute="centerX" id="IIx-na-HqF"/>
+                            <constraint firstItem="juV-ao-NvW" firstAttribute="centerX" secondItem="uEX-8j-zZ6" secondAttribute="centerX" constant="-4" id="IIx-na-HqF"/>
                             <constraint firstItem="uEX-8j-zZ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kpb-8v-BfF"/>
                             <constraint firstItem="uEX-8j-zZ6" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="PZC-oH-GF3"/>
-                            <constraint firstItem="juV-ao-NvW" firstAttribute="centerY" secondItem="uEX-8j-zZ6" secondAttribute="centerY" id="W45-Cc-eok"/>
-                            <constraint firstItem="juV-ao-NvW" firstAttribute="height" secondItem="uEX-8j-zZ6" secondAttribute="height" multiplier="0.15" id="hKY-xe-Tip"/>
+                            <constraint firstItem="juV-ao-NvW" firstAttribute="centerY" secondItem="uEX-8j-zZ6" secondAttribute="centerY" constant="-5.5" id="W45-Cc-eok"/>
+                            <constraint firstItem="juV-ao-NvW" firstAttribute="height" secondItem="uEX-8j-zZ6" secondAttribute="height" multiplier="0.15" constant="-10.049999999999997" id="hKY-xe-Tip"/>
                             <constraint firstItem="uEX-8j-zZ6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wbn-aQ-TfV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
