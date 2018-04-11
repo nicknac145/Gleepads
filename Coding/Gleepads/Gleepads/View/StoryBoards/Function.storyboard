@@ -1406,6 +1406,9 @@
                                         <state key="normal" title="X">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="dismiss_Action:" destination="gQi-ZN-Y0q" eventType="touchUpInside" id="z5m-tF-Ya4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

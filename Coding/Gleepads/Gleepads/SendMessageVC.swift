@@ -28,5 +28,8 @@ class SendMessageVC: UIViewController {
     @IBAction func guest_Action(_ sender: Any) {
     }
    
-
+    @IBAction func dismiss_Action(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
