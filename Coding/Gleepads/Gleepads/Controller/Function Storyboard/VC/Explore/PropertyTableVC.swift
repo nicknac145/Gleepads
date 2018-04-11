@@ -101,8 +101,24 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Similar_Home", for: indexPath) as! Similar_CollectionCell
         
         return cell
+        
     }
     
+    @IBAction func dismiss_Action(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func share_Action(_ sender: Any) {
+        let shareActivity = UIActivityViewController(activityItems: ["www.gleepad.com"], applicationActivities: nil)
+        
+        shareActivity.popoverPresentationController?.sourceView = self.view
+        self.present(shareActivity, animated: true, completion: nil)
+        
+        
+        
+    }
     
 }
     
