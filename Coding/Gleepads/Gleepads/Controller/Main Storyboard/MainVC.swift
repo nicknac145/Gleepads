@@ -9,8 +9,17 @@
 import UIKit
 import SafariServices
 import SwiftVideoBackground
+import GoogleSignIn
+import FirebaseAuth
+import Firebase
 
-class MainVC: UIViewController {
+import FBSDKLoginKit
+import FacebookLogin
+import FacebookCore
+
+class MainVC: UIViewController,GIDSignInUIDelegate {
+   
+    
 
  // ***********  variable ***************
     @IBOutlet weak var bottomLabel: UILabel!
@@ -23,6 +32,10 @@ class MainVC: UIViewController {
 Phrase_Label.font = UIFont(name: "BebasNeue-Regular", size: 15.0)
         
 bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
+        
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
  // ***********  Configuration Navigation bar setting ***************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -61,6 +74,46 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
     
     }
     
+    
+     // *********** Google BUTTON ACTION FUNCTION  ***************
+    @IBAction func GoogleButton(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+   
+     // *********** Facebook BUTTON ACTION FUNCTION  ***************
+    @IBAction func facebookButton(_ sender: Any) {
+        
 
+        FBSDKLoginManager().logIn(withReadPermissions: ["email","public_profile"], from: self) { (result, error) in
+
+            if error == nil && result?.token != nil{
+
+                guard let accessToken = result?.token.tokenString else{
+                    return
+                }
+
+
+                print(accessToken)
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    print("SUCCESSFUL LOGIN WITH FACEBOOK")
+//                    self.performSegue(withIdentifier: "Function_Segue", sender: nil)
+
+                }
+
+            }
+            else{
+                print(error?.localizedDescription)
+            }
+
+        }
+        
+    }
+    
 }
 

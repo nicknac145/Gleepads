@@ -8,7 +8,8 @@
 
 import UIKit
 import SafariServices
-//import Shift
+import FirebaseAuth
+import Firebase
 
 
 class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -162,6 +163,13 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //                print(self.parent)
                 
                 self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main_Nav") as UIViewController, animated: true, completion: nil)
+                
+                let firebaseAuth = Auth.auth()
+                do {
+                    try firebaseAuth.signOut()
+                } catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+                }
 
             })
             let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

@@ -49,6 +49,7 @@
 		F244C80C207BC114000316FE /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C80B207BC114000316FE /* pool.png */; };
 		F244C80E207BC5FD000316FE /* PropertyBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F244C80D207BC5FD000316FE /* PropertyBottomView.xib */; };
 		F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244C80F207BC616000316FE /* PropertyBottomView.swift */; };
+		F2532281208E0A8100AB75E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
 		F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F258154920692D9800045DCF /* Gleepads_witout_BG.png */; };
@@ -171,6 +172,7 @@
 		F244C80B207BC114000316FE /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
 		F244C80D207BC5FD000316FE /* PropertyBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyBottomView.xib; sourceTree = "<group>"; };
 		F244C80F207BC616000316FE /* PropertyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBottomView.swift; sourceTree = "<group>"; };
+		F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F258154320692AA500045DCF /* forget.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = forget.mp4; sourceTree = "<group>"; };
 		F258154420692AA500045DCF /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
 		F258154520692AA500045DCF /*  signup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = " signup.mp4"; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
 				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
 				F201576420752ECB0053F02F /* CalenderVC.swift */,
+				F2EB479F207E7AD700084652 /* CheckOutVC.swift */,
 				F298C37920763B1D006E9F09 /* GuestVC.swift */,
 				F2DE9D012077C05E00920040 /* ImageScrollVC.swift */,
 				F2DE9D052077C84300920040 /* imageScrollCell.swift */,
@@ -529,7 +532,6 @@
 		F2EBBB8C20597EA600DD03A9 = {
 			isa = PBXGroup;
 			children = (
-				F2EB479F207E7AD700084652 /* CheckOutVC.swift */,
 				F2EBBB9720597EA600DD03A9 /* Gleepads */,
 				F2EBBB9620597EA600DD03A9 /* Products */,
 				5EEA63DA8FC3FA8DB0232F52 /* Pods */,
@@ -560,6 +562,7 @@
 				F2EBBB9F20597EA600DD03A9 /* Assets.xcassets */,
 				F2EBBBA120597EA600DD03A9 /* LaunchScreen.storyboard */,
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
+				F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */,
 				F2C1025D206D359A00B4DA6B /* TEST SWIFT */,
 				F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */,
 			);
@@ -671,6 +674,7 @@
 				F27B514E206585FF00599F82 /* intro.mp4 in Resources */,
 				F2330EE8206DF4FD00D328AA /* TypeOne_TableCell.xib in Resources */,
 				F2C10257206D2C5A00B4DA6B /* google.png in Resources */,
+				F2532281208E0A8100AB75E0 /* GoogleService-Info.plist in Resources */,
 				F244C80A207BC039000316FE /* dine.png in Resources */,
 				F2EF76E32068EAA100B378BB /* feedback.png in Resources */,
 				F2EF76D82068EAA100B378BB /* credit.png in Resources */,
@@ -721,9 +725,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,17 +744,39 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Gleepads/Pods-Gleepads-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/Shift/Shift.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

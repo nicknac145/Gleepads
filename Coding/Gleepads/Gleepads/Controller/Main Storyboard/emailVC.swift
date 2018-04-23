@@ -8,11 +8,14 @@
 
 import UIKit
 import SwiftVideoBackground
+import Firebase
+import FirebaseAuth
 
 class emailVC: UIViewController {
 
     @IBOutlet weak var nextButton: Custom_Button!
     @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passTF: UITextField!
     
     
     override func viewDidLoad() {
@@ -44,6 +47,24 @@ class emailVC: UIViewController {
     }
     
     
+    // Action on pressing next button
+    @IBAction func nextButtonAction(_ sender: Any) {
+      
+        let newEmail = emailTF.text
+        let password = passTF.text
+        Auth.auth().createUser(withEmail: newEmail!, password: password!) { (user, error) in
+
+            if error == nil{
+                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main_Nav") as UIViewController, animated: true, completion: nil)
+
+            }
+        }
+    }
+    
+    
+    
+    
+    
     // FUNCTION THAT CHECK WHEN TO ENABLE BUTTON
     @objc func enableButton(_ textField : UITextField){
         
@@ -51,6 +72,12 @@ class emailVC: UIViewController {
             nextButton.isEnabled = true
             nextButton.alpha = 1.0
         }
+//        else if (passTF.isEditing == true && emailTF.text?.isEmpty == false){
+//            nextButton.isEnabled = true
+//            nextButton.alpha = 1.0
+//
+//        }
+        
        
         
     }

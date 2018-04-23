@@ -63,8 +63,8 @@ open class BubbleTransition: NSObject {
     /**
     The color of the bubble. Make sure that it matches the destination controller's background color.
     */
-    open var bubbleColor: UIColor = UIColor(red: 0, green: 0, blue: 255, alpha: 0.6)
-
+    open var bubbleColor: UIColor = .white
+    
     open fileprivate(set) var bubble = UIView()
 
     /**

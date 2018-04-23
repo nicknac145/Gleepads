@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Shift
 
 class testVC: UIViewController {
 
@@ -15,19 +14,7 @@ class testVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let view = self.view as! ShiftView
-        view.setColors([UIColor.orange,
-                        UIColor.red,
-                        UIColor.blue,
-                        UIColor.purple,
-                        UIColor.green,
-                        UIColor.brown,
-                        UIColor.cyan,
-                        UIColor.yellow,
-                        UIColor.gray,
-                        UIColor.lightGray,
-                        ])
-        view.startTimedAnimation()
+      
     }
 
  

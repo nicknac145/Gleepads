@@ -5,11 +5,29 @@ target 'Gleepads' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Gleepads
+# Firebase
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+
+
+# Google
+pod 'GoogleSignIn'
+
+# Facebook
+pod 'FBSDKLoginKit'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+
+# Pods for UI Work
 pod 'SwiftVideoBackground', '~> 3.0'
 
 pod 'BubbleTransition'
 
-pod "Shift"
+#pod "Shift"
+
+# Calendar
 pod 'CVCalendar'
 end

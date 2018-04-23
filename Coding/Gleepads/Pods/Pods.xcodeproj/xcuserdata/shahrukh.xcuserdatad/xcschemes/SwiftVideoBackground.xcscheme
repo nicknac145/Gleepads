@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B429E4A17B3AF55EFDA5E6249B6BC435'
+               BlueprintIdentifier = 'DA8E88FE71BE550BDEB694008C90E736'
                BlueprintName = 'SwiftVideoBackground'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwiftVideoBackground.framework'>
