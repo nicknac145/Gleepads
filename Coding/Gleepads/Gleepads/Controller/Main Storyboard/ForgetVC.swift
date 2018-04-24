@@ -8,9 +8,11 @@
 
 import UIKit
 import SwiftVideoBackground
+import FirebaseAuth
 
 class ForgetVC: UIViewController {
-
+    @IBOutlet weak var emailTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,13 +31,26 @@ class ForgetVC: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
     
         
-        // ************** SEGUE TO INITIAL VIEW CONTROLLER  ***************
+        // ************** Reset Password  ***************
 
-        let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        
+        Auth.auth().sendPasswordReset(withEmail: emailTF.text!) { (error) in
+            if error == nil{
+                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+                
+                let navController = UINavigationController(rootViewController: mainVC)
+                self.present(navController, animated: true, completion: nil)
+                
+            }
+            else{
+                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
+                let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(actionButton)
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
 
-        let navController = UINavigationController(rootViewController: mainVC)
-        self.present(navController, animated: true, completion: nil)
-  
     }
     
     @IBAction func backButton(_ sender: Any) {

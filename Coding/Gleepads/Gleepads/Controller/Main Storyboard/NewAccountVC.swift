@@ -60,7 +60,18 @@ class NewAccountVC: UIViewController {
         }
         
     }
+    // ******* Action Function "nextButton" **********
 
+    @IBAction func nextButtonAction(_ sender: Any) {
+        
+        performSegue(withIdentifier: "Email_Segue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let email_dest = segue.destination as! emailVC
+        email_dest.fName = firstNameTF.text!
+        email_dest.lName = lastNameTF.text!
+    }
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

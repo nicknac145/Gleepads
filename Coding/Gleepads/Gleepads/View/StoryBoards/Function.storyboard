@@ -865,7 +865,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
+                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </scrollView>
@@ -1264,7 +1264,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl0-Vw-cwp">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="V30-dY-LuQ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Function_First_View" automaticallyAdjustsScrollViewInsets="NO" id="V30-dY-LuQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v5y-et-pRb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

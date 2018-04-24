@@ -8,8 +8,8 @@
 
 import UIKit
 import SwiftVideoBackground
-import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class emailVC: UIViewController {
 
@@ -18,9 +18,14 @@ class emailVC: UIViewController {
     @IBOutlet weak var passTF: UITextField!
     
     
+    var fName : String?
+    var lName : String?
+    
+    var dbRef = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // ************ remove Navigator bar Border *************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -55,8 +60,26 @@ class emailVC: UIViewController {
         Auth.auth().createUser(withEmail: newEmail!, password: password!) { (user, error) in
 
             if error == nil{
-                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main_Nav") as UIViewController, animated: true, completion: nil)
+               
+                // *** update database node "USER-PROFILE" ***
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Fname").setValue(self.fName!)
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Lname").setValue(self.lName!)
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Email").setValue(Auth.auth().currentUser?.email)
+                
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Uid").setValue(Auth.auth().currentUser?.uid)
+                
+                // *** SEGUE RETURN STARTUP SCENE ***
 
+                self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main_Nav") as UIViewController, animated: true, completion: nil)
+                
+                
+            }
+            else{
+                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
+                let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(actionButton)
+                self.present(alert, animated: true, completion: nil)
+                
             }
         }
     }

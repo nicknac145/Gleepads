@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftVideoBackground
+import Firebase
+import FirebaseAuth
 
 class SignInVC: UIViewController {
 
@@ -47,7 +49,21 @@ class SignInVC: UIViewController {
 
     @IBAction func nextButton(_ sender: Any) {
         
-    
+        Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { (user, error) in
+           
+            if error == nil{
+                  self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
+            }
+            else{
+                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
+                let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(actionButton)
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+        
+  
     }
     
     @IBAction func backButton(_ sender: Any) {

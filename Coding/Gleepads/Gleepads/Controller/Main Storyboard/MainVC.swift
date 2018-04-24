@@ -17,7 +17,7 @@ import FBSDKLoginKit
 import FacebookLogin
 import FacebookCore
 
-class MainVC: UIViewController,GIDSignInUIDelegate {
+class MainVC: UIViewController,GIDSignInUIDelegate,GIDSignInDelegate {
    
     
 
@@ -35,6 +35,12 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
         
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        
+        
+        if Auth.auth().currentUser != nil {
+             self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
+        }
         
  // ***********  Configuration Navigation bar setting ***************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -78,8 +84,45 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
      // *********** Google BUTTON ACTION FUNCTION  ***************
     @IBAction func GoogleButton(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
+        
+        
     }
    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        
+        if  error == nil {
+            // ...
+            guard let authentication = user.authentication else { return }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                           accessToken: authentication.accessToken)
+            
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if let error = error {
+                    // ...
+                    print(error.localizedDescription)
+                }
+                print("Google Sign IN Successfully")
+                 self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
+                
+            }
+            
+        }
+        
+        else{
+            let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
+            let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(actionButton)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+      
+    }
+    
+    
+    
+    
      // *********** Facebook BUTTON ACTION FUNCTION  ***************
     @IBAction func facebookButton(_ sender: Any) {
         
@@ -92,8 +135,6 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                     return
                 }
 
-
-                print(accessToken)
                 let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
 
                 Auth.auth().signIn(with: credential) { (user, error) in
@@ -102,13 +143,16 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                         return
                     }
                     print("SUCCESSFUL LOGIN WITH FACEBOOK")
-//                    self.performSegue(withIdentifier: "Function_Segue", sender: nil)
-
+                    self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
                 }
 
             }
             else{
-                print(error?.localizedDescription)
+                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
+                let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(actionButton)
+                self.present(alert, animated: true, completion: nil)
+                
             }
 
         }

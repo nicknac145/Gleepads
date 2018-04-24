@@ -57,6 +57,7 @@
 		F2581552206953FB00045DCF /* NotifySettingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */; };
 		F25815552069542C00045DCF /* NotifySettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */; };
 		F25815562069542C00045DCF /* NotifySettingSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */; };
+		F25C77BE208F8D860015CA85 /* Host.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F25C77BD208F8D860015CA85 /* Host.mp4 */; };
 		F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2648482206E76B2008271BE /* BebasNeue-Regular.otf */; };
 		F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */; };
 		F2648488206E94F9008271BE /* karachi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2648486206E94F9008271BE /* karachi.jpg */; };
@@ -181,6 +182,7 @@
 		F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingLabelCell.xib; sourceTree = "<group>"; };
 		F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingSwitchCell.swift; sourceTree = "<group>"; };
 		F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingSwitchCell.xib; sourceTree = "<group>"; };
+		F25C77BD208F8D860015CA85 /* Host.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Host.mp4; sourceTree = "<group>"; };
 		F2648482206E76B2008271BE /* BebasNeue-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.otf"; sourceTree = "<group>"; };
 		F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		F2648486206E94F9008271BE /* karachi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = karachi.jpg; path = "../../../../images & icon/karachi.jpg"; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				F258154520692AA500045DCF /*  signup.mp4 */,
 				F2FD44D9206AB1AC00913885 /* e-mail.mp4 */,
 				F258154320692AA500045DCF /* forget.mp4 */,
+				F25C77BD208F8D860015CA85 /* Host.mp4 */,
 				F258154420692AA500045DCF /* login.mp4 */,
 				F2EF76A02068E89C00B378BB /* launched_screen.mp4 */,
 				F2EF76A22068E89C00B378BB /* Social.mp4 */,
@@ -703,6 +706,7 @@
 				F2C10259206D2EF200B4DA6B /* facebook.png in Resources */,
 				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
 				F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */,
+				F25C77BE208F8D860015CA85 /* Host.mp4 in Resources */,
 				F2EF76D92068EAA100B378BB /* border_image.png in Resources */,
 				F2330F01206E0FC200D328AA /* golden_star.png in Resources */,
 				F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */,

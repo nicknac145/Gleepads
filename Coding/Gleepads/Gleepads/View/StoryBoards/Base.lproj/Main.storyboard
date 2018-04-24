@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NmZ-lM-pJi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GBA-AK-rAx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -128,9 +128,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="nextButton:" destination="dUS-oS-vZD" eventType="touchUpInside" id="kp5-lg-ymD"/>
-                                            <segue destination="95w-Y1-1DN" kind="popoverPresentation" popoverAnchorView="cK5-3S-Anv" id="bV6-9s-7Wp">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -176,6 +173,7 @@
                     <connections>
                         <outlet property="emailTF" destination="8wt-Rv-ose" id="meC-21-EiP"/>
                         <outlet property="passwordTF" destination="gdL-Uc-Lhj" id="GRr-fV-8Lu"/>
+                        <segue destination="95w-Y1-1DN" kind="presentation" id="wT9-wZ-NJE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rla-4L-Y67" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,6 +305,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTF" destination="bH6-df-Y65" id="SUX-Oz-5ej"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFd-gG-hrs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,7 +548,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Y1m-OM-NJs" kind="show" id="PRa-cT-TBy"/>
+                                            <action selector="backButton:" destination="Axv-k9-IUT" eventType="touchUpInside" id="fRe-Ty-bv8"/>
+                                            <action selector="nextButtonAction:" destination="Axv-k9-IUT" eventType="touchUpInside" id="eEv-WU-hEK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -608,6 +610,7 @@
                         <outlet property="NextButton" destination="PZ8-Kp-PY3" id="PFa-rN-Bxn"/>
                         <outlet property="firstNameTF" destination="ueV-Qf-7zB" id="Zzc-xi-CBx"/>
                         <outlet property="lastNameTF" destination="Smo-97-qnj" id="MCd-DO-cv6"/>
+                        <segue destination="Y1m-OM-NJs" kind="show" identifier="Email_Segue" id="oyt-pE-Q3I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uo-EH-Tv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -832,13 +835,36 @@
                     <view key="view" contentMode="scaleToFill" id="gA8-L6-vHW" customClass="ShiftView" customModule="Shift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YZ1-i6-LyG">
+                                <rect key="frame" x="0.0" y="136" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="546280731.57964396">
+                                    <!--2018-04-24 16:38:51 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="action:" destination="GBA-AK-rAx" eventType="valueChanged" id="Zsx-Es-6r0"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtA-Py-j9f">
+                                <rect key="frame" x="69" y="83" width="236" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Bhb-ZS-uHo"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="TtA-Py-j9f" id="xku-IW-ZDE"/>
+                        <outlet property="dob" destination="YZ1-i6-LyG" id="tcA-JJ-0yn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAe-B8-vkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2030" y="1943"/>
+            <point key="canvasLocation" x="-2031.2" y="1942.5787106446778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t6X-nS-xMe">
@@ -868,6 +894,6 @@
         <image name="logo.png" width="349" height="412"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UlE-xu-tGm"/>
+        <segue reference="wT9-wZ-NJE"/>
     </inferredMetricsTieBreakers>
 </document>
