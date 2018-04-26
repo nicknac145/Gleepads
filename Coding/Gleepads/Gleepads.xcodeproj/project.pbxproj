@@ -49,6 +49,7 @@
 		F244C80C207BC114000316FE /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C80B207BC114000316FE /* pool.png */; };
 		F244C80E207BC5FD000316FE /* PropertyBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F244C80D207BC5FD000316FE /* PropertyBottomView.xib */; };
 		F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244C80F207BC616000316FE /* PropertyBottomView.swift */; };
+		F247B1B22091D6AE00FFF478 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */; };
 		F2532281208E0A8100AB75E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
@@ -173,6 +174,7 @@
 		F244C80B207BC114000316FE /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
 		F244C80D207BC5FD000316FE /* PropertyBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyBottomView.xib; sourceTree = "<group>"; };
 		F244C80F207BC616000316FE /* PropertyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBottomView.swift; sourceTree = "<group>"; };
+		F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F258154320692AA500045DCF /* forget.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = forget.mp4; sourceTree = "<group>"; };
 		F258154420692AA500045DCF /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				F2DE9D012077C05E00920040 /* ImageScrollVC.swift */,
 				F2DE9D052077C84300920040 /* imageScrollCell.swift */,
 				F244C803207BA379000316FE /* PropertyTableVC.swift */,
+				F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -778,6 +782,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -812,6 +817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F247B1B22091D6AE00FFF478 /* SearchResultVC.swift in Sources */,
 				F2C10253206D262500B4DA6B /* InboxVC.swift in Sources */,
 				F29C0580206645B100EC802F /* NotificationVC.swift in Sources */,
 				F29C058E2066473F00EC802F /* FeedbackVC.swift in Sources */,

@@ -20,12 +20,17 @@ class emailVC: UIViewController {
     
     var fName : String?
     var lName : String?
+    var dob : String?
+    
     
     var dbRef = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        print(dob!)
+        
         // ************ remove Navigator bar Border *************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -49,6 +54,7 @@ class emailVC: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    
     }
     
     
@@ -67,6 +73,8 @@ class emailVC: UIViewController {
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Email").setValue(Auth.auth().currentUser?.email)
                 
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Uid").setValue(Auth.auth().currentUser?.uid)
+                
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue(self.dob!)
                 
                 // *** SEGUE RETURN STARTUP SCENE ***
 

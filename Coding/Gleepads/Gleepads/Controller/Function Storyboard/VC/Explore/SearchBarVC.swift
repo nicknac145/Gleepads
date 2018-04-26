@@ -10,25 +10,20 @@ import UIKit
 //import Shift
 
 
-class SearchBarVC: UIViewController {
+class SearchBarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ 
+    
 
+    var dump = ["karachi", "lahore"]
+    
+    @IBOutlet weak var searchResultTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchResultTable.delegate = self
+        searchResultTable.dataSource = self
 
-//        let view = self.view as! ShiftView
-//        view.setColors([UIColor.yellow,
-//                        UIColor.brown,
-//                        UIColor.orange,
-//                        UIColor.red,
-//                        UIColor.blue,
-//                        UIColor.purple,
-//                        UIColor.cyan,
-//                        UIColor.green,
-//           
-//            ])
-//        
-//        
-//        view.startTimedAnimation()
+        
     let searchVC = UISearchController(searchResultsController: nil)
         
         searchVC.searchBar.placeholder = "Where to?"
@@ -41,5 +36,20 @@ class SearchBarVC: UIViewController {
 
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dump.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = dump[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ResultSegue", sender: self)
     }
 }

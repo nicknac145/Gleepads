@@ -144,16 +144,22 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                     }
                     print("SUCCESSFUL LOGIN WITH FACEBOOK")
                     self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
+//                    print(user?.displayName)
+//                    print(user?.email)
                 }
 
             }
+            
             else{
-                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
-                let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(actionButton)
-                self.present(alert, animated: true, completion: nil)
-                
+                print(error?.localizedDescription)
             }
+//            else{
+//                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: .alert)
+//                let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alert.addAction(actionButton)
+//                self.present(alert, animated: true, completion: nil)
+//
+//            }
 
         }
         
