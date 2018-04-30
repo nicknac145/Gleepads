@@ -36,10 +36,19 @@ class ForgetVC: UIViewController {
         
         Auth.auth().sendPasswordReset(withEmail: emailTF.text!) { (error) in
             if error == nil{
-                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
                 
-                let navController = UINavigationController(rootViewController: mainVC)
-                self.present(navController, animated: true, completion: nil)
+                let alert = UIAlertController(title: "Alert", message: "Step to Reset Password has been sent to your email address ", preferredStyle: .alert)
+                let actionButton = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+                    
+                    let navController = UINavigationController(rootViewController: mainVC)
+                    self.present(navController, animated: true, completion: nil)
+                })
+                alert.addAction(actionButton)
+               
+                self.present(alert, animated: true, completion: nil)
+                
+               
                 
             }
             else{

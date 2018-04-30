@@ -58,7 +58,11 @@
 		F2581552206953FB00045DCF /* NotifySettingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */; };
 		F25815552069542C00045DCF /* NotifySettingSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */; };
 		F25815562069542C00045DCF /* NotifySettingSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */; };
-		F25C77BE208F8D860015CA85 /* Host.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F25C77BD208F8D860015CA85 /* Host.mp4 */; };
+		F25B56B92094C1B10023406D /* Step1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56B82094C1B10023406D /* Step1VC.swift */; };
+		F25B56BB2094C1C70023406D /* Step2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56BA2094C1C70023406D /* Step2VC.swift */; };
+		F25B56BD2094C1FD0023406D /* Step3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56BC2094C1FD0023406D /* Step3VC.swift */; };
+		F25B56BF2094C3200023406D /* host.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F25B56BE2094C3200023406D /* host.mp4 */; };
+		F25B56C12094C33C0023406D /* guest.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F25B56C02094C33B0023406D /* guest.mp4 */; };
 		F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2648482206E76B2008271BE /* BebasNeue-Regular.otf */; };
 		F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */; };
 		F2648488206E94F9008271BE /* karachi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2648486206E94F9008271BE /* karachi.jpg */; };
@@ -184,7 +188,11 @@
 		F2581550206953FB00045DCF /* NotifySettingLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingLabelCell.xib; sourceTree = "<group>"; };
 		F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingSwitchCell.swift; sourceTree = "<group>"; };
 		F25815542069542C00045DCF /* NotifySettingSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifySettingSwitchCell.xib; sourceTree = "<group>"; };
-		F25C77BD208F8D860015CA85 /* Host.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Host.mp4; sourceTree = "<group>"; };
+		F25B56B82094C1B10023406D /* Step1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1VC.swift; sourceTree = "<group>"; };
+		F25B56BA2094C1C70023406D /* Step2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2VC.swift; sourceTree = "<group>"; };
+		F25B56BC2094C1FD0023406D /* Step3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3VC.swift; sourceTree = "<group>"; };
+		F25B56BE2094C3200023406D /* host.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = host.mp4; sourceTree = "<group>"; };
+		F25B56C02094C33B0023406D /* guest.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = guest.mp4; sourceTree = "<group>"; };
 		F2648482206E76B2008271BE /* BebasNeue-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.otf"; sourceTree = "<group>"; };
 		F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		F2648486206E94F9008271BE /* karachi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = karachi.jpg; path = "../../../../images & icon/karachi.jpg"; sourceTree = "<group>"; };
@@ -297,6 +305,9 @@
 				F29C058B2066472B00EC802F /* HostVC.swift */,
 				F29C058D2066473F00EC802F /* FeedbackVC.swift */,
 				F29C05A02066702500EC802F /* NotificationSettingVC.swift */,
+				F25B56B82094C1B10023406D /* Step1VC.swift */,
+				F25B56BA2094C1C70023406D /* Step2VC.swift */,
+				F25B56BC2094C1FD0023406D /* Step3VC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -580,8 +591,9 @@
 				F26CFC3E206A85DB00A9DD20 /* couple.mp4 */,
 				F258154520692AA500045DCF /*  signup.mp4 */,
 				F2FD44D9206AB1AC00913885 /* e-mail.mp4 */,
+				F25B56BE2094C3200023406D /* host.mp4 */,
 				F258154320692AA500045DCF /* forget.mp4 */,
-				F25C77BD208F8D860015CA85 /* Host.mp4 */,
+				F25B56C02094C33B0023406D /* guest.mp4 */,
 				F258154420692AA500045DCF /* login.mp4 */,
 				F2EF76A02068E89C00B378BB /* launched_screen.mp4 */,
 				F2EF76A22068E89C00B378BB /* Social.mp4 */,
@@ -653,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2330EF6206DFF8700D328AA /* TypeThree_CollectionViewCell.xib in Resources */,
+				F25B56BF2094C3200023406D /* host.mp4 in Resources */,
 				F244C80C207BC114000316FE /* pool.png in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
 				F244C809207BC039000316FE /* wifi.png in Resources */,
@@ -663,6 +676,7 @@
 				F2015762207524140053F02F /* facebook_button.png in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
 				F2066BE12076869600FB0621 /* Heart.png in Resources */,
+				F25B56C12094C33C0023406D /* guest.mp4 in Resources */,
 				F2330EF2206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib in Resources */,
 				F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */,
 				F2066BDB2076854600FB0621 /* Explore.png in Resources */,
@@ -709,7 +723,6 @@
 				F2C10259206D2EF200B4DA6B /* facebook.png in Resources */,
 				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
 				F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */,
-				F25C77BE208F8D860015CA85 /* Host.mp4 in Resources */,
 				F2EF76D92068EAA100B378BB /* border_image.png in Resources */,
 				F2330F01206E0FC200D328AA /* golden_star.png in Resources */,
 				F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */,
@@ -821,12 +834,14 @@
 				F2C10253206D262500B4DA6B /* InboxVC.swift in Sources */,
 				F29C0580206645B100EC802F /* NotificationVC.swift in Sources */,
 				F29C058E2066473F00EC802F /* FeedbackVC.swift in Sources */,
+				F25B56BB2094C1C70023406D /* Step2VC.swift in Sources */,
 				F29C058A2066471700EC802F /* HelpVC.swift in Sources */,
 				F2C10251206D260B00B4DA6B /* SavedVC.swift in Sources */,
 				F2330EEB206DF53600D328AA /* TypeOne_CollectionViewCell.swift in Sources */,
 				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
 				F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */,
+				F25B56B92094C1B10023406D /* Step1VC.swift in Sources */,
 				F29C0582206645D200EC802F /* InviteVC.swift in Sources */,
 				F2EB47A0207E7AD700084652 /* CheckOutVC.swift in Sources */,
 				F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */,
@@ -861,6 +876,7 @@
 				F2942FA9207DF96600B49BC9 /* SendMessageVC.swift in Sources */,
 				F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */,
 				F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */,
+				F25B56BD2094C1FD0023406D /* Step3VC.swift in Sources */,
 				F244C804207BA379000316FE /* PropertyTableVC.swift in Sources */,
 				F29C057D2066417C00EC802F /* InviteTableViewCell.swift in Sources */,
 				F26CFC4B206AA88D00A9DD20 /* SearchBarTableViewController.swift in Sources */,

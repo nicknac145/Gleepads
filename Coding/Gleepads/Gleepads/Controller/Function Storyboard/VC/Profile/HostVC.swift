@@ -26,7 +26,8 @@ class HostVC: UIViewController {
                        "Mininum-day":"",
                        "Check-in":"",
                        "Check-out":"","Rent":"",
-                       "Description":""]
+                       "Description":""
+                       ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
