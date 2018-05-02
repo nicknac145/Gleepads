@@ -9,7 +9,24 @@
 import UIKit
 import SwiftVideoBackground
 
-class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+
+protocol amentiesDelegate {
+   
+    func amenities(value : [String], title: String)
+}
+
+class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate, amentiesDelegate {
+    
+    
+    func amenities(value: [String], title: String) {
+        
+        self.selectedAmenties = value
+        self.amenitiesTF.text = title
+        
+        print(value)
+        print(title)
+    }
+    
   
     @IBOutlet weak var propertyTF: UITextField!
     @IBOutlet weak var amenitiesTF: UITextField!
@@ -20,10 +37,10 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
     
     var PickerView = UIPickerView()
     var selectedTF : String?
-    
+    var selectedAmenties = [String]()
     var propertyType = ["Properties","Flat","Single Unit", "Bungalow","Room Sharing"]
     
-    
+
     
 //    var amenitiesClass = AmentiesVC()
     
@@ -50,6 +67,9 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
 //
         
     }
+    
+ 
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.propertyTF {
             self.propertyTF.inputView = self.PickerView
@@ -57,7 +77,6 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
 
 
         }else{
-            view.endEditing(true)
             performSegue(withIdentifier: "Amenities_Segue", sender: self)
 
         }
@@ -110,5 +129,11 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
             print((minDay.text?.isEmpty)!)
             print(descrip.text.isEmpty)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let amenitiesSegue = segue.destination as! AmentiesVC
+        
+        amenitiesSegue.Delegate = self
     }
 }

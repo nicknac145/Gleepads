@@ -28,6 +28,9 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
         imageCollectionView.isHidden = true
     }
+    
+    
+  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return propertyImageArray.count
     }

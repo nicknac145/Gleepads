@@ -39,6 +39,9 @@
 		F2330EFE206DFFBE00D328AA /* TypeThree_TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2330EFC206DFFBE00D328AA /* TypeThree_TableCell.xib */; };
 		F2330F01206E0FC200D328AA /* golden_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F2330EFF206E0FC200D328AA /* golden_star.png */; };
 		F2330F02206E0FC200D328AA /* black_star.png in Resources */ = {isa = PBXBuildFile; fileRef = F2330F00206E0FC200D328AA /* black_star.png */; };
+		F2351801209A072F00DCDCCA /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F2351800209A072E00DCDCCA /* checkbox.png */; };
+		F2351803209A07F600DCDCCA /* checkboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2351802209A07F600DCDCCA /* checkboxCell.swift */; };
+		F2351805209A08BF00DCDCCA /* uncheckbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F2351804209A08BF00DCDCCA /* uncheckbox.png */; };
 		F235ACA12073B1FF00CD20E6 /* SearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F235ACA02073B1FF00CD20E6 /* SearchBar.xib */; };
 		F235ACA32073B3A200CD20E6 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F235ACA22073B3A200CD20E6 /* search.png */; };
 		F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235ACA42073B51B00CD20E6 /* SearchBar.swift */; };
@@ -171,6 +174,9 @@
 		F2330EFC206DFFBE00D328AA /* TypeThree_TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeThree_TableCell.xib; sourceTree = "<group>"; };
 		F2330EFF206E0FC200D328AA /* golden_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golden_star.png; sourceTree = "<group>"; };
 		F2330F00206E0FC200D328AA /* black_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_star.png; sourceTree = "<group>"; };
+		F2351800209A072E00DCDCCA /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		F2351802209A07F600DCDCCA /* checkboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkboxCell.swift; sourceTree = "<group>"; };
+		F2351804209A08BF00DCDCCA /* uncheckbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheckbox.png; sourceTree = "<group>"; };
 		F235ACA02073B1FF00CD20E6 /* SearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBar.xib; sourceTree = "<group>"; };
 		F235ACA22073B3A200CD20E6 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		F235ACA42073B51B00CD20E6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -385,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				F296C30420999B33006AD38D /* add_image.png */,
+				F2351800209A072E00DCDCCA /* checkbox.png */,
+				F2351804209A08BF00DCDCCA /* uncheckbox.png */,
 				F244C807207BC039000316FE /* dine.png */,
 				F244C805207BC039000316FE /* television.png */,
 				F244C806207BC039000316FE /* wifi.png */,
@@ -466,6 +474,7 @@
 				F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */,
 				F29C059D2066660D00EC802F /* HeadingCell.swift */,
 				F244C80F207BC616000316FE /* PropertyBottomView.swift */,
+				F2351802209A07F600DCDCCA /* checkboxCell.swift */,
 			);
 			path = "Table Cell";
 			sourceTree = "<group>";
@@ -732,9 +741,11 @@
 				F2648488206E94F9008271BE /* karachi.jpg in Resources */,
 				F2C10259206D2EF200B4DA6B /* facebook.png in Resources */,
 				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
+				F2351805209A08BF00DCDCCA /* uncheckbox.png in Resources */,
 				F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */,
 				F2EF76D92068EAA100B378BB /* border_image.png in Resources */,
 				F2330F01206E0FC200D328AA /* golden_star.png in Resources */,
+				F2351801209A072F00DCDCCA /* checkbox.png in Resources */,
 				F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */,
 				F258154720692AA500045DCF /* login.mp4 in Resources */,
 				F2EF76E52068EAA100B378BB /* Gleepads.png in Resources */,
@@ -890,6 +901,7 @@
 				F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */,
 				F25B56BD2094C1FD0023406D /* Step3VC.swift in Sources */,
 				F244C804207BA379000316FE /* PropertyTableVC.swift in Sources */,
+				F2351803209A07F600DCDCCA /* checkboxCell.swift in Sources */,
 				F29C057D2066417C00EC802F /* InviteTableViewCell.swift in Sources */,
 				F26CFC4B206AA88D00A9DD20 /* SearchBarTableViewController.swift in Sources */,
 				F2DE9D062077C84300920040 /* imageScrollCell.swift in Sources */,

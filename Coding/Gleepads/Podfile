@@ -31,4 +31,9 @@ pod 'IQKeyboardManagerSwift'
 
 # Calendar
 pod 'CVCalendar'
+
+# Google Map
+pod 'GoogleMaps'
+pod 'GooglePlaces'
+
 end

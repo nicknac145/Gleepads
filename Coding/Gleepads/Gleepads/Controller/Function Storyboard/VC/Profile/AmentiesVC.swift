@@ -22,7 +22,8 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                          "Programmable thermostat",
                          "Granite countertop in the kitchen",
                          "Central island in the kitchen",
-                         "Bathrooms",
+                         "Shared-Bathrooms",
+                         "Attach-Bathroom",
                          "Front porch",
                          "Outdoor kitchen (cooking, refrigerators and sinks)",
                          "Laminate countertops in the kitchen",
@@ -37,6 +38,8 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     ]
     
     
+    var Delegate : amentiesDelegate?
+    
     var step1 = Step1VC()
      var selectedAmenties = [String]()
     var selectedIndex = [Int]()
@@ -49,6 +52,8 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         amenitiesTable.dataSource = self
         
         amenitiesTable.reloadData()
+        
+        self.amenitiesTable.allowsMultipleSelection=true
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,37 +61,47 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = amenitiesType[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "checkboxCell", for: indexPath) as! checkboxCell
+        cell.Title.text = amenitiesType[indexPath.row]
+        cell.selectionStyle = .none
+
+        if self.selectedIndex.contains(indexPath.row){
+            cell.checkbox.image = #imageLiteral(resourceName: "checkbox.png")
+        }else{
+            cell.checkbox.image = #imageLiteral(resourceName: "uncheckbox.png")
+        }
+        
         return cell
     }
     
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
-            
-            for i in selectedIndex{
-               
-                if indexPath.row == i{
-                    selectedIndex.remove(at: i)
-                    
-                    print(selectedIndex)
-                }
-            }
-
-        }
-        else{
-        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
-            selectedIndex.append(indexPath.row)
-            
-            print(selectedIndex)
-        }
+        
+   let  check = tableView.cellForRow(at: indexPath) as! checkboxCell
+        check.checkbox.image = #imageLiteral(resourceName: "checkbox.png")
+        self.selectedIndex.append(indexPath.row)
+        
+        print(self.selectedIndex)
+        
+        
     }
     
-    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        
+        
+        if let i = self.selectedIndex.index(of: indexPath.row) {
+            let check = tableView.cellForRow(at: indexPath) as! checkboxCell
+            check.checkbox.image = #imageLiteral(resourceName: "uncheckbox.png")
+            self.selectedIndex.remove(at: i)
+
+            
+        }
+        
+        print(self.selectedIndex)
+
+    }
     
     
     
@@ -103,12 +118,13 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             
             
         }
-        print(self.textfieldAmenties)
-        print(selectedAmenties)
+//        print(self.textfieldAmenties)
+//        print(selectedAmenties)
+        
         
         
         self.dismiss(animated: true) {
-                    self.step1.amenitiesTF.text = self.textfieldAmenties
+            self.Delegate?.amenities(value: self.selectedAmenties, title: self.selectedAmenties.joined(separator: ","))
 
         }
     }
