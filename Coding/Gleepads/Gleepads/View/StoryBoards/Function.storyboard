@@ -755,7 +755,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.74475599319999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="4rL-YU-fhe" firstAttribute="top" secondItem="HBI-ZT-fdH" secondAttribute="bottom" constant="12" id="3zK-qq-fEA"/>
                                     <constraint firstItem="wco-yP-aXa" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="107" id="91S-vZ-fxf"/>
