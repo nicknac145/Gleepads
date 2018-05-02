@@ -86,6 +86,8 @@
 		F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90AE206016FB00AE2A5D /* Custom_View.swift */; };
 		F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */; };
 		F2942FA9207DF96600B49BC9 /* SendMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */; };
+		F296C30320999176006AD38D /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F296C30220999176006AD38D /* ImageCollectionCell.swift */; };
+		F296C30520999B34006AD38D /* add_image.png in Resources */ = {isa = PBXBuildFile; fileRef = F296C30420999B33006AD38D /* add_image.png */; };
 		F298C37A20763B1D006E9F09 /* GuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298C37920763B1D006E9F09 /* GuestVC.swift */; };
 		F29C057D2066417C00EC802F /* InviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C057B2066417C00EC802F /* InviteTableViewCell.swift */; };
 		F29C057E2066417C00EC802F /* InviteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29C057C2066417C00EC802F /* InviteTableViewCell.xib */; };
@@ -216,6 +218,8 @@
 		F28D90AE206016FB00AE2A5D /* Custom_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
 		F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_ImageView.swift; sourceTree = "<group>"; };
 		F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageVC.swift; sourceTree = "<group>"; };
+		F296C30220999176006AD38D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
+		F296C30420999B33006AD38D /* add_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image.png; sourceTree = "<group>"; };
 		F298C37920763B1D006E9F09 /* GuestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestVC.swift; sourceTree = "<group>"; };
 		F29C057B2066417C00EC802F /* InviteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteTableViewCell.swift; sourceTree = "<group>"; };
 		F29C057C2066417C00EC802F /* InviteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteTableViewCell.xib; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				F25B56BA2094C1C70023406D /* Step2VC.swift */,
 				F25B56BC2094C1FD0023406D /* Step3VC.swift */,
 				F22991B220989786007D6A5B /* AmentiesVC.swift */,
+				F296C30220999176006AD38D /* ImageCollectionCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 		F26B34EE205B89D50082FAFD /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				F296C30420999B33006AD38D /* add_image.png */,
 				F244C807207BC039000316FE /* dine.png */,
 				F244C805207BC039000316FE /* television.png */,
 				F244C806207BC039000316FE /* wifi.png */,
@@ -704,6 +710,7 @@
 				F29C059E2066660D00EC802F /* HeadingCell.xib in Resources */,
 				F25815562069542C00045DCF /* NotifySettingSwitchCell.xib in Resources */,
 				F2DE9CFD2077B15600920040 /* Share.png in Resources */,
+				F296C30520999B34006AD38D /* add_image.png in Resources */,
 				F2066BD520767C8100FB0621 /* archived.png in Resources */,
 				F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */,
 				F2EBBBA320597EA600DD03A9 /* LaunchScreen.storyboard in Resources */,
@@ -868,6 +875,7 @@
 				F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */,
 				F201576520752ECB0053F02F /* CalenderVC.swift in Sources */,
 				F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */,
+				F296C30320999176006AD38D /* ImageCollectionCell.swift in Sources */,
 				F22991B320989786007D6A5B /* AmentiesVC.swift in Sources */,
 				F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */,
 				F2330EF9206DFFAB00D328AA /* TypeTwo_TableCell.swift in Sources */,

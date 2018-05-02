@@ -25,7 +25,7 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
     
     
     
-    
+//    var amenitiesClass = AmentiesVC()
     
  
     
