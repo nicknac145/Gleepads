@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0721C2D6A33F39FE8BC4EE16F1F43E7F'
-               BlueprintName = 'SwiftVideoBackground'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftVideoBackground.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0721C2D6A33F39FE8BC4EE16F1F43E7F"
+               BlueprintName = "SwiftVideoBackground"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SwiftVideoBackground.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

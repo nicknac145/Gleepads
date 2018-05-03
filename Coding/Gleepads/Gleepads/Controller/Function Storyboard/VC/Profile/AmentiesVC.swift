@@ -23,7 +23,7 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                          "Granite countertop in the kitchen",
                          "Central island in the kitchen",
                          "Shared-Bathrooms",
-                         "Attach-Bathroom",
+                         "Attached-Bathroom",
                          "Front porch",
                          "Outdoor kitchen (cooking, refrigerators and sinks)",
                          "Laminate countertops in the kitchen",

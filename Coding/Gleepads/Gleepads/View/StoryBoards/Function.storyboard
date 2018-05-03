@@ -660,9 +660,6 @@
                                             <action selector="proceedButton:" destination="JZf-In-E5X" eventType="touchUpInside" id="AEY-EU-slL"/>
                                         </connections>
                                     </button>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rL-YU-fhe">
-                                        <rect key="frame" x="8" y="184" width="327" height="247"/>
-                                    </mapView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your Property images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="941-2H-qLY">
                                         <rect key="frame" x="20" y="100" width="244" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -754,10 +751,27 @@
                                             <action selector="addImage:" destination="KJD-re-n5I" eventType="touchUpInside" id="ELN-Hn-jWJ"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80I-wI-nrL" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="192" width="327" height="197"/>
+                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="4" height="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="4rL-YU-fhe" firstAttribute="top" secondItem="HBI-ZT-fdH" secondAttribute="bottom" constant="12" id="3zK-qq-fEA"/>
                                     <constraint firstItem="wco-yP-aXa" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="107" id="91S-vZ-fxf"/>
                                     <constraint firstItem="faI-ew-JBr" firstAttribute="trailing" secondItem="INa-b1-aue" secondAttribute="trailing" id="A49-xe-v6b"/>
                                     <constraint firstItem="INa-b1-aue" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="8" id="D8g-oA-yZb"/>
@@ -765,19 +779,20 @@
                                     <constraint firstItem="HBI-ZT-fdH" firstAttribute="top" secondItem="xV6-oW-agb" secondAttribute="bottom" constant="10" id="EJx-Rt-4Wt"/>
                                     <constraint firstItem="HBI-ZT-fdH" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="8" id="GAk-dH-pnD"/>
                                     <constraint firstItem="faI-ew-JBr" firstAttribute="centerY" secondItem="HBI-ZT-fdH" secondAttribute="centerY" id="GvM-da-ouk"/>
-                                    <constraint firstItem="wco-yP-aXa" firstAttribute="top" secondItem="4rL-YU-fhe" secondAttribute="bottom" constant="8" id="HcK-3i-wUn"/>
                                     <constraint firstItem="INa-b1-aue" firstAttribute="top" secondItem="5hL-PC-kdH" secondAttribute="top" constant="8" id="LRP-9a-0zI"/>
+                                    <constraint firstItem="80I-wI-nrL" firstAttribute="top" secondItem="HBI-ZT-fdH" secondAttribute="bottom" constant="20" id="O0p-tg-cko"/>
                                     <constraint firstItem="faI-ew-JBr" firstAttribute="leading" secondItem="HBI-ZT-fdH" secondAttribute="trailing" constant="8" symbolic="YES" id="PbI-nO-3hR"/>
                                     <constraint firstItem="xV6-oW-agb" firstAttribute="height" secondItem="5hL-PC-kdH" secondAttribute="height" multiplier="0.002" id="Rkp-1I-kGX"/>
                                     <constraint firstItem="faI-ew-JBr" firstAttribute="top" secondItem="xV6-oW-agb" secondAttribute="bottom" constant="47" id="UaJ-F7-fC3"/>
                                     <constraint firstItem="xV6-oW-agb" firstAttribute="top" secondItem="INa-b1-aue" secondAttribute="bottom" constant="10" id="VXL-sk-lSv"/>
                                     <constraint firstAttribute="trailing" secondItem="wco-yP-aXa" secondAttribute="trailing" constant="107" id="WFu-bu-e1c"/>
+                                    <constraint firstAttribute="trailing" secondItem="80I-wI-nrL" secondAttribute="trailing" constant="8" id="c6n-Jm-QHo"/>
                                     <constraint firstAttribute="bottom" secondItem="wco-yP-aXa" secondAttribute="bottom" constant="4" id="dei-Oh-JDR"/>
+                                    <constraint firstItem="80I-wI-nrL" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="8" id="fD3-54-0c3"/>
                                     <constraint firstAttribute="trailing" secondItem="xV6-oW-agb" secondAttribute="trailing" constant="30" id="g07-me-5DW"/>
                                     <constraint firstItem="xV6-oW-agb" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="30" id="iNR-3n-Qqy"/>
-                                    <constraint firstAttribute="trailing" secondItem="4rL-YU-fhe" secondAttribute="trailing" constant="8" id="okY-pn-gcP"/>
-                                    <constraint firstItem="4rL-YU-fhe" firstAttribute="leading" secondItem="5hL-PC-kdH" secondAttribute="leading" constant="8" id="tbT-vC-RBT"/>
                                     <constraint firstAttribute="trailing" secondItem="INa-b1-aue" secondAttribute="trailing" constant="8" id="tlO-gN-1hB"/>
+                                    <constraint firstItem="wco-yP-aXa" firstAttribute="top" secondItem="80I-wI-nrL" secondAttribute="bottom" constant="50" id="wKR-sD-GGU"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
@@ -807,13 +822,14 @@
                         <viewLayoutGuide key="safeArea" id="41o-91-lgo"/>
                     </view>
                     <connections>
+                        <outlet property="MapView" destination="80I-wI-nrL" id="IOa-3d-8hj"/>
                         <outlet property="addImageLabel" destination="941-2H-qLY" id="W5G-y7-ccx"/>
                         <outlet property="imageCollectionView" destination="HBI-ZT-fdH" id="bWU-f0-v5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kk-Xn-g8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12332" y="2786.3568215892055"/>
+            <point key="canvasLocation" x="10365.6" y="2569.5652173913045"/>
         </scene>
         <!--Step1VC-->
         <scene sceneID="P5u-FA-2J9">

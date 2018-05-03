@@ -6,6 +6,9 @@
 //  Copyright © 2018 Syed ShahRukh Haider. All rights reserved.
 //
 
+// google map key : "AIzaSyBNDIiChhelaRjYL8VZyA-wrLv0gTQZmAU "
+
+
 import UIKit
 import Firebase
 import GoogleSignIn
@@ -14,6 +17,9 @@ import FacebookCore
 import FacebookLogin
 
 import IQKeyboardManagerSwift
+
+import GoogleMaps
+import GooglePlaces
 
 
 @UIApplicationMain
@@ -38,6 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         
         // Facebook
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //Google Map
+        GMSServices.provideAPIKey("AIzaSyBNDIiChhelaRjYL8VZyA-wrLv0gTQZmAU")
+        GMSPlacesClient.provideAPIKey("AIzaSyBNDIiChhelaRjYL8VZyA-wrLv0gTQZmAU")
+
         
         return true
     }
