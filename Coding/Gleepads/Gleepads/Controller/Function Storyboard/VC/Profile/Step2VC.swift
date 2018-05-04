@@ -13,13 +13,16 @@ import GoogleMaps
 import CoreLocation
 
 
-class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
   
     @IBOutlet weak var addImageLabel: UILabel!
     
     @IBOutlet weak var MapView: Custom_View!
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    
+    
     var propertyImageArray = [UIImage]()
+    var yourLocation = ["Latitude":"0" ,"Longitude":"0"]
    
     let locationManager = CLLocationManager()
     var currentLocation : CLLocation? = CLLocation(latitude: 0, longitude: 0)
@@ -33,7 +36,8 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         super.viewDidLoad()
 
         
-    
+        mapView.delegate = self
+
         try? VideoBackground.shared.play(view: view, videoName: "host", videoType: "mp4")
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
@@ -61,15 +65,20 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
         // *********************** setting Map camera parameter ***********************
 
-        let camera = GMSCameraPosition.camera(withLatitude: (self.currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!, zoom: zoomLevel)
+        
+        
+        
+        let camera  = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: zoomLevel)
+//        let camera  = GMSCameraPosition.camera(withLatitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!, zoom: zoomLevel)
         
         // *********************** setting Mapview frame dimension ***********************
         mapView = GMSMapView.map(withFrame: MapView.bounds, camera: camera)
         
+        mapView.animate(to: camera)
         
-//        MapView = mapView
-        MapView.addSubview(mapView)
-        //        view.addSubview(mapView)
+        self.MapView.addSubview(mapView)
+  print(yourLocation)
+        
     }
     
     
@@ -88,6 +97,8 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         return cell
         
     }
+    
+    
     
     @IBAction func addImage(_ sender: Any) {
         
@@ -119,71 +130,56 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     
     
+
+    
 }
 
 
 
-extension Step2VC: CLLocationManagerDelegate{
+extension Step2VC: CLLocationManagerDelegate, GMSMapViewDelegate{
+    
+    
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location : CLLocation = locations.last!
         
-        print("loc=",location)
-       
+       self.currentLocation = location
+        locationManager.stopUpdatingHeading()
         
         
-        // Setting Camera Position
-        
-     
-            let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
-            
-            // *********************** Creating Map View ***********************
-            mapView.animate(to: camera)
-            
+        yourLocation["Latitude"] = String(location.coordinate.latitude)
+        yourLocation["Longitude"] = String(location.coordinate.longitude )
 
-      
         
+      
+
+        
+        
+        
+      
         
         // *********************** Define user current location with Marker: ***********************
         
         let marker = GMSMarker(position: location.coordinate)
 //                marker.icon = UIImage(named: "wifi")
                 marker.iconView = UIImageView(image: UIImage(named: "marker"))
-                marker.tracksViewChanges = true
+//                marker.tracksViewChanges = true
         marker.title = "Gleepads Inc"
         marker.map = mapView
+
         
-        
-//        // *********************** Retrieving "Near By Place" data  with Google Map API: ***********************
-//        NearByPlace(Lat: String(location.coordinate.latitude), Long: String(location.coordinate.longitude), Radius: "1000", category: "shop", keyword: "mobile", completion: { (places) in
 //
-//
-//            places.forEach({ (results) in
-//
-//                let name  = results["Title"] as! String
-//                let lat  =  results["Latitude"] as! Double
-//                let long  = results["Longitude"] as! Double
-//
-//                // TEST RESULT
-//                print(lat,  long)
-//
-//
-//
-//                //***************** Markering  "Near By Place" location on MapView:***********************
-//
-//                let placeMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: lat, longitude: long))
-//                placeMarker.icon = UIImage(named: "endPoint")
-//                //        marker.iconView = UIImageView(image: UIImage(named: "signboardNode"))
-//                //        marker.tracksViewChanges = true
-//                placeMarker.title = name
-//                placeMarker.map = self.mapView
-//
-//            })
-//
-//
-//
-//        })
-        
         
     }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        print(coordinate)
+    }
+
+    
+
+    
+
 }

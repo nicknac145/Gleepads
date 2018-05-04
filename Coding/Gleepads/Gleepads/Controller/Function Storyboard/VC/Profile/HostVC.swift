@@ -9,6 +9,8 @@
 import UIKit
 //import Shift
 
+
+
 class HostVC: UIViewController {
 
     @IBOutlet weak var step1_view: UIView!
@@ -28,6 +30,10 @@ class HostVC: UIViewController {
                        "Check-out":"","Rent":"",
                        "Description":""
                        ]
+    
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +45,8 @@ class HostVC: UIViewController {
     
     step3_view.alpha = 0.3
     step3_Button.isEnabled = false
+        
+    
     }
 
     @IBAction func step1_Button_Action(_ sender: Any) {
@@ -47,6 +55,8 @@ class HostVC: UIViewController {
         
         step3_view.alpha = 0.3
         step3_Button.isEnabled = false
+        
+        performSegue(withIdentifier: "Step1_Segue", sender: self)
     }
     
     
@@ -54,15 +64,18 @@ class HostVC: UIViewController {
         step3_view.alpha = 1
         step3_Button.isEnabled = true
         
-      
+performSegue(withIdentifier: "Step2_Segue", sender: self)
     }
     
 
     @IBAction func step3_Button_Action(_ sender: Any) {
-        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "Step3_Segue", sender: self)
+        
+//        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alert.addAction(action)
+//        self.present(alert, animated: true, completion: nil)
       
     }
     @IBAction func dismissButton(_ sender: Any) {

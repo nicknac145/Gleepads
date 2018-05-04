@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SwiftVideoBackground
 
 class Step3VC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        try? VideoBackground.shared.play(view: view, videoName: "host", videoType: "mp4")
 
         // Do any additional setup after loading the view.
     }
