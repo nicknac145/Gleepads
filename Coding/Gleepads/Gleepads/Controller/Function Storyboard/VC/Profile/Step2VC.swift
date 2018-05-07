@@ -21,16 +21,15 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
     
-    var propertyImageArray = [UIImage]()
     var yourLocation = ["Latitude":"0" ,"Longitude":"0"]
    
     let locationManager = CLLocationManager()
-    var currentLocation : CLLocation? = CLLocation(latitude: 0, longitude: 0)
     var mapView = GMSMapView()
     var zoomLevel: Float = 15.0
     
-    var checkview : UIView?
-    
+    var currentLocation : CLLocation?
+    var propertyImageArray = [UIImage]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

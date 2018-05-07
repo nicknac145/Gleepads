@@ -15,7 +15,7 @@ protocol amentiesDelegate {
     func amenities(value : [String], title: String)
 }
 
-class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate, amentiesDelegate {
+class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate, amentiesDelegate,UITextViewDelegate {
     
     
     func amenities(value: [String], title: String) {
@@ -23,8 +23,8 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
         self.selectedAmenties = value
         self.amenitiesTF.text = title
         
-        print(value)
-        print(title)
+        amenities = title
+   
     }
     
   
@@ -41,8 +41,14 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
     var propertyType = ["Properties","Flat","Single Unit", "Bungalow","Room Sharing"]
     
 
+    var hostDelegate : step1Delegate?
     
-//    var amenitiesClass = AmentiesVC()
+
+    var adtitle : String?
+    var propertyCategory : String?
+    var amenities : String?
+    var mininumDay : String?
+    var propertyDescription : String?
     
  
     
@@ -59,11 +65,10 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
         PickerView.delegate = self
         self.propertyTF.delegate=self
         self.amenitiesTF.delegate=self
-        
+        self.descrip.delegate = self
 
 
-        print(selectedTF)
-        
+     
 //
         
     }
@@ -87,9 +92,21 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
         if textField == self.propertyTF {
             self.propertyTF.inputView = nil
             self.PickerView.reloadAllComponents()
-            
-            
         }
+        adtitle = adTitle.text
+        propertyCategory = propertyTF.text
+        mininumDay =  minDay.text
+        propertyDescription = descrip.text
+
+        
+        print(mininumDay)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        mininumDay =  minDay.text
+
+        propertyDescription = descrip.text
+
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -98,12 +115,12 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return pickerView.inputView == self.propertyTF ? propertyType.count : amenitiesType.count
+
         return propertyType.count
 
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//       return pickerView  == self.propertyTF ? propertyType[row] : amenitiesType[row]
+
         return propertyType[row]
       
     }
@@ -129,6 +146,14 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
             print((minDay.text?.isEmpty)!)
             print(descrip.text.isEmpty)
         }
+        
+        print ( adtitle! )
+        print(amenities!)
+        print(propertyCategory!)
+        print(mininumDay!)
+        print(propertyDescription!)
+        
+        hostDelegate?.DataColletion(propertyTitle: adtitle!, propertyCatergory: propertyCategory!, propertyAmenities: amenities!, propertyMininum: mininumDay!, propertyDescription: propertyDescription!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

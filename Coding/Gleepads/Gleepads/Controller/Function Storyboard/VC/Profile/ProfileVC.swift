@@ -63,6 +63,7 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "setting.png"), Title: nil, Sub_Title: "Setting"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "help.png"), Title: nil, Sub_Title: "Get Help"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "host.png"), Title: nil, Sub_Title: "Become a Host"),
+                     Cell_info(cell: 3, image: #imageLiteral(resourceName: "Dashboard.png"), Title: nil, Sub_Title: " Host Dashboard"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "feedback.png"), Title: nil, Sub_Title: "Give us feedback"),
         ]
         
@@ -74,6 +75,7 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                   "Setting",
                   "Help",
                   "Host",
+                  "Host-Dashboard",
                   "Feedback"]
         
         profileTableView.delegate = self

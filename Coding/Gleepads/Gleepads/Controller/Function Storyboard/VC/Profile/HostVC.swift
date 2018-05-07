@@ -8,10 +8,29 @@
 
 import UIKit
 //import Shift
+import Firebase
 
 
+protocol step1Delegate {
+    func DataColletion(propertyTitle : String, propertyCatergory: String, propertyAmenities : String, propertyMininum : String, propertyDescription:String)
+}
 
-class HostVC: UIViewController {
+
+class HostVC: UIViewController, step1Delegate {
+   
+    
+    func DataColletion(propertyTitle: String, propertyCatergory: String, propertyAmenities: String, propertyMininum: String, propertyDescription: String) {
+        hostingData["User_ID"] = Auth.auth().currentUser?.uid
+        hostingData["AD-Title"] = propertyTitle
+        hostingData["Property-Catergory"] = propertyCatergory
+        hostingData["Amenities"] = propertyAmenities
+        hostingData["Mininum-Day"] = propertyMininum
+        hostingData["Description"] = propertyDescription
+        
+        
+        print(hostingData)
+    }
+    
 
     @IBOutlet weak var step1_view: UIView!
     @IBOutlet weak var step2_view: UIView!
@@ -23,13 +42,22 @@ class HostVC: UIViewController {
     var hostingData = ["User_ID":"",
                        "AD-Title":"",
                        "Property-Category":"",
+                       "Amenities": "",
+                       "Mininum-Day":"",
+                       "Description":"",
                        "City":"",
+                       "Country":"",
                        "Lat-Long":"",
-                       "Mininum-day":"",
+                        "Rent":"",
+                        "Mode-Of-Payment":"",
+                        "Guest-Number":"",
                        "Check-in":"",
-                       "Check-out":"","Rent":"",
-                       "Description":""
+                       "Check-out":""
+                       
+
                        ]
+    
+    var hostImages = [UIImage]()
     
 
     
@@ -71,17 +99,32 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
     @IBAction func step3_Button_Action(_ sender: Any) {
         
         performSegue(withIdentifier: "Step3_Segue", sender: self)
-        
-//        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alert.addAction(action)
-//        self.present(alert, animated: true, completion: nil)
-      
+
     }
     @IBAction func dismissButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Step1_Segue"{
+            
+            let dest = segue.destination as! Step1VC
+            
+            
+          dest.hostDelegate = self
+            
+            
+            
+        }
+        else if segue.identifier == "Step2_Segue"{
+            let dest = segue.destination as! Step2VC
+
+
+        }
+        else if segue.identifier == "Step3_Segue" {
+            let dest = segue.destination as! Step3VC
+
+        }
+    }
     
 }

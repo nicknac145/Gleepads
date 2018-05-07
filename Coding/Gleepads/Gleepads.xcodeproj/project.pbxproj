@@ -67,6 +67,8 @@
 		F25B56BD2094C1FD0023406D /* Step3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56BC2094C1FD0023406D /* Step3VC.swift */; };
 		F25B56BF2094C3200023406D /* host.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F25B56BE2094C3200023406D /* host.mp4 */; };
 		F25B56C12094C33C0023406D /* guest.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F25B56C02094C33B0023406D /* guest.mp4 */; };
+		F262C95D20A0ACE300A4001C /* Host-DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F262C95C20A0ACE300A4001C /* Host-DashboardVC.swift */; };
+		F262C95F20A0AE8600A4001C /* Dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = F262C95E20A0AE8600A4001C /* Dashboard.png */; };
 		F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2648482206E76B2008271BE /* BebasNeue-Regular.otf */; };
 		F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */; };
 		F2648488206E94F9008271BE /* karachi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2648486206E94F9008271BE /* karachi.jpg */; };
@@ -204,6 +206,8 @@
 		F25B56BC2094C1FD0023406D /* Step3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3VC.swift; sourceTree = "<group>"; };
 		F25B56BE2094C3200023406D /* host.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = host.mp4; sourceTree = "<group>"; };
 		F25B56C02094C33B0023406D /* guest.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = guest.mp4; sourceTree = "<group>"; };
+		F262C95C20A0ACE300A4001C /* Host-DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Host-DashboardVC.swift"; sourceTree = "<group>"; };
+		F262C95E20A0AE8600A4001C /* Dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dashboard.png; sourceTree = "<group>"; };
 		F2648482206E76B2008271BE /* BebasNeue-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.otf"; sourceTree = "<group>"; };
 		F2648483206E76B2008271BE /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		F2648486206E94F9008271BE /* karachi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = karachi.jpg; path = "../../../../images & icon/karachi.jpg"; sourceTree = "<group>"; };
@@ -316,9 +320,10 @@
 				F29C0583206645FB00EC802F /* CrediitVC.swift */,
 				F29C0587206646FC00EC802F /* SettingVC.swift */,
 				F29C05892066471700EC802F /* HelpVC.swift */,
-				F29C058B2066472B00EC802F /* HostVC.swift */,
 				F29C058D2066473F00EC802F /* FeedbackVC.swift */,
 				F29C05A02066702500EC802F /* NotificationSettingVC.swift */,
+				F262C95C20A0ACE300A4001C /* Host-DashboardVC.swift */,
+				F29C058B2066472B00EC802F /* HostVC.swift */,
 				F25B56B82094C1B10023406D /* Step1VC.swift */,
 				F25B56BA2094C1C70023406D /* Step2VC.swift */,
 				F25B56BC2094C1FD0023406D /* Step3VC.swift */,
@@ -401,6 +406,7 @@
 				F2DE9CFC2077B15600920040 /* Share.png */,
 				F2330EED206DF9C200D328AA /* hyper.jpg */,
 				F2066BDA2076854500FB0621 /* Explore.png */,
+				F262C95E20A0AE8600A4001C /* Dashboard.png */,
 				F2066BD420767C8000FB0621 /* archived.png */,
 				F2066BD620767CF300FB0621 /* search_small.png */,
 				F2DE9CF22077AFC700920040 /* Profile.png */,
@@ -687,6 +693,7 @@
 			files = (
 				F2330EF6206DFF8700D328AA /* TypeThree_CollectionViewCell.xib in Resources */,
 				F25B56BF2094C3200023406D /* host.mp4 in Resources */,
+				F262C95F20A0AE8600A4001C /* Dashboard.png in Resources */,
 				F244C80C207BC114000316FE /* pool.png in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
 				F244C809207BC039000316FE /* wifi.png in Resources */,
@@ -896,6 +903,7 @@
 				F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */,
 				F296C30320999176006AD38D /* ImageCollectionCell.swift in Sources */,
 				F22991B320989786007D6A5B /* AmentiesVC.swift in Sources */,
+				F262C95D20A0ACE300A4001C /* Host-DashboardVC.swift in Sources */,
 				F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */,
 				F2330EF9206DFFAB00D328AA /* TypeTwo_TableCell.swift in Sources */,
 				F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */,
