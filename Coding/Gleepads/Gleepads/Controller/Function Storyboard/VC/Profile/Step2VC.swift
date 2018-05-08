@@ -21,7 +21,6 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
     
-    var yourLocation = ["Latitude":"0" ,"Longitude":"0"]
    
     let locationManager = CLLocationManager()
     var mapView = GMSMapView()
@@ -30,6 +29,8 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var currentLocation : CLLocation?
     var propertyImageArray = [UIImage]()
 
+    var hostDelegate : step2Delegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,6 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         mapView.animate(to: camera)
         
         self.MapView.addSubview(mapView)
-  print(yourLocation)
         
     }
     
@@ -126,11 +126,22 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         print(propertyImageArray)
         imageCollectionView.reloadData()
     }
+  
+    @IBAction func ProceedButton(_ sender: Any) {
+        
+        
+        let lat = currentLocation?.coordinate.latitude.description
+        let long = currentLocation?.coordinate.longitude.description
+        
+        
     
-    
-    
-
-    
+        
+        hostDelegate?.DataColletion(latitude: lat!,   Longitude: long!, PropertyImage:propertyImageArray)
+        
+        self.navigationController?.popViewController(animated: true)
+        print("\(lat)  \(long)"  )
+        print(propertyImageArray)
+    }
 }
 
 
@@ -148,8 +159,8 @@ extension Step2VC: CLLocationManagerDelegate, GMSMapViewDelegate{
         locationManager.stopUpdatingHeading()
         
         
-        yourLocation["Latitude"] = String(location.coordinate.latitude)
-        yourLocation["Longitude"] = String(location.coordinate.longitude )
+//        yourLocation["Latitude"] = String(location.coordinate.latitude)
+//        yourLocation["Longitude"] = String(location.coordinate.longitude )
 
         
       
@@ -177,6 +188,8 @@ extension Step2VC: CLLocationManagerDelegate, GMSMapViewDelegate{
         print(coordinate)
     }
 
+    
+    
     
 
     

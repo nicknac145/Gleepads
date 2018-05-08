@@ -10,13 +10,26 @@ import UIKit
 //import Shift
 import Firebase
 
-
+// ********* Created Delegate to fetch Data from Step1 VC ***************
 protocol step1Delegate {
     func DataColletion(propertyTitle : String, propertyCatergory: String, propertyAmenities : String, propertyMininum : String, propertyDescription:String)
 }
 
 
-class HostVC: UIViewController, step1Delegate {
+// ********* Created Delegate to fetch Data from Step2 VC ***************
+
+protocol step2Delegate {
+    func DataColletion(latitude : String, Longitude : String, PropertyImage : [UIImage])
+}
+
+
+protocol step3Delegate {
+    func DataColletion(Rent : String, PaymentMode : String, Guest : String, Check_In : String, Check_Out:String)
+}
+
+
+class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
+
    
     
     func DataColletion(propertyTitle: String, propertyCatergory: String, propertyAmenities: String, propertyMininum: String, propertyDescription: String) {
@@ -28,7 +41,23 @@ class HostVC: UIViewController, step1Delegate {
         hostingData["Description"] = propertyDescription
         
         
-        print(hostingData)
+    }
+    
+    
+    func DataColletion(latitude: String, Longitude: String, PropertyImage: [UIImage]) {
+        hostImages = PropertyImage
+        hostingData["Latitude"] = latitude
+        hostingData["Longitude"] = Longitude
+    }
+    
+    func DataColletion(Rent : String, PaymentMode : String, Guest : String, Check_In : String, Check_Out:String){
+        
+        hostingData["Rent"] = Rent
+        hostingData["Payment"] = PaymentMode
+        hostingData["Guest-Number"] = Guest
+        hostingData["Check-in"] = Check_In
+        hostingData["Check-out"] = Check_Out
+      
     }
     
 
@@ -38,6 +67,7 @@ class HostVC: UIViewController, step1Delegate {
     @IBOutlet weak var step1_button: Custom_Button!
     @IBOutlet weak var step2_Button: Custom_Button!
     @IBOutlet weak var step3_Button: Custom_Button!
+    @IBOutlet weak var Confirm_Button: Custom_Button!
     
     var hostingData = ["User_ID":"",
                        "AD-Title":"",
@@ -47,14 +77,14 @@ class HostVC: UIViewController, step1Delegate {
                        "Description":"",
                        "City":"",
                        "Country":"",
-                       "Lat-Long":"",
+                       "Latitude":"",
+                       "Longitude":"",
                         "Rent":"",
-                        "Mode-Of-Payment":"",
+                        "Payment-Mode":"",
                         "Guest-Number":"",
                        "Check-in":"",
                        "Check-out":""
-                       
-
+        
                        ]
     
     var hostImages = [UIImage]()
@@ -73,6 +103,8 @@ class HostVC: UIViewController, step1Delegate {
     
     step3_view.alpha = 0.3
     step3_Button.isEnabled = false
+        
+    Confirm_Button.isHidden = true
         
     
     }
@@ -99,6 +131,8 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
     @IBAction func step3_Button_Action(_ sender: Any) {
         
         performSegue(withIdentifier: "Step3_Segue", sender: self)
+        
+        
 
     }
     @IBAction func dismissButton(_ sender: Any) {
@@ -118,13 +152,30 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         }
         else if segue.identifier == "Step2_Segue"{
             let dest = segue.destination as! Step2VC
+            
+            dest.hostDelegate = self
 
 
         }
         else if segue.identifier == "Step3_Segue" {
             let dest = segue.destination as! Step3VC
 
+          
+            dest.hostDelegate = self
+            Confirm_Button.isHidden = false
+
         }
     }
     
+    @IBAction func Confirm_Button_Action(_ sender: Any) {
+        
+        
+        print(hostingData)
+        print(hostImages)
+        
+//        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alert.addAction(action)
+//        self.present(alert, animated: true, completion: nil)
+    }
 }

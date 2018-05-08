@@ -20,13 +20,18 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
  
     @IBOutlet weak var paymentModeTF: UITextField!
     @IBOutlet weak var guestNumber: UITextField!
-    @IBOutlet weak var checkInTF: UITextField!
-    @IBOutlet weak var checkOutTF: UITextField!
+
+    @IBOutlet weak var Check_In_label: UILabel!
+    @IBOutlet weak var Check_Out_label: UILabel!
     
     
     var PickerView = UIPickerView()
     var PaymentType = ["Visa","Master Card","American Express", ]
-  
+    
+    
+    var hostDelegate :step3Delegate?
+    
+
     
     
     override func viewDidLoad() {
@@ -39,16 +44,40 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
       paymentModeTF.delegate = self
         PickerView.dataSource = self
         PickerView.delegate = self
-    }
+        
+        let CheckINtapped = UITapGestureRecognizer(target: self, action: #selector(SetTime))
+        CheckINtapped.name = "IN"
+        Check_In_label.addGestureRecognizer(CheckINtapped)
 
+        let CheckOUTtapped = UITapGestureRecognizer(target: self, action: #selector(SetTime))
+        CheckOUTtapped.name = "OUT"
+        Check_Out_label.addGestureRecognizer(CheckOUTtapped)
+
+    
+        
+    }
+    @objc func SetTime(recog : UIGestureRecognizer){
+        
+        var recogName = recog.name!
+        
+        if recogName == "IN"{
+            performSegue(withIdentifier: "Time_Segue", sender: self)
+        }
+        else {}
+    }
+    
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.paymentModeTF {
             self.paymentModeTF.inputView = self.PickerView
             self.PickerView.reloadAllComponents()
-            
-            
+       
         }
+       
     }
+    
+   
  
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -71,10 +100,23 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
     
     @IBAction func proceedButton(_ sender: Any) {
         
-                let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+        
+        if (rentTF.text?.isEmpty)! == false && (paymentModeTF.text?.isEmpty)! == false && (guestNumber.text?.isEmpty)! == false && (Check_In_label.text!.isEmpty) == false && (Check_Out_label.text?.isEmpty)! == false{
+            
+            hostDelegate?.DataColletion(Rent: rentTF.text!, PaymentMode: paymentModeTF.text!, Guest: guestNumber.text!, Check_In: Check_In_label.text!, Check_Out: Check_Out_label.text!)
+            
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        else{
+            let alert = UIAlertController(title: "Some Value Missing!", message: "You are missing some textField", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+        }
+ 
+
     }
     
 }

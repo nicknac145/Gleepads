@@ -94,6 +94,7 @@
 		F296C30320999176006AD38D /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F296C30220999176006AD38D /* ImageCollectionCell.swift */; };
 		F296C30520999B34006AD38D /* add_image.png in Resources */ = {isa = PBXBuildFile; fileRef = F296C30420999B33006AD38D /* add_image.png */; };
 		F298C37A20763B1D006E9F09 /* GuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298C37920763B1D006E9F09 /* GuestVC.swift */; };
+		F29B9BE220A2046900715141 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29B9BE120A2046900715141 /* TimeController.swift */; };
 		F29C057D2066417C00EC802F /* InviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C057B2066417C00EC802F /* InviteTableViewCell.swift */; };
 		F29C057E2066417C00EC802F /* InviteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29C057C2066417C00EC802F /* InviteTableViewCell.xib */; };
 		F29C0580206645B100EC802F /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C057F206645B100EC802F /* NotificationVC.swift */; };
@@ -232,6 +233,7 @@
 		F296C30220999176006AD38D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		F296C30420999B33006AD38D /* add_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image.png; sourceTree = "<group>"; };
 		F298C37920763B1D006E9F09 /* GuestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestVC.swift; sourceTree = "<group>"; };
+		F29B9BE120A2046900715141 /* TimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
 		F29C057B2066417C00EC802F /* InviteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteTableViewCell.swift; sourceTree = "<group>"; };
 		F29C057C2066417C00EC802F /* InviteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteTableViewCell.xib; sourceTree = "<group>"; };
 		F29C057F206645B100EC802F /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				F25B56BC2094C1FD0023406D /* Step3VC.swift */,
 				F22991B220989786007D6A5B /* AmentiesVC.swift */,
 				F296C30220999176006AD38D /* ImageCollectionCell.swift */,
+				F29B9BE120A2046900715141 /* TimeController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -870,6 +873,7 @@
 				F2C10253206D262500B4DA6B /* InboxVC.swift in Sources */,
 				F29C0580206645B100EC802F /* NotificationVC.swift in Sources */,
 				F29C058E2066473F00EC802F /* FeedbackVC.swift in Sources */,
+				F29B9BE220A2046900715141 /* TimeController.swift in Sources */,
 				F25B56BB2094C1C70023406D /* Step2VC.swift in Sources */,
 				F29C058A2066471700EC802F /* HelpVC.swift in Sources */,
 				F2C10251206D260B00B4DA6B /* SavedVC.swift in Sources */,
