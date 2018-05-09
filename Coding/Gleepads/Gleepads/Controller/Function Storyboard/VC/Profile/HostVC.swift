@@ -108,7 +108,7 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     var hostImages = [UIImage]()
     
 
-    
+    var ref =  Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -208,7 +208,14 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         print(hostImages)
         
         let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let action = UIAlertAction(title: "OK", style: .default) { (Alert) in
+            
+            print(Auth.auth().currentUser?.uid)
+            
+            
+//            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().child("User ID").setValue((Auth.auth().currentUser?.uid)!)
+            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+        }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }

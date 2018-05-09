@@ -763,7 +763,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80I-wI-nrL" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="280" width="327" height="206.5"/>
+                                        <rect key="frame" x="8" y="280" width="327" height="163"/>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
@@ -827,7 +827,7 @@
                                     <constraint firstItem="ODo-Af-9vj" firstAttribute="top" secondItem="HBI-ZT-fdH" secondAttribute="bottom" constant="15" id="GlO-9h-1sr"/>
                                     <constraint firstItem="BrH-KJ-gLa" firstAttribute="top" secondItem="HBI-ZT-fdH" secondAttribute="bottom" constant="10.5" id="LHu-Qn-PO4"/>
                                     <constraint firstItem="INa-b1-aue" firstAttribute="top" secondItem="5hL-PC-kdH" secondAttribute="top" constant="8" id="LRP-9a-0zI"/>
-                                    <constraint firstItem="80I-wI-nrL" firstAttribute="height" secondItem="5hL-PC-kdH" secondAttribute="height" multiplier="0.38" id="M7O-uL-App"/>
+                                    <constraint firstItem="80I-wI-nrL" firstAttribute="height" secondItem="5hL-PC-kdH" secondAttribute="height" multiplier="0.3" id="M7O-uL-App"/>
                                     <constraint firstItem="BrH-KJ-gLa" firstAttribute="leading" secondItem="ODo-Af-9vj" secondAttribute="trailing" constant="39" id="NPU-dE-ZWb"/>
                                     <constraint firstItem="bya-pF-RCo" firstAttribute="width" secondItem="5hL-PC-kdH" secondAttribute="width" multiplier="0.7" id="QWh-nx-UwG"/>
                                     <constraint firstAttribute="trailing" secondItem="80I-wI-nrL" secondAttribute="trailing" constant="8" id="RXN-Gl-SUf"/>
@@ -1298,7 +1298,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fht-xH-t02">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fht-xH-t02">
                                         <rect key="frame" x="15" y="285" width="313" height="112"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2006,7 +2006,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
+                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </scrollView>
