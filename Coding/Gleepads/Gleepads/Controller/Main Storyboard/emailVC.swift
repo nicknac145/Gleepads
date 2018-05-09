@@ -17,19 +17,18 @@ class emailVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
     
-    
+    // ******* Variable that will hold basic Info about user ************
     var fName : String?
     var lName : String?
     var dob : String?
     
-    
+    // ******* Firebase Database reference
     var dbRef = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        print(dob!)
         
         // ************ remove Navigator bar Border *************
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

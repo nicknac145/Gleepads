@@ -49,6 +49,8 @@ class SignInVC: UIViewController {
 
     @IBAction func nextButton(_ sender: Any) {
         
+        
+        // ******** Sign IN if Auth is TRUE *************
         Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { (user, error) in
            
             if error == nil{

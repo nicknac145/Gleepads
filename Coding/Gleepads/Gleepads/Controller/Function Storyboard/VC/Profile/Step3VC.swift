@@ -11,24 +11,26 @@ import SwiftVideoBackground
 
 class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    
+    // ************ OUTLET **********************
     @IBOutlet weak var rentTF: UITextField!
     @IBOutlet weak var enableSwitch: UISwitch!
     @IBOutlet weak var minSuggestAmount: UILabel!
     @IBOutlet weak var SuggestSlider: UISlider!
     @IBOutlet weak var maxSuggestAmount: UILabel!
- 
     @IBOutlet weak var paymentModeTF: UITextField!
     @IBOutlet weak var guestNumber: UITextField!
-
     @IBOutlet weak var Check_In_label: UILabel!
     @IBOutlet weak var Check_Out_label: UILabel!
     
     
+    
+    // ********* VARIABLE THAT WILL BE USE WITH  VC
+    
     var PickerView = UIPickerView()
-    var PaymentType = ["Visa","Master Card","American Express", ]
+    var PaymentType = ["Visa","Master Card","American Express", "Cryptocurrency" ]
     
-    
+    // *********** INITIALIZE HOSTVC DELEGATE
+
     var hostDelegate :step3Delegate?
     
 
@@ -38,13 +40,15 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
        
         super.viewDidLoad()
 
-
+// ************ BACKGROUND VIDEO PLAYER ***************
         try? VideoBackground.shared.play(view: view, videoName: "host", videoType: "mp4")
 
       paymentModeTF.delegate = self
         PickerView.dataSource = self
         PickerView.delegate = self
         
+        
+        // ********* TAPPING GESTURE *************
         let CheckINtapped = UITapGestureRecognizer(target: self, action: #selector(SetTime))
         CheckINtapped.name = "IN"
         Check_In_label.addGestureRecognizer(CheckINtapped)
@@ -56,6 +60,9 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
     
         
     }
+    
+    
+    // ********* SET-TIME METHOD  ON TAP
     @objc func SetTime(recog : UIGestureRecognizer){
         
         var recogName = recog.name!
@@ -78,7 +85,7 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
     }
     
    
- 
+ //************* PICKERVIEW DELEGATE METHOD ***********
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -88,16 +95,25 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
         return PaymentType.count
 
     }
+    
+    
+    // ****** ENTITLE PICKERVIEW *************
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         //       return pickerView  == self.propertyTF ? propertyType[row] : amenitiesType[row]
         return PaymentType[row]
         
     }
+    
+    
+    //*********** SELECT VLAUE FROM PICKERVIEW *************
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         paymentModeTF.text = PaymentType[row]
     }
     
     
+    
+    
+    // *********** PROCEED BUTTON ACTION *********************
     @IBAction func proceedButton(_ sender: Any) {
         
         

@@ -79,6 +79,9 @@ class NewAccountVC: UIViewController {
         
     }
     
+    
+    
+    // *********** Extract Selected Date ************
 @IBAction func dobPickerAction() {
         let format = DateFormatter()
         format.dateFormat = "dd-MM-YYYY"

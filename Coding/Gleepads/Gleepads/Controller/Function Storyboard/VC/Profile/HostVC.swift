@@ -10,6 +10,10 @@ import UIKit
 //import Shift
 import Firebase
 
+
+                // ********************    " PROTOCOLS " ***************************
+
+
 // ********* Created Delegate to fetch Data from Step1 VC ***************
 protocol step1Delegate {
     func DataColletion(propertyTitle : String, propertyCatergory: String, propertyAmenities : String, propertyMininum : String, propertyDescription:String)
@@ -28,9 +32,14 @@ protocol step3Delegate {
 }
 
 
+
+
+
+
+
 class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
 
-   
+  // ********* DELEGATE INITIALIZE *************
     
     func DataColletion(propertyTitle: String, propertyCatergory: String, propertyAmenities: String, propertyMininum: String, propertyDescription: String) {
         hostingData["User_ID"] = Auth.auth().currentUser?.uid
@@ -61,6 +70,8 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     }
     
 
+    // ************* OUTLET *******************
+    
     @IBOutlet weak var step1_view: UIView!
     @IBOutlet weak var step2_view: UIView!
     @IBOutlet weak var step3_view: UIView!
@@ -69,6 +80,9 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     @IBOutlet weak var step3_Button: Custom_Button!
     @IBOutlet weak var Confirm_Button: Custom_Button!
     
+    
+    
+    // *******  DICTIONARY OF USER'S PROPERTY RENT ADVERTISE PROFILE ***************
     var hostingData = ["User_ID":"",
                        "AD-Title":"",
                        "Property-Category":"",
@@ -95,9 +109,14 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        // *********** CONFIGURE NAVIGATOIN BAR SETTING  ***************
+
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     
+        
+        // ********* SETTING INITIAL BUTTON VISUAL LOOK ************
     step2_view.alpha = 0.3
     step2_Button.isEnabled = false
     
@@ -109,6 +128,9 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     
     }
 
+    
+    // *******  STEP 1 BUTTON ACTION **************
+    
     @IBAction func step1_Button_Action(_ sender: Any) {
         step2_view.alpha = 1
         step2_Button.isEnabled = true
@@ -119,6 +141,8 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
         performSegue(withIdentifier: "Step1_Segue", sender: self)
     }
     
+    // *******  STEP 2 BUTTON ACTION **************
+
     
     @IBAction func step2_Button_Action(_ sender: Any) {
         step3_view.alpha = 1
@@ -127,7 +151,9 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
 performSegue(withIdentifier: "Step2_Segue", sender: self)
     }
     
+    // *******  STEP 3 BUTTON ACTION **************
 
+    
     @IBAction func step3_Button_Action(_ sender: Any) {
         
         performSegue(withIdentifier: "Step3_Segue", sender: self)
@@ -135,6 +161,10 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         
 
     }
+    
+    
+    
+    
     @IBAction func dismissButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

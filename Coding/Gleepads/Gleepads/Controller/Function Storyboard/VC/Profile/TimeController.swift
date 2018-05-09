@@ -22,7 +22,7 @@ class TimeController: UIViewController {
         
     }
 
-    
+    // ************  Extract selected time ************
    @objc func setTime(){
     
     let formatter = DateFormatter()

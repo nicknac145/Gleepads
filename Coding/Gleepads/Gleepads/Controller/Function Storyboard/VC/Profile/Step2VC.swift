@@ -15,20 +15,26 @@ import CoreLocation
 
 class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
   
-    @IBOutlet weak var addImageLabel: UILabel!
     
+    
+    //********* OUTLET ******************
+    @IBOutlet weak var addImageLabel: UILabel!
     @IBOutlet weak var MapView: Custom_View!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
     
-   
+   // ******** VARIABLE FOR GEOLOCATION OPERATION **********
     let locationManager = CLLocationManager()
     var mapView = GMSMapView()
     var zoomLevel: Float = 15.0
     
+    
+    // ********** VARIABLE TO STORE DESIRE VALUE FROM THIS VC **************
     var currentLocation : CLLocation?
     var propertyImageArray = [UIImage]()
 
+    
+    // *********** INITIALIZE HOSTVC DELEGATE
     var hostDelegate : step2Delegate?
     
     
@@ -36,9 +42,11 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         super.viewDidLoad()
 
         
-        mapView.delegate = self
+        // *********** BACKGROUND Video Player ***************
 
         try? VideoBackground.shared.play(view: view, videoName: "host", videoType: "mp4")
+        
+        mapView.delegate = self
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
         
@@ -47,31 +55,27 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         imageCollectionView.isHidden = true
         
         
-        // Google Map
-        // *********************** LocationManager setting ***********************
+        //  ***************** " Google Map " ********************
+        
+        
+// ***** LocationManager setting ******
       //  locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-//        locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         
         print(CLLocationManager.locationServicesEnabled())
-        
-       
-        
-        
-        
-        // *********************** setting Map camera parameter ***********************
 
         
         
         
+// ******** setting Map camera parameter *******
+
         let camera  = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: zoomLevel)
-//        let camera  = GMSCameraPosition.camera(withLatitude: (currentLocation?.coordinate.latitude)!, longitude: (currentLocation?.coordinate.longitude)!, zoom: zoomLevel)
-        
-        // *********************** setting Mapview frame dimension ***********************
+
+// ********** setting Mapview frame dimension ************
+       
         mapView = GMSMapView.map(withFrame: MapView.bounds, camera: camera)
         
         mapView.animate(to: camera)
@@ -80,7 +84,7 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
     }
     
-    
+    // ******* COLLECTIONVIEW DELEGATE METHODS
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return propertyImageArray.count
@@ -98,6 +102,7 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     
+    // *********** ADDING IMAGE FROM PHOTO-LIBRARY *************
     
     @IBAction func addImage(_ sender: Any) {
         
@@ -114,7 +119,7 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 
     }
     
-  
+  // **************** METHOD TO PICK PHOTO **************
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print(info)
@@ -127,6 +132,8 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         imageCollectionView.reloadData()
     }
   
+    
+    //********** PROCEED BUTTON ACTION  **********
     @IBAction func ProceedButton(_ sender: Any) {
         
         
@@ -146,6 +153,8 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 
 
 
+// EXTENSION TO PERFORM GOOGLE MAP FUNCITON &
+
 extension Step2VC: CLLocationManagerDelegate, GMSMapViewDelegate{
     
     
@@ -162,15 +171,9 @@ extension Step2VC: CLLocationManagerDelegate, GMSMapViewDelegate{
 //        yourLocation["Latitude"] = String(location.coordinate.latitude)
 //        yourLocation["Longitude"] = String(location.coordinate.longitude )
 
-        
-      
 
         
-        
-        
-      
-        
-        // *********************** Define user current location with Marker: ***********************
+// ******** Define user current location with Marker: *************
         
         let marker = GMSMarker(position: location.coordinate)
 //                marker.icon = UIImage(named: "wifi")
@@ -188,10 +191,6 @@ extension Step2VC: CLLocationManagerDelegate, GMSMapViewDelegate{
         print(coordinate)
     }
 
-    
-    
-    
 
-    
 
 }
