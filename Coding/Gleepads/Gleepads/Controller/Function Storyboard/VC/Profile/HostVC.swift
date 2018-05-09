@@ -23,7 +23,7 @@ protocol step1Delegate {
 // ********* Created Delegate to fetch Data from Step2 VC ***************
 
 protocol step2Delegate {
-    func DataColletion(latitude : String, Longitude : String, PropertyImage : [UIImage])
+    func DataColletion(latitude : String, Longitude : String, PropertyImage : [UIImage], CityName: String, CountryName : String)
 }
 
 
@@ -38,6 +38,8 @@ protocol step3Delegate {
 
 
 class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
+ 
+    
 
   // ********* DELEGATE INITIALIZE *************
     
@@ -52,12 +54,14 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
         
     }
     
-    
-    func DataColletion(latitude: String, Longitude: String, PropertyImage: [UIImage]) {
+    func DataColletion(latitude: String, Longitude: String, PropertyImage: [UIImage], CityName: String, CountryName: String) {
         hostImages = PropertyImage
         hostingData["Latitude"] = latitude
         hostingData["Longitude"] = Longitude
+        hostingData["City"] = CityName
+        hostingData["Country"] = CountryName
     }
+    
     
     func DataColletion(Rent : String, PaymentMode : String, Guest : String, Check_In : String, Check_Out:String){
         
@@ -203,9 +207,9 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         print(hostingData)
         print(hostImages)
         
-//        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alert.addAction(action)
-//        self.present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }

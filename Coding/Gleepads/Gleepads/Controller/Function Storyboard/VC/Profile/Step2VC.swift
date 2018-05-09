@@ -20,6 +20,8 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     //********* OUTLET ******************
     @IBOutlet weak var addImageLabel: UILabel!
     @IBOutlet weak var MapView: Custom_View!
+    @IBOutlet weak var CityNameTF: UITextField!
+    @IBOutlet weak var countryTF: UITextField!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
     
@@ -30,8 +32,10 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     
     // ********** VARIABLE TO STORE DESIRE VALUE FROM THIS VC **************
-    var currentLocation : CLLocation?
+    var currentLocation : CLLocation? = CLLocation(latitude: 0, longitude: 0)
     var propertyImageArray = [UIImage]()
+    var city : String?
+    var country : String?
 
     
     // *********** INITIALIZE HOSTVC DELEGATE
@@ -58,12 +62,26 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         //  ***************** " Google Map " ********************
         
         
-// ***** LocationManager setting ******
-      //  locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
+        // ***** LocationManager setting ******
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+        
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+
+        }
+        else if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+
+        }
+        else if CLLocationManager.authorizationStatus() == .restricted {
+            print(CLLocationManager.authorizationStatus())
+        }
+        
+        
+       
         
         print(CLLocationManager.locationServicesEnabled())
 
@@ -72,7 +90,13 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
 // ******** setting Map camera parameter *******
 
+        
+        print(locationManager.location?.coordinate)
+        
+        
+        if locationManager.location?.coordinate != nil {
         let camera  = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: zoomLevel)
+
 
 // ********** setting Mapview frame dimension ************
        
@@ -81,7 +105,12 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         mapView.animate(to: camera)
         
         self.MapView.addSubview(mapView)
+    }
         
+        else{
+            let defaultValue = CLLocation(latitude: 0, longitude: 0)
+         let camera  = GMSCameraPosition.camera(withLatitude: defaultValue.coordinate.latitude, longitude: defaultValue.coordinate.longitude, zoom: zoomLevel)
+        }
     }
     
     // ******* COLLECTIONVIEW DELEGATE METHODS
@@ -136,18 +165,26 @@ class Step2VC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     //********** PROCEED BUTTON ACTION  **********
     @IBAction func ProceedButton(_ sender: Any) {
         
-        
+           if locationManager.location?.coordinate != nil && (CityNameTF.text!.isEmpty) == false && (countryTF.text?.isEmpty)! == false{
+            
         let lat = currentLocation?.coordinate.latitude.description
         let long = currentLocation?.coordinate.longitude.description
-        
+        city = CityNameTF.text
+        country = countryTF.text
         
     
         
-        hostDelegate?.DataColletion(latitude: lat!,   Longitude: long!, PropertyImage:propertyImageArray)
+        hostDelegate?.DataColletion(latitude: lat!,   Longitude: long!, PropertyImage:propertyImageArray, CityName: city!, CountryName: country!)
         
         self.navigationController?.popViewController(animated: true)
-        print("\(lat)  \(long)"  )
-        print(propertyImageArray)
+    }
+        else{
+            let alert = UIAlertController(title: "Some Value Missing!", message: "You are missing some textField", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
 }
 

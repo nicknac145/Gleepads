@@ -157,12 +157,20 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
         if (adTitle.text?.isEmpty)! == false && (propertyTF.text?.isEmpty)! == false && (amenitiesTF.text?.isEmpty)! == false && (minDay.text?.isEmpty)! == false && descrip.text.isEmpty == false{
 
             self.navigationController?.popViewController(animated: true)
+            
+            // *********** ASSIGN VALUE TO HOST DELEGATE METHOD ********
+            hostDelegate?.DataColletion(propertyTitle: adtitle!, propertyCatergory: propertyCategory!, propertyAmenities: amenities!, propertyMininum: mininumDay!, propertyDescription: propertyDescription!)
         }
 
         else{
 
             print("MISSING VALUE")
 
+            let alert = UIAlertController(title: "Some Value Missing!", message: "You are missing some textField", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            
             print((adTitle.text?.isEmpty)!)
             print((propertyTF.text?.isEmpty)!)
             print((amenitiesTF.text?.isEmpty)!)
@@ -171,8 +179,7 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
         }
         
 
-        // *********** ASSIGN VALUE TO HOST DELEGATE METHOD ********
-        hostDelegate?.DataColletion(propertyTitle: adtitle!, propertyCatergory: propertyCategory!, propertyAmenities: amenities!, propertyMininum: mininumDay!, propertyDescription: propertyDescription!)
+      
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

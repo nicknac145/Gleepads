@@ -9,7 +9,28 @@
 import UIKit
 import SwiftVideoBackground
 
-class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+
+
+protocol TimeDelegate {
+    func setCheckTime(Time: String)
+}
+
+class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, TimeDelegate {
+   
+    
+    func setCheckTime(Time: String) {
+        if timeSettingFor == "IN"{
+            
+            Check_In_label.textColor = UIColor.black
+            Check_In_label.text = Time
+        }
+        else if timeSettingFor == "OUT"{
+            Check_Out_label.textColor = UIColor.black
+
+            Check_Out_label.text = Time
+        }
+    }
+    
 
     // ************ OUTLET **********************
     @IBOutlet weak var rentTF: UITextField!
@@ -28,6 +49,7 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
     
     var PickerView = UIPickerView()
     var PaymentType = ["Visa","Master Card","American Express", "Cryptocurrency" ]
+    var timeSettingFor : String?
     
     // *********** INITIALIZE HOSTVC DELEGATE
 
@@ -58,6 +80,13 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
         Check_Out_label.addGestureRecognizer(CheckOUTtapped)
 
     
+        enableSwitch.isOn = false
+        SuggestSlider.isEnabled = false
+        minSuggestAmount.isHidden = true
+        maxSuggestAmount.isHidden = true
+        
+        minSuggestAmount.text = "10.0"
+        maxSuggestAmount.text = "100.0"
         
     }
     
@@ -69,8 +98,13 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
         
         if recogName == "IN"{
             performSegue(withIdentifier: "Time_Segue", sender: self)
+            
+            timeSettingFor = "IN"
         }
-        else {}
+        else {
+            performSegue(withIdentifier: "Time_Segue", sender: self)
+            timeSettingFor = "OUT"
+        }
     }
     
     
@@ -84,6 +118,8 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
        
     }
     
+    
+
    
  //************* PICKERVIEW DELEGATE METHOD ***********
     
@@ -110,7 +146,11 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
         paymentModeTF.text = PaymentType[row]
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! TimeController
+        
+        dest.delegate = self
+    }
     
     
     // *********** PROCEED BUTTON ACTION *********************
@@ -120,6 +160,7 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
         if (rentTF.text?.isEmpty)! == false && (paymentModeTF.text?.isEmpty)! == false && (guestNumber.text?.isEmpty)! == false && (Check_In_label.text!.isEmpty) == false && (Check_Out_label.text?.isEmpty)! == false{
             
             hostDelegate?.DataColletion(Rent: rentTF.text!, PaymentMode: paymentModeTF.text!, Guest: guestNumber.text!, Check_In: Check_In_label.text!, Check_Out: Check_Out_label.text!)
+            
             
             
             self.navigationController?.popViewController(animated: true)
@@ -133,6 +174,32 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
         }
  
 
+    }
+    
+    
+    @IBAction func enableButtonAction(_ sender: UISwitch) {
+        if sender.isOn == true{
+            
+// let amount = ((Float(maxSuggestAmount.text!)! - Float(minSuggestAmount.text!)! ) * sender.value ) + Float(minSuggestAmount.text!)!
+//            rentTF.text = String(amount)
+            SuggestSlider.isEnabled = true
+            minSuggestAmount.isHidden = false
+            maxSuggestAmount.isHidden = false
+        }
+        else{
+            SuggestSlider.isEnabled = false
+            minSuggestAmount.isHidden = true
+            maxSuggestAmount.isHidden = true
+        }
+    }
+    @IBAction func SliderAction(_ sender: UISlider) {
+        
+        print(sender.value)
+        
+        let amount = ((Float(maxSuggestAmount.text!)! - Float(minSuggestAmount.text!)! ) * sender.value ) + Float(minSuggestAmount.text!)!
+        rentTF.text = String(amount)
+        
+        
     }
     
 }
