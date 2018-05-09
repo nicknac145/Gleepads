@@ -46,7 +46,7 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     func DataColletion(propertyTitle: String, propertyCatergory: String, propertyAmenities: String, propertyMininum: String, propertyDescription: String) {
         hostingData["User_ID"] = Auth.auth().currentUser?.uid
         hostingData["AD-Title"] = propertyTitle
-        hostingData["Property-Catergory"] = propertyCatergory
+        hostingData["Property-Category"] = propertyCatergory
         hostingData["Amenities"] = propertyAmenities
         hostingData["Mininum-Day"] = propertyMininum
         hostingData["Description"] = propertyDescription
@@ -66,7 +66,7 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     func DataColletion(Rent : String, PaymentMode : String, Guest : String, Check_In : String, Check_Out:String){
         
         hostingData["Rent"] = Rent
-        hostingData["Payment"] = PaymentMode
+        hostingData["Payment-Mode"] = PaymentMode
         hostingData["Guest-Number"] = Guest
         hostingData["Check-in"] = Check_In
         hostingData["Check-out"] = Check_Out
