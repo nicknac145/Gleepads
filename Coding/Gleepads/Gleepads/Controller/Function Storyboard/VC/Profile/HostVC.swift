@@ -106,12 +106,17 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
                        ]
     
     var hostImages = [UIImage]()
-    
+    var count = 1
+    var urlString : String?
+    var urlArray = [String]()
 
     var ref =  Database.database().reference()
     
+    let storage = Storage.storage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         
         // *********** CONFIGURE NAVIGATOIN BAR SETTING  ***************
@@ -210,11 +215,44 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { (Alert) in
             
-            print(Auth.auth().currentUser?.uid)
+//            print(Auth.auth().currentUser?.uid)
             
             
-//            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().child("User ID").setValue((Auth.auth().currentUser?.uid)!)
-            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+            
+            for image in self.hostImages{
+                
+                var imageData = Data()
+                imageData = UIImagePNGRepresentation(image)!
+                
+                
+                
+                let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
+                self.count += 1
+                let uploadMetaData = StorageMetadata()
+                uploadMetaData.contentType = "image/jpeg"
+                storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
+                
+                    if error != nil{
+                        
+                        print("i recieved error \(error?.localizedDescription)")
+                    }
+                    else{
+                        
+                    
+                        print(metaData)
+
+                        self.urlArray.append((metaData?.downloadURL()?.description)!)
+                        print((metaData?.downloadURL()?.description)!)
+                        
+                        
+                        
+                    }
+                })
+
+            }
+
+//
+                self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
