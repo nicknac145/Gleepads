@@ -101,7 +101,11 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
                         "Payment-Mode":"",
                         "Guest-Number":"",
                        "Check-in":"",
-                       "Check-out":""
+                       "Check-out":"",
+                       "Available":"Yes",
+                       "CheckIn-Date":"",
+                       "CheckOut-Date":"",
+                       "Guest-Name":""
         
                        ]
     
