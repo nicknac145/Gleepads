@@ -9,6 +9,8 @@
 import UIKit
 //import Shift
 
+import Firebase
+
 class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
 
@@ -24,9 +26,22 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     var endingOffset : CGFloat = 0
 
     
+    
+    
+    // FIREBASE
+    
+    let StorageRef = Storage.storage().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let Uid = (Auth.auth().currentUser?.uid)!
+        
+        print(Uid)
+     
+        self.StorageRef.child(Uid).child("Hosting").child("My Dundee").getData(maxSize: 2048) { (data, err) in
+            print(data)
+        }
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()

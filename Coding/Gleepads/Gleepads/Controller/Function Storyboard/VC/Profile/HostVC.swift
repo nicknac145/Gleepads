@@ -210,55 +210,123 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         }
     }
     
+    
+  
+    
     @IBAction func Confirm_Button_Action(_ sender: Any) {
         
         
-        print(hostingData)
-        print(hostImages)
         
-        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default) { (Alert) in
+        // *********** Uploading Photo ***************
+        
+        for image in self.hostImages{
             
-//            print(Auth.auth().currentUser?.uid)
+            var imageData = Data()
+            imageData = UIImagePNGRepresentation(image)!
             
             
             
-            for image in self.hostImages{
+            let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
+            
+            self.count += 1
+            let uploadMetaData = StorageMetadata()
+            uploadMetaData.contentType = "image/jpeg"
+            storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
                 
-                var imageData = Data()
-                imageData = UIImagePNGRepresentation(image)!
-                
-                
-                
-                let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
-                self.count += 1
-                let uploadMetaData = StorageMetadata()
-                uploadMetaData.contentType = "image/jpeg"
-                storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
-                
-                    if error != nil{
-                        
-                        print("i recieved error \(error?.localizedDescription)")
-                    }
-                    else{
-                        
+                if error != nil{
                     
-                        print(metaData)
+                    let alert = UIAlertController(title: "ERROR!", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    self.urlArray.append((metaData?.downloadURL()?.description)!)
+                     print("METADATA:\(metaData?.downloadURL()?.description)!")
+                    
+                }
+                    
+                    
+                else{
 
-                        self.urlArray.append((metaData?.downloadURL()?.description)!)
-                        print((metaData?.downloadURL()?.description)!)
-                        
-                        
-                        
-                    }
-                })
+                    self.urlArray.append((metaData?.downloadURL()?.description)!)
+                    
+                    
+                    print("-------------------")
+                    print("METADATA:\(metaData?.downloadURL()?.description)!")
+                    print("ARRAY:\(self.urlArray)")
+                    print("-------------------")
 
-            }
 
-//
-                self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+                    
+                }
+            })
+   
         }
+        
+        
+        
+    
+        
+       
+        print("FINAL RESULT: \(self.urlArray)")
+        
+//****************************************
+        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default) { (alert) in
+            self.navigationController?.popViewController(animated: true)
+
+        }
+//************************************
         alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+       
+        
+        self.present(alert, animated: true) {
+           
+            
+//            for image in self.hostImages{
+//
+//                var imageData = Data()
+//                imageData = UIImagePNGRepresentation(image)!
+//
+//
+//
+//                let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
+//
+////                self.count += 1
+//                let uploadMetaData = StorageMetadata()
+//                uploadMetaData.contentType = "image/jpeg"
+//                storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
+//
+//                    if error != nil{
+//
+//                        print("i recieved error \(error?.localizedDescription)")
+//                    }
+//                    else{
+//
+//
+//
+//                        self.urlArray.append((metaData?.downloadURL()?.description)!)
+//                        print("METADATA:\(metaData?.downloadURL()?.description)!")
+//
+//                        self.count += 1
+//                    }
+//                })
+//
+//
+//
+//            }
+            
+            
+            if self.count == self.hostImages.count{
+                
+                                        print("ARRAY:\(self.urlArray)")
+            }
+            //
+//            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+            
+        
+        }
     }
 }
