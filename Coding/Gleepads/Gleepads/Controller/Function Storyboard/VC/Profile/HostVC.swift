@@ -251,39 +251,23 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
 
                 
                         self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+                
+                //****************************************
+                let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "OK", style: .default) { (alert) in
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }
+                //************************************
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
             }
             
         }
-        
-        
-        
-        
-        
-        
-       
-        
-        
-        
-    
-        
-       
-        
-//****************************************
-        let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "OK", style: .default) { (alert) in
-            self.navigationController?.popViewController(animated: true)
 
-        }
-//************************************
-        alert.addAction(action)
-       
-        
-        self.present(alert, animated: true) {
-//            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
-            
-        
-        }
+      
     }
     
     
