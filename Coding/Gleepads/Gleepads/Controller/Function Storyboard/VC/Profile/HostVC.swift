@@ -105,12 +105,13 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
                        "Available":"Yes",
                        "CheckIn-Date":"",
                        "CheckOut-Date":"",
-                       "Guest-Name":""
+                       "Guest-Name":"",
+                       "ImageUrl":""
         
                        ]
     
     var hostImages = [UIImage]()
-    var count = 1
+    var count : Int?
     var urlString : String?
     var urlArray = [String]()
 
@@ -168,6 +169,8 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
 
     
     @IBAction func step3_Button_Action(_ sender: Any) {
+        self.count = self.hostImages.count
+
         
         performSegue(withIdentifier: "Step3_Segue", sender: self)
         
@@ -210,66 +213,60 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         }
     }
     
+
     
-  
+    
+    
+    // *************** CONFIRM BUTTON ************
     
     @IBAction func Confirm_Button_Action(_ sender: Any) {
         
         
         
-        // *********** Uploading Photo ***************
         
-        for image in self.hostImages{
+        
+        
+        uploadData { (url) in
+          
+            let imageUrl = url as! String
+        
+            self.count = self.count! - 1
+
+            print((self.count)!)
+
+            print(imageUrl)
             
-            var imageData = Data()
-            imageData = UIImagePNGRepresentation(image)!
+            self.urlArray.append(imageUrl)
             
             
-            
-            let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
-            
-            self.count += 1
-            let uploadMetaData = StorageMetadata()
-            uploadMetaData.contentType = "image/jpeg"
-            storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
+            if (self.count)! == 0{
                 
-                if error != nil{
-                    
-                    let alert = UIAlertController(title: "ERROR!", message: error?.localizedDescription, preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    
-                    self.present(alert, animated: true, completion: nil)
-                    
-                    self.urlArray.append((metaData?.downloadURL()?.description)!)
-                     print("METADATA:\(metaData?.downloadURL()?.description)!")
-                    
-                }
-                    
-                    
-                else{
+                self.urlString = self.urlArray.joined(separator: ",")
+                
+                
+                print("******************")
+                self.hostingData["ImageUrl"] = self.urlString!
+                print(self.hostingData)
+                print("******************")
 
-                    self.urlArray.append((metaData?.downloadURL()?.description)!)
-                    
-                    
-                    print("-------------------")
-                    print("METADATA:\(metaData?.downloadURL()?.description)!")
-                    print("ARRAY:\(self.urlArray)")
-                    print("-------------------")
-
-
-                    
-                }
-            })
-   
+                
+                        self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+            }
+            
         }
+        
+        
+        
+        
+        
+        
+       
         
         
         
     
         
        
-        print("FINAL RESULT: \(self.urlArray)")
         
 //****************************************
         let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
@@ -283,50 +280,75 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
        
         
         self.present(alert, animated: true) {
-           
-            
-//            for image in self.hostImages{
-//
-//                var imageData = Data()
-//                imageData = UIImagePNGRepresentation(image)!
-//
-//
-//
-//                let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
-//
-////                self.count += 1
-//                let uploadMetaData = StorageMetadata()
-//                uploadMetaData.contentType = "image/jpeg"
-//                storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
-//
-//                    if error != nil{
-//
-//                        print("i recieved error \(error?.localizedDescription)")
-//                    }
-//                    else{
-//
-//
-//
-//                        self.urlArray.append((metaData?.downloadURL()?.description)!)
-//                        print("METADATA:\(metaData?.downloadURL()?.description)!")
-//
-//                        self.count += 1
-//                    }
-//                })
-//
-//
-//
-//            }
-            
-            
-            if self.count == self.hostImages.count{
-                
-                                        print("ARRAY:\(self.urlArray)")
-            }
-            //
 //            self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
             
         
         }
+    }
+    
+    
+    
+    
+    
+    func uploadData(completion : @escaping (_ url:String)->()){
+        
+       
+        
+        // *********** Uploading Photo ***************
+        
+        for image in self.hostImages{
+            
+            var imageData = Data()
+            imageData = UIImagePNGRepresentation(image)!
+            
+            
+            
+            let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
+            
+            let uploadMetaData = StorageMetadata()
+            uploadMetaData.contentType = "image/jpeg"
+            storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
+                
+             
+                
+                if error != nil{
+                    
+                    let alert = UIAlertController(title: "ERROR!", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    self.urlArray.append((metaData?.downloadURL()?.description)!)
+                    print("METADATA:\(metaData?.downloadURL()?.description)!")
+                    
+                }
+                  
+   
+                    
+                else{
+                    
+                    
+//
+                    completion((metaData?.downloadURL()?.description)!)
+                    
+                    
+//                    print("-------------------")
+//                    print("METADATA:\(metaData?.downloadURL()?.description)!")
+//                    print("ARRAY:\(self.urlArray)")
+//                    print("-------------------")
+                    
+                    
+                    
+                }
+            })
+            
+        }
+        
+        
+        ///**** update db ********
+       
+        
+        
     }
 }
