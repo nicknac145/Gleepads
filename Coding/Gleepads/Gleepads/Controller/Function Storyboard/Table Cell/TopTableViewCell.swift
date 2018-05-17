@@ -16,4 +16,8 @@ class TopTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageCell: UIImageView!
     
+    
+    
+   
+    
 }

@@ -612,17 +612,45 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfY-BX-XzI" userLabel="progress view">
+                                <rect key="frame" x="67" y="245" width="240" height="240"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8e0-T6-V9H">
+                                        <rect key="frame" x="110" y="110" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing ...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2Y-dk-oFF">
+                                        <rect key="frame" x="40" y="179.5" width="160" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8e0-T6-V9H" firstAttribute="leading" secondItem="NfY-BX-XzI" secondAttribute="leading" constant="110" id="DcT-TK-Chf"/>
+                                    <constraint firstItem="g2Y-dk-oFF" firstAttribute="leading" secondItem="NfY-BX-XzI" secondAttribute="leading" constant="40" id="FeF-lB-LdL"/>
+                                    <constraint firstAttribute="bottom" secondItem="g2Y-dk-oFF" secondAttribute="bottom" constant="40" id="I5b-50-zby"/>
+                                    <constraint firstAttribute="trailing" secondItem="8e0-T6-V9H" secondAttribute="trailing" constant="110" id="IRB-ew-PAN"/>
+                                    <constraint firstAttribute="trailing" secondItem="g2Y-dk-oFF" secondAttribute="trailing" constant="40" id="MBP-vB-qRt"/>
+                                    <constraint firstItem="8e0-T6-V9H" firstAttribute="top" secondItem="NfY-BX-XzI" secondAttribute="top" constant="110" id="lxl-jr-1Oe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5VD-0t-3g4" firstAttribute="trailing" secondItem="oOu-48-Kx8" secondAttribute="trailing" id="4KF-yY-kcn"/>
                             <constraint firstItem="fcJ-Ko-rt4" firstAttribute="leading" secondItem="oOu-48-Kx8" secondAttribute="leading" id="AVv-V8-oMz"/>
+                            <constraint firstItem="NfY-BX-XzI" firstAttribute="centerY" secondItem="oOu-48-Kx8" secondAttribute="centerY" id="GOe-mI-9Eq"/>
                             <constraint firstItem="5VD-0t-3g4" firstAttribute="height" secondItem="8mp-wp-cD1" secondAttribute="height" multiplier="0.22" id="INO-Ic-Y7w"/>
+                            <constraint firstItem="NfY-BX-XzI" firstAttribute="width" secondItem="8mp-wp-cD1" secondAttribute="width" multiplier="0.64" id="Mt9-dC-hHR"/>
                             <constraint firstItem="oOu-48-Kx8" firstAttribute="bottom" secondItem="fcJ-Ko-rt4" secondAttribute="bottom" id="QMH-ON-Kcb"/>
                             <constraint firstItem="5VD-0t-3g4" firstAttribute="leading" secondItem="oOu-48-Kx8" secondAttribute="leading" id="SR2-ut-Dd2"/>
+                            <constraint firstItem="NfY-BX-XzI" firstAttribute="height" secondItem="8mp-wp-cD1" secondAttribute="height" multiplier="0.36" id="Tob-k7-Zep"/>
                             <constraint firstItem="fcJ-Ko-rt4" firstAttribute="top" secondItem="5VD-0t-3g4" secondAttribute="bottom" id="idG-ZZ-jc8"/>
                             <constraint firstItem="5VD-0t-3g4" firstAttribute="top" secondItem="8mp-wp-cD1" secondAttribute="top" id="mwF-oi-Eu8"/>
                             <constraint firstItem="oOu-48-Kx8" firstAttribute="trailing" secondItem="fcJ-Ko-rt4" secondAttribute="trailing" id="nHt-BO-Jyw"/>
+                            <constraint firstItem="NfY-BX-XzI" firstAttribute="centerX" secondItem="oOu-48-Kx8" secondAttribute="centerX" id="oXn-ge-FCF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oOu-48-Kx8"/>
                     </view>
@@ -636,6 +664,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Confirm_Button" destination="d0l-3e-OmL" id="bu9-L0-rL1"/>
+                        <outlet property="activityIndicator" destination="8e0-T6-V9H" id="Iab-4d-P5e"/>
+                        <outlet property="progress_View" destination="NfY-BX-XzI" id="8iz-nB-gpu"/>
                         <outlet property="step1_button" destination="FIU-O7-K4t" id="ZRv-2B-70T"/>
                         <outlet property="step1_view" destination="L17-PT-vLN" id="9p7-if-VgO"/>
                         <outlet property="step2_Button" destination="ZwW-Tm-KTq" id="6Ee-4s-F8x"/>

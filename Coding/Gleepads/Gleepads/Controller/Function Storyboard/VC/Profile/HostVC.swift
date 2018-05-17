@@ -79,10 +79,12 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     @IBOutlet weak var step1_view: UIView!
     @IBOutlet weak var step2_view: UIView!
     @IBOutlet weak var step3_view: UIView!
+    @IBOutlet weak var progress_View: UIView!
     @IBOutlet weak var step1_button: Custom_Button!
     @IBOutlet weak var step2_Button: Custom_Button!
     @IBOutlet weak var step3_Button: Custom_Button!
     @IBOutlet weak var Confirm_Button: Custom_Button!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     
@@ -130,7 +132,10 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
         navigationController?.navigationBar.shadowImage = UIImage()
     
         
-        // ********* SETTING INITIAL BUTTON VISUAL LOOK ************
+        // ********* SETTING INITIAL  VISUAL LOOK ************
+        
+    progress_View.isHidden = true
+        
     step2_view.alpha = 0.3
     step2_Button.isEnabled = false
     
@@ -178,7 +183,8 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
 
     }
     
-    
+    // *************** DISMISS BUTTON ************
+
     
     
     @IBAction func dismissButton(_ sender: Any) {
@@ -220,25 +226,34 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
     // *************** CONFIRM BUTTON ************
     
     @IBAction func Confirm_Button_Action(_ sender: Any) {
+ 
         
+        progress_View.isHidden = false
         
+        step2_view.alpha = 0.3
+        step2_Button.isEnabled = false
         
+        step3_view.alpha = 0.3
+        step3_Button.isEnabled = false
         
+        Confirm_Button.isEnabled = false
+        Confirm_Button.alpha = 0.3
         
-        
+        // CALLING "uploadData" FUNCTION
+       
         uploadData { (url) in
           
             let imageUrl = url as! String
         
             self.count = self.count! - 1
 
-            print((self.count)!)
-
-            print(imageUrl)
+//            print((self.count)!)
+//
+//            print(imageUrl)
             
             self.urlArray.append(imageUrl)
             
-            
+     // IF ALL PHOTOS HAVE BEEN UPLOAD TO STORAGE
             if (self.count)! == 0{
                 
                 self.urlString = self.urlArray.joined(separator: ",")
@@ -249,20 +264,32 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
                 print(self.hostingData)
                 print("******************")
 
+    // ******** CREATE FIREBASE DATABASE RECORD *************
+    self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
                 
-                        self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+    //****************************************
+                self.progress_View.isHidden = true
                 
-                //****************************************
+                self.step2_view.alpha = 1
+                self.step2_Button.isEnabled = true
+                
+                self.step3_view.alpha = 1
+                self.step3_Button.isEnabled = true
+                
+                self.Confirm_Button.isEnabled = true
+                self.Confirm_Button.alpha = 0.3
+                
+                
                 let alert = UIAlertController(title: "SUCCESS!", message: "YOU PROPERTY DETAIL HAS BEEN STORED", preferredStyle: .alert)
                 
                 let action = UIAlertAction(title: "OK", style: .default) { (alert) in
                     self.navigationController?.popViewController(animated: true)
                     
                 }
-                //************************************
                 alert.addAction(action)
                 
-                self.present(alert, animated: true, completion: nil)
+                
+    self.present(alert, animated: true, completion: nil)
             }
             
         }
@@ -272,13 +299,13 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
     
     
     
-    
+    // *********** Uploading Photo ***************
+
     
     func uploadData(completion : @escaping (_ url:String)->()){
         
        
         
-        // *********** Uploading Photo ***************
         
         for image in self.hostImages{
             
@@ -313,26 +340,15 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
                 else{
                     
                     
-//
+
                     completion((metaData?.downloadURL()?.description)!)
                     
-                    
-//                    print("-------------------")
-//                    print("METADATA:\(metaData?.downloadURL()?.description)!")
-//                    print("ARRAY:\(self.urlArray)")
-//                    print("-------------------")
-                    
-                    
-                    
+   
                 }
             })
             
         }
         
-        
-        ///**** update db ********
-       
-        
-        
+
     }
 }

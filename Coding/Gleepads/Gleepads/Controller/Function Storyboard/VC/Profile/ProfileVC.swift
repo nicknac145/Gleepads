@@ -7,9 +7,9 @@
 //
 
 import UIKit
-//import Shift
+import Firebase
 
-class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     //*********** STRUCT TO MANAGE DATA IN CELL WILL HOLD *************
     
@@ -28,23 +28,20 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var profileTableView: UITableView!
     
     var dataArray = [Cell_info]()
-    
+   
+    var dbRef =  Database.database().reference()
+    let storage = Storage.storage()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-//        let view = self.view as! ShiftView
-//        view.setColors([UIColor.yellow,
-//                        UIColor.brown,
-//                        UIColor.orange,
-//                        UIColor.red,
-//                        UIColor.blue,
-//                        UIColor.purple,
-//                        UIColor.cyan,
-//                        UIColor.green,
-//                        //                        UIColor.lightGray,
-//            ])
-//        view.startTimedAnimation()
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(imageChange))
+//
+//        self.topTableView.imageCell.addGestureRecognizer(tap)
+//
+        
+
         
         
         
@@ -108,6 +105,10 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             cell.subTitleLabel.text = dataArray[indexPath.row].Sub_Title
             cell.imageCell.image = dataArray[indexPath.row].image
             
+            let tap = UITapGestureRecognizer(target: self, action: #selector(imageChange))
+            cell.imageCell.addGestureRecognizer(tap)
+        
+            
             return cell
 
         }
@@ -159,5 +160,65 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             self.navigationController?.pushViewController(controller!, animated: true)
         }
        
+    }
+    
+    
+    // ********** Change profile photo *******
+    @objc func imageChange(){
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    
+        present(imagePicker, animated: true, completion: nil)
+    
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
+        let selectedImage = info["UIImagePickerControllerOriginalImage"] as! UIImage
+        
+        var imageData = Data()
+        
+        imageData = UIImageJPEGRepresentation(selectedImage, 0.3)!
+        
+        
+        
+        let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("profile_Image")
+        
+        let uploadMetaData = StorageMetadata()
+        uploadMetaData.contentType = "image/jpeg"
+        storageRef.putData(imageData, metadata: uploadMetaData, completion: { (metaData, error) in
+            
+            
+            
+            if error != nil{
+                
+                let alert = UIAlertController(title: "ERROR!", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            }
+                
+                
+                
+            else{
+                
+                print(metaData?.downloadURL()?.description)
+                
+            self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("ProfileImage_Url").setValue((metaData?.downloadURL()?.description)!)
+                
+                
+            }
+        })
+        
+        
+        
+        
+        dismiss(animated: true, completion: nil)
+        
     }
 }

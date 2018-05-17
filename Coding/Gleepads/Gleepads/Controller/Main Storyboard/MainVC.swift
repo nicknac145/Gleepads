@@ -26,6 +26,10 @@ class MainVC: UIViewController,GIDSignInUIDelegate,GIDSignInDelegate {
     
     @IBOutlet weak var Phrase_Label: UILabel!
     
+    
+    
+    var dbRef : DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,6 +110,28 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                 print("Google Sign IN Successfully")
                  self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
                 
+                
+                print(user?.displayName)
+                print(user?.email)
+                print(user?.uid)
+                
+                var fullName = user?.displayName?.components(separatedBy: " ")
+                let fName = fullName![0]
+                let lName = fullName![1]
+                
+                print(fName)
+                print(lName)
+                
+                self.dbRef = Database.database().reference()
+                
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Fname").setValue(fName)
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Lname").setValue(lName)
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Email").setValue(Auth.auth().currentUser?.email)
+
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Uid").setValue(Auth.auth().currentUser?.uid)
+                
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue("")
+                
             }
             
         }
@@ -129,6 +155,8 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
 
         FBSDKLoginManager().logIn(withReadPermissions: ["email","public_profile"], from: self) { (result, error) in
 
+            
+            
             if error == nil && result?.token != nil{
 
                 guard let accessToken = result?.token.tokenString else{
@@ -143,9 +171,30 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                         return
                     }
                     print("SUCCESSFUL LOGIN WITH FACEBOOK")
+                    
+                    
+                    
                     self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
-//                    print(user?.displayName)
-//                    print(user?.email)
+                    print(user?.displayName)
+                    print(user?.email)
+                    
+                    
+                    var fullName = user?.displayName?.components(separatedBy: " ")
+                    let fName = fullName![0]
+                    let lName = fullName![1]
+                    
+                    print(fName)
+                    print(lName)
+                    
+                    self.dbRef = Database.database().reference()
+                    
+                    self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Fname").setValue(fName)
+                    self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Lname").setValue(lName)
+                    self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Email").setValue(Auth.auth().currentUser?.email)
+                    
+                    self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Uid").setValue(Auth.auth().currentUser?.uid)
+                    
+                    self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue("")
                 }
 
             }

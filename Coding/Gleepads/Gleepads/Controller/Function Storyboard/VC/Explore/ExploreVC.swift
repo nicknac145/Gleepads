@@ -24,24 +24,82 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     @IBOutlet weak var guestButton: UIButton!
     
     var endingOffset : CGFloat = 0
+    
+    var dbRef : DatabaseReference!
+    var dbHandle : DatabaseHandle!
 
     
+    var exploreValue = ["":""]
+    var hostingValue = ["":""]
+    var suggestedValue = ["":""]
+    var userValue = ["":""]
+
     
     
     // FIREBASE
     
-    let StorageRef = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let Uid = (Auth.auth().currentUser?.uid)!
+        dbRef = Database.database().reference()
         
-        print(Uid)
+        
+        // ********** EXPLORE VALUE ****************
+        dbHandle = dbRef.child("Explore").observe(.value, with: { (SnapShot) in
+            if  SnapShot != nil {
+                
+                self.exploreValue = SnapShot.value as! [String : String]
+
+                print("******* EXPLORE *******")
+                print(self.exploreValue)
+                print("***************")
+
+            }
+        })
+        
+        
+        // ********** HOSTING VALUE ****************
+        let Uid = (Auth.auth().currentUser?.uid)!
+
+        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (SnapShot) in
+            
+//            print(SnapShot.value)
+            if  SnapShot != nil {
+
+                self.hostingValue = SnapShot.value as! [String : String]
+
+//                print("****** HOST ******")
+//                print(self.hostingValue)
+//                print("***************")
+
+            }
+        })
      
-        self.StorageRef.child(Uid).child("Hosting").child("My Dundee").getData(maxSize: 2048) { (data, err) in
-            print(data)
-        }
+        // ********** SUGGESTED VALUE ****************
+        dbHandle = dbRef.child("Suggested").observe(.value, with: { (SnapShot) in
+            if  SnapShot != nil {
+
+                self.suggestedValue = SnapShot.value as! [String : String]
+
+                print("******* SUGGESGTED *******")
+                print(self.suggestedValue)
+                print("***************")
+
+            }
+        })
+        // ********** USER VALUE ****************
+        dbHandle = dbRef.child("User_Profile").child(Uid).observe(.value, with: { (SnapShot) in
+            if  SnapShot != nil {
+
+                self.userValue = SnapShot.value as! [String : String]
+
+                print("******** USER PROFILE ******")
+                print(self.userValue)
+                print("***************")
+
+            }
+        })
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
