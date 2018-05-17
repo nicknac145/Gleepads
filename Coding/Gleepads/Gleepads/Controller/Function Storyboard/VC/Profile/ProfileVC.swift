@@ -58,37 +58,41 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                 self.userValue = SnapShot.value as! [String : String]
                 
                 
-                if self.userValue["ProfileImage_Url"]?.isEmpty == false {
-                    
+                
                     
                 let profileURL = self.userValue["ProfileImage_Url"]
 
                 print(profileURL)
                 
-//                let fileUrl = profileURL as! String
-//                let url = URL(string: fileUrl)
-//                let data = NSData(contentsOf: url!)
-//                let picture = UIImage(data: data as! Data)
-//
-//                    self.ProfileImage = picture
+                let fileUrl = profileURL as! String
+                print("fileUrl:\(fileUrl)")
+                let url = URL(string: fileUrl)
+                print("url: \(url!)")
+                let data = NSData(contentsOf: url!)
+                print("data: \(data)")
+                
+                
+                let picture = UIImage(data: data as! Data)
+                print("picture:\(picture)")
+                    self.ProfileImage = picture!
                     
                     // *****************
-                if let url = URL(string: profileURL!){
-
-                    do {
-                        let data = try Data(contentsOf: url)
-                        self.ProfileImage = UIImage(data: data)
-
-
-                        print("########################")
-                        print(self.ProfileImage)
-
-                        print("########################")
-
-                    }catch let err{
-                        print(err.localizedDescription)
-                    }
-                }
+//                if let url = URL(string: profileURL!){
+//
+//                    do {
+//                        let data = try Data(contentsOf: url)
+//                        self.ProfileImage = UIImage(data: data)
+//
+//
+//                        print("########################")
+//                        print(self.ProfileImage)
+//
+//                        print("########################")
+//
+//                    }catch let err{
+//                        print(err.localizedDescription)
+//                    }
+//                }
                 
                 
                 print("******** USER PROFILE ******")
@@ -96,11 +100,7 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                 print("***************")
                 
             }
-                else{
-                    self.ProfileImage = UIImage(named: "Add-image")
-
-                }
-            }
+            
         })
 //        self.ProfileImage = UIImage(named: "Add-image")
 
