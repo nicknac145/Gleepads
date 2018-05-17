@@ -28,23 +28,82 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIIm
     @IBOutlet weak var profileTableView: UITableView!
     
     var dataArray = [Cell_info]()
-   
-    var dbRef =  Database.database().reference()
+    var userValue = ["":""]
+    
+    var fullName : String!
+    var ProfileImage : UIImage!
+    
+    
+    // FIREBASE
+    var dbRef : DatabaseReference!
+    var dbHandle : DatabaseHandle!
     let storage = Storage.storage()
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(imageChange))
-//
-//        self.topTableView.imageCell.addGestureRecognizer(tap)
-//
+self.fullName = (Auth.auth().currentUser?.displayName)!
+ 
+        // ********** USER VALUE ****************
+        dbRef = Database.database().reference()
         
+        dbHandle = dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).observe(.value, with: { (SnapShot) in
+            if  SnapShot != nil {
+               
+            
+                self.userValue = SnapShot.value as! [String : String]
+                
+                
+                if self.userValue["ProfileImage_Url"]?.isEmpty == false {
+                    
+                    
+                let profileURL = self.userValue["ProfileImage_Url"]
 
-        
-        
-        
+                print(profileURL)
+                
+//                let fileUrl = profileURL as! String
+//                let url = URL(string: fileUrl)
+//                let data = NSData(contentsOf: url!)
+//                let picture = UIImage(data: data as! Data)
+//
+//                    self.ProfileImage = picture
+                    
+                    // *****************
+                if let url = URL(string: profileURL!){
+
+                    do {
+                        let data = try Data(contentsOf: url)
+                        self.ProfileImage = UIImage(data: data)
+
+
+                        print("########################")
+                        print(self.ProfileImage)
+
+                        print("########################")
+
+                    }catch let err{
+                        print(err.localizedDescription)
+                    }
+                }
+                
+                
+                print("******** USER PROFILE ******")
+                print(self.userValue)
+                print("***************")
+                
+            }
+                else{
+                    self.ProfileImage = UIImage(named: "Add-image")
+
+                }
+            }
+        })
+//        self.ProfileImage = UIImage(named: "Add-image")
+
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -52,7 +111,7 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIIm
         
         // ********** DATA FOR TABLEVIEW CELL ***********
 
-        dataArray = [Cell_info(cell: 1, image: #imageLiteral(resourceName: "tom.jpg"), Title: "Tom Cruise", Sub_Title: "view & edit"),
+        dataArray = [Cell_info(cell: 1, image: self.ProfileImage, Title: self.fullName, Sub_Title: "view & edit"),
                      Cell_info(cell: 2, image: nil, Title: nil, Sub_Title: "Just 4 steps left"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "notify.png"), Title: nil, Sub_Title: "Notification"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "gift.png"), Title: nil, Sub_Title: "Invite friend"),
@@ -78,7 +137,7 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIIm
         profileTableView.delegate = self
         profileTableView.dataSource = self
         
-        
+        profileTableView.reloadData()
      
     }
     

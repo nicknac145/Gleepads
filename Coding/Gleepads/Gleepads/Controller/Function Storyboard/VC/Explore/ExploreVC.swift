@@ -88,18 +88,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
             }
         })
-        // ********** USER VALUE ****************
-        dbHandle = dbRef.child("User_Profile").child(Uid).observe(.value, with: { (SnapShot) in
-            if  SnapShot != nil {
-
-                self.userValue = SnapShot.value as! [String : String]
-
-                print("******** USER PROFILE ******")
-                print(self.userValue)
-                print("***************")
-
-            }
-        })
+    
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()

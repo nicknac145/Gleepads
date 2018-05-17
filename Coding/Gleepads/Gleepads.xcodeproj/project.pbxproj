@@ -108,6 +108,7 @@
 		F29C059F2066660D00EC802F /* HeadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C059D2066660D00EC802F /* HeadingCell.swift */; };
 		F29C05A12066702500EC802F /* NotificationSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C05A02066702500EC802F /* NotificationSettingVC.swift */; };
 		F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C05A82066BC6600EC802F /* LaunchedVC.swift */; };
+		F29D7A2020AD9E8D0029271E /* Add-image.png in Resources */ = {isa = PBXBuildFile; fileRef = F29D7A1F20AD9E8C0029271E /* Add-image.png */; };
 		F2A97F98209B742900312B66 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A97F97209B742900312B66 /* logo.png */; };
 		F2A97F9C209B792500312B66 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A97F9B209B792500312B66 /* marker.png */; };
 		F2C1024D206D1D5F00B4DA6B /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1024C206D1D5F00B4DA6B /* testVC.swift */; };
@@ -138,7 +139,6 @@
 		F2EF76E02068EAA100B378BB /* right_pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76CF2068EAA100B378BB /* right_pointer.png */; };
 		F2EF76E12068EAA100B378BB /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D02068EAA100B378BB /* setting.png */; };
 		F2EF76E32068EAA100B378BB /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D22068EAA100B378BB /* feedback.png */; };
-		F2EF76E42068EAA100B378BB /* tom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D32068EAA100B378BB /* tom.jpg */; };
 		F2EF76E52068EAA100B378BB /* Gleepads.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D42068EAA100B378BB /* Gleepads.png */; };
 		F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2FD44D9206AB1AC00913885 /* e-mail.mp4 */; };
 /* End PBXBuildFile section */
@@ -247,6 +247,7 @@
 		F29C059D2066660D00EC802F /* HeadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadingCell.swift; sourceTree = "<group>"; };
 		F29C05A02066702500EC802F /* NotificationSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingVC.swift; sourceTree = "<group>"; };
 		F29C05A82066BC6600EC802F /* LaunchedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchedVC.swift; sourceTree = "<group>"; };
+		F29D7A1F20AD9E8C0029271E /* Add-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-image.png"; sourceTree = "<group>"; };
 		F2A97F97209B742900312B66 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../../images & icon/logo.png"; sourceTree = "<group>"; };
 		F2A97F9B209B792500312B66 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		F2C1024C206D1D5F00B4DA6B /* testVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
@@ -279,7 +280,6 @@
 		F2EF76CF2068EAA100B378BB /* right_pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_pointer.png; sourceTree = "<group>"; };
 		F2EF76D02068EAA100B378BB /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		F2EF76D22068EAA100B378BB /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
-		F2EF76D32068EAA100B378BB /* tom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tom.jpg; sourceTree = "<group>"; };
 		F2EF76D42068EAA100B378BB /* Gleepads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gleepads.png; sourceTree = "<group>"; };
 		F2FD44D9206AB1AC00913885 /* e-mail.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "e-mail.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -441,7 +441,7 @@
 				F26CFC4C206AAAAE00A9DD20 /* Start.png */,
 				F2EF76CF2068EAA100B378BB /* right_pointer.png */,
 				F2EF76D02068EAA100B378BB /* setting.png */,
-				F2EF76D32068EAA100B378BB /* tom.jpg */,
+				F29D7A1F20AD9E8C0029271E /* Add-image.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -713,7 +713,6 @@
 				F2066BDB2076854600FB0621 /* Explore.png in Resources */,
 				F2EF76E12068EAA100B378BB /* setting.png in Resources */,
 				F27B51722065960100599F82 /* MiddleTableViewCell.xib in Resources */,
-				F2EF76E42068EAA100B378BB /* tom.jpg in Resources */,
 				F244C808207BC039000316FE /* television.png in Resources */,
 				F2A97F98209B742900312B66 /* logo.png in Resources */,
 				F235ACA12073B1FF00CD20E6 /* SearchBar.xib in Resources */,
@@ -740,6 +739,7 @@
 				F2EBBBA320597EA600DD03A9 /* LaunchScreen.storyboard in Resources */,
 				F2EF76A32068E89C00B378BB /* launched_screen.mp4 in Resources */,
 				F2330EFE206DFFBE00D328AA /* TypeThree_TableCell.xib in Resources */,
+				F29D7A2020AD9E8D0029271E /* Add-image.png in Resources */,
 				F2EF76DA2068EAA100B378BB /* gift.png in Resources */,
 				F2330EFA206DFFAB00D328AA /* TypeTwo_TableCell.xib in Resources */,
 				F29C057E2066417C00EC802F /* InviteTableViewCell.xib in Resources */,

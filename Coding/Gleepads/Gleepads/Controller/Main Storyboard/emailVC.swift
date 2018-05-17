@@ -75,6 +75,10 @@ class emailVC: UIViewController {
                 
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue(self.dob!)
                 
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("ProfileImage_Url").setValue("")
+                
+                
+                
                 // *** SEGUE RETURN STARTUP SCENE ***
 
                 self.present( UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main_Nav") as UIViewController, animated: true, completion: nil)

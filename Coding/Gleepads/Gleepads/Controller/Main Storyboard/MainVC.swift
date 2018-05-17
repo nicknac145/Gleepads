@@ -132,6 +132,9 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                 
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue("")
                 
+                self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("ProfileImage_Url").setValue("")
+
+                
             }
             
         }
@@ -195,6 +198,9 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Uid").setValue(Auth.auth().currentUser?.uid)
                     
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue("")
+                    
+                    self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("ProfileImage_Url").setValue("")
+
                 }
 
             }
