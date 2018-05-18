@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F643F0886954E64B4A0E57F67317C21"
+               BlueprintIdentifier = "9E460C8F51D52C5CA98A65461A11171A"
                BuildableName = "Pods_Gleepads.framework"
                BlueprintName = "Pods-Gleepads"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5F643F0886954E64B4A0E57F67317C21"
+            BlueprintIdentifier = "9E460C8F51D52C5CA98A65461A11171A"
             BuildableName = "Pods_Gleepads.framework"
             BlueprintName = "Pods-Gleepads"
             ReferencedContainer = "container:Pods.xcodeproj">

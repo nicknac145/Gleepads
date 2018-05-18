@@ -95,6 +95,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - SwiftVideoBackground (3.0.0)
 
 DEPENDENCIES:
@@ -112,6 +115,7 @@ DEPENDENCIES:
   - GooglePlaces
   - GoogleSignIn
   - IQKeyboardManagerSwift
+  - SDWebImage (~> 4.0)
   - SwiftVideoBackground (~> 3.0)
 
 SPEC REPOS:
@@ -141,6 +145,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - leveldb-library
     - nanopb
+    - SDWebImage
     - SwiftVideoBackground
 
 SPEC CHECKSUMS:
@@ -169,8 +174,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftVideoBackground: 15c69b74458ad57f123c52f55a5bf6865eaf4eae
 
-PODFILE CHECKSUM: 2cd2fe326d62d7cd65bba01d7cd00cb4b47835ac
+PODFILE CHECKSUM: c7caeabf17efb75e8b9ed9f275dcadf3cb31cdb9
 
 COCOAPODS: 1.5.0

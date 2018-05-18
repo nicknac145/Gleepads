@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import SDWebImage
+
 
 class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -40,7 +42,7 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIIm
     let storage = Storage.storage()
 
     
-    
+    var profileURL : URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,39 +62,28 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                 
                 
                     
-                let profileURL = self.userValue["ProfileImage_Url"]
+                let url = self.userValue["ProfileImage_Url"]!
+                
+                 self.profileURL = URL(string: url)
 
-                print(profileURL)
-                
-                let fileUrl = profileURL as! String
-                print("fileUrl:\(fileUrl)")
-                let url = URL(string: fileUrl)
-                print("url: \(url!)")
-                let data = NSData(contentsOf: url!)
-                print("data: \(data)")
                 
                 
-                let picture = UIImage(data: data as! Data)
-                print("picture:\(picture)")
-                    self.ProfileImage = picture!
-                    
-                    // *****************
-//                if let url = URL(string: profileURL!){
+                print("********* 1 **************")
+                print(self.profileURL)
+                
+//                let fileUrl = profileURL as! String
+//                print("fileUrl:\(fileUrl)")
+//                let url = URL(string: fileUrl)
+//                print("url: \(url!)")
+//                let data = NSData(contentsOf: url!)
+//                print("data: \(data)")
 //
-//                    do {
-//                        let data = try Data(contentsOf: url)
-//                        self.ProfileImage = UIImage(data: data)
 //
-//
-//                        print("########################")
-//                        print(self.ProfileImage)
-//
-//                        print("########################")
-//
-//                    }catch let err{
-//                        print(err.localizedDescription)
-//                    }
-//                }
+//                let picture = UIImage(data: data as! Data)
+//                print("picture:\(picture)")
+//                    self.ProfileImage = picture!
+                
+                
                 
                 
                 print("******** USER PROFILE ******")
@@ -100,7 +91,7 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                 print("***************")
                 
             }
-            
+          self.profileTableView.reloadData()
         })
 //        self.ProfileImage = UIImage(named: "Add-image")
 
@@ -162,7 +153,12 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
 
             cell.TitleLabel.text = dataArray[indexPath.row].Title
             cell.subTitleLabel.text = dataArray[indexPath.row].Sub_Title
-            cell.imageCell.image = dataArray[indexPath.row].image
+            
+            
+             print("********* 2 **************")
+            print(profileURL)
+            
+            cell.imageCell.sd_setImage(with: profileURL, placeholderImage: UIImage(named: "Add-image"), options: .progressiveDownload, completed: nil)
             
             let tap = UITapGestureRecognizer(target: self, action: #selector(imageChange))
             cell.imageCell.addGestureRecognizer(tap)

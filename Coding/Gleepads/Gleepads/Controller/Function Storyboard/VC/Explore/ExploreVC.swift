@@ -10,6 +10,7 @@ import UIKit
 //import Shift
 
 import Firebase
+import SDWebImage
 
 class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
@@ -34,13 +35,24 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     var suggestedValue = ["":""]
     var userValue = ["":""]
 
+
+    var cellType = 0
+    var exploreData = ["Explore"]
+    var suggesData = ["Suggest"]
+    var hostData = ["Hosting"]
     
+//    var exploreData = [String]()
+//    var suggesData = [String]()
+//    var hostData = [String]()
     
     // FIREBASE
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         dbRef = Database.database().reference()
         
@@ -51,11 +63,22 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
                 
                 self.exploreValue = SnapShot.value as! [String : String]
 
-                print("******* EXPLORE *******")
-                print(self.exploreValue)
-                print("***************")
+//                print("******* EXPLORE *******")
+//                print(self.exploreValue)
+//                print("***************")
+                
+                for explore in self.exploreValue{
+                    
+                    self.exploreData.append(explore.value)
+                    
+                    print(self.exploreData)
+
+                }
+                
 
             }
+            self.exploreTable.reloadData()
+
         })
         
         
@@ -64,7 +87,6 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
         dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (SnapShot) in
             
-//            print(SnapShot.value)
             if  SnapShot != nil {
 
                 self.hostingValue = SnapShot.value as! [String : String]
@@ -72,8 +94,20 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 //                print("****** HOST ******")
 //                print(self.hostingValue)
 //                print("***************")
+                
+                for hosting in self.hostingValue{
+                    
+//                    print(hosting)
+                    
+//                    self.hostData.append(hosting.value)
+//                   self.exploreTable.reloadData()
+
+                }
+
 
             }
+            self.exploreTable.reloadData()
+
         })
      
         // ********** SUGGESTED VALUE ****************
@@ -86,7 +120,15 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
                 print(self.suggestedValue)
                 print("***************")
 
+                for suggested in self.suggestedValue{
+                    print(suggested.value)
+                    self.suggesData.append(suggested.value)
+                    print(self.suggesData)
+
+                }
             }
+            self.exploreTable.reloadData()
+
         })
     
         
@@ -106,20 +148,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         exploreTable.delegate = self
         exploreTable.dataSource = self
         
-//        let view = self.view as! ShiftView
-//        view.setColors([UIColor.yellow,
-//                        UIColor.brown,
-//                        UIColor.orange,
-//                        UIColor.red,
-//                        UIColor.blue,
-//                        UIColor.purple,
-//                         UIColor.cyan,
-//                        UIColor.green,
-////                        UIColor.lightGray,
-//                        ])
-//
-//
-//        view.startTimedAnimation()
+
         
         let One_nib = UINib(nibName: "TypeOne_TableCell", bundle: nil)
         self.exploreTable.register(One_nib, forCellReuseIdentifier: "TypeOne_TableCell")
@@ -144,38 +173,56 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return hostData.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         
+        self.cellType = indexPath.row
         
+        
+        //*******************  Suggesting CELL ****************
         if indexPath.row == 0{
+        
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeOne_TableCell") as! TypeOne_TableCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
 
-//            cell.TypeOne_Collection.
-            
+            cell.TypeOne_Collection.delegate = self
+            cell.TypeOne_Collection.dataSource = self
+            let TypeOne_Nib = UINib(nibName: "TypeOne_CollectionViewCell", bundle: nil)
+            cell.TypeOne_Collection.register(TypeOne_Nib, forCellWithReuseIdentifier: "TypeOne_Nib")
+            cell.TypeOne_Collection.reloadData()
             return cell
         }
         
-        else if indexPath.row == 1 || indexPath.row % 3 == 0{
+            //*******************  EXPLORE CELL ****************
+
+        else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTwo_TableCell") as! TypeTwo_TableCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
 
+            cell.TypeTwo_Collection.delegate = self
+            cell.TypeTwo_Collection.dataSource = self
+            let TypeTwo_Nib = UINib(nibName: "TypeTwo_CollectionViewCell", bundle: nil)
+            cell.TypeTwo_Collection.register(TypeTwo_Nib, forCellWithReuseIdentifier: "TypeTwo_Nib")
+            cell.TypeTwo_Collection.reloadData()
             return cell
         }
+            
+            //*******************  HOSTING CELL ****************
+
        
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
-            let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
-            
             cell.selectionStyle = UITableViewCellSelectionStyle.none
 
-            cell.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
             cell.TypeThree_Collection.delegate=self
             cell.TypeThree_Collection.dataSource=self
+            let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
+            cell.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
+            cell.TypeThree_Collection.reloadData()
+          
             return cell
         }
       
@@ -188,7 +235,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             
             
         }
-        else if indexPath.row == 1 || indexPath.row % 3 == 0{
+        else if indexPath.row == 1 {
             
            return 375
         }
@@ -232,31 +279,123 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "PropertyVC")
-//        self.navigationController?.pushViewController(vc!, animated: true)
-//    }
+
     
 }
 
+
+
+
+
+//*************** EXTENSION *****************************
 
 extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
    
     
     
+  
+    // ***************** COLLECTION VIEW NUMBER OF ITEM ****************************
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        
+        if cellType == 0{
+              return exploreData.count
+        }
+        else if cellType == 1{
+              return suggesData.count
+        }
+        
+        else{
+              return hostData.count
+        }
     }
     
+    
+    
+    // ***************** COLLECTION VIEW CELL FOR ITEM ****************************
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath)
+        
+       
+   
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as? TypeOne_CollectionViewCell{
+//            cell.TypeOne_Label.text = exploreData[indexPath.row]
+//            return cell
+//         }
+//
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeTwo_Nib", for: indexPath) as? TypeTwo_CollectionViewCell{
+//
+//            print(suggesData)
+//            cell.TypeTwo_Caption.text = suggesData[indexPath.row]
+//
+//            return cell
+//         }
+//
+//
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath) as? TypeThree_CollectionViewCell
+//        cell?.TypeThree_Caption.text = hostData[indexPath.row]
+//        return cell!
+        
+        
+        if cellType == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as! TypeOne_CollectionViewCell
+            cell.TypeOne_Label.text = exploreData[indexPath.row]
+            return cell
+        }
+        
+        else if cellType == 1{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeTwo_Nib", for: indexPath) as! TypeTwo_CollectionViewCell
+            
+            print(suggesData)
+            cell.TypeTwo_Caption.text = suggesData[indexPath.row]
+            
+            return cell
+        }
+        
+        
+        else{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath) as! TypeThree_CollectionViewCell
+        cell.TypeThree_Caption.text = hostData[indexPath.row]
         return cell
+        }
+        
     }
     
+    
+    
+    // ***************** COLLECTION VIEW SIZE ****************************
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+//       if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as? TypeOne_CollectionViewCell{
+//            return CGSize(width: 150, height: 175)
+//
+//        }
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as? TypeTwo_CollectionViewCell{
+//            return CGSize(width: 350, height:250)
+//
+//        }
+//
+//         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as? TypeThree_CollectionViewCell
+//            return CGSize(width:150, height: 230)
+
+        
+        if cellType == 0{
+            
+            return CGSize(width: 150, height: 175)
+            
+        }
+        else if cellType == 1{
+            
+            return CGSize(width: 350, height:250)
+            
+        }
+        else
+        {
         return CGSize(width:150, height: 230)
+        }
     }
-    
+
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -265,4 +404,21 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         self.performSegue(withIdentifier: "detail", sender: nil)
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
 }
