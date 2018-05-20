@@ -473,10 +473,10 @@
 			children = (
 				F220384E207DCA2700C7CA4F /* Similar_CollectionCell.swift */,
 				F2330EE5206DF4FD00D328AA /* TypeOne_TableCell.swift */,
-				F2330EE9206DF53600D328AA /* TypeOne_CollectionViewCell.swift */,
 				F2330EF7206DFFAB00D328AA /* TypeTwo_TableCell.swift */,
-				F2330EEF206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift */,
 				F2330EFB206DFFBE00D328AA /* TypeThree_TableCell.swift */,
+				F2330EE9206DF53600D328AA /* TypeOne_CollectionViewCell.swift */,
+				F2330EEF206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift */,
 				F2330EF3206DFF8700D328AA /* TypeThree_CollectionViewCell.swift */,
 				F27B516B206595E700599F82 /* TopTableViewCell.swift */,
 				F27B516F2065960100599F82 /* MiddleTableViewCell.swift */,
