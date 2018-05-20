@@ -265,7 +265,9 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
                 print("******************")
 
     // ******** CREATE FIREBASE DATABASE RECORD *************
-    self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+//    self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+                self.ref.child("Hosting").child(self.hostingData["City"]!).childByAutoId().setValue(self.hostingData)
+
                 
     //****************************************
                 self.progress_View.isHidden = true

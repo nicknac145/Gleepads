@@ -115,22 +115,22 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
         dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (SnapShot) in
 
-            if  SnapShot != nil {
-
-                self.hostingValue = SnapShot.value as! [String : String]
-
-//                print("****** HOST ******")
-//                print(self.hostingValue)
-//                print("***************")
-
-                for hosting in self.hostingValue{
-
-//                    print(hosting)
-
-//                    self.hostData.append(hosting.value)
-//                   self.exploreTable.reloadData()
-
-                }
+//            if  SnapShot != nil {
+//
+////                self.hostingValue = SnapShot.value as! [String : String]
+//
+////                print("****** HOST ******")
+////                print(self.hostingValue)
+////                print("***************")
+//
+//                for hosting in self.hostingValue{
+//
+////                    print(hosting)
+//
+////                    self.hostData.append(hosting.value)
+////                   self.exploreTable.reloadData()
+//
+//                }
 
 
             }
