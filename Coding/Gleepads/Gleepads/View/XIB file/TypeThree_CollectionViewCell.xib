@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -29,20 +28,20 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qe-eH-Phv">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD-Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qe-eH-Phv">
                         <rect key="frame" x="4" y="137" width="181" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kF-i7-5u6">
-                        <rect key="frame" x="4" y="186" width="181" height="20.5"/>
+                        <rect key="frame" x="4" y="185" width="181" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YNn-hT-PtR">
-                        <rect key="frame" x="4" y="210.5" width="47.5" height="14.5"/>
+                        <rect key="frame" x="4" y="209.5" width="47.5" height="14.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="vYP-NZ-vuF">
                                 <rect key="frame" x="0.0" y="0.0" width="9.5" height="14.5"/>
@@ -64,8 +63,8 @@
                             <constraint firstAttribute="width" secondItem="YNn-hT-PtR" secondAttribute="height" multiplier="1:0.3" id="N8b-at-fyK"/>
                         </constraints>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixQ-Ka-dPn">
-                        <rect key="frame" x="4" y="161.5" width="181" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixQ-Ka-dPn">
+                        <rect key="frame" x="4" y="161" width="181" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -98,10 +97,9 @@
                 <outlet property="Star4" destination="HJJ-ab-Ais" id="UFf-hn-Mih"/>
                 <outlet property="Star5" destination="cGO-2A-bTH" id="yIV-BV-S6f"/>
                 <outlet property="Start2" destination="Ka6-Vo-i5J" id="o7B-1u-Vz0"/>
-                <outlet property="TypeThree_Caption" destination="6qe-eH-Phv" id="w0Z-vX-Cc5"/>
+                <outlet property="TypeThree_AD_Title" destination="6qe-eH-Phv" id="pgU-ty-d4f"/>
                 <outlet property="TypeThree_Image" destination="avS-jY-Ej7" id="Dir-rv-Tbc"/>
-                <outlet property="TypeThree_SubTitle" destination="0kF-i7-5u6" id="lus-uy-l0e"/>
-                <outlet property="TypeThree_SubTitle1" destination="ixQ-Ka-dPn" id="yqu-4j-MOB"/>
+                <outlet property="TypeThree_Rent" destination="ixQ-Ka-dPn" id="nlh-Zl-8Ps"/>
             </connections>
             <point key="canvasLocation" x="85.5" y="16"/>
         </collectionViewCell>

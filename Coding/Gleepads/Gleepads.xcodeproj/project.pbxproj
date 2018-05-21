@@ -140,6 +140,7 @@
 		F2EF76E12068EAA100B378BB /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D02068EAA100B378BB /* setting.png */; };
 		F2EF76E32068EAA100B378BB /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D22068EAA100B378BB /* feedback.png */; };
 		F2EF76E52068EAA100B378BB /* Gleepads.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D42068EAA100B378BB /* Gleepads.png */; };
+		F2F8765120B2E42400DE9E71 /* DiscoverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8765020B2E42400DE9E71 /* DiscoverData.swift */; };
 		F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2FD44D9206AB1AC00913885 /* e-mail.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +282,7 @@
 		F2EF76D02068EAA100B378BB /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		F2EF76D22068EAA100B378BB /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		F2EF76D42068EAA100B378BB /* Gleepads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gleepads.png; sourceTree = "<group>"; };
+		F2F8765020B2E42400DE9E71 /* DiscoverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverData.swift; sourceTree = "<group>"; };
 		F2FD44D9206AB1AC00913885 /* e-mail.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "e-mail.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +358,7 @@
 		F226FB75205A395400F14CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F2F8765020B2E42400DE9E71 /* DiscoverData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */,
 				F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */,
 				F2330EFD206DFFBE00D328AA /* TypeThree_TableCell.swift in Sources */,
+				F2F8765120B2E42400DE9E71 /* DiscoverData.swift in Sources */,
 				F2DE9D022077C05E00920040 /* ImageScrollVC.swift in Sources */,
 				F2EBBB9B20597EA600DD03A9 /* MainVC.swift in Sources */,
 				F2203850207DCA2700C7CA4F /* Similar_CollectionCell.swift in Sources */,

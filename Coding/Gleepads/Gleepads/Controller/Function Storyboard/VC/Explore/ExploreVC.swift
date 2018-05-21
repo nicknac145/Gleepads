@@ -37,10 +37,10 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
 
     var cellType = 0
-    var cityName = [String]()
-    var cityAD = [String]()
-    
-    var displayAD = [String]()
+    var cityArray = [String]()
+    var cityDetail = [[String : String]]()
+
+    var displayAD = [[String : [[String: String]]]]()     // ["Karachi": [asdjad, sdjkahsjkda], New York : [sdjhaskjd,ajksdhjkasd]
 //    var cityData = [[String:Any]]()
 //    var exploreData = ["Explore"]
 //    var suggesData = ["Suggest"]
@@ -52,6 +52,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     // FIREBASE
     
+    var FirebaseData = [String:[DiscoveryData]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,100 +111,28 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
         })
 
-        // ********** HOSTING VALUE ****************
-        let Uid = (Auth.auth().currentUser?.uid)!
-
-        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (SnapShot) in
-
-//            if  SnapShot != nil {
-//
-////                self.hostingValue = SnapShot.value as! [String : String]
-//
-////                print("****** HOST ******")
-////                print(self.hostingValue)
-////                print("***************")
-//
-//                for hosting in self.hostingValue{
-//
-////                    print(hosting)
-//
-////                    self.hostData.append(hosting.value)
-////                   self.exploreTable.reloadData()
-//
-//                }
-
-
-            }
-            self.exploreTable.reloadData()
-
-        })
-        
+      
         
         // ********** HOSTING VALUE ****************
 
         
         // FETCHING KEY INFO FROM CITY NODE
-        dbHandle = dbRef.child("City").observe(.childAdded, with: { (cityinfo) in
+        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (info) in
             
         
-            self.cityName.append(cityinfo.key as! String)
-           print(self.cityName)
-            
-            
-            
-            // FETCHING DATA FROM CITY NODE
-            self.dbHandle = self.dbRef.child("City").child(cityinfo.key).observe(.childAdded, with: { (cityValue) in
-               
-                
-                var data = cityValue.value  as! [String : Any]
-                
-                var name = data["AD-Title"] as! String
-//                var userId = data["User_Uid"] as! String
+            let jsonData = try? JSONSerialization.data(withJSONObject: info.value)
+            let discovery = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
 
-                self.cityAD.append(name)
-                
-                print(self.cityAD)
-                
-//                self.cityData.append(["City": self.cityName, "AD" : self.cityAD])
-//                
-//                print(self.cityData)
-                
+            if let d = discovery {
+                if self.FirebaseData[discovery!.City] == nil {
+                    self.FirebaseData[discovery!.City] = []
+                }
+                self.FirebaseData[discovery!.City]!.append(discovery!)
+               print("******************")
+                print(self.FirebaseData)
+                print("*******************")
 
-                
-                self.dbHandle = self.dbRef.child("Hosting").observe(.childAdded, with: { (hostingData) in
-                  
-                    
-//                    print(hostingData.value)
-                        
-                        
-                   
-                    self.exploreTable.reloadData()
-                    
-                })
-            })
-            
-            
-//            if  SnapShot != nil {
-//
-//                self.hostingValue = SnapShot.value as! [String : String]
-//
-//                print("****** HOST ******")
-//                print(self.hostingValue)
-//                print("***************")
-//
-//                for hosting in self.hostingValue{
-//
-//                    //                    print(hosting)
-//
-//                    //                    self.hostData.append(hosting.value)
-//                    //                   self.exploreTable.reloadData()
-//
-//                }
-//
-//
-//            }
-//            self.exploreTable.reloadData()
-            
+            }
         })
      
        
@@ -250,7 +179,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Array(FirebaseData).count + 2
     }
     
     
@@ -270,12 +199,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             cell.selectionStyle = UITableViewCellSelectionStyle.none
 
             
-            
-//            print("|||||||||||||||||||||||||||")
-//
-//            print(exploreData)
-//            print("|||||||||||||||||||||||||||")
-            
+
             
             
 
@@ -312,7 +236,9 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-
+            
+            cell.TypeThree_Title.text = Array(self.FirebaseData.keys)[indexPath.row]
+            
             cell.TypeThree_Collection.delegate=self
             cell.TypeThree_Collection.dataSource=self
             
@@ -388,6 +314,9 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
 
     
+    
+    
+    
 }
 
 
@@ -406,8 +335,9 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-            return 4
-
+//            return 4
+     
+        return Array(FirebaseData.values).count
     }
     
     
@@ -417,7 +347,10 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath) as! TypeThree_CollectionViewCell
-//        cell.TypeThree_Caption.text = hostData[indexPath.row]
+        
+        let key = Array(FirebaseData.keys)[indexPath.row]
+        cell.TypeThree_AD_Title.text = FirebaseData[key]![indexPath.row].AD_Title
+        cell.TypeThree_Rent.text = FirebaseData[key]![indexPath.row].Rent
         return cell
 //
     

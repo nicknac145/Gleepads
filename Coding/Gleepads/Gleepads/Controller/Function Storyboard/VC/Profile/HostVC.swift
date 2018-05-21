@@ -45,10 +45,10 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     
     func DataColletion(propertyTitle: String, propertyCatergory: String, propertyAmenities: String, propertyMininum: String, propertyDescription: String) {
         hostingData["User_ID"] = Auth.auth().currentUser?.uid
-        hostingData["AD-Title"] = propertyTitle
-        hostingData["Property-Category"] = propertyCatergory
+        hostingData["AD_Title"] = propertyTitle
+        hostingData["Property_Category"] = propertyCatergory
         hostingData["Amenities"] = propertyAmenities
-        hostingData["Mininum-Day"] = propertyMininum
+        hostingData["Mininum_Day"] = propertyMininum
         hostingData["Description"] = propertyDescription
         
         
@@ -66,10 +66,10 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     func DataColletion(Rent : String, PaymentMode : String, Guest : String, Check_In : String, Check_Out:String){
         
         hostingData["Rent"] = Rent
-        hostingData["Payment-Mode"] = PaymentMode
-        hostingData["Guest-Number"] = Guest
-        hostingData["Check-in"] = Check_In
-        hostingData["Check-out"] = Check_Out
+        hostingData["Payment_Mode"] = PaymentMode
+        hostingData["Guest_Number"] = Guest
+        hostingData["Check_in"] = Check_In
+        hostingData["Check_out"] = Check_Out
       
     }
     
@@ -91,23 +91,23 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     // *******  DICTIONARY OF USER'S PROPERTY RENT ADVERTISE PROFILE ***************
     var hostingData = ["User_ID":"",
                        "AD-Title":"",
-                       "Property-Category":"",
+                       "Property_Category":"",
                        "Amenities": "",
-                       "Mininum-Day":"",
+                       "Mininum_Day":"",
                        "Description":"",
                        "City":"",
                        "Country":"",
                        "Latitude":"",
                        "Longitude":"",
                         "Rent":"",
-                        "Payment-Mode":"",
-                        "Guest-Number":"",
-                       "Check-in":"",
-                       "Check-out":"",
+                        "Payment_Mode":"",
+                        "Guest_Number":"",
+                       "Check_in":"",
+                       "Check_out":"",
                        "Available":"Yes",
-                       "CheckIn-Date":"",
-                       "CheckOut-Date":"",
-                       "Guest-Name":"",
+                       "CheckIn_Date":"",
+                       "CheckOut_Date":"",
+                       "Guest_Name":"",
                        "ImageUrl":""
         
                        ]

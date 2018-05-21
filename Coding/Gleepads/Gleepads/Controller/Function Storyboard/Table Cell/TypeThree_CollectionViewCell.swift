@@ -13,9 +13,8 @@ class TypeThree_CollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var TypeThree_Image: UIImageView!
-    @IBOutlet weak var TypeThree_Caption: UILabel!
-    @IBOutlet weak var TypeThree_SubTitle1: UILabel!
-    @IBOutlet weak var TypeThree_SubTitle: UILabel!
+    @IBOutlet weak var TypeThree_AD_Title: UILabel!
+    @IBOutlet weak var TypeThree_Rent: UILabel!
     
     @IBOutlet weak var Star1: UIImageView!
     @IBOutlet weak var Start2: UIImageView!
