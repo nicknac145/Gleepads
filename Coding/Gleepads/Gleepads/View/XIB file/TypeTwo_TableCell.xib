@@ -25,14 +25,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub-Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqP-yR-4lI">
-                        <rect key="frame" x="20" y="40" width="561" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SKD-GZ-y8H">
-                        <rect key="frame" x="19" y="70.5" width="563" height="266.5"/>
+                        <rect key="frame" x="19" y="45" width="563" height="292"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z2Z-m5-2ya">
                             <size key="itemSize" width="50" height="50"/>
@@ -46,19 +40,15 @@
                     <constraint firstItem="MNi-Oc-dHC" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2jp-7C-sGv"/>
                     <constraint firstAttribute="bottom" secondItem="SKD-GZ-y8H" secondAttribute="bottom" constant="20.5" id="7sF-UO-tbh"/>
                     <constraint firstItem="MNi-Oc-dHC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="G1e-vq-UuK"/>
-                    <constraint firstItem="HqP-yR-4lI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="SGU-Fn-ug6"/>
-                    <constraint firstItem="HqP-yR-4lI" firstAttribute="top" secondItem="MNi-Oc-dHC" secondAttribute="bottom" id="duI-iJ-47O"/>
+                    <constraint firstItem="SKD-GZ-y8H" firstAttribute="top" secondItem="MNi-Oc-dHC" secondAttribute="bottom" constant="5" id="aC5-xw-379"/>
                     <constraint firstItem="MNi-Oc-dHC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ees-Bu-XRs"/>
                     <constraint firstAttribute="trailing" secondItem="SKD-GZ-y8H" secondAttribute="trailing" constant="19" id="fyF-dd-1Ck"/>
-                    <constraint firstItem="SKD-GZ-y8H" firstAttribute="top" secondItem="HqP-yR-4lI" secondAttribute="bottom" constant="10" id="nDM-bp-MaE"/>
                     <constraint firstItem="SKD-GZ-y8H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="oZP-8m-FCc"/>
-                    <constraint firstItem="HqP-yR-4lI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yOI-Dh-IMa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="TypeTwo_Collection" destination="SKD-GZ-y8H" id="UJH-HK-1ny"/>
-                <outlet property="TypeTwo_SubTitle" destination="HqP-yR-4lI" id="1EM-wN-Opl"/>
                 <outlet property="TypeTwo_Title" destination="MNi-Oc-dHC" id="JM6-Ru-oIw"/>
             </connections>
             <point key="canvasLocation" x="165.5" y="70"/>

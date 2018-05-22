@@ -90,7 +90,7 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     
     // *******  DICTIONARY OF USER'S PROPERTY RENT ADVERTISE PROFILE ***************
     var hostingData = ["User_ID":"",
-                       "AD-Title":"",
+                       "AD_Title":"",
                        "Property_Category":"",
                        "Amenities": "",
                        "Mininum_Day":"",
@@ -114,6 +114,7 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
     
     var hostImages = [UIImage]()
     var count : Int?
+    var ImageNumber = 0
     var urlString : String?
     var urlArray = [String]()
 
@@ -247,7 +248,9 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         
             self.count = self.count! - 1
 
-//            print((self.count)!)
+            print("$$$$$$$$$$$$$$$$")
+            print((self.count)!)
+            print("$$$$$$$$$$$$$$$$")
 //
 //            print(imageUrl)
             
@@ -266,7 +269,7 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
 
     // ******** CREATE FIREBASE DATABASE RECORD *************
 //    self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
-                self.ref.child("Hosting").child(self.hostingData["City"]!).childByAutoId().setValue(self.hostingData)
+                self.ref.child("Hosting").childByAutoId().setValue(self.hostingData)
 
                 
     //****************************************
@@ -311,12 +314,15 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
         
         for image in self.hostImages{
             
+            self.ImageNumber = self.ImageNumber + 1
             var imageData = Data()
             imageData = UIImagePNGRepresentation(image)!
             
-            
-            
-            let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD-Title"]!).child("property\(self.count)")
+            print("***************")
+            print(self.count!)
+            print("***************")
+
+            let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("Hosting").child(self.hostingData["AD_Title"]!).child("Image\(self.ImageNumber)")
             
             let uploadMetaData = StorageMetadata()
             uploadMetaData.contentType = "image/jpeg"
@@ -341,6 +347,8 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
                     
                 else{
                     
+                    
+//                    print(metaData?.downloadURL()?.description)
                     
 
                     completion((metaData?.downloadURL()?.description)!)

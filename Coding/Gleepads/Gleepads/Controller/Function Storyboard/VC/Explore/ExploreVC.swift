@@ -31,28 +31,17 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
     
     var exploreValue = ["":""]
-    var hostingValue = ["":""]
-    var suggestedValue = ["":""]
     var userValue = ["":""]
 
-
-    var cellType = 0
-    var cityArray = [String]()
-    var cityDetail = [[String : String]]()
-
-    var displayAD = [[String : [[String: String]]]]()     // ["Karachi": [asdjad, sdjkahsjkda], New York : [sdjhaskjd,ajksdhjkasd]
-//    var cityData = [[String:Any]]()
-//    var exploreData = ["Explore"]
-//    var suggesData = ["Suggest"]
-//    var hostData = ["Hosting"]
+  
     
-    var exploreData = [String]()
-    var suggesData = [String]()
-    var hostData = [String]()
+ 
     
     // FIREBASE
     
-    var FirebaseData = [String:[DiscoveryData]]()
+    var HostingData = [String:[DiscoveryData]]()
+    var SuggestedData = [[String:String]]()
+    var ExploreData = [[String:String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,55 +53,39 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
 
         // ********** EXPLORE VALUE ****************
-        dbHandle = dbRef.child("Explore").observe(.value, with: { (SnapShot) in
+        dbHandle = dbRef.child("Explore").observe(.childAdded, with: { (exploreInfo) in
+
+            let dict = exploreInfo.value as! [String : String]
+     
             
-            if  SnapShot != nil {
-
-                self.exploreValue = SnapShot.value as! [String : String]
-
-//                print("******* EXPLORE *******")
-//                print(self.exploreValue)
-//                print("***************")
-
-                for explore in self.exploreValue{
-
-                    self.exploreData.append(explore.value)
-
-//                    print(self.exploreData)
-
-                }
-
-
-            }
+            self.ExploreData.append(dict)
+//            print("%%%%%%%%%%%%%")
+//            print(self.ExploreData)
+//            print("%%%%%%%%%%%%%")
             self.exploreTable.reloadData()
-
         })
+        
 
 
 
         // ********** SUGGESTED VALUE ****************
-        dbHandle = dbRef.child("Suggested").observe(.value, with: { (SnapShot) in
-            if  SnapShot != nil {
-
-                self.suggestedValue = SnapShot.value as! [String : String]
-
-//                print("******* SUGGESGTED *******")
-//                print(self.suggestedValue)
-//                print("***************")
-
-                for suggested in self.suggestedValue{
-//                    print(suggested.value)
-//                    self.suggesData.append(suggested.value)
-//                    print(self.suggesData)
-
-                }
-            }
-            self.exploreTable.reloadData()
-
-        })
-
-      
         
+        
+        dbHandle = dbRef.child("Suggested").observe(.childAdded, with: { (suggestedInfo) in
+
+            
+
+            let dict = suggestedInfo.value as! [String : String]
+
+
+            self.SuggestedData.append(dict)
+//            print("%%%%%%%%%%%%%")
+//            print(self.SuggestedData)
+//            print("%%%%%%%%%%%%%")
+            self.exploreTable.reloadData()
+        })
+        
+
         // ********** HOSTING VALUE ****************
 
         
@@ -124,15 +97,19 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             let discovery = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
 
             if let d = discovery {
-                if self.FirebaseData[discovery!.City] == nil {
-                    self.FirebaseData[discovery!.City] = []
+                if self.HostingData[discovery!.City] == nil {
+                    self.HostingData[discovery!.City] = []
                 }
-                self.FirebaseData[discovery!.City]!.append(discovery!)
-               print("******************")
-                print(self.FirebaseData)
-                print("*******************")
+                self.HostingData[discovery!.City]!.append(discovery!)
+               
+                let city  = Array(self.HostingData)
+                print("------------------------")
+                print(self.HostingData.keys)
+                print("------------------------")
+
 
             }
+            self.exploreTable.reloadData()
         })
      
        
@@ -179,7 +156,8 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Array(FirebaseData).count + 2
+//        return Array(FirebaseData).count + 2
+        return Array(HostingData).count + 2
     }
     
     
@@ -189,7 +167,6 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         
-        self.cellType = indexPath.row
         
         
         //*******************  Suggesting CELL ****************
@@ -199,18 +176,19 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             cell.selectionStyle = UITableViewCellSelectionStyle.none
 
             
-
+            // TAGGING COLLECTION-VIEW
+            cell.TypeOne_Collection.tag = indexPath.row
             
             
-
-            cell.exploreCollectionData = exploreData
-//            cell.TypeOne_Collection.delegate = self
-//            cell.TypeOne_Collection.dataSource = self
-//
-//            let TypeOne_Nib = UINib(nibName: "TypeOne_CollectionViewCell", bundle: nil)
-//            cell.TypeOne_Collection.register(TypeOne_Nib, forCellWithReuseIdentifier: "TypeOne_Nib")
-////            cell.TypeOne_Collection.reloadData()
+          
+           
             
+            // CONFIGURE CELL
+            cell.TypeOne_Collection.delegate = self
+            cell.TypeOne_Collection.dataSource = self
+            let TypeOne_Nib = UINib(nibName: "TypeOne_CollectionViewCell", bundle: nil)
+            cell.self.TypeOne_Collection.register(TypeOne_Nib, forCellWithReuseIdentifier: "TypeOne_Nib")
+            cell.TypeOne_Collection.reloadData()
             return cell
         }
         
@@ -222,7 +200,17 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeTwo_TableCell") as! TypeTwo_TableCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-   
+            
+            // TAGGING COLLECTION-VIEW
+            cell.TypeTwo_Collection.tag = indexPath.row
+            
+            
+            // CONFIGURE CELL
+            cell.TypeTwo_Collection.delegate = self
+            cell.TypeTwo_Collection.dataSource = self
+            let TypeTwo_Nib = UINib(nibName: "TypeTwo_CollectionViewCell", bundle: nil)
+            cell.TypeTwo_Collection.register(TypeTwo_Nib, forCellWithReuseIdentifier: "TypeTwo_Nib")
+            cell.TypeTwo_Collection.reloadData()
             
             return cell
         }
@@ -236,15 +224,25 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
+           
+            // TAGGING COLLECTION-VIEW
+            cell.TypeThree_Collection.tag = indexPath.row
             
-            cell.TypeThree_Title.text = Array(self.FirebaseData.keys)[indexPath.row]
             
+            
+            // ADD TITLE TO LABEL
+            let keyValue = Array(HostingData.keys)
+            cell.TypeThree_Title.text = "Events in : \(keyValue[indexPath.row-2])"
+          
+            // CONFIGURE CELL
+
             cell.TypeThree_Collection.delegate=self
             cell.TypeThree_Collection.dataSource=self
-            
             let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
             cell.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
-//            cell.TypeThree_Collection.reloadData()
+            cell.TypeThree_Collection.reloadData()
+            
+            
             
             return cell
         }
@@ -270,8 +268,18 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
            return 375
         }
         
-        return 575
+        else
+        {
+        let hostValueArray = Array(HostingData)
+        
+        let totalValue =  hostValueArray[indexPath.row - 2].value.count
+        
+         if totalValue <= 2{
+            return 300
 
+        }
+        return 575
+    }
     }
     
    
@@ -335,9 +343,21 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-//            return 4
-     
-        return Array(FirebaseData.values).count
+        
+        if collectionView.tag == 0{
+            
+//            return 10
+            return self.ExploreData.count
+        }
+            
+        else if collectionView.tag == 1{
+//            return 3
+            return self.SuggestedData.count
+        }
+        
+        let hostValueArray = Array(HostingData.values)[collectionView.tag - 2]
+        return hostValueArray.count
+        
     }
     
     
@@ -346,11 +366,66 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath) as! TypeThree_CollectionViewCell
         
-        let key = Array(FirebaseData.keys)[indexPath.row]
-        cell.TypeThree_AD_Title.text = FirebaseData[key]![indexPath.row].AD_Title
-        cell.TypeThree_Rent.text = FirebaseData[key]![indexPath.row].Rent
+        
+        if collectionView.tag == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeOne_Nib", for: indexPath) as! TypeOne_CollectionViewCell
+            
+            cell.TypeOne_Label.text = self.ExploreData[indexPath.row]["Value"]
+            
+            let imageString =  self.ExploreData[indexPath.row]["Image"]
+            let imageUrl = URL(string: imageString!)
+            
+            cell.TypeOne_Image.sd_setImage(with: imageUrl!, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
+            
+            return cell
+        }
+           
+            
+            
+            
+        else if collectionView.tag == 1{
+             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeTwo_Nib", for: indexPath) as! TypeTwo_CollectionViewCell
+            
+            cell.TypeTwo_Caption.text = self.SuggestedData[indexPath.row]["Value"]
+            
+            let imageString =  self.SuggestedData[indexPath.row]["Image"]
+            let imageUrl = URL(string: imageString!)
+            
+            cell.TypeTwo_Image.sd_setImage(with: imageUrl!, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
+            return  cell
+        }
+        
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeThree_Nib", for: indexPath) as! TypeThree_CollectionViewCell
+
+        let hostValueArray = Array(HostingData.values)
+        let name = Array(HostingData.keys)[collectionView.tag-2]
+//        print("!!!!!!!!!!!!!!!!")
+//
+//        print(name)
+//        print("!!!!!!!!!!!!!!!!")
+//        print("******************")
+////        print(hostValueArray)
+//        print(collectionView.tag - 2)
+//        print(indexPath.row)
+////        print(hostValueArray[collectionView.tag - 2][indexPath.row].AD_Title)
+//        print(HostingData[name]![indexPath.row].AD_Title)
+//        print("***************")
+        
+        cell.TypeThree_AD_Title.text = HostingData[name]![indexPath.row].AD_Title
+        cell.TypeThree_Rent.text = "$\(hostValueArray[collectionView.tag - 2][indexPath.row].Rent)"
+        
+//
+        
+       let imageString = hostValueArray[collectionView.tag - 2][indexPath.row].ImageUrl
+        let singleImage =  imageString.split(separator: ",")
+        
+        let ImageURL = URL(string: String(singleImage[0]))
+//
+//
+        cell.TypeThree_Image.sd_setImage(with: ImageURL, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
+        
         return cell
 //
     
@@ -359,13 +434,33 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     
     // ***************** COLLECTION VIEW SIZE ****************************
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+        
+        if collectionView.tag == 0{
+            
+            return CGSize(width: 150, height: 175)
+
+        }
+            
+        else if collectionView.tag == 1{
+            
+            return CGSize(width: 350, height:300)
+
+        }
+        
         return CGSize(width:150, height: 230)
 
     }
 
 
+
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

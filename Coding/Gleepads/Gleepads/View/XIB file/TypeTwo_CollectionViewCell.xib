@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dxb.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DsZ-kZ-BRF" customClass="Custom_ImageView" customModule="Gleepads" customModuleProvider="target">
-                        <rect key="frame" x="15" y="15" width="445" height="218.5"/>
+                        <rect key="frame" x="15" y="5" width="445" height="218.5"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
                                 <real key="value" value="10"/>
@@ -29,13 +28,13 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Xq-ZDz">
-                        <rect key="frame" x="10" y="274.5" width="88" height="20.5"/>
+                        <rect key="frame" x="10" y="264.5" width="88" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-78-EII">
-                        <rect key="frame" x="10" y="243.5" width="455" height="21"/>
+                        <rect key="frame" x="10" y="233.5" width="455" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,7 +48,7 @@
                 <constraint firstItem="xrT-78-EII" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="IgH-EQ-9X3"/>
                 <constraint firstItem="Sqh-Xq-ZDz" firstAttribute="top" secondItem="xrT-78-EII" secondAttribute="bottom" constant="10" id="SU0-qC-m6s"/>
                 <constraint firstItem="DsZ-kZ-BRF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Xuw-1K-1dN"/>
-                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="bTn-cl-aAt"/>
+                <constraint firstItem="DsZ-kZ-BRF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="bTn-cl-aAt"/>
                 <constraint firstAttribute="trailing" secondItem="xrT-78-EII" secondAttribute="trailing" constant="10" id="kvv-EJ-Jmu"/>
                 <constraint firstItem="DsZ-kZ-BRF" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" multiplier="0.7" id="zc4-PX-aUY"/>
             </constraints>
