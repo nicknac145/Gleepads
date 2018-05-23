@@ -2098,7 +2098,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 night min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l4-A0-M1J">
-                                                    <rect key="frame" x="28" y="13" width="90" height="23"/>
+                                                    <rect key="frame" x="28" y="13" width="181" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2106,7 +2106,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1l4-A0-M1J" firstAttribute="leading" secondItem="LGO-RZ-QpI" secondAttribute="leadingMargin" constant="12" id="H0m-cd-4gx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1l4-A0-M1J" secondAttribute="trailing" constant="241" id="O5s-9z-bM5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1l4-A0-M1J" secondAttribute="trailing" constant="150" id="O5s-9z-bM5"/>
                                                 <constraint firstItem="1l4-A0-M1J" firstAttribute="top" secondItem="LGO-RZ-QpI" secondAttribute="topMargin" constant="2" id="hcn-Qj-ABn"/>
                                                 <constraint firstItem="1l4-A0-M1J" firstAttribute="bottom" secondItem="LGO-RZ-QpI" secondAttribute="bottomMargin" constant="2" id="kdl-T0-w8T"/>
                                             </constraints>
@@ -2125,16 +2125,16 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi.png" translatesAutoresizingMaskIntoConstraints="NO" id="UGT-yq-dYo">
                                                             <rect key="frame" x="0.0" y="0.0" width="42" height="35"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dine.png" translatesAutoresizingMaskIntoConstraints="NO" id="5iN-UF-qRp">
+                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dine.png" translatesAutoresizingMaskIntoConstraints="NO" id="5iN-UF-qRp">
                                                             <rect key="frame" x="42" y="0.0" width="42" height="35"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="television.png" translatesAutoresizingMaskIntoConstraints="NO" id="MXW-Eb-tia">
+                                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="television.png" translatesAutoresizingMaskIntoConstraints="NO" id="MXW-Eb-tia">
                                                             <rect key="frame" x="84" y="0.0" width="42" height="35"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pool.png" translatesAutoresizingMaskIntoConstraints="NO" id="kh5-zk-8ve">
+                                                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pool.png" translatesAutoresizingMaskIntoConstraints="NO" id="kh5-zk-8ve">
                                                             <rect key="frame" x="126" y="0.0" width="42" height="35"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="MqN-EB-MZ0">
+                                                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="MqN-EB-MZ0">
                                                             <rect key="frame" x="168" y="0.0" width="42" height="35"/>
                                                         </imageView>
                                                     </subviews>
@@ -2175,9 +2175,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="292.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rzb-na-poP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
-                                                </mapView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-In after 12 noon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36c-VL-Gv7">
                                                     <rect key="frame" x="28" y="239" width="108" height="46"/>
                                                     <constraints>
@@ -2198,16 +2195,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-K2-qeV">
+                                                    <rect key="frame" x="16" y="11" width="343" height="225"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Gir-K2-qeV" firstAttribute="top" secondItem="jtP-Iq-sT7" secondAttribute="topMargin" id="1cY-pX-iFC"/>
                                                 <constraint firstItem="36c-VL-Gv7" firstAttribute="leading" secondItem="jtP-Iq-sT7" secondAttribute="leadingMargin" constant="12" id="HZY-9b-wzx"/>
+                                                <constraint firstItem="UHf-qH-o7J" firstAttribute="top" secondItem="Gir-K2-qeV" secondAttribute="bottom" id="KlQ-Oq-Df0"/>
                                                 <constraint firstItem="UHf-qH-o7J" firstAttribute="trailing" secondItem="jtP-Iq-sT7" secondAttribute="trailingMargin" constant="3" id="NK4-L0-36X"/>
+                                                <constraint firstItem="Gir-K2-qeV" firstAttribute="leading" secondItem="jtP-Iq-sT7" secondAttribute="leadingMargin" id="Nob-3q-uuH"/>
                                                 <constraint firstItem="36c-VL-Gv7" firstAttribute="bottom" secondItem="jtP-Iq-sT7" secondAttribute="bottomMargin" constant="3" id="WsA-p7-hsm"/>
-                                                <constraint firstAttribute="trailing" secondItem="rzb-na-poP" secondAttribute="trailing" id="Zbi-zL-4fi"/>
-                                                <constraint firstItem="rzb-na-poP" firstAttribute="top" secondItem="jtP-Iq-sT7" secondAttribute="top" id="c9I-y1-BQC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Gir-K2-qeV" secondAttribute="trailing" id="aAI-Mh-vDP"/>
                                                 <constraint firstItem="UHf-qH-o7J" firstAttribute="bottom" secondItem="jtP-Iq-sT7" secondAttribute="bottomMargin" constant="13" id="dd3-8O-3rH"/>
-                                                <constraint firstItem="rzb-na-poP" firstAttribute="height" secondItem="jtP-Iq-sT7" secondAttribute="height" multiplier="0.8" id="egg-rK-o0d"/>
-                                                <constraint firstItem="rzb-na-poP" firstAttribute="leading" secondItem="jtP-Iq-sT7" secondAttribute="leading" id="imO-kg-5Vo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2423,9 +2424,26 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="CheckIn_Label" destination="36c-VL-Gv7" id="K2C-61-1Sk"/>
+                        <outlet property="CheckOut_Label" destination="UHf-qH-o7J" id="VBZ-yb-cQe"/>
+                        <outlet property="DescriptionLabel" destination="K4S-Uh-A1T" id="oEf-DB-E0q"/>
+                        <outlet property="MapView" destination="Gir-K2-qeV" id="FPx-7C-FE0"/>
                         <outlet property="Similar_collection" destination="uwy-Oe-auk" id="zdr-RR-5dB"/>
+                        <outlet property="TitleLabel" destination="lGi-p0-nCF" id="lLc-ez-6Wr"/>
+                        <outlet property="locationLabel" destination="MZj-pv-Evt" id="7iF-cL-dXv"/>
+                        <outlet property="minNight" destination="1l4-A0-M1J" id="h3z-0b-s8x"/>
+                        <outlet property="moreAmenties" destination="0df-HM-3BN" id="HaN-aq-ZFV"/>
+                        <outlet property="profileImage" destination="lkk-Qm-C4i" id="CGu-5z-qWV"/>
                         <outlet property="propertyTable" destination="6Sl-22-bU9" id="LdG-8O-Psm"/>
+                        <outlet property="reviewLabel" destination="kPL-N9-NeT" id="7F3-O1-08D"/>
+                        <outlet property="reviewerImage" destination="h08-HZ-H4F" id="R2M-2A-mho"/>
+                        <outlet property="reviewerName" destination="rx4-aa-qDL" id="ELt-bk-4TT"/>
                         <outlet property="scroll_image" destination="BvN-nL-een" id="lSr-j2-Dtp"/>
+                        <outletCollection property="AmenitiesImages" destination="UGT-yq-dYo" collectionClass="NSMutableArray" id="YWa-NR-1Sg"/>
+                        <outletCollection property="AmenitiesImages" destination="5iN-UF-qRp" collectionClass="NSMutableArray" id="Dpn-sI-LNL"/>
+                        <outletCollection property="AmenitiesImages" destination="MXW-Eb-tia" collectionClass="NSMutableArray" id="RIt-Xe-pK0"/>
+                        <outletCollection property="AmenitiesImages" destination="kh5-zk-8ve" collectionClass="NSMutableArray" id="8id-a8-F7f"/>
+                        <outletCollection property="AmenitiesImages" destination="MqN-EB-MZ0" collectionClass="NSMutableArray" id="DyY-99-Ftf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTf-2h-gUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2452,7 +2470,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lW0-fp-mrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="237"/>
+            <point key="canvasLocation" x="660" y="-570"/>
         </scene>
         <!--Explore-->
         <scene sceneID="lmk-e9-Z2w">
@@ -3064,6 +3082,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpL-Ku-sJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7422" y="3188"/>
+        </scene>
+        <!--Guest DashboardVC-->
+        <scene sceneID="erD-gg-kva">
+            <objects>
+                <viewController storyboardIdentifier="Guest-Dashboard" id="8zE-gl-JRG" customClass="Guest_DashboardVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z9H-TJ-ACF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Esq-ZH-Kn9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zi7-WG-ZnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7422" y="3962"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4zD-Vs-e7S">

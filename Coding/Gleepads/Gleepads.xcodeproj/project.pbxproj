@@ -28,7 +28,6 @@
 		F2330EE8206DF4FD00D328AA /* TypeOne_TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2330EE6206DF4FD00D328AA /* TypeOne_TableCell.xib */; };
 		F2330EEB206DF53600D328AA /* TypeOne_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2330EE9206DF53600D328AA /* TypeOne_CollectionViewCell.swift */; };
 		F2330EEC206DF53600D328AA /* TypeOne_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2330EEA206DF53600D328AA /* TypeOne_CollectionViewCell.xib */; };
-		F2330EEE206DF9C200D328AA /* hyper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2330EED206DF9C200D328AA /* hyper.jpg */; };
 		F2330EF1206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2330EEF206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift */; };
 		F2330EF2206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2330EF0206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib */; };
 		F2330EF5206DFF8700D328AA /* TypeThree_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2330EF3206DFF8700D328AA /* TypeThree_CollectionViewCell.swift */; };
@@ -141,6 +140,28 @@
 		F2EF76E12068EAA100B378BB /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D02068EAA100B378BB /* setting.png */; };
 		F2EF76E32068EAA100B378BB /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D22068EAA100B378BB /* feedback.png */; };
 		F2EF76E52068EAA100B378BB /* Gleepads.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EF76D42068EAA100B378BB /* Gleepads.png */; };
+		F2F6219A20B5678800E2DF26 /* Outdoor fireplace.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218520B5678400E2DF26 /* Outdoor fireplace.png */; };
+		F2F6219B20B5678800E2DF26 /* Party Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218620B5678400E2DF26 /* Party Friendly.png */; };
+		F2F6219C20B5678800E2DF26 /* Front porch.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218720B5678400E2DF26 /* Front porch.png */; };
+		F2F6219D20B5678800E2DF26 /* Granite countertop in the kitchen".png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218820B5678400E2DF26 /* Granite countertop in the kitchen".png */; };
+		F2F6219E20B5678800E2DF26 /* Shared-Bathrooms.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218920B5678500E2DF26 /* Shared-Bathrooms.png */; };
+		F2F6219F20B5678800E2DF26 /* Birthday Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218A20B5678500E2DF26 /* Birthday Friendly.png */; };
+		F2F621A020B5678800E2DF26 /* Noise Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218B20B5678500E2DF26 /* Noise Friendly.png */; };
+		F2F621A120B5678800E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png */; };
+		F2F621A220B5678800E2DF26 /* Sunroom.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218D20B5678500E2DF26 /* Sunroom.png */; };
+		F2F621A320B5678800E2DF26 /* Walk-in closet in master bedroom.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218E20B5678600E2DF26 /* Walk-in closet in master bedroom.png */; };
+		F2F621A420B5678800E2DF26 /* Wedding Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218F20B5678600E2DF26 /* Wedding Friendly.png */; };
+		F2F621A520B5678800E2DF26 /* Programmable thermostat.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219020B5678600E2DF26 /* Programmable thermostat.png */; };
+		F2F621A620B5678800E2DF26 /* Attached-Bathroom.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219120B5678600E2DF26 /* Attached-Bathroom.png */; };
+		F2F621A720B5678800E2DF26 /* Media room.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219220B5678600E2DF26 /* Media room.png */; };
+		F2F621A820B5678800E2DF26 /* Low-E windows.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219320B5678600E2DF26 /* Low-E windows.png */; };
+		F2F621A920B5678800E2DF26 /* Backyard.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219420B5678600E2DF26 /* Backyard.png */; };
+		F2F621AA20B5678800E2DF26 /* Laundry room.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219520B5678700E2DF26 /* Laundry room.png */; };
+		F2F621AB20B5678800E2DF26 /* Central island in the kitchen.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219620B5678700E2DF26 /* Central island in the kitchen.png */; };
+		F2F621AC20B5678800E2DF26 /* 420 friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219720B5678700E2DF26 /* 420 friendly.png */; };
+		F2F621AD20B5678800E2DF26 /* Concert Ready.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219820B5678700E2DF26 /* Concert Ready.png */; };
+		F2F621AE20B5678800E2DF26 /* Two-story family room.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6219920B5678700E2DF26 /* Two-story family room.png */; };
+		F2F621B020B5809800E2DF26 /* Guest_DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F621AF20B5809800E2DF26 /* Guest_DashboardVC.swift */; };
 		F2F8765120B2E42400DE9E71 /* DiscoverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8765020B2E42400DE9E71 /* DiscoverData.swift */; };
 		F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F2FD44D9206AB1AC00913885 /* e-mail.mp4 */; };
 /* End PBXBuildFile section */
@@ -169,7 +190,6 @@
 		F2330EE6206DF4FD00D328AA /* TypeOne_TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeOne_TableCell.xib; sourceTree = "<group>"; };
 		F2330EE9206DF53600D328AA /* TypeOne_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOne_CollectionViewCell.swift; sourceTree = "<group>"; };
 		F2330EEA206DF53600D328AA /* TypeOne_CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeOne_CollectionViewCell.xib; sourceTree = "<group>"; };
-		F2330EED206DF9C200D328AA /* hyper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hyper.jpg; path = "../../../../images & icon/hyper.jpg"; sourceTree = "<group>"; };
 		F2330EEF206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTwo_CollectionViewCell.swift; sourceTree = "<group>"; };
 		F2330EF0206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeTwo_CollectionViewCell.xib; sourceTree = "<group>"; };
 		F2330EF3206DFF8700D328AA /* TypeThree_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeThree_CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +304,28 @@
 		F2EF76D02068EAA100B378BB /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		F2EF76D22068EAA100B378BB /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		F2EF76D42068EAA100B378BB /* Gleepads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gleepads.png; sourceTree = "<group>"; };
+		F2F6218520B5678400E2DF26 /* Outdoor fireplace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Outdoor fireplace.png"; path = "../../../../images & icon/amenities/Outdoor fireplace.png"; sourceTree = "<group>"; };
+		F2F6218620B5678400E2DF26 /* Party Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Party Friendly.png"; path = "../../../../images & icon/amenities/Party Friendly.png"; sourceTree = "<group>"; };
+		F2F6218720B5678400E2DF26 /* Front porch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Front porch.png"; path = "../../../../images & icon/amenities/Front porch.png"; sourceTree = "<group>"; };
+		F2F6218820B5678400E2DF26 /* Granite countertop in the kitchen".png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Granite countertop in the kitchen\".png"; path = "../../../../images & icon/amenities/Granite countertop in the kitchen\".png"; sourceTree = "<group>"; };
+		F2F6218920B5678500E2DF26 /* Shared-Bathrooms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Shared-Bathrooms.png"; path = "../../../../images & icon/amenities/Shared-Bathrooms.png"; sourceTree = "<group>"; };
+		F2F6218A20B5678500E2DF26 /* Birthday Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Birthday Friendly.png"; path = "../../../../images & icon/amenities/Birthday Friendly.png"; sourceTree = "<group>"; };
+		F2F6218B20B5678500E2DF26 /* Noise Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise Friendly.png"; path = "../../../../images & icon/amenities/Noise Friendly.png"; sourceTree = "<group>"; };
+		F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Outdoor kitchen (cooking, refrigerators and sinks).png"; path = "../../../../images & icon/amenities/Outdoor kitchen (cooking, refrigerators and sinks).png"; sourceTree = "<group>"; };
+		F2F6218D20B5678500E2DF26 /* Sunroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sunroom.png; path = "../../../../images & icon/amenities/Sunroom.png"; sourceTree = "<group>"; };
+		F2F6218E20B5678600E2DF26 /* Walk-in closet in master bedroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Walk-in closet in master bedroom.png"; path = "../../../../images & icon/amenities/Walk-in closet in master bedroom.png"; sourceTree = "<group>"; };
+		F2F6218F20B5678600E2DF26 /* Wedding Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wedding Friendly.png"; path = "../../../../images & icon/amenities/Wedding Friendly.png"; sourceTree = "<group>"; };
+		F2F6219020B5678600E2DF26 /* Programmable thermostat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Programmable thermostat.png"; path = "../../../../images & icon/amenities/Programmable thermostat.png"; sourceTree = "<group>"; };
+		F2F6219120B5678600E2DF26 /* Attached-Bathroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Attached-Bathroom.png"; path = "../../../../images & icon/amenities/Attached-Bathroom.png"; sourceTree = "<group>"; };
+		F2F6219220B5678600E2DF26 /* Media room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Media room.png"; path = "../../../../images & icon/amenities/Media room.png"; sourceTree = "<group>"; };
+		F2F6219320B5678600E2DF26 /* Low-E windows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Low-E windows.png"; path = "../../../../images & icon/amenities/Low-E windows.png"; sourceTree = "<group>"; };
+		F2F6219420B5678600E2DF26 /* Backyard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Backyard.png; path = "../../../../images & icon/amenities/Backyard.png"; sourceTree = "<group>"; };
+		F2F6219520B5678700E2DF26 /* Laundry room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Laundry room.png"; path = "../../../../images & icon/amenities/Laundry room.png"; sourceTree = "<group>"; };
+		F2F6219620B5678700E2DF26 /* Central island in the kitchen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Central island in the kitchen.png"; path = "../../../../images & icon/amenities/Central island in the kitchen.png"; sourceTree = "<group>"; };
+		F2F6219720B5678700E2DF26 /* 420 friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "420 friendly.png"; path = "../../../../images & icon/amenities/420 friendly.png"; sourceTree = "<group>"; };
+		F2F6219820B5678700E2DF26 /* Concert Ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Concert Ready.png"; path = "../../../../images & icon/amenities/Concert Ready.png"; sourceTree = "<group>"; };
+		F2F6219920B5678700E2DF26 /* Two-story family room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Two-story family room.png"; path = "../../../../images & icon/amenities/Two-story family room.png"; sourceTree = "<group>"; };
+		F2F621AF20B5809800E2DF26 /* Guest_DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest_DashboardVC.swift; sourceTree = "<group>"; };
 		F2F8765020B2E42400DE9E71 /* DiscoverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverData.swift; sourceTree = "<group>"; };
 		F2FD44D9206AB1AC00913885 /* e-mail.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "e-mail.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +378,7 @@
 				F22991B220989786007D6A5B /* AmentiesVC.swift */,
 				F296C30220999176006AD38D /* ImageCollectionCell.swift */,
 				F29B9BE120A2046900715141 /* TimeController.swift */,
+				F2F621AF20B5809800E2DF26 /* Guest_DashboardVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -412,7 +455,27 @@
 				F244C805207BC039000316FE /* television.png */,
 				F244C806207BC039000316FE /* wifi.png */,
 				F2DE9CFC2077B15600920040 /* Share.png */,
-				F2330EED206DF9C200D328AA /* hyper.jpg */,
+				F2F6219720B5678700E2DF26 /* 420 friendly.png */,
+				F2F6219120B5678600E2DF26 /* Attached-Bathroom.png */,
+				F2F6219420B5678600E2DF26 /* Backyard.png */,
+				F2F6218A20B5678500E2DF26 /* Birthday Friendly.png */,
+				F2F6219620B5678700E2DF26 /* Central island in the kitchen.png */,
+				F2F6219820B5678700E2DF26 /* Concert Ready.png */,
+				F2F6218720B5678400E2DF26 /* Front porch.png */,
+				F2F6218820B5678400E2DF26 /* Granite countertop in the kitchen".png */,
+				F2F6219520B5678700E2DF26 /* Laundry room.png */,
+				F2F6219320B5678600E2DF26 /* Low-E windows.png */,
+				F2F6219220B5678600E2DF26 /* Media room.png */,
+				F2F6218B20B5678500E2DF26 /* Noise Friendly.png */,
+				F2F6218520B5678400E2DF26 /* Outdoor fireplace.png */,
+				F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png */,
+				F2F6218620B5678400E2DF26 /* Party Friendly.png */,
+				F2F6219020B5678600E2DF26 /* Programmable thermostat.png */,
+				F2F6218920B5678500E2DF26 /* Shared-Bathrooms.png */,
+				F2F6218D20B5678500E2DF26 /* Sunroom.png */,
+				F2F6219920B5678700E2DF26 /* Two-story family room.png */,
+				F2F6218E20B5678600E2DF26 /* Walk-in closet in master bedroom.png */,
+				F2F6218F20B5678600E2DF26 /* Wedding Friendly.png */,
 				F2066BDA2076854500FB0621 /* Explore.png */,
 				F262C95E20A0AE8600A4001C /* Dashboard.png */,
 				F2066BD420767C8000FB0621 /* archived.png */,
@@ -700,11 +763,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F621AE20B5678800E2DF26 /* Two-story family room.png in Resources */,
+				F2F621A920B5678800E2DF26 /* Backyard.png in Resources */,
 				F2330EF6206DFF8700D328AA /* TypeThree_CollectionViewCell.xib in Resources */,
+				F2F621A720B5678800E2DF26 /* Media room.png in Resources */,
+				F2F6219B20B5678800E2DF26 /* Party Friendly.png in Resources */,
 				F25B56BF2094C3200023406D /* host.mp4 in Resources */,
 				F262C95F20A0AE8600A4001C /* Dashboard.png in Resources */,
 				F244C80C207BC114000316FE /* pool.png in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
+				F2F621A120B5678800E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png in Resources */,
+				F2F621AA20B5678800E2DF26 /* Laundry room.png in Resources */,
 				F244C809207BC039000316FE /* wifi.png in Resources */,
 				F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */,
 				F235ACA32073B3A200CD20E6 /* search.png in Resources */,
@@ -712,20 +781,27 @@
 				F2066BD720767CF300FB0621 /* search_small.png in Resources */,
 				F2015762207524140053F02F /* facebook_button.png in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
+				F2F621AC20B5678800E2DF26 /* 420 friendly.png in Resources */,
 				F2066BE12076869600FB0621 /* Heart.png in Resources */,
 				F25B56C12094C33C0023406D /* guest.mp4 in Resources */,
 				F2330EF2206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib in Resources */,
 				F26CFC40206A85DB00A9DD20 /* couple.mp4 in Resources */,
 				F2066BDB2076854600FB0621 /* Explore.png in Resources */,
 				F2EF76E12068EAA100B378BB /* setting.png in Resources */,
+				F2F621A220B5678800E2DF26 /* Sunroom.png in Resources */,
 				F27B51722065960100599F82 /* MiddleTableViewCell.xib in Resources */,
+				F2F621A820B5678800E2DF26 /* Low-E windows.png in Resources */,
 				F244C808207BC039000316FE /* television.png in Resources */,
 				F2A97F98209B742900312B66 /* logo.png in Resources */,
 				F235ACA12073B1FF00CD20E6 /* SearchBar.xib in Resources */,
 				F2330F02206E0FC200D328AA /* black_star.png in Resources */,
+				F2F6219A20B5678800E2DF26 /* Outdoor fireplace.png in Resources */,
+				F2F6219C20B5678800E2DF26 /* Front porch.png in Resources */,
 				F2EF76A52068E89C00B378BB /* Social.mp4 in Resources */,
 				F2A97F9C209B792500312B66 /* marker.png in Resources */,
+				F2F6219F20B5678800E2DF26 /* Birthday Friendly.png in Resources */,
 				F2EF76D72068EAA100B378BB /* help.png in Resources */,
+				F2F621A620B5678800E2DF26 /* Attached-Bathroom.png in Resources */,
 				F2DE9CF32077AFC700920040 /* Profile.png in Resources */,
 				F2581552206953FB00045DCF /* NotifySettingLabelCell.xib in Resources */,
 				F2015763207524140053F02F /* google_button.png in Resources */,
@@ -746,6 +822,7 @@
 				F2EF76A32068E89C00B378BB /* launched_screen.mp4 in Resources */,
 				F2330EFE206DFFBE00D328AA /* TypeThree_TableCell.xib in Resources */,
 				F29D7A2020AD9E8D0029271E /* Add-image.png in Resources */,
+				F2F621AB20B5678800E2DF26 /* Central island in the kitchen.png in Resources */,
 				F2EF76DA2068EAA100B378BB /* gift.png in Resources */,
 				F2330EFA206DFFAB00D328AA /* TypeTwo_TableCell.xib in Resources */,
 				F29C057E2066417C00EC802F /* InviteTableViewCell.xib in Resources */,
@@ -753,22 +830,28 @@
 				F2EBBBA020597EA600DD03A9 /* Assets.xcassets in Resources */,
 				F2129B40206A2DE800D6D276 /* firstpage.png in Resources */,
 				F2648489206E94F9008271BE /* dxb.jpg in Resources */,
+				F2F621A320B5678800E2DF26 /* Walk-in closet in master bedroom.png in Resources */,
 				F26CFC4D206AAAAE00A9DD20 /* Start.png in Resources */,
 				F244C80E207BC5FD000316FE /* PropertyBottomView.xib in Resources */,
-				F2330EEE206DF9C200D328AA /* hyper.jpg in Resources */,
+				F2F621AD20B5678800E2DF26 /* Concert Ready.png in Resources */,
 				F2EF76DE2068EAA100B378BB /* host.png in Resources */,
 				F2330EEC206DF53600D328AA /* TypeOne_CollectionViewCell.xib in Resources */,
 				F2648488206E94F9008271BE /* karachi.jpg in Resources */,
 				F2C10259206D2EF200B4DA6B /* facebook.png in Resources */,
+				F2F621A020B5678800E2DF26 /* Noise Friendly.png in Resources */,
+				F2F6219D20B5678800E2DF26 /* Granite countertop in the kitchen".png in Resources */,
 				F28D9093205FF6F700AE2A5D /* Function.storyboard in Resources */,
 				F2351805209A08BF00DCDCCA /* uncheckbox.png in Resources */,
 				F2FD44DA206AB1AC00913885 /* e-mail.mp4 in Resources */,
 				F2EF76D92068EAA100B378BB /* border_image.png in Resources */,
 				F2330F01206E0FC200D328AA /* golden_star.png in Resources */,
 				F2351801209A072F00DCDCCA /* checkbox.png in Resources */,
+				F2F621A520B5678800E2DF26 /* Programmable thermostat.png in Resources */,
 				F2648484206E76B2008271BE /* BebasNeue-Regular.otf in Resources */,
+				F2F621A420B5678800E2DF26 /* Wedding Friendly.png in Resources */,
 				F258154720692AA500045DCF /* login.mp4 in Resources */,
 				F2EF76E52068EAA100B378BB /* Gleepads.png in Resources */,
+				F2F6219E20B5678800E2DF26 /* Shared-Bathrooms.png in Resources */,
 				F27B516E206595E700599F82 /* TopTableViewCell.xib in Resources */,
 				F2EF76DF2068EAA100B378BB /* notify.png in Resources */,
 				F258154620692AA500045DCF /* forget.mp4 in Resources */,
@@ -886,6 +969,7 @@
 				F25B56BB2094C1C70023406D /* Step2VC.swift in Sources */,
 				F29C058A2066471700EC802F /* HelpVC.swift in Sources */,
 				F2C10251206D260B00B4DA6B /* SavedVC.swift in Sources */,
+				F2F621B020B5809800E2DF26 /* Guest_DashboardVC.swift in Sources */,
 				F2330EEB206DF53600D328AA /* TypeOne_CollectionViewCell.swift in Sources */,
 				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,

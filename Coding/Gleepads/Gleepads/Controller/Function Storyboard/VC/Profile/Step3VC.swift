@@ -48,7 +48,7 @@ class Step3VC: UIViewController,UITextFieldDelegate, UIPickerViewDataSource, UIP
     // ********* VARIABLE THAT WILL BE USE WITH  VC
     
     var PickerView = UIPickerView()
-    var PaymentType = ["Visa","Master Card","American Express", "Cryptocurrency" ]
+    var PaymentType = [" ","Visa","Master Card","American Express", "Cryptocurrency" ]
     var timeSettingFor : String?
     
     // *********** INITIALIZE HOSTVC DELEGATE

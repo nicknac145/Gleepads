@@ -111,6 +111,7 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "help.png"), Title: nil, Sub_Title: "Get Help"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "host.png"), Title: nil, Sub_Title: "Become a Host"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "Dashboard.png"), Title: nil, Sub_Title: " Host Dashboard"),
+                     Cell_info(cell: 3, image: #imageLiteral(resourceName: "Dashboard.png"), Title: nil, Sub_Title: " Guest Dashboard"),
                      Cell_info(cell: 3, image: #imageLiteral(resourceName: "feedback.png"), Title: nil, Sub_Title: "Give us feedback"),
         ]
         
@@ -123,6 +124,7 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                   "Help",
                   "Host",
                   "Host-Dashboard",
+                  "Guest-Dashboard",
                   "Feedback"]
         
         profileTableView.delegate = self
@@ -239,7 +241,7 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
         
         
         
-        let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("profile_Image")
+        let storageRef = self.storage.reference().child((Auth.auth().currentUser?.uid)!).child("User_Profile").child("profile_Image")
         
         let uploadMetaData = StorageMetadata()
         uploadMetaData.contentType = "image/jpeg"

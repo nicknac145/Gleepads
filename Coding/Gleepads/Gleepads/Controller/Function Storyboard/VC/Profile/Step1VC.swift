@@ -50,7 +50,7 @@ class Step1VC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITe
     var PickerView = UIPickerView()
     var selectedTF : String?
     var selectedAmenties = [String]()
-    var propertyType = ["Properties","Flat","Single Unit", "Bungalow","Room Sharing"]
+    var propertyType = ["","Flat","Single Unit", "Bungalow","Room Sharing"]
     
     // ******** INITIALIZE STEP1VC DELEGATE***********
     var hostDelegate : step1Delegate?

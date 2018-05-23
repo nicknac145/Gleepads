@@ -47,7 +47,6 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         super.viewDidLoad()
         
         
-        
 
         dbRef = Database.database().reference()
 
@@ -103,9 +102,9 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
                 self.HostingData[discovery!.City]!.append(discovery!)
                
                 let city  = Array(self.HostingData)
-                print("------------------------")
-                print(self.HostingData.keys)
-                print("------------------------")
+//                print("------------------------")
+//                print(self.HostingData.keys)
+//                print("------------------------")
 
 
             }
@@ -401,11 +400,7 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
 
         let hostValueArray = Array(HostingData.values)
         let name = Array(HostingData.keys)[collectionView.tag-2]
-//        print("!!!!!!!!!!!!!!!!")
-//
-//        print(name)
-//        print("!!!!!!!!!!!!!!!!")
-//        print("******************")
+////        print("******************")
 ////        print(hostValueArray)
 //        print(collectionView.tag - 2)
 //        print(indexPath.row)
@@ -464,11 +459,34 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if collectionView.tag == 0{
+            print(collectionView.tag)
+        }
+        else if collectionView.tag == 1 {
+            
+            print(collectionView.tag)
+        }
         
-        self.performSegue(withIdentifier: "detail", sender: nil)
+        else{
+        let hostValueArray = Array(HostingData.values)
+        let name = Array(HostingData.keys)[collectionView.tag-2]
         
+        
+       
+         let AD_Title  = HostingData[name]![indexPath.row].AD_Title
+        
+        
+        
+        self.performSegue(withIdentifier: "detail", sender: AD_Title)
+        }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest  =  segue.destination as! PropertyTableVC
+        
+        dest.AD_Name = sender as! String
+    }
     
 
   

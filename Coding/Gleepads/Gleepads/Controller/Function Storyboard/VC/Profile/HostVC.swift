@@ -269,6 +269,7 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
 
     // ******** CREATE FIREBASE DATABASE RECORD *************
 //    self.ref.child("Hosting").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.hostingData)
+                
                 self.ref.child("Hosting").childByAutoId().setValue(self.hostingData)
 
                 
@@ -316,7 +317,9 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
             
             self.ImageNumber = self.ImageNumber + 1
             var imageData = Data()
-            imageData = UIImagePNGRepresentation(image)!
+            
+            imageData = UIImageJPEGRepresentation(image, 0.3)!
+//            imageData = UIImagePNGRepresentation(image)!
             
             print("***************")
             print(self.count!)
