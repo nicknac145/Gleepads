@@ -274,7 +274,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         let totalValue =  hostValueArray[indexPath.row - 2].value.count
         
          if totalValue <= 2{
-            return 300
+            return 310
 
         }
         return 575
@@ -474,10 +474,15 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         
        
          let AD_Title  = HostingData[name]![indexPath.row].AD_Title
+        let imageString = HostingData[name]![indexPath.row].ImageUrl
+            
+            
+        let dataDictionary = ["AdValue" : AD_Title , "ImageValue" : imageString]
         
+//        self.performSegue(withIdentifier: "detail", sender: AD_Title)
         
-        
-        self.performSegue(withIdentifier: "detail", sender: AD_Title)
+            self.performSegue(withIdentifier: "detail", sender: dataDictionary)
+
         }
     }
     
@@ -485,7 +490,8 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest  =  segue.destination as! PropertyTableVC
         
-        dest.AD_Name = sender as! String
+        dest.AD_Dictionary = sender as! Dictionary
+//        dest.AD_Name = sender as! String
     }
     
 

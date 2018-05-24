@@ -12,6 +12,7 @@ import MapKit
 import GoogleMaps
 import CoreLocation
 import Firebase
+import SDWebImage
 
 class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionViewDelegate,UICollectionViewDataSource{
    
@@ -19,12 +20,14 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
   
    
     
-    var IMAGE = [#imageLiteral(resourceName: "dundee1"),#imageLiteral(resourceName: "dundee2"),#imageLiteral(resourceName: "dundee3"),#imageLiteral(resourceName: "dundee4")]
-
+//    var IMAGE = [#imageLiteral(resourceName: "dundee1"),#imageLiteral(resourceName: "dundee2"),#imageLiteral(resourceName: "dundee3"),#imageLiteral(resourceName: "dundee4")]
+        var IMAGE = [UIImage]()
     
     // ****** OUTLET ***********
     
     
+    
+    @IBOutlet weak var propertyCategory: UILabel!
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
@@ -33,10 +36,6 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     
 
     @IBOutlet var AmenitiesImages: [UIImageView]!
-    
-    
-
-    
     @IBOutlet weak var moreAmenties: UILabel!
     
     @IBOutlet weak var MapView: UIView!
@@ -51,11 +50,23 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     @IBOutlet var propertyTable: UITableView!
     @IBOutlet weak var Similar_collection: UICollectionView!
     
+
+    
+    
     var bottomViewNib : UIView!
     var final = UIApplication.shared.keyWindow
     var timer:Timer!
     var count = 0
+    var propertyDetail : DiscoveryData?
     var AD_Name = ""
+    var imageString = ""
+    var AD_Dictionary = [String : String]()
+    
+    
+    var similarProperty = [DiscoveryData]()
+    
+    var dbRef : DatabaseReference!
+    var dbHandle : DatabaseHandle!
     
     // ******** VARIABLE FOR GEOLOCATION OPERATION **********
     let locationManager = CLLocationManager()
@@ -63,18 +74,39 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     var zoomLevel: Float = 15.0
     var currentLocation : CLLocation? = CLLocation(latitude: 0, longitude: 0)
     
-    var dbRef : DatabaseReference!
-    var dbHandle : DatabaseHandle!
+
     
-    var propertyDetail : DiscoveryData?
    
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        self.AD_Name = AD_Dictionary["AdValue"]!
+        self.imageString = AD_Dictionary["ImageValue"]!
         
- 
+        let singleImage = self.imageString.split(separator: ",")
+        
+        print(singleImage.count)
+        
+        for loop in singleImage{
+            
+            
+            let imageUrlString = loop
+            
+            
+            let imageUrl = URL(string: String(imageUrlString))!
+            
+            let imageData = try! Data(contentsOf: imageUrl)
+            
+            let image = UIImage(data: imageData)
+            
+            self.IMAGE.append(image!)
+        }
+        
+        
+        moreAmenties.isHidden = true
         
         scroll_image.zgDelegate = self
         
@@ -83,12 +115,13 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         Similar_collection.delegate = self
         Similar_collection.dataSource = self
-        
+//        Similar_collection.reloadData()
         
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.updateImage), userInfo: nil, repeats: true)
         
         
          self.bottomViewNib = Bundle.main.loadNibNamed("PropertyBottomView", owner: nil, options: nil)?.first as! PropertyBottomView
+        
         self.bottomViewNib.frame.origin.y = self.view.frame.size.height - bottomViewNib.frame.size.height
         self.bottomViewNib.frame.size.width = self.view.frame.size.width
         UIApplication.shared.keyWindow?.addSubview(self.bottomViewNib)
@@ -120,36 +153,80 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
 //        print(CLLocationManager.locationServicesEnabled())
         
         
-        print("****************")
-        print(AD_Name)
-        print("****************")
+//        print("****************")
+//        print(AD_Name)
+//        print("****************")
 
     
         dbRef = Database.database().reference()
         
         dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (valueSnapshot) in
-//            print (valueSnapshot.value)
             
             var AD = valueSnapshot.value as! [String:String]
             
             let name = AD["AD_Title"]!
             
             if name == self.AD_Name{
-                let jsonData = try? JSONSerialization.data(withJSONObject: valueSnapshot.value)
+                let jsonData = try? JSONSerialization.data(withJSONObject: valueSnapshot.value as Any)
                 self.propertyDetail = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
                 
-//                print(discovery!)
+                
+                
+//                let bottonView = PropertyBottomView()
+//                bottonView.rent.text = (self.propertyDetail?.Rent)!
+                
+                self.similarPropertyAD(city: (self.propertyDetail?.City)!, completion: { (similar) in
+                   
+                    if similar.AD_Title != self.AD_Name{
+                    
+                    self.similarProperty.append(similar)
+                    
+//                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+//                    print((self.similarProperty))
+//                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+                    }
+                })
 
+//************* CONFIGURE SCROLL IMAGES *********
                 
-                //************* CONFIGURE RESPECTIVE LABELS *********
+                let Images = (self.propertyDetail?.ImageUrl)!
+                let imageArray = Images.split(separator: ",")
                 
+                
+//                print("****************")
+//                print(imageArray)
+//                print("****************")
+              
+                
+                
+    // Property Owner Profile image
+                
+                let userID = (self.propertyDetail?.User_ID)!
+                print(userID)
+                
+                self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
+                    
+                    let value = profile.value as! [String : String]
+                    print(value["ProfileImage_Url"])
+                    let imageString = (value["ProfileImage_Url"])!
+                    let imageURL = URL(string: imageString)
+                    self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
+                })
+                
+//************* CONFIGURE RESPECTIVE LABELS *********
+                self.propertyCategory.text = ("Property Catergory: \((self.propertyDetail?.Property_Category)!)")
                 self.TitleLabel.text = (self.propertyDetail?.AD_Title)!
-                self.locationLabel.text = (self.propertyDetail?.City)!
-                self.DescriptionLabel.text = (self.propertyDetail?.Description)!
+                self.locationLabel.text = "Location :\((self.propertyDetail?.City)!)"
+                self.DescriptionLabel.text = "Description: \((self.propertyDetail?.Description)!))"
                 self.minNight.text = "\((self.propertyDetail?.Mininum_Day)!) night minimum"
                 
                 let amenitiesArray = (self.propertyDetail?.Amenities)!.split(separator: ",")
-                print(amenitiesArray)
+//                print(amenitiesArray)
+                
+                if amenitiesArray.count > 5{
+                    
+                    self.moreAmenties.isHidden = false
+                }
                 
                 for loop in 0...(amenitiesArray.count - 1){
                     
@@ -157,13 +234,13 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
        
                 }
                 
-                  self.CheckIn_Label.text = "Check-In\((self.propertyDetail?.Check_in)!)"
-                self.CheckOut_Label.text = "Check-Out\((self.propertyDetail?.Check_out)!)"
+                  self.CheckIn_Label.text = "Check-In \((self.propertyDetail?.Check_in)!)"
+                self.CheckOut_Label.text = "Check-Out \((self.propertyDetail?.Check_out)!)"
 
                 
                 
                 
-              // ********* CONFIGURE MAP ****************
+// ********* CONFIGURE MAP ****************
                 let lat = ((self.propertyDetail?.Latitude)! as NSString).doubleValue
                 let long = ((self.propertyDetail?.Longitude)! as NSString).doubleValue
                 let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
@@ -180,7 +257,7 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
                 
                 
                 
-                // ******** Define user current location with Marker: *************
+// ******** Define user current location with Marker: *************
                 
                 let marker = GMSMarker(position: propertyCoordinate.coordinate)
                 //                marker.icon = UIImage(named: "wifi")
@@ -190,25 +267,10 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
                 marker.map = self.mapView
 
             }
+            self.Similar_collection.reloadData()
 
         })
-        
-        
-        
-    
-        
-//        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-//
-//        print(propertyDetail?.Latitude)
-//        print(propertyDetail?.Longitude)
-//        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     
@@ -221,7 +283,6 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         scroll_image.moveTo(index: count)
         
     }
-    
     
     
     
@@ -248,12 +309,23 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+//        return testTitle.count
+        return similarProperty.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Similar_Home", for: indexPath) as! Similar_CollectionCell
         
+        cell.Home_Title.text = similarProperty[indexPath.row].AD_Title
+        
+        let imageString = similarProperty[indexPath.row].ImageUrl
+        let imageArray = imageString.split(separator: ",")
+        let displayImage = imageArray[0]
+        let image_URL = URL(string: String(displayImage))
+        
+        cell.Home_Image.sd_setImage(with: image_URL, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
+//        cell.Home_Title.text = testTitle[indexPath.row]
+    
         return cell
         
     }
@@ -275,6 +347,24 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
     }
     
+    func similarPropertyAD(city : String, completion : @escaping (DiscoveryData)->()){
+        
+        dbRef = Database.database().reference()
+        
+        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (valueSnapshot) in
+            
+            var AD = valueSnapshot.value as! [String:String]
+            
+            let name = AD["AD_Title"]!
+
+                let jsonData = try? JSONSerialization.data(withJSONObject: valueSnapshot.value as Any)
+                let similar = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
+            
+            
+            completion(similar!)
+        })
+    }
+    
 }
 
 
@@ -288,29 +378,7 @@ extension PropertyTableVC: CLLocationManagerDelegate, GMSMapViewDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
 //        
-//        
-//        let location : CLLocation = locations.last!
-//
-//        self.currentLocation = location
-//        locationManager.stopUpdatingHeading()
-//
-//
-//        //        yourLocation["Latitude"] = String(location.coordinate.latitude)
-//        //        yourLocation["Longitude"] = String(location.coordinate.longitude )
-//
-//
-//
-//        // ******** Define user current location with Marker: *************
-//
-//        let marker = GMSMarker(position: location.coordinate)
-//        //                marker.icon = UIImage(named: "wifi")
-//        marker.iconView = UIImageView(image: UIImage(named: "marker"))
-//        //                marker.tracksViewChanges = true
-//        marker.title = "Gleepads Inc"
-//        marker.map = mapView
-//
-//
-//        //
+
     
     }
     

@@ -109,6 +109,7 @@
 		F29C05A12066702500EC802F /* NotificationSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C05A02066702500EC802F /* NotificationSettingVC.swift */; };
 		F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C05A82066BC6600EC802F /* LaunchedVC.swift */; };
 		F29D7A2020AD9E8D0029271E /* Add-image.png in Resources */ = {isa = PBXBuildFile; fileRef = F29D7A1F20AD9E8C0029271E /* Add-image.png */; };
+		F2A5D4CA20B6A80600F2A028 /* Two-story foyer.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A5D4C920B6A80500F2A028 /* Two-story foyer.png */; };
 		F2A97F98209B742900312B66 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A97F97209B742900312B66 /* logo.png */; };
 		F2A97F9C209B792500312B66 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A97F9B209B792500312B66 /* marker.png */; };
 		F2C1024D206D1D5F00B4DA6B /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1024C206D1D5F00B4DA6B /* testVC.swift */; };
@@ -271,6 +272,7 @@
 		F29C05A02066702500EC802F /* NotificationSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingVC.swift; sourceTree = "<group>"; };
 		F29C05A82066BC6600EC802F /* LaunchedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchedVC.swift; sourceTree = "<group>"; };
 		F29D7A1F20AD9E8C0029271E /* Add-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add-image.png"; sourceTree = "<group>"; };
+		F2A5D4C920B6A80500F2A028 /* Two-story foyer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Two-story foyer.png"; path = "../../../../images & icon/amenities/Two-story foyer.png"; sourceTree = "<group>"; };
 		F2A97F97209B742900312B66 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../../images & icon/logo.png"; sourceTree = "<group>"; };
 		F2A97F9B209B792500312B66 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		F2C1024C206D1D5F00B4DA6B /* testVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				F244C806207BC039000316FE /* wifi.png */,
 				F2DE9CFC2077B15600920040 /* Share.png */,
 				F2F6219720B5678700E2DF26 /* 420 friendly.png */,
+				F2A5D4C920B6A80500F2A028 /* Two-story foyer.png */,
 				F2F6219120B5678600E2DF26 /* Attached-Bathroom.png */,
 				F2F6219420B5678600E2DF26 /* Backyard.png */,
 				F2F6218A20B5678500E2DF26 /* Birthday Friendly.png */,
@@ -540,7 +543,6 @@
 		F29C0595206658EA00EC802F /* Table Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F220384E207DCA2700C7CA4F /* Similar_CollectionCell.swift */,
 				F2330EE5206DF4FD00D328AA /* TypeOne_TableCell.swift */,
 				F2330EF7206DFFAB00D328AA /* TypeTwo_TableCell.swift */,
 				F2330EFB206DFFBE00D328AA /* TypeThree_TableCell.swift */,
@@ -555,6 +557,7 @@
 				F25815532069542C00045DCF /* NotifySettingSwitchCell.swift */,
 				F29C059D2066660D00EC802F /* HeadingCell.swift */,
 				F244C80F207BC616000316FE /* PropertyBottomView.swift */,
+				F220384E207DCA2700C7CA4F /* Similar_CollectionCell.swift */,
 				F2351802209A07F600DCDCCA /* checkboxCell.swift */,
 			);
 			path = "Table Cell";
@@ -782,6 +785,7 @@
 				F2015762207524140053F02F /* facebook_button.png in Resources */,
 				F27B51782065A68E00599F82 /* ButtonTableViewCell.xib in Resources */,
 				F2F621AC20B5678800E2DF26 /* 420 friendly.png in Resources */,
+				F2A5D4CA20B6A80600F2A028 /* Two-story foyer.png in Resources */,
 				F2066BE12076869600FB0621 /* Heart.png in Resources */,
 				F25B56C12094C33C0023406D /* guest.mp4 in Resources */,
 				F2330EF2206DFF6E00D328AA /* TypeTwo_CollectionViewCell.xib in Resources */,
