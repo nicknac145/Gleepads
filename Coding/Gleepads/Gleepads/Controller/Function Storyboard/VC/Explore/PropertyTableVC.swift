@@ -16,11 +16,11 @@ import SDWebImage
 
 class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionViewDelegate,UICollectionViewDataSource{
    
-    
+ 
   
    
     
-//    var IMAGE = [#imageLiteral(resourceName: "dundee1"),#imageLiteral(resourceName: "dundee2"),#imageLiteral(resourceName: "dundee3"),#imageLiteral(resourceName: "dundee4")]
+
         var IMAGE = [UIImage]()
     
     // ****** OUTLET ***********
@@ -82,6 +82,8 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+    
 
         self.AD_Name = AD_Dictionary["AdValue"]!
         self.imageString = AD_Dictionary["ImageValue"]!

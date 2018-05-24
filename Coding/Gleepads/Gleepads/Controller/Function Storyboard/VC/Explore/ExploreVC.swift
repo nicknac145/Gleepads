@@ -479,6 +479,9 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             
         let dataDictionary = ["AdValue" : AD_Title , "ImageValue" : imageString]
         
+            
+            print(dataDictionary)
+            
 //        self.performSegue(withIdentifier: "detail", sender: AD_Title)
         
             self.performSegue(withIdentifier: "detail", sender: dataDictionary)
