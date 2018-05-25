@@ -351,6 +351,95 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedData = self.similarProperty[indexPath.row].AD_Title
+        
+        print(selectedData)
+        
+         let selectedImage = self.similarProperty[indexPath.row].ImageUrl
+        
+        print(selectedImage)
+        
+        self.AD_Name = self.similarProperty[indexPath.row].AD_Title
+        self.imageString = self.similarProperty[indexPath.row].ImageUrl
+
+        self.TitleLabel.text = selectedData
+        
+        //*****************************************************************
+        
+        self.CheckIn_Label.text = "Check-In \((self.similarProperty[indexPath.row].Check_in))"
+        self.CheckOut_Label.text = "Check-Out \((self.similarProperty[indexPath.row].Check_out))"
+        
+        
+        
+        
+        // ********* CONFIGURE MAP ****************
+        let lat = ((self.similarProperty[indexPath.row].Latitude) as NSString).doubleValue
+        let long = ((self.similarProperty[indexPath.row].Longitude) as NSString).doubleValue
+        let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
+        
+        let camera = GMSCameraPosition.camera(withLatitude: propertyCoordinate.coordinate.latitude, longitude: propertyCoordinate.coordinate.longitude, zoom: self.zoomLevel)
+        
+        // ********** setting Mapview frame dimension ************
+        
+        self.mapView = GMSMapView.map(withFrame: self.MapView.bounds, camera: camera)
+        
+        self.mapView.animate(to: camera)
+        
+        self.MapView.addSubview(self.mapView)
+        
+        
+        
+        // ******** Define user current location with Marker: *************
+        
+        let marker = GMSMarker(position: propertyCoordinate.coordinate)
+        //                marker.icon = UIImage(named: "wifi")
+        marker.iconView = UIImageView(image: UIImage(named: "marker"))
+        //                marker.tracksViewChanges = true
+        marker.title = "Gleepads Inc"
+        marker.map = self.mapView
+        
+        
+        //*****************************************************************
+        
+        
+        // ******************* BottomNib INFORMATION **********************
+        
+        
+        print((self.propertyDetail?.Rent)!)
+        
+        self.bottomViewNib.rent.text = "$ \((self.similarProperty[indexPath.row].Rent)) "
+        
+        
+        self.bottomViewNib.StarRating.rating = Double((self.similarProperty[indexPath.row].Rating))!
+        
+//        self.IMAGE.removeAll()
+//
+//        self.imageString = self.similarProperty[indexPath.row].ImageUrl
+//        let singleImage = self.imageString.split(separator: ",")
+//
+//        print(singleImage.count)
+//
+//
+//        // *********** COLLECTING SCROLL VIEW IMAGES *************
+//        for loop in singleImage{
+//
+//
+//            let imageUrlString = loop
+//
+//
+//            let imageUrl = URL(string: String(imageUrlString))!
+//
+//            let imageData = try! Data(contentsOf: imageUrl)
+//
+//            let image = UIImage(data: imageData)
+//
+//            self.IMAGE.append(image!)
+//        }
+//
+    }
+    
     @IBAction func dismiss_Action(_ sender: Any) {
 
         self.navigationController?.popViewController(animated: true)
