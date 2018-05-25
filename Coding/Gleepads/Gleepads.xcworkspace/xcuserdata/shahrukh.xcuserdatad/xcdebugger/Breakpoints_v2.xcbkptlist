@@ -9,14 +9,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Gleepads/Controller/Function Storyboard/VC/Explore/ExploreVC.swift"
-            timestampString = "548859827.043599"
+            filePath = "Gleepads/Controller/Function Storyboard/VC/Profile/HostVC.swift"
+            timestampString = "548941371.726666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "Confirm_Button_Action(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gleepads/Controller/Function Storyboard/VC/Explore/ExploreVC.swift"
+            timestampString = "548941371.726751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

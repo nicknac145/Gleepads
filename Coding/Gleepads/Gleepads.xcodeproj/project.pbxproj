@@ -105,7 +105,7 @@
 		F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90AE206016FB00AE2A5D /* Custom_View.swift */; };
 		F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */; };
 		F28DE7F320B406E90044D5D9 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = F28DE7F220B406E80044D5D9 /* thumbnail.png */; };
-		F2942FA9207DF96600B49BC9 /* SendMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */; };
+		F2942FA9207DF96600B49BC9 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2942FA8207DF96600B49BC9 /* BookingVC.swift */; };
 		F296C30320999176006AD38D /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F296C30220999176006AD38D /* ImageCollectionCell.swift */; };
 		F296C30520999B34006AD38D /* add_image.png in Resources */ = {isa = PBXBuildFile; fileRef = F296C30420999B33006AD38D /* add_image.png */; };
 		F298C37A20763B1D006E9F09 /* GuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298C37920763B1D006E9F09 /* GuestVC.swift */; };
@@ -284,7 +284,7 @@
 		F28D90AE206016FB00AE2A5D /* Custom_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
 		F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_ImageView.swift; sourceTree = "<group>"; };
 		F28DE7F220B406E80044D5D9 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
-		F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageVC.swift; sourceTree = "<group>"; };
+		F2942FA8207DF96600B49BC9 /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
 		F296C30220999176006AD38D /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		F296C30420999B33006AD38D /* add_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image.png; sourceTree = "<group>"; };
 		F298C37920763B1D006E9F09 /* GuestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestVC.swift; sourceTree = "<group>"; };
@@ -671,6 +671,7 @@
 		F2C1025C206D2FF600B4DA6B /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				F2942FA8207DF96600B49BC9 /* BookingVC.swift */,
 				F2C1024E206D236F00B4DA6B /* ExploreVC.swift */,
 				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
 				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
@@ -688,7 +689,6 @@
 		F2C1025D206D359A00B4DA6B /* TEST SWIFT */ = {
 			isa = PBXGroup;
 			children = (
-				F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */,
 				F26CFC4A206AA88D00A9DD20 /* SearchBarTableViewController.swift */,
 				F2C1024C206D1D5F00B4DA6B /* testVC.swift */,
 			);
@@ -1081,7 +1081,7 @@
 				F2330EF1206DFF6E00D328AA /* TypeTwo_CollectionViewCell.swift in Sources */,
 				F27B51712065960100599F82 /* MiddleTableViewCell.swift in Sources */,
 				F2DE9D002077C01D00920040 /* ZGCarousel.swift in Sources */,
-				F2942FA9207DF96600B49BC9 /* SendMessageVC.swift in Sources */,
+				F2942FA9207DF96600B49BC9 /* BookingVC.swift in Sources */,
 				F25619C720B7F00F00704847 /* CosmosTouchTarget.swift in Sources */,
 				F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */,
 				F25619C920B7F00F00704847 /* CosmosText.swift in Sources */,

@@ -27,6 +27,7 @@ struct DiscoveryData : Codable {
     var Mininum_Day: String
     var Payment_Mode: String
     var Property_Category: String
+    var Rating : String
     var Rent: String
     var User_ID: String
 }

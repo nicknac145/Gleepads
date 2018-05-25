@@ -14,4 +14,11 @@ class PropertyBottomView: UIView {
     
     @IBOutlet weak var StarRating: CosmosView!
     
+    @IBOutlet weak var bookingButton: Custom_Button!
+
+
+    
+
+
+
 }

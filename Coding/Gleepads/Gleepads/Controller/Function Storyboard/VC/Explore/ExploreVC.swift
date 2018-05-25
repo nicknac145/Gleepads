@@ -91,10 +91,13 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         // FETCHING KEY INFO FROM CITY NODE
         dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (info) in
             
+//            print(info.value)
         
             let jsonData = try? JSONSerialization.data(withJSONObject: info.value)
             let discovery = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
 
+//            print(discovery)
+            
             if let d = discovery {
                 if self.HostingData[discovery!.City] == nil {
                     self.HostingData[discovery!.City] = []
@@ -408,8 +411,11 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
 //        print(HostingData[name]![indexPath.row].AD_Title)
 //        print("***************")
         
+        print(HostingData[name]![indexPath.row].Rating)
+        
         cell.TypeThree_AD_Title.text = HostingData[name]![indexPath.row].AD_Title
         cell.TypeThree_Rent.text = "$\(hostValueArray[collectionView.tag - 2][indexPath.row].Rent)"
+        cell.starRating.rating = Double( HostingData[name]![indexPath.row].Rating)!
         
 //
         
@@ -491,12 +497,13 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail"{
         let dest  =  segue.destination as! PropertyTableVC
         
         dest.AD_Dictionary = sender as! Dictionary
 //        dest.AD_Name = sender as! String
     }
-    
+    }
 
   
 }

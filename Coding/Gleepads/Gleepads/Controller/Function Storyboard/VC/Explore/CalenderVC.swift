@@ -18,6 +18,8 @@ class CalenderVC: UIViewController, CVCalendarViewDelegate,CVCalendarMenuViewDel
         return .monday
     }
     
+ 
+    
 
     @IBOutlet weak var calendarMenu: CVCalendarMenuView!
     
@@ -30,7 +32,11 @@ class CalenderVC: UIViewController, CVCalendarViewDelegate,CVCalendarMenuViewDel
 
         calendarView.delegate = self
         calendarMenu.delegate = self
-       
+        
+
+        
+        
+        // ********* DISMISS ***********
         let exitTap = UITapGestureRecognizer(target: self, action: #selector(exit))
         BGView.addGestureRecognizer(exitTap)
         
@@ -44,6 +50,7 @@ class CalenderVC: UIViewController, CVCalendarViewDelegate,CVCalendarMenuViewDel
     }
     
     @objc func exit(recog : UIGestureRecognizer){
+        
         self.dismiss(animated: true, completion: nil)
     }
 

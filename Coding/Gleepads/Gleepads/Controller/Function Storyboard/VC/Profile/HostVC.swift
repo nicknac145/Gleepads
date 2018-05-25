@@ -99,6 +99,7 @@ class HostVC: UIViewController, step1Delegate, step2Delegate, step3Delegate {
                        "Country":"",
                        "Latitude":"",
                        "Longitude":"",
+                       "Rating" : "4",
                         "Rent":"",
                         "Payment_Mode":"",
                         "Guest_Number":"",
@@ -264,7 +265,7 @@ performSegue(withIdentifier: "Step2_Segue", sender: self)
                 
                 print("******************")
                 self.hostingData["ImageUrl"] = self.urlString!
-                print(self.hostingData)
+                print(self.hostingData["Rating"])
                 print("******************")
 
     // ******** CREATE FIREBASE DATABASE RECORD *************

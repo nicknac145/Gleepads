@@ -1,5 +1,5 @@
 //
-//  SendMessageVC.swift
+//  BookingVC.swift
 //  Gleepads
 //
 //  Created by Syed ShahRukh Haider on 11/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SendMessageVC: UIViewController {
+class BookingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

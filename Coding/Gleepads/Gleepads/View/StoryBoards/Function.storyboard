@@ -1728,10 +1728,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5BS-ef-D48">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-vr-iHl" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
-                                        <rect key="frame" x="38" y="150.5" width="300" height="298.5"/>
+                                        <rect key="frame" x="38" y="162" width="300" height="323"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Infants" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-u3-5yQ">
                                                 <rect key="frame" x="10" y="168.5" width="52" height="20.5"/>
@@ -1963,17 +1963,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVt-8q-T8W" userLabel="BGView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o11-qr-wS7" customClass="Custom_View" customModule="Gleepads" customModuleProvider="target">
-                                        <rect key="frame" x="47" y="149.5" width="281.5" height="299.5"/>
+                                        <rect key="frame" x="47" y="162" width="281.5" height="324"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGt-4g-mvc" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                                <rect key="frame" x="8" y="8" width="266" height="29.5"/>
+                                                <rect key="frame" x="8" y="8" width="266" height="31.5"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcy-Ks-DZx" customClass="CVCalendarView" customModule="CVCalendar">
-                                                <rect key="frame" x="8" y="45.5" width="266" height="246"/>
+                                                <rect key="frame" x="8" y="47.5" width="266" height="268.5"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
@@ -2036,7 +2036,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
+                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" id="BvN-nL-een" customClass="ZGCarousel" customModule="Gleepads" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </scrollView>
@@ -2250,7 +2250,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tom.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="h08-HZ-H4F" customClass="Custom_ImageView" customModule="Gleepads" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add-image.png" translatesAutoresizingMaskIntoConstraints="NO" id="h08-HZ-H4F" customClass="Custom_ImageView" customModule="Gleepads" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="11" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Bgb-m7-P7l"/>
@@ -2296,6 +2296,9 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -2320,38 +2323,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="58" id="N6P-b2-vXJ">
-                                        <rect key="frame" x="0.0" y="938" width="375" height="58"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N6P-b2-vXJ" id="rcB-eT-1q7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_pointer.png" translatesAutoresizingMaskIntoConstraints="NO" id="5uX-uI-k3R">
-                                                    <rect key="frame" x="343" y="16" width="16" height="25"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-8T-Puo">
-                                                    <rect key="frame" x="16" y="18" width="82.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="pmf-8T-Puo" firstAttribute="top" secondItem="rcB-eT-1q7" secondAttribute="topMargin" constant="7" id="10V-tj-FOs"/>
-                                                <constraint firstItem="pmf-8T-Puo" firstAttribute="leading" secondItem="rcB-eT-1q7" secondAttribute="leadingMargin" id="C3T-ON-5fU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pmf-8T-Puo" secondAttribute="bottom" constant="8" id="OCl-W2-Hrc"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="5uX-uI-k3R" secondAttribute="bottom" constant="6" id="TB9-Xq-gZw"/>
-                                                <constraint firstItem="5uX-uI-k3R" firstAttribute="top" secondItem="rcB-eT-1q7" secondAttribute="topMargin" constant="5" id="Usu-Jg-owS"/>
-                                                <constraint firstItem="5uX-uI-k3R" firstAttribute="trailing" secondItem="rcB-eT-1q7" secondAttribute="trailingMargin" id="ZuK-lg-6DO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gQi-ZN-Y0q" kind="presentation" id="xgH-Ej-RaY"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="182" id="vt7-3r-owF">
-                                        <rect key="frame" x="0.0" y="996" width="375" height="182"/>
+                                        <rect key="frame" x="0.0" y="938" width="375" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vt7-3r-owF" id="FEr-xG-a9t">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
@@ -2419,7 +2392,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="0mL-a8-Z8e">
-                                        <rect key="frame" x="0.0" y="1178" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="1120" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0mL-a8-Z8e" id="0fw-e5-5HE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
@@ -2472,6 +2445,7 @@
                         <outletCollection property="AmenitiesImages" destination="MXW-Eb-tia" collectionClass="NSMutableArray" id="RIt-Xe-pK0"/>
                         <outletCollection property="AmenitiesImages" destination="kh5-zk-8ve" collectionClass="NSMutableArray" id="8id-a8-F7f"/>
                         <outletCollection property="AmenitiesImages" destination="MqN-EB-MZ0" collectionClass="NSMutableArray" id="DyY-99-Ftf"/>
+                        <segue destination="gQi-ZN-Y0q" kind="presentation" identifier="Booking_Segue" id="t2m-OG-ocK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTf-2h-gUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2667,10 +2641,10 @@
             </objects>
             <point key="canvasLocation" x="-241" y="1021"/>
         </scene>
-        <!--Send MessageVC-->
+        <!--BookingVC-->
         <scene sceneID="FYc-oi-l1G">
             <objects>
-                <viewController id="gQi-ZN-Y0q" customClass="SendMessageVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gQi-ZN-Y0q" customClass="BookingVC" customModule="Gleepads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BHG-np-C60">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3154,14 +3128,13 @@
         <image name="Share.png" width="24" height="24"/>
         <image name="add_image.png" width="80" height="80"/>
         <image name="archived.png" width="24" height="24"/>
-        <image name="right_pointer.png" width="16" height="16"/>
         <image name="search_small.png" width="24" height="24"/>
         <image name="tom.jpg" width="297" height="396"/>
         <image name="traveller.png" width="64" height="64"/>
         <image name="uncheckbox.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oVO-O2-hAP"/>
-        <segue reference="D2M-xp-97o"/>
+        <segue reference="9jO-ta-CQ7"/>
+        <segue reference="Q6j-v1-U1m"/>
     </inferredMetricsTieBreakers>
 </document>

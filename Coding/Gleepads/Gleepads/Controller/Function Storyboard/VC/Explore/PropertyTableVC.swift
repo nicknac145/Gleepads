@@ -53,7 +53,7 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
 
     
     
-    var bottomViewNib : UIView!
+    var bottomViewNib : PropertyBottomView!
     var final = UIApplication.shared.keyWindow
     var timer:Timer!
     var count = 0
@@ -83,8 +83,9 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         super.viewDidLoad()
         
-    
-
+        let tapButton = UITapGestureRecognizer(target: self, action: #selector(bookingAction))
+        
+      
         self.AD_Name = AD_Dictionary["AdValue"]!
         self.imageString = AD_Dictionary["ImageValue"]!
         
@@ -92,6 +93,8 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         print(singleImage.count)
         
+        
+        // *********** COLLECTING SCROLL VIEW IMAGES *************
         for loop in singleImage{
             
             
@@ -123,6 +126,7 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         
          self.bottomViewNib = Bundle.main.loadNibNamed("PropertyBottomView", owner: nil, options: nil)?.first as! PropertyBottomView
+        
         
         self.bottomViewNib.frame.origin.y = self.view.frame.size.height - bottomViewNib.frame.size.height
         self.bottomViewNib.frame.size.width = self.view.frame.size.width
@@ -201,7 +205,22 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
               
                 
                 
-    // Property Owner Profile image
+     // ******************* BottomNib INFORMATION **********************
+                
+                
+                print((self.propertyDetail?.Rent)!)
+                
+                self.bottomViewNib.rent.text = "$ \((self.propertyDetail?.Rent)!) "
+                
+                
+                self.bottomViewNib.StarRating.rating = Double((self.propertyDetail?.Rating)!)!
+                
+                self.bottomViewNib.bookingButton.addGestureRecognizer(tapButton)
+                
+                
+                
+                
+    // ****************** Property Owner Profile image ********************
                 
                 let userID = (self.propertyDetail?.User_ID)!
                 print(userID)
@@ -365,6 +384,12 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
             
             completion(similar!)
         })
+    }
+    
+    
+    @objc func bookingAction(){
+    
+   performSegue(withIdentifier: "Booking_Segue", sender: nil)
     }
     
 }
