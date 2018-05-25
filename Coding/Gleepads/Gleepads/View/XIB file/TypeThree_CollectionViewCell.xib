@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,64 +39,60 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YNn-hT-PtR">
-                        <rect key="frame" x="0.0" y="192" width="66" height="20"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="vYP-NZ-vuF">
-                                <rect key="frame" x="0.0" y="0.0" width="13" height="20"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ka6-Vo-i5J">
-                                <rect key="frame" x="13" y="0.0" width="13.5" height="20"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="BZ2-MI-hxd">
-                                <rect key="frame" x="26.5" y="0.0" width="13" height="20"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="HJJ-ab-Ais">
-                                <rect key="frame" x="39.5" y="0.0" width="13.5" height="20"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="cGO-2A-bTH">
-                                <rect key="frame" x="53" y="0.0" width="13" height="20"/>
-                            </imageView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="YNn-hT-PtR" secondAttribute="height" multiplier="1:0.3" id="N8b-at-fyK"/>
-                        </constraints>
-                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpX-06-NxH" customClass="CosmosView" customModule="Gleepads" customModuleProvider="target">
+                        <rect key="frame" x="6" y="188" width="132.5" height="26"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                <color key="value" red="0.92102043550026602" green="0.82855863541893249" blue="0.22003680342092907" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="YNn-hT-PtR" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.35" id="3zN-Rj-UVC"/>
                 <constraint firstItem="6qe-eH-Phv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="AeW-GF-KPk"/>
                 <constraint firstItem="6qe-eH-Phv" firstAttribute="top" secondItem="avS-jY-Ej7" secondAttribute="bottom" constant="6" id="BFx-Ck-ujk"/>
                 <constraint firstAttribute="trailing" secondItem="avS-jY-Ej7" secondAttribute="trailing" constant="4" id="EDn-WN-a6I"/>
                 <constraint firstItem="avS-jY-Ej7" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" multiplier="0.5" id="d8o-HQ-Wez"/>
+                <constraint firstItem="bpX-06-NxH" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.7" id="dUL-nO-pex"/>
                 <constraint firstAttribute="trailing" secondItem="6qe-eH-Phv" secondAttribute="trailing" constant="4" id="e1j-nQ-FRy"/>
-                <constraint firstItem="YNn-hT-PtR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="f6H-HS-UIR"/>
+                <constraint firstItem="bpX-06-NxH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="eeu-s3-cIL"/>
                 <constraint firstAttribute="trailing" secondItem="ixQ-Ka-dPn" secondAttribute="trailing" constant="4" id="gb8-G0-qcB"/>
-                <constraint firstItem="YNn-hT-PtR" firstAttribute="top" secondItem="ixQ-Ka-dPn" secondAttribute="bottom" constant="6" id="hah-9p-0pV"/>
                 <constraint firstItem="avS-jY-Ej7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="ht6-ls-qDU"/>
                 <constraint firstItem="ixQ-Ka-dPn" firstAttribute="top" secondItem="6qe-eH-Phv" secondAttribute="bottom" constant="6" id="i37-wl-ZoN"/>
                 <constraint firstItem="avS-jY-Ej7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="loY-3L-cf2"/>
                 <constraint firstItem="ixQ-Ka-dPn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="o5P-XS-hhk"/>
+                <constraint firstItem="bpX-06-NxH" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.1" id="x7V-k7-0CY"/>
+                <constraint firstItem="bpX-06-NxH" firstAttribute="top" secondItem="ixQ-Ka-dPn" secondAttribute="bottom" constant="2" id="yrY-bd-JRH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="189" height="278"/>
             <connections>
-                <outlet property="Star1" destination="vYP-NZ-vuF" id="Hbp-ti-s0l"/>
-                <outlet property="Star3" destination="BZ2-MI-hxd" id="o8H-Bq-oMA"/>
-                <outlet property="Star4" destination="HJJ-ab-Ais" id="UFf-hn-Mih"/>
-                <outlet property="Star5" destination="cGO-2A-bTH" id="yIV-BV-S6f"/>
-                <outlet property="Start2" destination="Ka6-Vo-i5J" id="o7B-1u-Vz0"/>
                 <outlet property="TypeThree_AD_Title" destination="6qe-eH-Phv" id="pgU-ty-d4f"/>
                 <outlet property="TypeThree_Image" destination="avS-jY-Ej7" id="Dir-rv-Tbc"/>
                 <outlet property="TypeThree_Rent" destination="ixQ-Ka-dPn" id="nlh-Zl-8Ps"/>
+                <outlet property="starRating" destination="bpX-06-NxH" id="jzo-Zw-qk7"/>
             </connections>
             <point key="canvasLocation" x="85.5" y="16"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="black_star.png" width="32" height="32"/>
-        <image name="golden_star.png" width="30" height="30"/>
         <image name="karachi.jpg" width="1152" height="752"/>
     </resources>
 </document>

@@ -12,5 +12,6 @@ class PropertyBottomView: UIView {
 
     @IBOutlet weak var rent: UILabel!
     
-
+    @IBOutlet weak var StarRating: CosmosView!
+    
 }

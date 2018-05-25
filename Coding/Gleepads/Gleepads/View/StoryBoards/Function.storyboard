@@ -2239,7 +2239,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User review" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPL-N9-NeT">
-                                                    <rect key="frame" x="16" y="65" width="343" height="41"/>
+                                                    <rect key="frame" x="16" y="65" width="343" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -2262,53 +2262,61 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rZT-s9-1LR">
-                                                    <rect key="frame" x="295" y="107" width="56" height="23"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="SPV-3T-kZo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="11" height="23"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEx-fH-Sc8">
-                                                            <rect key="frame" x="11" y="0.0" width="11.5" height="23"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lld-sY-lbf">
-                                                            <rect key="frame" x="22.5" y="0.0" width="11" height="23"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="PL2-qm-tda">
-                                                            <rect key="frame" x="33.5" y="0.0" width="11.5" height="23"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-hb-zfD">
-                                                            <rect key="frame" x="45" y="0.0" width="11" height="23"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEM-GQ-aaF">
-                                                    <rect key="frame" x="16" y="114" width="91" height="27"/>
+                                                    <rect key="frame" x="16" y="90" width="91" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="Read all reviews">
                                                         <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juD-ux-wVD" customClass="CosmosView" customModule="Gleepads" customModuleProvider="target">
+                                                    <rect key="frame" x="246.5" y="79" width="112.5" height="23"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                            <color key="value" red="0.92102043550000001" green="0.82855863539999997" blue="0.22003680340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rZT-s9-1LR" firstAttribute="width" secondItem="SXC-I0-fwY" secondAttribute="width" multiplier="0.15" id="7TW-ZP-E1P"/>
-                                                <constraint firstItem="rZT-s9-1LR" firstAttribute="height" secondItem="SXC-I0-fwY" secondAttribute="height" multiplier="0.15" id="88L-l1-qen"/>
                                                 <constraint firstItem="kPL-N9-NeT" firstAttribute="top" secondItem="h08-HZ-H4F" secondAttribute="bottom" constant="14" id="9SR-Y3-7Hn"/>
+                                                <constraint firstItem="juD-ux-wVD" firstAttribute="width" secondItem="SXC-I0-fwY" secondAttribute="width" multiplier="0.3" id="A2K-jc-DqW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="rx4-aa-qDL" secondAttribute="trailing" constant="218" id="AiF-6h-jj0"/>
+                                                <constraint firstItem="juD-ux-wVD" firstAttribute="height" secondItem="SXC-I0-fwY" secondAttribute="height" multiplier="0.15" id="CtO-2B-6n4"/>
                                                 <constraint firstItem="h08-HZ-H4F" firstAttribute="top" secondItem="SXC-I0-fwY" secondAttribute="topMargin" id="IlB-Dc-GEu"/>
                                                 <constraint firstItem="kPL-N9-NeT" firstAttribute="leading" secondItem="SXC-I0-fwY" secondAttribute="leadingMargin" id="Kh6-tk-dhu"/>
                                                 <constraint firstItem="SEM-GQ-aaF" firstAttribute="leading" secondItem="SXC-I0-fwY" secondAttribute="leadingMargin" id="Olo-aQ-0pI"/>
                                                 <constraint firstItem="rx4-aa-qDL" firstAttribute="top" secondItem="SXC-I0-fwY" secondAttribute="topMargin" id="Sqg-r1-3fY"/>
                                                 <constraint firstItem="h08-HZ-H4F" firstAttribute="leading" secondItem="SXC-I0-fwY" secondAttribute="leadingMargin" id="TBo-sp-6TE"/>
                                                 <constraint firstItem="kPL-N9-NeT" firstAttribute="trailing" secondItem="SXC-I0-fwY" secondAttribute="trailingMargin" id="e7Z-ba-Trp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="rZT-s9-1LR" secondAttribute="trailing" constant="8" id="iKn-d1-6FF"/>
+                                                <constraint firstItem="juD-ux-wVD" firstAttribute="top" secondItem="SXC-I0-fwY" secondAttribute="topMargin" constant="68" id="gba-XY-DNO"/>
                                                 <constraint firstItem="h08-HZ-H4F" firstAttribute="top" secondItem="SXC-I0-fwY" secondAttribute="topMargin" id="ift-g6-xIG"/>
                                                 <constraint firstItem="rx4-aa-qDL" firstAttribute="leading" secondItem="h08-HZ-H4F" secondAttribute="trailing" constant="8" id="nnE-Rz-TRw"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="rZT-s9-1LR" secondAttribute="bottom" constant="12" id="oDF-QC-tpN"/>
                                                 <constraint firstItem="SEM-GQ-aaF" firstAttribute="top" secondItem="kPL-N9-NeT" secondAttribute="bottom" constant="8" id="qeP-Rb-IRf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="SEM-GQ-aaF" secondAttribute="bottom" constant="1" id="rZx-cZ-frW"/>
                                                 <constraint firstItem="h08-HZ-H4F" firstAttribute="leading" secondItem="SXC-I0-fwY" secondAttribute="leadingMargin" id="uaa-lr-Pb9"/>
-                                                <constraint firstItem="rZT-s9-1LR" firstAttribute="top" secondItem="kPL-N9-NeT" secondAttribute="bottom" constant="1" id="ysq-OA-Tg0"/>
+                                                <constraint firstItem="juD-ux-wVD" firstAttribute="trailing" secondItem="SXC-I0-fwY" secondAttribute="trailingMargin" id="z3r-e9-PzC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3146,8 +3154,6 @@
         <image name="Share.png" width="24" height="24"/>
         <image name="add_image.png" width="80" height="80"/>
         <image name="archived.png" width="24" height="24"/>
-        <image name="black_star.png" width="32" height="32"/>
-        <image name="golden_star.png" width="30" height="30"/>
         <image name="right_pointer.png" width="16" height="16"/>
         <image name="search_small.png" width="24" height="24"/>
         <image name="tom.jpg" width="297" height="396"/>

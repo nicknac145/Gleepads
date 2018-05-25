@@ -54,6 +54,21 @@
 		F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244C80F207BC616000316FE /* PropertyBottomView.swift */; };
 		F247B1B22091D6AE00FFF478 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */; };
 		F2532281208E0A8100AB75E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */; };
+		F25619BB20B7F00F00704847 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AB20B7F00D00704847 /* CosmosSize.swift */; };
+		F25619BC20B7F00F00704847 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AC20B7F00D00704847 /* CosmosLayerHelper.swift */; };
+		F25619BD20B7F00F00704847 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AD20B7F00D00704847 /* CosmosLayers.swift */; };
+		F25619BE20B7F00F00704847 /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AE20B7F00E00704847 /* CosmosTouch.swift */; };
+		F25619BF20B7F00F00704847 /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AF20B7F00E00704847 /* CosmosLocalizedRating.swift */; };
+		F25619C020B7F00F00704847 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B020B7F00E00704847 /* CosmosRating.swift */; };
+		F25619C120B7F00F00704847 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B120B7F00E00704847 /* StarLayer.swift */; };
+		F25619C220B7F00F00704847 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B320B7F00E00704847 /* RightToLeft.swift */; };
+		F25619C320B7F00F00704847 /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B420B7F00E00704847 /* CosmosAccessibility.swift */; };
+		F25619C420B7F00F00704847 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B520B7F00E00704847 /* CosmosView.swift */; };
+		F25619C520B7F00F00704847 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B620B7F00E00704847 /* CosmosSettings.swift */; };
+		F25619C620B7F00F00704847 /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B720B7F00F00704847 /* StarFillMode.swift */; };
+		F25619C720B7F00F00704847 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B820B7F00F00704847 /* CosmosTouchTarget.swift */; };
+		F25619C820B7F00F00704847 /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619B920B7F00F00704847 /* CosmosDefaultSettings.swift */; };
+		F25619C920B7F00F00704847 /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619BA20B7F00F00704847 /* CosmosText.swift */; };
 		F258154620692AA500045DCF /* forget.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154320692AA500045DCF /* forget.mp4 */; };
 		F258154720692AA500045DCF /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F258154420692AA500045DCF /* login.mp4 */; };
 		F258154A20692D9800045DCF /* Gleepads_witout_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = F258154920692D9800045DCF /* Gleepads_witout_BG.png */; };
@@ -217,6 +232,22 @@
 		F244C80F207BC616000316FE /* PropertyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBottomView.swift; sourceTree = "<group>"; };
 		F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F25619AB20B7F00D00704847 /* CosmosSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosSize.swift; sourceTree = "<group>"; };
+		F25619AC20B7F00D00704847 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		F25619AD20B7F00D00704847 /* CosmosLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLayers.swift; sourceTree = "<group>"; };
+		F25619AE20B7F00E00704847 /* CosmosTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosTouch.swift; sourceTree = "<group>"; };
+		F25619AF20B7F00E00704847 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		F25619B020B7F00E00704847 /* CosmosRating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosRating.swift; sourceTree = "<group>"; };
+		F25619B120B7F00E00704847 /* StarLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarLayer.swift; sourceTree = "<group>"; };
+		F25619B220B7F00E00704847 /* Cosmos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cosmos.h; sourceTree = "<group>"; };
+		F25619B320B7F00E00704847 /* RightToLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightToLeft.swift; sourceTree = "<group>"; };
+		F25619B420B7F00E00704847 /* CosmosAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosAccessibility.swift; sourceTree = "<group>"; };
+		F25619B520B7F00E00704847 /* CosmosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosView.swift; sourceTree = "<group>"; };
+		F25619B620B7F00E00704847 /* CosmosSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosSettings.swift; sourceTree = "<group>"; };
+		F25619B720B7F00F00704847 /* StarFillMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarFillMode.swift; sourceTree = "<group>"; };
+		F25619B820B7F00F00704847 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		F25619B920B7F00F00704847 /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		F25619BA20B7F00F00704847 /* CosmosText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosText.swift; sourceTree = "<group>"; };
 		F258154320692AA500045DCF /* forget.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = forget.mp4; sourceTree = "<group>"; };
 		F258154420692AA500045DCF /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
 		F258154520692AA500045DCF /*  signup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = " signup.mp4"; sourceTree = "<group>"; };
@@ -405,6 +436,7 @@
 		F226FB75205A395400F14CB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F25619AA20B7EFF700704847 /* Cosmos */,
 				F2F8765020B2E42400DE9E71 /* DiscoverData.swift */,
 			);
 			path = Model;
@@ -436,6 +468,29 @@
 				F28D90B22060183C00AE2A5D /* Custom_ImageView.swift */,
 			);
 			path = Customize;
+			sourceTree = "<group>";
+		};
+		F25619AA20B7EFF700704847 /* Cosmos */ = {
+			isa = PBXGroup;
+			children = (
+				F25619B220B7F00E00704847 /* Cosmos.h */,
+				F25619B420B7F00E00704847 /* CosmosAccessibility.swift */,
+				F25619B920B7F00F00704847 /* CosmosDefaultSettings.swift */,
+				F25619AC20B7F00D00704847 /* CosmosLayerHelper.swift */,
+				F25619AD20B7F00D00704847 /* CosmosLayers.swift */,
+				F25619AF20B7F00E00704847 /* CosmosLocalizedRating.swift */,
+				F25619B020B7F00E00704847 /* CosmosRating.swift */,
+				F25619B620B7F00E00704847 /* CosmosSettings.swift */,
+				F25619AB20B7F00D00704847 /* CosmosSize.swift */,
+				F25619BA20B7F00F00704847 /* CosmosText.swift */,
+				F25619AE20B7F00E00704847 /* CosmosTouch.swift */,
+				F25619B820B7F00F00704847 /* CosmosTouchTarget.swift */,
+				F25619B520B7F00E00704847 /* CosmosView.swift */,
+				F25619B320B7F00E00704847 /* RightToLeft.swift */,
+				F25619B720B7F00F00704847 /* StarFillMode.swift */,
+				F25619B120B7F00E00704847 /* StarLayer.swift */,
+			);
+			path = Cosmos;
 			sourceTree = "<group>";
 		};
 		F2648481206E7698008271BE /* Fonts */ = {
@@ -633,6 +688,7 @@
 		F2C1025D206D359A00B4DA6B /* TEST SWIFT */ = {
 			isa = PBXGroup;
 			children = (
+				F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */,
 				F26CFC4A206AA88D00A9DD20 /* SearchBarTableViewController.swift */,
 				F2C1024C206D1D5F00B4DA6B /* testVC.swift */,
 			);
@@ -682,7 +738,6 @@
 				F2EBBBA420597EA600DD03A9 /* Info.plist */,
 				F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */,
 				F2C1025D206D359A00B4DA6B /* TEST SWIFT */,
-				F2942FA8207DF96600B49BC9 /* SendMessageVC.swift */,
 			);
 			path = Gleepads;
 			sourceTree = "<group>";
@@ -975,6 +1030,7 @@
 				F2C10251206D260B00B4DA6B /* SavedVC.swift in Sources */,
 				F2F621B020B5809800E2DF26 /* Guest_DashboardVC.swift in Sources */,
 				F2330EEB206DF53600D328AA /* TypeOne_CollectionViewCell.swift in Sources */,
+				F25619C320B7F00F00704847 /* CosmosAccessibility.swift in Sources */,
 				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
 				F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */,
@@ -982,7 +1038,10 @@
 				F29C0582206645D200EC802F /* InviteVC.swift in Sources */,
 				F2EB47A0207E7AD700084652 /* CheckOutVC.swift in Sources */,
 				F27B514C20652B0200599F82 /* ProfileVC.swift in Sources */,
+				F25619BD20B7F00F00704847 /* CosmosLayers.swift in Sources */,
 				F28D90AF206016FB00AE2A5D /* Custom_View.swift in Sources */,
+				F25619C520B7F00F00704847 /* CosmosSettings.swift in Sources */,
+				F25619C620B7F00F00704847 /* StarFillMode.swift in Sources */,
 				F2330EFD206DFFBE00D328AA /* TypeThree_TableCell.swift in Sources */,
 				F2F8765120B2E42400DE9E71 /* DiscoverData.swift in Sources */,
 				F2DE9D022077C05E00920040 /* ImageScrollVC.swift in Sources */,
@@ -992,20 +1051,28 @@
 				F29C059F2066660D00EC802F /* HeadingCell.swift in Sources */,
 				F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */,
 				F2C1024F206D236F00B4DA6B /* ExploreVC.swift in Sources */,
+				F25619BF20B7F00F00704847 /* CosmosLocalizedRating.swift in Sources */,
+				F25619C220B7F00F00704847 /* RightToLeft.swift in Sources */,
+				F25619C120B7F00F00704847 /* StarLayer.swift in Sources */,
 				F29C0588206646FC00EC802F /* SettingVC.swift in Sources */,
+				F25619BC20B7F00F00704847 /* CosmosLayerHelper.swift in Sources */,
 				F298C37A20763B1D006E9F09 /* GuestVC.swift in Sources */,
 				F2330EF5206DFF8700D328AA /* TypeThree_CollectionViewCell.swift in Sources */,
+				F25619BB20B7F00F00704847 /* CosmosSize.swift in Sources */,
 				F28D9091205FECBA00AE2A5D /* ForgetVC.swift in Sources */,
 				F2C1024D206D1D5F00B4DA6B /* testVC.swift in Sources */,
 				F29C05A12066702500EC802F /* NotificationSettingVC.swift in Sources */,
 				F27B51772065A68E00599F82 /* ButtonTableViewCell.swift in Sources */,
 				F28D908F205FE75A00AE2A5D /* SignInVC.swift in Sources */,
+				F25619BE20B7F00F00704847 /* CosmosTouch.swift in Sources */,
 				F28D90B32060183C00AE2A5D /* Custom_ImageView.swift in Sources */,
+				F25619C420B7F00F00704847 /* CosmosView.swift in Sources */,
 				F201576520752ECB0053F02F /* CalenderVC.swift in Sources */,
 				F29C05A92066BC6600EC802F /* LaunchedVC.swift in Sources */,
 				F296C30320999176006AD38D /* ImageCollectionCell.swift in Sources */,
 				F22991B320989786007D6A5B /* AmentiesVC.swift in Sources */,
 				F262C95D20A0ACE300A4001C /* Host-DashboardVC.swift in Sources */,
+				F25619C020B7F00F00704847 /* CosmosRating.swift in Sources */,
 				F235ACA52073B51B00CD20E6 /* SearchBar.swift in Sources */,
 				F2330EF9206DFFAB00D328AA /* TypeTwo_TableCell.swift in Sources */,
 				F2142B85205C1E1100B381E8 /* emailVC.swift in Sources */,
@@ -1015,8 +1082,11 @@
 				F27B51712065960100599F82 /* MiddleTableViewCell.swift in Sources */,
 				F2DE9D002077C01D00920040 /* ZGCarousel.swift in Sources */,
 				F2942FA9207DF96600B49BC9 /* SendMessageVC.swift in Sources */,
+				F25619C720B7F00F00704847 /* CosmosTouchTarget.swift in Sources */,
 				F2142B83205C064100B381E8 /* NewAccountVC.swift in Sources */,
+				F25619C920B7F00F00704847 /* CosmosText.swift in Sources */,
 				F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */,
+				F25619C820B7F00F00704847 /* CosmosDefaultSettings.swift in Sources */,
 				F25B56BD2094C1FD0023406D /* Step3VC.swift in Sources */,
 				F244C804207BA379000316FE /* PropertyTableVC.swift in Sources */,
 				F2351803209A07F600DCDCCA /* checkboxCell.swift in Sources */,

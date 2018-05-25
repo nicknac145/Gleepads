@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,38 +52,45 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LNj-Vp-9c6">
-                            <rect key="frame" x="8" y="49" width="170" height="32"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="I9M-Cz-WBl">
-                                    <rect key="frame" x="0.0" y="0.0" width="34" height="32"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-e8-AFE">
-                                    <rect key="frame" x="34" y="0.0" width="34" height="32"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-rg-Sf8">
-                                    <rect key="frame" x="68" y="0.0" width="34" height="32"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="golden_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQj-kg-keM">
-                                    <rect key="frame" x="102" y="0.0" width="34" height="32"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_star.png" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-ra-hQ7">
-                                    <rect key="frame" x="136" y="0.0" width="34" height="32"/>
-                                </imageView>
-                            </subviews>
-                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhG-fv-Mrs" customClass="CosmosView" customModule="Gleepads" customModuleProvider="target">
+                            <rect key="frame" x="22" y="51" width="193" height="18"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                    <color key="value" red="0.92102043550000001" green="0.82855863539999997" blue="0.22003680340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="BhG-fv-Mrs" firstAttribute="height" secondItem="MQt-jg-LpC" secondAttribute="height" multiplier="0.2" id="9Dn-yu-DRS"/>
                         <constraint firstItem="X25-rt-3t8" firstAttribute="top" secondItem="MQt-jg-LpC" secondAttribute="top" constant="22" id="Abp-0f-KpH"/>
-                        <constraint firstItem="LNj-Vp-9c6" firstAttribute="top" secondItem="X25-rt-3t8" secondAttribute="bottom" constant="6.5" id="CA6-n9-QqR"/>
+                        <constraint firstItem="BhG-fv-Mrs" firstAttribute="width" secondItem="MQt-jg-LpC" secondAttribute="width" multiplier="0.5" id="HyO-G3-TET"/>
+                        <constraint firstItem="BhG-fv-Mrs" firstAttribute="top" secondItem="X25-rt-3t8" secondAttribute="bottom" constant="8.5" id="VAZ-JE-QGi"/>
                         <constraint firstItem="X25-rt-3t8" firstAttribute="leading" secondItem="MQt-jg-LpC" secondAttribute="leading" constant="22" id="Y2d-bX-Z03"/>
                         <constraint firstAttribute="trailing" secondItem="X4B-mC-UQZ" secondAttribute="trailing" constant="20" id="aId-2T-o9s"/>
-                        <constraint firstItem="X4B-mC-UQZ" firstAttribute="leading" secondItem="LNj-Vp-9c6" secondAttribute="trailing" constant="62" id="aff-re-Q02"/>
-                        <constraint firstItem="LNj-Vp-9c6" firstAttribute="leading" secondItem="MQt-jg-LpC" secondAttribute="leading" constant="8" id="gEu-6S-myw"/>
                         <constraint firstItem="X4B-mC-UQZ" firstAttribute="top" secondItem="MQt-jg-LpC" secondAttribute="top" constant="22" id="lBr-0V-Fvi"/>
                         <constraint firstAttribute="bottom" secondItem="X4B-mC-UQZ" secondAttribute="bottom" constant="22" id="pCa-OK-C2i"/>
-                        <constraint firstAttribute="bottom" secondItem="LNj-Vp-9c6" secondAttribute="bottom" constant="8" id="sZC-zV-ra8"/>
+                        <constraint firstItem="BhG-fv-Mrs" firstAttribute="leading" secondItem="MQt-jg-LpC" secondAttribute="leading" constant="22" id="qsz-82-4vX"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -114,13 +121,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="StarRating" destination="BhG-fv-Mrs" id="4Ea-Y3-m12"/>
                 <outlet property="rent" destination="nve-tH-4Si" id="5WI-zO-2w8"/>
             </connections>
             <point key="canvasLocation" x="-224" y="-241.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="black_star.png" width="32" height="32"/>
-        <image name="golden_star.png" width="30" height="30"/>
-    </resources>
 </document>
