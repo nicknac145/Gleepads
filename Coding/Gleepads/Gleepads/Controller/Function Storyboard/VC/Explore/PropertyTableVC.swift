@@ -156,12 +156,7 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         }
 
         
-//        print(CLLocationManager.locationServicesEnabled())
-        
-        
-//        print("****************")
-//        print(AD_Name)
-//        print("****************")
+
 
     
         dbRef = Database.database().reference()
@@ -364,9 +359,28 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         self.AD_Name = self.similarProperty[indexPath.row].AD_Title
         self.imageString = self.similarProperty[indexPath.row].ImageUrl
 
-        self.TitleLabel.text = selectedData
-        
+//        self.TitleLabel.text = selectedData
+        self.propertyCategory.text = ("Property Catergory: \((self.similarProperty[indexPath.row].Property_Category))")
+        self.TitleLabel.text = (self.similarProperty[indexPath.row].AD_Title)
+        self.locationLabel.text = "Location :\((self.similarProperty[indexPath.row].City))"
+        self.DescriptionLabel.text = "Description: \((self.similarProperty[indexPath.row].Description)))"
+        self.minNight.text = "\((self.similarProperty[indexPath.row].Mininum_Day)) night minimum"
         //*****************************************************************
+        
+        let amenitiesArray = (self.similarProperty[indexPath.row].Amenities).split(separator: ",")
+        //                print(amenitiesArray)
+        
+        if amenitiesArray.count > 5{
+            
+            self.moreAmenties.isHidden = false
+        }
+        
+        for loop in 0...(amenitiesArray.count - 1){
+            
+            self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
+            
+        }
+        
         
         self.CheckIn_Label.text = "Check-In \((self.similarProperty[indexPath.row].Check_in))"
         self.CheckOut_Label.text = "Check-Out \((self.similarProperty[indexPath.row].Check_out))"
@@ -401,7 +415,6 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         marker.map = self.mapView
         
         
-        //*****************************************************************
         
         
         // ******************* BottomNib INFORMATION **********************
@@ -414,7 +427,22 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         self.bottomViewNib.StarRating.rating = Double((self.similarProperty[indexPath.row].Rating))!
         
-//        self.IMAGE.removeAll()
+        // ****************** Property Owner Profile image ********************
+        
+        let userID = (self.similarProperty[indexPath.row].User_ID)
+        print(userID)
+        
+        self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
+            
+            let value = profile.value as! [String : String]
+            print(value["ProfileImage_Url"])
+            let imageString = (value["ProfileImage_Url"])!
+            let imageURL = URL(string: imageString)
+            self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
+        })
+        
+        
+        self.IMAGE.removeAll()
 //
 //        self.imageString = self.similarProperty[indexPath.row].ImageUrl
 //        let singleImage = self.imageString.split(separator: ",")
