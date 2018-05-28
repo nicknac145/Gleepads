@@ -83,32 +83,39 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
         super.viewDidLoad()
         
-        let tapButton = UITapGestureRecognizer(target: self, action: #selector(bookingAction))
         
-      
+//      print(AD_Dictionary["AdValue"])
         self.AD_Name = AD_Dictionary["AdValue"]!
-        self.imageString = AD_Dictionary["ImageValue"]!
-        
-        let singleImage = self.imageString.split(separator: ",")
-        
-        print(singleImage.count)
         
         
-        // *********** COLLECTING SCROLL VIEW IMAGES *************
-        for loop in singleImage{
-            
-            
-            let imageUrlString = loop
-            
-            
-            let imageUrl = URL(string: String(imageUrlString))!
-            
-            let imageData = try! Data(contentsOf: imageUrl)
-            
-            let image = UIImage(data: imageData)
-            
-            self.IMAGE.append(image!)
+        fetchImage { (image) in
+            self.IMAGE.append(image)
         }
+        
+        //        let tapButton = UITapGestureRecognizer(target: self, action: #selector(bookingAction))
+
+//        self.imageString = AD_Dictionary["ImageValue"]!
+//
+//        let singleImage = self.imageString.split(separator: ",")
+//
+////        print(singleImage.count)
+//
+//
+//        // *********** COLLECTING SCROLL VIEW IMAGES *************
+//        for loop in singleImage{
+//
+//
+//            let imageUrlString = loop
+//
+//
+//            let imageUrl = URL(string: String(imageUrlString))!
+//
+//            let imageData = try! Data(contentsOf: imageUrl)
+//
+//            let image = UIImage(data: imageData)
+//
+//            self.IMAGE.append(image!)
+//        }
         
         
         moreAmenties.isHidden = true
@@ -140,152 +147,151 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         // ***** LocationManager setting ******
         
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-            
-        }
-        else if CLLocationManager.authorizationStatus() == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-            
-        }
-        else if CLLocationManager.authorizationStatus() == .restricted {
-            print(CLLocationManager.authorizationStatus())
-        }
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+//            locationManager.startUpdatingLocation()
+//
+//        }
+//        else if CLLocationManager.authorizationStatus() == .notDetermined {
+//            locationManager.requestWhenInUseAuthorization()
+//
+//        }
+//        else if CLLocationManager.authorizationStatus() == .restricted {
+//            print(CLLocationManager.authorizationStatus())
+//        }
 
         
-
+        self.assignOutletValue()
 
     
-        dbRef = Database.database().reference()
-        
-        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (valueSnapshot) in
-            
-            var AD = valueSnapshot.value as! [String:String]
-            
-            let name = AD["AD_Title"]!
-            
-            if name == self.AD_Name{
-                let jsonData = try? JSONSerialization.data(withJSONObject: valueSnapshot.value as Any)
-                self.propertyDetail = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
-                
-                
-                
-//                let bottonView = PropertyBottomView()
-//                bottonView.rent.text = (self.propertyDetail?.Rent)!
-                
-                self.similarPropertyAD(city: (self.propertyDetail?.City)!, completion: { (similar) in
-                   
-                    if similar.AD_Title != self.AD_Name{
-                    
-                    self.similarProperty.append(similar)
-                    
-//                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
-//                    print((self.similarProperty))
-//                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
-                    }
-                })
-
-//************* CONFIGURE SCROLL IMAGES *********
-                
-                let Images = (self.propertyDetail?.ImageUrl)!
-                let imageArray = Images.split(separator: ",")
-                
-                
-//                print("****************")
-//                print(imageArray)
-//                print("****************")
-              
-                
-                
-     // ******************* BottomNib INFORMATION **********************
-                
-                
-                print((self.propertyDetail?.Rent)!)
-                
-                self.bottomViewNib.rent.text = "$ \((self.propertyDetail?.Rent)!) "
-                
-                
-                self.bottomViewNib.StarRating.rating = Double((self.propertyDetail?.Rating)!)!
-                
-                self.bottomViewNib.bookingButton.addGestureRecognizer(tapButton)
-                
-                
-                
-                
-    // ****************** Property Owner Profile image ********************
-                
-                let userID = (self.propertyDetail?.User_ID)!
-                print(userID)
-                
-                self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
-                    
-                    let value = profile.value as! [String : String]
-                    print(value["ProfileImage_Url"])
-                    let imageString = (value["ProfileImage_Url"])!
-                    let imageURL = URL(string: imageString)
-                    self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
-                })
-                
-//************* CONFIGURE RESPECTIVE LABELS *********
-                self.propertyCategory.text = ("Property Catergory: \((self.propertyDetail?.Property_Category)!)")
-                self.TitleLabel.text = (self.propertyDetail?.AD_Title)!
-                self.locationLabel.text = "Location :\((self.propertyDetail?.City)!)"
-                self.DescriptionLabel.text = "Description: \((self.propertyDetail?.Description)!))"
-                self.minNight.text = "\((self.propertyDetail?.Mininum_Day)!) night minimum"
-                
-                let amenitiesArray = (self.propertyDetail?.Amenities)!.split(separator: ",")
-//                print(amenitiesArray)
-                
-                if amenitiesArray.count > 5{
-                    
-                    self.moreAmenties.isHidden = false
-                }
-                
-                for loop in 0...(amenitiesArray.count - 1){
-                    
-                    self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
-       
-                }
-                
-                  self.CheckIn_Label.text = "Check-In \((self.propertyDetail?.Check_in)!)"
-                self.CheckOut_Label.text = "Check-Out \((self.propertyDetail?.Check_out)!)"
-
-                
-                
-                
-// ********* CONFIGURE MAP ****************
-                let lat = ((self.propertyDetail?.Latitude)! as NSString).doubleValue
-                let long = ((self.propertyDetail?.Longitude)! as NSString).doubleValue
-                let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
-          
-                let camera = GMSCameraPosition.camera(withLatitude: propertyCoordinate.coordinate.latitude, longitude: propertyCoordinate.coordinate.longitude, zoom: self.zoomLevel)
-                
-                // ********** setting Mapview frame dimension ************
-                
-                self.mapView = GMSMapView.map(withFrame: self.MapView.bounds, camera: camera)
-                
-                self.mapView.animate(to: camera)
-                
-                self.MapView.addSubview(self.mapView)
-                
-                
-                
-// ******** Define user current location with Marker: *************
-                
-                let marker = GMSMarker(position: propertyCoordinate.coordinate)
-                //                marker.icon = UIImage(named: "wifi")
-                marker.iconView = UIImageView(image: UIImage(named: "marker"))
-                //                marker.tracksViewChanges = true
-                marker.title = "Gleepads Inc"
-                marker.map = self.mapView
-
-            }
-            self.Similar_collection.reloadData()
-
-        })
+//        dbRef = Database.database().reference()
+//
+//        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (valueSnapshot) in
+//
+//            var AD = valueSnapshot.value as! [String:String]
+//
+//            let name = AD["AD_Title"]!
+//
+//            if name == self.AD_Name{
+//                let jsonData = try? JSONSerialization.data(withJSONObject: valueSnapshot.value as Any)
+//                self.propertyDetail = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
+//
+//
+//
+////                let bottonView = PropertyBottomView()
+////                bottonView.rent.text = (self.propertyDetail?.Rent)!
+//
+//                self.similarPropertyAD(city: (self.propertyDetail?.City)!, completion: { (similar) in
+//
+//                    if similar.AD_Title != self.AD_Name{
+//
+//                    self.similarProperty.append(similar)
+//
+////                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+////                    print((self.similarProperty))
+////                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+//                    }
+//                })
+//
+////************* CONFIGURE SCROLL IMAGES *********
+//
+//                let Images = (self.propertyDetail?.ImageUrl)!
+//                let imageArray = Images.split(separator: ",")
+//
+//
+////                print("****************")
+////                print(imageArray)
+////                print("****************")
+//
+//
+//
+//     // ******************* BottomNib INFORMATION **********************
+//
+//
+//                print((self.propertyDetail?.Rent)!)
+//
+//                self.bottomViewNib.rent.text = "$ \((self.propertyDetail?.Rent)!) "
+//
+//
+//                self.bottomViewNib.StarRating.rating = Double((self.propertyDetail?.Rating)!)!
+//
+//                self.bottomViewNib.bookingButton.addGestureRecognizer(tapButton)
+//
+//
+//
+//
+//    // ****************** Property Owner Profile image ********************
+//
+//                let userID = (self.propertyDetail?.User_ID)!
+//                print(userID)
+//
+//                self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
+//
+//                    let value = profile.value as! [String : String]
+//                    print(value["ProfileImage_Url"])
+//                    let imageString = (value["ProfileImage_Url"])!
+//                    let imageURL = URL(string: imageString)
+//                    self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
+//                })
+//
+////************* CONFIGURE RESPECTIVE LABELS *********
+//                self.propertyCategory.text = ("Property Catergory: \((self.propertyDetail?.Property_Category)!)")
+//                self.TitleLabel.text = (self.propertyDetail?.AD_Title)!
+//                self.locationLabel.text = "Location :\((self.propertyDetail?.City)!)"
+//                self.DescriptionLabel.text = "Description: \((self.propertyDetail?.Description)!))"
+//                self.minNight.text = "\((self.propertyDetail?.Mininum_Day)!) night minimum"
+//
+//                let amenitiesArray = (self.propertyDetail?.Amenities)!.split(separator: ",")
+////                print(amenitiesArray)
+//
+//                if amenitiesArray.count > 5{
+//
+//                    self.moreAmenties.isHidden = false
+//                }
+//
+//                for loop in 0...(amenitiesArray.count - 1){
+//
+//                    self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
+//
+//                }
+//
+//                  self.CheckIn_Label.text = "Check-In \((self.propertyDetail?.Check_in)!)"
+//                self.CheckOut_Label.text = "Check-Out \((self.propertyDetail?.Check_out)!)"
+//
+//
+//
+//
+//// ********* CONFIGURE MAP ****************
+//                let lat = ((self.propertyDetail?.Latitude)! as NSString).doubleValue
+//                let long = ((self.propertyDetail?.Longitude)! as NSString).doubleValue
+//                let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
+//
+//                let camera = GMSCameraPosition.camera(withLatitude: propertyCoordinate.coordinate.latitude, longitude: propertyCoordinate.coordinate.longitude, zoom: self.zoomLevel)
+//
+//                // ********** setting Mapview frame dimension ************
+//
+//                self.mapView = GMSMapView.map(withFrame: self.MapView.bounds, camera: camera)
+//
+//                self.mapView.animate(to: camera)
+//
+//                self.MapView.addSubview(self.mapView)
+//
+//
+//
+//// ******** Define user current location with Marker: *************
+//
+//                let marker = GMSMarker(position: propertyCoordinate.coordinate)
+//                //                marker.icon = UIImage(named: "wifi")
+//                marker.iconView = UIImageView(image: UIImage(named: "marker"))
+//                //                marker.tracksViewChanges = true
+//                marker.title = "Gleepads Inc"
+//                marker.map = self.mapView
+//
+//            }
+//            self.Similar_collection.reloadData()
+//
+//        })
 
     }
 
@@ -349,122 +355,137 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let selectedData = self.similarProperty[indexPath.row].AD_Title
-        
+
         print(selectedData)
         
-         let selectedImage = self.similarProperty[indexPath.row].ImageUrl
+        self.AD_Name = selectedData
         
-        print(selectedImage)
-        
-        self.AD_Name = self.similarProperty[indexPath.row].AD_Title
-        self.imageString = self.similarProperty[indexPath.row].ImageUrl
-
-//        self.TitleLabel.text = selectedData
-        self.propertyCategory.text = ("Property Catergory: \((self.similarProperty[indexPath.row].Property_Category))")
-        self.TitleLabel.text = (self.similarProperty[indexPath.row].AD_Title)
-        self.locationLabel.text = "Location :\((self.similarProperty[indexPath.row].City))"
-        self.DescriptionLabel.text = "Description: \((self.similarProperty[indexPath.row].Description)))"
-        self.minNight.text = "\((self.similarProperty[indexPath.row].Mininum_Day)) night minimum"
-        //*****************************************************************
-        
-        let amenitiesArray = (self.similarProperty[indexPath.row].Amenities).split(separator: ",")
-        //                print(amenitiesArray)
-        
-        if amenitiesArray.count > 5{
-            
-            self.moreAmenties.isHidden = false
-        }
-        
-        for loop in 0...(amenitiesArray.count - 1){
-            
-            self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
-            
-        }
+        self.assignOutletValue()
         
         
-        self.CheckIn_Label.text = "Check-In \((self.similarProperty[indexPath.row].Check_in))"
-        self.CheckOut_Label.text = "Check-Out \((self.similarProperty[indexPath.row].Check_out))"
+        //        self.IMAGE.removeAll()
+        //
+        //        self.imageString = self.similarProperty[indexPath.row].ImageUrl
+        //        let singleImage = self.imageString.split(separator: ",")
+        //
+        //        print(singleImage.count)
+        //
+        //
+        //        // *********** COLLECTING SCROLL VIEW IMAGES *************
+        //        for loop in singleImage{
+        //
+        //
+        //            let imageUrlString = loop
+        //
+        //
+        //            let imageUrl = URL(string: String(imageUrlString))!
+        //
+        //            let imageData = try! Data(contentsOf: imageUrl)
+        //
+        //            let image = UIImage(data: imageData)
+        //
+        //            self.IMAGE.append(image!)
+        //        }
         
         
         
-        
-        // ********* CONFIGURE MAP ****************
-        let lat = ((self.similarProperty[indexPath.row].Latitude) as NSString).doubleValue
-        let long = ((self.similarProperty[indexPath.row].Longitude) as NSString).doubleValue
-        let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
-        
-        let camera = GMSCameraPosition.camera(withLatitude: propertyCoordinate.coordinate.latitude, longitude: propertyCoordinate.coordinate.longitude, zoom: self.zoomLevel)
-        
-        // ********** setting Mapview frame dimension ************
-        
-        self.mapView = GMSMapView.map(withFrame: self.MapView.bounds, camera: camera)
-        
-        self.mapView.animate(to: camera)
-        
-        self.MapView.addSubview(self.mapView)
+//  *******************************     ASSIGNING VALUES TO OUTLET      ************************************
         
         
-        
-        // ******** Define user current location with Marker: *************
-        
-        let marker = GMSMarker(position: propertyCoordinate.coordinate)
-        //                marker.icon = UIImage(named: "wifi")
-        marker.iconView = UIImageView(image: UIImage(named: "marker"))
-        //                marker.tracksViewChanges = true
-        marker.title = "Gleepads Inc"
-        marker.map = self.mapView
-        
-        
-        
-        
-        // ******************* BottomNib INFORMATION **********************
-        
-        
-        print((self.propertyDetail?.Rent)!)
-        
-        self.bottomViewNib.rent.text = "$ \((self.similarProperty[indexPath.row].Rent)) "
-        
-        
-        self.bottomViewNib.StarRating.rating = Double((self.similarProperty[indexPath.row].Rating))!
-        
-        // ****************** Property Owner Profile image ********************
-        
-        let userID = (self.similarProperty[indexPath.row].User_ID)
-        print(userID)
-        
-        self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
-            
-            let value = profile.value as! [String : String]
-            print(value["ProfileImage_Url"])
-            let imageString = (value["ProfileImage_Url"])!
-            let imageURL = URL(string: imageString)
-            self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
-        })
-        
-        
-        self.IMAGE.removeAll()
+//         let selectedImage = self.similarProperty[indexPath.row].ImageUrl
 //
+//        print(selectedImage)
+//
+//        self.AD_Name = self.similarProperty[indexPath.row].AD_Title
 //        self.imageString = self.similarProperty[indexPath.row].ImageUrl
-//        let singleImage = self.imageString.split(separator: ",")
 //
-//        print(singleImage.count)
+////        self.TitleLabel.text = selectedData
+//        self.propertyCategory.text = ("Property Catergory: \((self.similarProperty[indexPath.row].Property_Category))")
+//        self.TitleLabel.text = (self.similarProperty[indexPath.row].AD_Title)
+//        self.locationLabel.text = "Location :\((self.similarProperty[indexPath.row].City))"
+//        self.DescriptionLabel.text = "Description: \((self.similarProperty[indexPath.row].Description)))"
+//        self.minNight.text = "\((self.similarProperty[indexPath.row].Mininum_Day)) night minimum"
+//        //*****************************************************************
 //
+//        let amenitiesArray = (self.similarProperty[indexPath.row].Amenities).split(separator: ",")
+//        //                print(amenitiesArray)
 //
-//        // *********** COLLECTING SCROLL VIEW IMAGES *************
-//        for loop in singleImage{
+//        if amenitiesArray.count > 5{
 //
-//
-//            let imageUrlString = loop
-//
-//
-//            let imageUrl = URL(string: String(imageUrlString))!
-//
-//            let imageData = try! Data(contentsOf: imageUrl)
-//
-//            let image = UIImage(data: imageData)
-//
-//            self.IMAGE.append(image!)
+//            self.moreAmenties.isHidden = false
 //        }
+//
+//        for loop in 0...(amenitiesArray.count - 1){
+//
+//            self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
+//
+//        }
+//
+//
+//        self.CheckIn_Label.text = "Check-In \((self.similarProperty[indexPath.row].Check_in))"
+//        self.CheckOut_Label.text = "Check-Out \((self.similarProperty[indexPath.row].Check_out))"
+//
+//
+//
+//
+//        // ********* CONFIGURE MAP ****************
+//        let lat = ((self.similarProperty[indexPath.row].Latitude) as NSString).doubleValue
+//        let long = ((self.similarProperty[indexPath.row].Longitude) as NSString).doubleValue
+//        let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
+//
+//        let camera = GMSCameraPosition.camera(withLatitude: propertyCoordinate.coordinate.latitude, longitude: propertyCoordinate.coordinate.longitude, zoom: self.zoomLevel)
+//
+//        // ********** setting Mapview frame dimension ************
+//
+//        self.mapView = GMSMapView.map(withFrame: self.MapView.bounds, camera: camera)
+//
+//        self.mapView.animate(to: camera)
+//
+//        self.MapView.addSubview(self.mapView)
+//
+//
+//
+//        // ******** Define user current location with Marker: *************
+//
+//        let marker = GMSMarker(position: propertyCoordinate.coordinate)
+//        //                marker.icon = UIImage(named: "wifi")
+//        marker.iconView = UIImageView(image: UIImage(named: "marker"))
+//        //                marker.tracksViewChanges = true
+//        marker.title = "Gleepads Inc"
+//        marker.map = self.mapView
+//
+//
+//
+//
+//        // ******************* BottomNib INFORMATION **********************
+//
+//
+//        print((self.propertyDetail?.Rent)!)
+//
+//        self.bottomViewNib.rent.text = "$ \((self.similarProperty[indexPath.row].Rent)) "
+//
+//
+//        self.bottomViewNib.StarRating.rating = Double((self.similarProperty[indexPath.row].Rating))!
+//
+//        // ****************** Property Owner Profile image ********************
+//
+//        let userID = (self.similarProperty[indexPath.row].User_ID)
+//        print(userID)
+//
+//        self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
+//
+//            let value = profile.value as! [String : String]
+//            print(value["ProfileImage_Url"])
+//            let imageString = (value["ProfileImage_Url"])!
+//            let imageURL = URL(string: imageString)
+//            self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
+//        })
+        
+        
+        //  *******************************     END CODING     ************************************
+
+        
+
 //
     }
     
@@ -507,6 +528,183 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
     @objc func bookingAction(){
     
    performSegue(withIdentifier: "Booking_Segue", sender: nil)
+    }
+    
+    
+    
+    
+    // ***************** FUNCTION THAT WILL BE ASSIGN VALUE TO THE OUTLET ****************************
+    
+    func assignOutletValue(){
+        
+        
+        
+        let tapButton = UITapGestureRecognizer(target: self, action: #selector(bookingAction))
+
+        dbRef = Database.database().reference()
+        
+        dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (valueSnapshot) in
+            
+            var AD = valueSnapshot.value as! [String:String]
+            
+            let name = AD["AD_Title"]!
+            
+            if name == self.AD_Name{
+                let jsonData = try? JSONSerialization.data(withJSONObject: valueSnapshot.value as Any)
+                self.propertyDetail = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
+                
+                
+                
+                //                let bottonView = PropertyBottomView()
+                //                bottonView.rent.text = (self.propertyDetail?.Rent)!
+                
+                self.similarPropertyAD(city: (self.propertyDetail?.City)!, completion: { (similar) in
+                    
+                    if similar.AD_Title != self.AD_Name{
+                        
+                        self.similarProperty.append(similar)
+                        
+                        //                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+                        //                    print((self.similarProperty))
+                        //                    print("&&&&&&&&&&&&&&&&&&&&&&&&&&")
+                    }
+                })
+                
+                //************* CONFIGURE SCROLL IMAGES *********
+                
+                let Images = (self.propertyDetail?.ImageUrl)!
+                let imageArray = Images.split(separator: ",")
+                
+                
+                //                print("****************")
+                //                print(imageArray)
+                //                print("****************")
+                
+                
+                
+                // ******************* BottomNib INFORMATION **********************
+                
+                
+                print((self.propertyDetail?.Rent)!)
+                
+                self.bottomViewNib.rent.text = "$ \((self.propertyDetail?.Rent)!) "
+                
+                
+                self.bottomViewNib.StarRating.rating = Double((self.propertyDetail?.Rating)!)!
+                
+                self.bottomViewNib.bookingButton.addGestureRecognizer(tapButton)
+                
+                
+                
+                
+                // ****************** Property Owner Profile image ********************
+                
+                let userID = (self.propertyDetail?.User_ID)!
+                print(userID)
+                
+                self.dbRef.child("User_Profile").child(userID).observe(.value, with: { (profile) in
+                    
+                    let value = profile.value as! [String : String]
+                    print(value["ProfileImage_Url"])
+                    let imageString = (value["ProfileImage_Url"])!
+                    let imageURL = URL(string: imageString)
+                    self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
+                })
+                
+                //************* CONFIGURE RESPECTIVE LABELS *********
+                self.propertyCategory.text = ("Property Catergory: \((self.propertyDetail?.Property_Category)!)")
+                self.TitleLabel.text = (self.propertyDetail?.AD_Title)!
+                self.locationLabel.text = "Location :\((self.propertyDetail?.City)!)"
+                self.DescriptionLabel.text = "Description: \((self.propertyDetail?.Description)!))"
+                self.minNight.text = "\((self.propertyDetail?.Mininum_Day)!) night minimum"
+                
+                let amenitiesArray = (self.propertyDetail?.Amenities)!.split(separator: ",")
+                //                print(amenitiesArray)
+                
+                if amenitiesArray.count > 5{
+                    
+                    self.moreAmenties.isHidden = false
+                }
+                
+                for loop in 0...(amenitiesArray.count - 1){
+                    
+                    self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
+                    
+                }
+                
+                self.CheckIn_Label.text = "Check-In \((self.propertyDetail?.Check_in)!)"
+                self.CheckOut_Label.text = "Check-Out \((self.propertyDetail?.Check_out)!)"
+                
+                
+                
+                
+                // ********* CONFIGURE MAP ****************
+                let lat = ((self.propertyDetail?.Latitude)! as NSString).doubleValue
+                let long = ((self.propertyDetail?.Longitude)! as NSString).doubleValue
+                let propertyCoordinate = CLLocation(latitude: lat, longitude: long)
+                
+                let camera = GMSCameraPosition.camera(withLatitude: propertyCoordinate.coordinate.latitude, longitude: propertyCoordinate.coordinate.longitude, zoom: self.zoomLevel)
+                
+                // ********** setting Mapview frame dimension ************
+                
+                self.mapView = GMSMapView.map(withFrame: self.MapView.bounds, camera: camera)
+                
+                self.mapView.animate(to: camera)
+                
+                self.MapView.addSubview(self.mapView)
+                
+                
+                
+                // ******** Define user current location with Marker: *************
+                
+                let marker = GMSMarker(position: propertyCoordinate.coordinate)
+                //                marker.icon = UIImage(named: "wifi")
+                marker.iconView = UIImageView(image: UIImage(named: "marker"))
+                //                marker.tracksViewChanges = true
+                marker.title = "Gleepads Inc"
+                marker.map = self.mapView
+                
+            }
+            self.Similar_collection.reloadData()
+            
+        })
+        
+        
+    }
+    
+    func fetchImage ( completion:@escaping (_ image : UIImage)-> ()){
+        
+        
+        self.imageString = AD_Dictionary["ImageValue"]!
+        
+        let singleImage = self.imageString.split(separator: ",")
+        
+        //        print(singleImage.count)
+      
+        
+//        var collectedImage : UIImage
+        
+        // *********** COLLECTING SCROLL VIEW IMAGES *************
+        for loop in singleImage{
+            
+            
+            let imageUrlString = loop
+            
+            
+            let imageUrl = URL(string: String(imageUrlString))!
+            
+            let imageData = try! Data(contentsOf: imageUrl)
+            
+            let image = UIImage(data: imageData)
+            
+//            collectedImage = image!
+//            self.IMAGE.append(image!)
+            
+            completion(image!)
+        }
+        
+//        completion(collectedImage)
+        
     }
     
 }

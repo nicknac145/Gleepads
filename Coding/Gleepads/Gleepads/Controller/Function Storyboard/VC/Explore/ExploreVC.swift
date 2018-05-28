@@ -15,6 +15,7 @@ import SDWebImage
 class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
 
+    @IBOutlet weak var backgroundView: UIView!
     
     @IBOutlet weak var exploreTable: UITableView!
     
@@ -24,6 +25,8 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     @IBOutlet weak var guestButton: UIButton!
     
+    @IBOutlet weak var indicatorView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var endingOffset : CGFloat = 0
     
     var dbRef : DatabaseReference!
@@ -43,9 +46,15 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     var SuggestedData = [[String:String]]()
     var ExploreData = [[String:String]]()
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        indicatorView.isHidden = true
         
 
         dbRef = Database.database().reference()
@@ -58,9 +67,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
      
             
             self.ExploreData.append(dict)
-//            print("%%%%%%%%%%%%%")
-//            print(self.ExploreData)
-//            print("%%%%%%%%%%%%%")
+
             self.exploreTable.reloadData()
         })
         
@@ -117,8 +124,8 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
        
     
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
         
         let SearchNib = Bundle.main.loadNibNamed("SearchBar", owner: self, options: nil)?.first as! SearchBar
         
@@ -146,6 +153,13 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
 
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        backgroundView.alpha = 1
+        indicatorView.isHidden = true
+    }
     
     @objc func searchVC(recog : UIGestureRecognizer){
         
@@ -411,7 +425,7 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
 //        print(HostingData[name]![indexPath.row].AD_Title)
 //        print("***************")
         
-        print(HostingData[name]![indexPath.row].Rating)
+//        print(HostingData[name]![indexPath.row].Rating)
         
         cell.TypeThree_AD_Title.text = HostingData[name]![indexPath.row].AD_Title
         cell.TypeThree_Rent.text = "$\(hostValueArray[collectionView.tag - 2][indexPath.row].Rent)"
@@ -465,15 +479,50 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        
+//        backgroundView.alpha = 0.4
+        
         if collectionView.tag == 0{
-            print(collectionView.tag)
-        }
-        else if collectionView.tag == 1 {
+ 
             
             print(collectionView.tag)
+            
+           let countryName =  (self.ExploreData[indexPath.row]["Value"])!
+            
+//            print(countryName)
+            
+            print("Collection View: Explore collection")
+            
+            self.performSegue(withIdentifier: "Explore_Collection_Segue", sender: countryName)
+
+        }
+       
+        
+        
+        else if collectionView.tag == 1 {
+         
+            print(collectionView.tag)
+            
+            
+            let cityName =  (self.SuggestedData[indexPath.row]["Value"])!
+
+            
+//            print(cityName)
+            
+            
+            print("Collection View: Suggested collection")
+            self.performSegue(withIdentifier: "Suggested_Collection_Segue", sender: cityName)
+
+
         }
         
+      
+        
+        
         else{
+            
+
+            
         let hostValueArray = Array(HostingData.values)
         let name = Array(HostingData.keys)[collectionView.tag-2]
         
@@ -488,7 +537,6 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             
             print(dataDictionary)
             
-//        self.performSegue(withIdentifier: "detail", sender: AD_Title)
         
             self.performSegue(withIdentifier: "detail", sender: dataDictionary)
 
@@ -497,7 +545,22 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detail"{
+        
+        if segue.identifier == "Explore_Collection_Segue"{
+            let dest = segue.destination as! exploreCollectionVC
+            
+            dest.Country_Name = sender as! String
+        }
+        
+        else if segue.identifier == "Suggested_Collection_Segue" {
+            let dest = segue.destination as! SuggestedCollectionVC
+            
+            dest.City_Name = sender as! String
+            
+        }
+        
+        else if segue.identifier == "detail"{
+          
         let dest  =  segue.destination as! PropertyTableVC
         
         dest.AD_Dictionary = sender as! Dictionary
