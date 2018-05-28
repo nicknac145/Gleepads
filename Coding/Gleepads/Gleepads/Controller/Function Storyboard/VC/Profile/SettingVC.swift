@@ -148,7 +148,7 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         else if indexPath.row == 4{
-            let url = URL(string: "https://www.google.com")
+            let url = URL(string: "https://www.gleepads.com")
             
             let svc = SFSafariViewController(url: url!)
             self.present(svc, animated: true, completion: nil)
