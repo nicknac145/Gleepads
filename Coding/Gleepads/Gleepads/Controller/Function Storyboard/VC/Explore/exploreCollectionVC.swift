@@ -65,13 +65,14 @@ class exploreCollectionVC: UIViewController, UITableViewDataSource,UITableViewDe
         
         
         cell.selectionStyle = .none
+        tableView.separatorStyle = .none
         cell.AD_Title_Label.text = dataCollection[indexPath.row].AD_Title
         
         let imageString = dataCollection[indexPath.row].ImageUrl
         
         let splitString = imageString.split(separator: ",")
         
-        let singleString = splitString[0] 
+        let singleString = splitString[2] 
         let imageURl = URL(string: String(singleString))
         
         cell.AD_Image.sd_setImage(with: imageURl, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
@@ -102,7 +103,7 @@ class exploreCollectionVC: UIViewController, UITableViewDataSource,UITableViewDe
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 104
+        return 90
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

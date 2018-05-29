@@ -25,8 +25,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     
     @IBOutlet weak var guestButton: UIButton!
     
-    @IBOutlet weak var indicatorView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  
     var endingOffset : CGFloat = 0
     
     var dbRef : DatabaseReference!
@@ -54,7 +53,6 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         super.viewDidLoad()
         
         
-        indicatorView.isHidden = true
         
 
         dbRef = Database.database().reference()
@@ -154,12 +152,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        backgroundView.alpha = 1
-        indicatorView.isHidden = true
-    }
+ 
     
     @objc func searchVC(recog : UIGestureRecognizer){
         

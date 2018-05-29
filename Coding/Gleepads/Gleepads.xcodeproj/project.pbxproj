@@ -11,6 +11,7 @@
 		F2015762207524140053F02F /* facebook_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2015760207524130053F02F /* facebook_button.png */; };
 		F2015763207524140053F02F /* google_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F2015761207524130053F02F /* google_button.png */; };
 		F201576520752ECB0053F02F /* CalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201576420752ECB0053F02F /* CalenderVC.swift */; };
+		F205795A20BD625400B24517 /* searchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F205795920BD625400B24517 /* searchTableCell.swift */; };
 		F2066BD520767C8100FB0621 /* archived.png in Resources */ = {isa = PBXBuildFile; fileRef = F2066BD420767C8000FB0621 /* archived.png */; };
 		F2066BD720767CF300FB0621 /* search_small.png in Resources */ = {isa = PBXBuildFile; fileRef = F2066BD620767CF300FB0621 /* search_small.png */; };
 		F2066BDB2076854600FB0621 /* Explore.png in Resources */ = {isa = PBXBuildFile; fileRef = F2066BDA2076854500FB0621 /* Explore.png */; };
@@ -52,7 +53,6 @@
 		F244C80C207BC114000316FE /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = F244C80B207BC114000316FE /* pool.png */; };
 		F244C80E207BC5FD000316FE /* PropertyBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F244C80D207BC5FD000316FE /* PropertyBottomView.xib */; };
 		F244C810207BC616000316FE /* PropertyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244C80F207BC616000316FE /* PropertyBottomView.swift */; };
-		F247B1B22091D6AE00FFF478 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */; };
 		F2532281208E0A8100AB75E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */; };
 		F25619BB20B7F00F00704847 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AB20B7F00D00704847 /* CosmosSize.swift */; };
 		F25619BC20B7F00F00704847 /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25619AC20B7F00D00704847 /* CosmosLayerHelper.swift */; };
@@ -193,6 +193,7 @@
 		F2015760207524130053F02F /* facebook_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_button.png; sourceTree = "<group>"; };
 		F2015761207524130053F02F /* google_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_button.png; sourceTree = "<group>"; };
 		F201576420752ECB0053F02F /* CalenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderVC.swift; sourceTree = "<group>"; };
+		F205795920BD625400B24517 /* searchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableCell.swift; sourceTree = "<group>"; };
 		F2066BD420767C8000FB0621 /* archived.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = archived.png; sourceTree = "<group>"; };
 		F2066BD620767CF300FB0621 /* search_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_small.png; sourceTree = "<group>"; };
 		F2066BDA2076854500FB0621 /* Explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explore.png; sourceTree = "<group>"; };
@@ -234,7 +235,6 @@
 		F244C80B207BC114000316FE /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
 		F244C80D207BC5FD000316FE /* PropertyBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyBottomView.xib; sourceTree = "<group>"; };
 		F244C80F207BC616000316FE /* PropertyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBottomView.swift; sourceTree = "<group>"; };
-		F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		F2532280208E0A8100AB75E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F25619AB20B7F00D00704847 /* CosmosSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosSize.swift; sourceTree = "<group>"; };
 		F25619AC20B7F00D00704847 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLayerHelper.swift; sourceTree = "<group>"; };
@@ -624,6 +624,7 @@
 				F244C80F207BC616000316FE /* PropertyBottomView.swift */,
 				F220384E207DCA2700C7CA4F /* Similar_CollectionCell.swift */,
 				F2351802209A07F600DCDCCA /* checkboxCell.swift */,
+				F205795920BD625400B24517 /* searchTableCell.swift */,
 			);
 			path = "Table Cell";
 			sourceTree = "<group>";
@@ -691,7 +692,6 @@
 				F2DE9D012077C05E00920040 /* ImageScrollVC.swift */,
 				F2DE9D052077C84300920040 /* imageScrollCell.swift */,
 				F244C803207BA379000316FE /* PropertyTableVC.swift */,
-				F247B1B12091D6AE00FFF478 /* SearchResultVC.swift */,
 				F272ECB920BBED5D00F904C1 /* exploreCollectionVC.swift */,
 				F272ECBB20BBED7E00F904C1 /* SuggestedCollectionVC.swift */,
 			);
@@ -1032,7 +1032,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F247B1B22091D6AE00FFF478 /* SearchResultVC.swift in Sources */,
 				F2C10253206D262500B4DA6B /* InboxVC.swift in Sources */,
 				F29C0580206645B100EC802F /* NotificationVC.swift in Sources */,
 				F29C058E2066473F00EC802F /* FeedbackVC.swift in Sources */,
@@ -1047,6 +1046,7 @@
 				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
 				F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */,
+				F205795A20BD625400B24517 /* searchTableCell.swift in Sources */,
 				F25B56B92094C1B10023406D /* Step1VC.swift in Sources */,
 				F29C0582206645D200EC802F /* InviteVC.swift in Sources */,
 				F2EB47A0207E7AD700084652 /* CheckOutVC.swift in Sources */,
