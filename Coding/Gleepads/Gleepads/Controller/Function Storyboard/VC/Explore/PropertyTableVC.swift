@@ -627,8 +627,11 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
                 }
                 
                 for loop in 0...(amenitiesArray.count - 1){
-                    
-                    self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
+             
+                    if loop < 5{
+                           self.AmenitiesImages[loop].image =  UIImage(named: String(amenitiesArray[loop]))
+                    }
+ 
                     
                 }
                 
@@ -705,6 +708,17 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
         
 //        completion(collectedImage)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Amenties_Segue"{
+            
+            let dest = segue.destination as! amenitiesListVC
+            
+            dest.AD_title = self.AD_Name
+        }
+       
     }
     
 }

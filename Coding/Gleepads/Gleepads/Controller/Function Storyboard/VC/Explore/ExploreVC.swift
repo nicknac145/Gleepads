@@ -35,7 +35,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
     var exploreValue = ["":""]
     var userValue = ["":""]
 
-  
+    var city : String?
     
  
     
@@ -236,6 +236,10 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
            
             // TAGGING COLLECTION-VIEW
             cell.TypeThree_Collection.tag = indexPath.row
+            cell.TypeThree_Button.isHidden = true
+
+            let hostValueArray = Array(HostingData.values)
+            let name = Array(HostingData.keys)[indexPath.row - 2]
             
             
             
@@ -244,11 +248,30 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
             cell.TypeThree_Title.text = "Events in : \(keyValue[indexPath.row-2])"
           
             // CONFIGURE CELL
+            
+            if (HostingData[name]?.count)! < 3{
+                cell.TypeThree_Button.isHidden = true
+            }
+            else{
+                cell.TypeThree_Button.isHidden = false
 
+            }
             cell.TypeThree_Collection.delegate=self
             cell.TypeThree_Collection.dataSource=self
             let TypeThree_Nib = UINib(nibName: "TypeThree_CollectionViewCell", bundle: nil)
             cell.TypeThree_Collection.register(TypeThree_Nib, forCellWithReuseIdentifier: "TypeThree_Nib")
+            
+            //
+            cell.TypeThree_Button.tag = indexPath.row - 2
+            
+//
+            
+            let moreAdTap = UITapGestureRecognizer(target: self, action: #selector(moreAdAction))
+            moreAdTap.name = name
+            cell.TypeThree_Button.addGestureRecognizer(moreAdTap)
+            //
+            
+
             cell.TypeThree_Collection.reloadData()
             
             
@@ -259,10 +282,22 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
      
     }
     
+    @objc func moreAdAction(reg : UIGestureRecognizer){
+        
+       let recog = reg.name
+        print(recog)
+        
+          self.performSegue(withIdentifier: "Suggested_Collection_Segue", sender: recog!)
+    }
+
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "TypeThree_TableCell") as! TypeThree_TableCell
+        
+        print("tapp")
+    }
     
-    
-    //************************* TABLE HEIGHT SETTING ******************
+    //************************* TABLE HEIGHT SETTING *****************
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         
@@ -284,7 +319,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         let totalValue =  hostValueArray[indexPath.row - 2].value.count
         
          if totalValue <= 2{
-            return 310
+            return 275
 
         }
         return 575
@@ -410,15 +445,7 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
 
         let hostValueArray = Array(HostingData.values)
         let name = Array(HostingData.keys)[collectionView.tag-2]
-////        print("******************")
-////        print(hostValueArray)
-//        print(collectionView.tag - 2)
-//        print(indexPath.row)
-////        print(hostValueArray[collectionView.tag - 2][indexPath.row].AD_Title)
-//        print(HostingData[name]![indexPath.row].AD_Title)
-//        print("***************")
-        
-//        print(HostingData[name]![indexPath.row].Rating)
+ 
         
         cell.TypeThree_AD_Title.text = HostingData[name]![indexPath.row].AD_Title
         cell.TypeThree_Rent.text = "$\(hostValueArray[collectionView.tag - 2][indexPath.row].Rent)"
@@ -433,6 +460,8 @@ extension ExploreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
 //
 //
         cell.TypeThree_Image.sd_setImage(with: ImageURL, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
+        
+        
         
         return cell
 //

@@ -137,6 +137,8 @@
 		F2C10253206D262500B4DA6B /* InboxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C10252206D262500B4DA6B /* InboxVC.swift */; };
 		F2C10257206D2C5A00B4DA6B /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C10256206D2C5900B4DA6B /* google.png */; };
 		F2C10259206D2EF200B4DA6B /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C10258206D2EF100B4DA6B /* facebook.png */; };
+		F2D5C61720BEA6960017E31A /* amenitiesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D5C61620BEA6960017E31A /* amenitiesListVC.swift */; };
+		F2D5C61920BEAB680017E31A /* AmentiesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D5C61820BEAB680017E31A /* AmentiesListCell.swift */; };
 		F2DE9CF32077AFC700920040 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F2DE9CF22077AFC700920040 /* Profile.png */; };
 		F2DE9CFD2077B15600920040 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = F2DE9CFC2077B15600920040 /* Share.png */; };
 		F2DE9D002077C01D00920040 /* ZGCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE9CFF2077C01D00920040 /* ZGCarousel.swift */; };
@@ -320,6 +322,8 @@
 		F2C10252206D262500B4DA6B /* InboxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxVC.swift; sourceTree = "<group>"; };
 		F2C10256206D2C5900B4DA6B /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
 		F2C10258206D2EF100B4DA6B /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		F2D5C61620BEA6960017E31A /* amenitiesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amenitiesListVC.swift; sourceTree = "<group>"; };
+		F2D5C61820BEAB680017E31A /* AmentiesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmentiesListCell.swift; sourceTree = "<group>"; };
 		F2DE9CF22077AFC700920040 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
 		F2DE9CFC2077B15600920040 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
 		F2DE9CFF2077C01D00920040 /* ZGCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZGCarousel.swift; sourceTree = "<group>"; };
@@ -625,6 +629,7 @@
 				F220384E207DCA2700C7CA4F /* Similar_CollectionCell.swift */,
 				F2351802209A07F600DCDCCA /* checkboxCell.swift */,
 				F205795920BD625400B24517 /* searchTableCell.swift */,
+				F2D5C61820BEAB680017E31A /* AmentiesListCell.swift */,
 			);
 			path = "Table Cell";
 			sourceTree = "<group>";
@@ -694,6 +699,7 @@
 				F244C803207BA379000316FE /* PropertyTableVC.swift */,
 				F272ECB920BBED5D00F904C1 /* exploreCollectionVC.swift */,
 				F272ECBB20BBED7E00F904C1 /* SuggestedCollectionVC.swift */,
+				F2D5C61620BEA6960017E31A /* amenitiesListVC.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -1045,6 +1051,7 @@
 				F25619C320B7F00F00704847 /* CosmosAccessibility.swift in Sources */,
 				F21B9A47206B7DC400D2A783 /* TripVC.swift in Sources */,
 				F29C058C2066472B00EC802F /* HostVC.swift in Sources */,
+				F2D5C61920BEAB680017E31A /* AmentiesListCell.swift in Sources */,
 				F235ACA72073D9A100CD20E6 /* SearchBarVC.swift in Sources */,
 				F205795A20BD625400B24517 /* searchTableCell.swift in Sources */,
 				F25B56B92094C1B10023406D /* Step1VC.swift in Sources */,
@@ -1062,6 +1069,7 @@
 				F2203850207DCA2700C7CA4F /* Similar_CollectionCell.swift in Sources */,
 				F272ECBE20BBF39B00F904C1 /* Explore_Collection_Cell.swift in Sources */,
 				F25815552069542C00045DCF /* NotifySettingSwitchCell.swift in Sources */,
+				F2D5C61720BEA6960017E31A /* amenitiesListVC.swift in Sources */,
 				F29C059F2066660D00EC802F /* HeadingCell.swift in Sources */,
 				F226FB7A205A39B100F14CB0 /* Custom_Button.swift in Sources */,
 				F2C1024F206D236F00B4DA6B /* ExploreVC.swift in Sources */,

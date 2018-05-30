@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Gleepads/Controller/Function Storyboard/VC/Explore/SuggestedCollectionVC.swift"
-            timestampString = "549288771.0501209"
+            filePath = "Gleepads/Controller/Function Storyboard/VC/Explore/ExploreVC.swift"
+            timestampString = "549368810.885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
