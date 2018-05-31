@@ -342,7 +342,7 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
                     let value = profile.value as! [String : String]
                     let imageString = (value["ProfileImage_Url"])!
                     let imageURL = URL(string: imageString)
-                    self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "add_image"), options: .progressiveDownload, completed: nil)
+                    self.profileImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)
                 })
                 
                 //************* CONFIGURE RESPECTIVE LABELS *********
@@ -420,6 +420,14 @@ class PropertyTableVC: UITableViewController,ZGCarouselDelegate, UICollectionVie
             let dest = segue.destination as! amenitiesListVC
             
             dest.AD_title = self.AD_Name
+        }
+        
+        else if segue.identifier == "Booking_Segue"{
+            
+            let dest = segue.destination as! BookingVC
+            
+            dest.Ad_Title = self.AD_Name
+            
         }
        
     }
