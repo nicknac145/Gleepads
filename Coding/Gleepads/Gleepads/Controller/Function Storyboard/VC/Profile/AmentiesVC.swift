@@ -25,7 +25,7 @@ class AmentiesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                          "Shared-Bathrooms",
                          "Attached-Bathroom",
                          "Front porch",
-                         "Outdoor kitchen (cooking, refrigerators and sinks)",
+                         "Outdoor kitchen (cooking refrigerators and sinks)",
                          "Laminate countertops in the kitchen",
                          "Outdoor fireplace",
                          "Sunroom",

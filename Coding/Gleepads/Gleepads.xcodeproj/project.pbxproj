@@ -169,7 +169,7 @@
 		F2F6219E20B5678800E2DF26 /* Shared-Bathrooms.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218920B5678500E2DF26 /* Shared-Bathrooms.png */; };
 		F2F6219F20B5678800E2DF26 /* Birthday Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218A20B5678500E2DF26 /* Birthday Friendly.png */; };
 		F2F621A020B5678800E2DF26 /* Noise Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218B20B5678500E2DF26 /* Noise Friendly.png */; };
-		F2F621A120B5678800E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png */; };
+		F2F621A120B5678800E2DF26 /* Outdoor kitchen (cooking refrigerators and sinks).png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking refrigerators and sinks).png */; };
 		F2F621A220B5678800E2DF26 /* Sunroom.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218D20B5678500E2DF26 /* Sunroom.png */; };
 		F2F621A320B5678800E2DF26 /* Walk-in closet in master bedroom.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218E20B5678600E2DF26 /* Walk-in closet in master bedroom.png */; };
 		F2F621A420B5678800E2DF26 /* Wedding Friendly.png in Resources */ = {isa = PBXBuildFile; fileRef = F2F6218F20B5678600E2DF26 /* Wedding Friendly.png */; };
@@ -356,7 +356,7 @@
 		F2F6218920B5678500E2DF26 /* Shared-Bathrooms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Shared-Bathrooms.png"; path = "../../../../images & icon/amenities/Shared-Bathrooms.png"; sourceTree = "<group>"; };
 		F2F6218A20B5678500E2DF26 /* Birthday Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Birthday Friendly.png"; path = "../../../../images & icon/amenities/Birthday Friendly.png"; sourceTree = "<group>"; };
 		F2F6218B20B5678500E2DF26 /* Noise Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise Friendly.png"; path = "../../../../images & icon/amenities/Noise Friendly.png"; sourceTree = "<group>"; };
-		F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Outdoor kitchen (cooking, refrigerators and sinks).png"; path = "../../../../images & icon/amenities/Outdoor kitchen (cooking, refrigerators and sinks).png"; sourceTree = "<group>"; };
+		F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking refrigerators and sinks).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Outdoor kitchen (cooking refrigerators and sinks).png"; path = "../../../../images & icon/amenities/Outdoor kitchen (cooking refrigerators and sinks).png"; sourceTree = "<group>"; };
 		F2F6218D20B5678500E2DF26 /* Sunroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sunroom.png; path = "../../../../images & icon/amenities/Sunroom.png"; sourceTree = "<group>"; };
 		F2F6218E20B5678600E2DF26 /* Walk-in closet in master bedroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Walk-in closet in master bedroom.png"; path = "../../../../images & icon/amenities/Walk-in closet in master bedroom.png"; sourceTree = "<group>"; };
 		F2F6218F20B5678600E2DF26 /* Wedding Friendly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wedding Friendly.png"; path = "../../../../images & icon/amenities/Wedding Friendly.png"; sourceTree = "<group>"; };
@@ -538,7 +538,7 @@
 				F2F6219220B5678600E2DF26 /* Media room.png */,
 				F2F6218B20B5678500E2DF26 /* Noise Friendly.png */,
 				F2F6218520B5678400E2DF26 /* Outdoor fireplace.png */,
-				F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png */,
+				F2F6218C20B5678500E2DF26 /* Outdoor kitchen (cooking refrigerators and sinks).png */,
 				F2F6218620B5678400E2DF26 /* Party Friendly.png */,
 				F2F6219020B5678600E2DF26 /* Programmable thermostat.png */,
 				F2F6218920B5678500E2DF26 /* Shared-Bathrooms.png */,
@@ -848,7 +848,7 @@
 				F262C95F20A0AE8600A4001C /* Dashboard.png in Resources */,
 				F244C80C207BC114000316FE /* pool.png in Resources */,
 				F26CFC41206A883900A9DD20 /*  signup.mp4 in Resources */,
-				F2F621A120B5678800E2DF26 /* Outdoor kitchen (cooking, refrigerators and sinks).png in Resources */,
+				F2F621A120B5678800E2DF26 /* Outdoor kitchen (cooking refrigerators and sinks).png in Resources */,
 				F2F621AA20B5678800E2DF26 /* Laundry room.png in Resources */,
 				F244C809207BC039000316FE /* wifi.png in Resources */,
 				F2648485206E76B2008271BE /* BebasNeue-Regular.ttf in Resources */,

@@ -178,8 +178,8 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                     
                     
                     self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
-                    print(user?.displayName)
-                    print(user?.email)
+//                    print(user?.displayName)
+//                    print(user?.email)
                     
                     
                     var fullName = user?.displayName?.components(separatedBy: " ")

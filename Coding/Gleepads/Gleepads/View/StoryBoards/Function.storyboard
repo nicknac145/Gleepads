@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V30-dY-LuQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V30-dY-LuQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2238,7 +2238,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0df-HM-3BN">
-                                                    <rect key="frame" x="274" y="48" width="25" height="25"/>
+                                                    <rect key="frame" x="252" y="48" width="47" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2259,7 +2259,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="0df-HM-3BN" secondAttribute="trailing" constant="60" id="jPc-Eh-iNr"/>
                                                 <constraint firstItem="0Dc-Gy-XJf" firstAttribute="top" secondItem="b2N-EW-CqY" secondAttribute="bottom" constant="17" id="vCf-z7-opS"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="0Dc-Gy-XJf" secondAttribute="bottom" constant="8" id="xNz-Kf-I6A"/>
-                                                <constraint firstItem="0df-HM-3BN" firstAttribute="leading" secondItem="0Dc-Gy-XJf" secondAttribute="trailing" constant="36" id="zwQ-ig-44D"/>
+                                                <constraint firstItem="0df-HM-3BN" firstAttribute="leading" secondItem="0Dc-Gy-XJf" secondAttribute="trailing" constant="14" id="zwQ-ig-44D"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2529,7 +2529,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTf-2h-gUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4074" y="3143"/>
+            <point key="canvasLocation" x="-4074.4000000000001" y="3142.1289355322342"/>
         </scene>
         <!--Amenities ListVC-->
         <scene sceneID="aVh-8V-y7x">
