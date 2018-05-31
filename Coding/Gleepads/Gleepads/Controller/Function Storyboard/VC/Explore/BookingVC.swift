@@ -32,6 +32,7 @@ class BookingVC: UIViewController, dateFetching {
     @IBOutlet weak var Host_label: UILabel!
     @IBOutlet weak var ProfileImage: UIImageView!
     @IBOutlet weak var messageText: UITextView!
+    @IBOutlet weak var Stay_Timeframe: UITextField!
     
     @IBOutlet weak var DateDisplay: UILabel!
     
@@ -45,12 +46,14 @@ class BookingVC: UIViewController, dateFetching {
     
     var propertyDetail : DiscoveryData?
 
+  
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         AD_Label.text = Ad_Title!
       
-        
         dbRef = Database.database().reference()
         
         dbHandle = dbRef.child("Hosting").observe(.childAdded, with: { (bookingSnapShoot) in
