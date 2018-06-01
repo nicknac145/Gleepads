@@ -16,9 +16,14 @@ class GuestVC: UIViewController {
     @IBOutlet weak var children_value_label: UILabel!
     @IBOutlet weak var infant_value_label: UILabel!
     
+    @IBOutlet weak var petSwitch: UISwitch!
+    
+    var guestDelegate : guestFetching?
+    
     var adultQuantity = 1
     var childrenQuantity = 0
     var infantQuantity = 0
+    var petStatus = "without"
     
     @IBOutlet weak var BGView: UIView!
 
@@ -32,6 +37,16 @@ class GuestVC: UIViewController {
     }
 
     @objc func exit(recog : UIGestureRecognizer){
+        
+        if petSwitch.isOn{
+            petStatus = "with"
+        }
+        else{
+            petStatus = "without"
+
+        }
+        guestDelegate?.guestValue(Adult: String(adultQuantity), Children: String(childrenQuantity),Infant : String(infantQuantity), Pet: petStatus)
+        
         self.dismiss(animated: true, completion: nil)
     }
   
@@ -48,6 +63,7 @@ class GuestVC: UIViewController {
         else if sender.tag == 1 {
             
             adultQuantity += 1
+            
             adult_value_label.text = String(adultQuantity)
         }
         

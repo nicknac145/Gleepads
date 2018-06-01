@@ -691,12 +691,12 @@
 			children = (
 				F2942FA8207DF96600B49BC9 /* BookingVC.swift */,
 				F2426B8B20BFE8F9009477BE /* DateCheckinVC.swift */,
+				F298C37920763B1D006E9F09 /* GuestVC.swift */,
 				F2C1024E206D236F00B4DA6B /* ExploreVC.swift */,
 				F235ACA42073B51B00CD20E6 /* SearchBar.swift */,
 				F235ACA62073D9A100CD20E6 /* SearchBarVC.swift */,
 				F201576420752ECB0053F02F /* CalenderVC.swift */,
 				F2EB479F207E7AD700084652 /* CheckOutVC.swift */,
-				F298C37920763B1D006E9F09 /* GuestVC.swift */,
 				F2DE9D012077C05E00920040 /* ImageScrollVC.swift */,
 				F2DE9D052077C84300920040 /* imageScrollCell.swift */,
 				F244C803207BA379000316FE /* PropertyTableVC.swift */,
