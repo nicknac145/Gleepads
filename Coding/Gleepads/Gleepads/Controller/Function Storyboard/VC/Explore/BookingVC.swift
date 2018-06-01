@@ -28,10 +28,13 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
     
     func guestValue(Adult: String, Children: String, Infant : String, Pet: String) {
         
-        
+        self.AdultQuantity = Adult
+        self.ChildrenQuantity = Children
+        self.InfantQunatity = Infant
+        self.PetStatus = Pet
        
     
-        guestDisplay.text = "\(Adult) Adult, \(Children) Children, \(Infant) Infant ( \(Pet) Pet )"
+        guestDisplay.text = "\(Adult) Adult, \(Children) Children, \(Infant) Infant (\(Pet) Pet)"
     }
 
     func dateValue(Date: String) {
@@ -50,15 +53,16 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
     @IBOutlet weak var Stay_Timeframe: UITextField!
     
     @IBOutlet weak var DateDisplay: UILabel!
-    
     @IBOutlet weak var guestDisplay: UILabel!
     
-    var dateValue = "DD/MM/YYYY"
+    var Ad_Title : String?
+    var dateValue : String?
     var AdultQuantity : String?
     var ChildrenQuantity : String?
     var InfantQunatity : String?
     var PetStatus : String?
     var rentAmount : String?
+    var userID : String?
     
     
     var bookingData = ["AD_Title": "",
@@ -68,11 +72,11 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
                        "Children":"",
                        "Infant":"",
                        "Pet":"",
-                       "Message":""]
+                       "Message":"",
+                       "Total Amount":""]
     
     var dbHandle : DatabaseHandle!
     var dbRef : DatabaseReference!
-    var Ad_Title : String?
     
     var propertyDetail : DiscoveryData?
 
@@ -96,8 +100,9 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
                 self.propertyDetail = try? JSONDecoder().decode(DiscoveryData.self, from: jsonData!)
                 
                //*******************************
+               
                 self.rentAmount = self.propertyDetail?.Rent
-                
+                self.userID = self.propertyDetail?.User_ID
                 // *********** PROFILE *********************
                 let userID = (self.propertyDetail?.User_ID)!
                 //                print(userID)
@@ -131,17 +136,39 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
  
     @IBAction func booking_button_action(_ sender: Any) {
         
-        print("*********************")
+       
         
-        print(AdultQuantity)
-        print(ChildrenQuantity)
-        print(InfantQunatity)
-        print(PetStatus)
+        if (Stay_Timeframe.text != "") && (guestDisplay.text != "------") && (DateDisplay.text != "DD-MM-YYYY") && (messageText.text != "") {
+            
+            let rent = Int((self.rentAmount)!)
+            
+            let period = Int((Stay_Timeframe.text)!)
+            
+            print(rent!)
+            
+            
+            let totalAmount = String(rent! * period!)
+            
+            self.bookingData = ["AD_Title": self.Ad_Title!,
+                                "User_Id": (userID)!,
+                                "Period":(Stay_Timeframe.text)!,
+                                "Adult":AdultQuantity!,
+                                "Children":ChildrenQuantity!,
+                                "Infant":InfantQunatity!,
+                                "Pet":PetStatus!,
+                                "Message":(messageText.text)!,
+                                "Total Amount":totalAmount]
+            
+            performSegue(withIdentifier: "PAYMENT_SEGUE", sender: nil)
+
+        }
         
-        print(self.rentAmount)
-        print(Stay_Timeframe.text)
-        
-        print("*********************")
+        else {
+            let alert = UIAlertController(title: "Warning", message: "Some Data missing!!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
      
     }
     
@@ -163,6 +190,13 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
             let dest = segue.destination as! GuestVC
             
             dest.guestDelegate = self
+            
+        }
+        
+        else if segue.identifier == "PAYMENT_SEGUE"{
+            let dest = segue.destination as! CheckOutVC
+            
+            dest.dataDictionarty = bookingData
             
         }
     }

@@ -20,7 +20,7 @@ class GuestVC: UIViewController {
     
     var guestDelegate : guestFetching?
     
-    var adultQuantity = 1
+    var adultQuantity = 0
     var childrenQuantity = 0
     var infantQuantity = 0
     var petStatus = "without"
@@ -31,24 +31,24 @@ class GuestVC: UIViewController {
         super.viewDidLoad()
 
 
-        let exitTap = UITapGestureRecognizer(target: self, action: #selector(exit))
-        BGView.addGestureRecognizer(exitTap)
+//        let exitTap = UITapGestureRecognizer(target: self, action: #selector(exit))
+//        BGView.addGestureRecognizer(exitTap)
     
     }
 
-    @objc func exit(recog : UIGestureRecognizer){
-        
-        if petSwitch.isOn{
-            petStatus = "with"
-        }
-        else{
-            petStatus = "without"
-
-        }
-        guestDelegate?.guestValue(Adult: String(adultQuantity), Children: String(childrenQuantity),Infant : String(infantQuantity), Pet: petStatus)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
+//    @objc func exit(recog : UIGestureRecognizer){
+//        
+////        if petSwitch.isOn{
+////            petStatus = "with"
+////        }
+////        else{
+////            petStatus = "without"
+////
+////        }
+////        guestDelegate?.guestValue(Adult: String(adultQuantity), Children: String(childrenQuantity),Infant : String(infantQuantity), Pet: petStatus)
+////
+////        self.dismiss(animated: true, completion: nil)
+//    }
   
    
     @IBAction func button_actions(_ sender: Custom_Button) {
@@ -89,5 +89,17 @@ class GuestVC: UIViewController {
         }
     }
     
-
+    @IBAction func DoneButton(_ sender: Any) {
+                if petSwitch.isOn{
+                    petStatus = "with"
+                }
+                else{
+                    petStatus = "without"
+        
+                }
+                guestDelegate?.guestValue(Adult: String(adultQuantity), Children: String(childrenQuantity),Infant : String(infantQuantity), Pet: petStatus)
+        
+                self.dismiss(animated: true, completion: nil)
+    }
+    
 }
