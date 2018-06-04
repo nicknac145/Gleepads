@@ -72,7 +72,7 @@ class exploreCollectionVC: UIViewController, UITableViewDataSource,UITableViewDe
         
         let splitString = imageString.split(separator: ",")
         
-        let singleString = splitString[2] 
+        let singleString = splitString[0] 
         let imageURl = URL(string: String(singleString))
         
         cell.AD_Image.sd_setImage(with: imageURl, placeholderImage: UIImage(named: "thumbnail"), options: .progressiveDownload, completed: nil)

@@ -53,7 +53,7 @@ class ExploreVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UISe
         super.viewDidLoad()
         
         
-        
+        print(Auth.auth().currentUser?.displayName)
 
         dbRef = Database.database().reference()
 

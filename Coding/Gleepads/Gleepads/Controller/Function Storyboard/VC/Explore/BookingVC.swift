@@ -196,7 +196,7 @@ class BookingVC: UIViewController, dateFetching, guestFetching {
         else if segue.identifier == "PAYMENT_SEGUE"{
             let dest = segue.destination as! CheckOutVC
             
-            dest.dataDictionarty = bookingData
+            dest.dataDictionary = bookingData
             
         }
     }

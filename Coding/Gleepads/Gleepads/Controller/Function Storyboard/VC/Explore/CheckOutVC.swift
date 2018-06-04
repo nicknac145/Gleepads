@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CheckOutVC: UIViewController {
 
@@ -17,12 +18,14 @@ class CheckOutVC: UIViewController {
     @IBOutlet weak var cvcNumber: UITextField!
     @IBOutlet weak var totalAmount: UILabel!
     
-    var dataDictionarty = [String : String]()
+    var dataDictionary = [String : String]()
+    
+    var dbRef : DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        totalAmount.text = "$ \((dataDictionarty["Total Amount"])!)"
+        totalAmount.text = "$ \((dataDictionary["Total Amount"])!)"
         
 //        print("*********************")
 //
@@ -42,8 +45,25 @@ class CheckOutVC: UIViewController {
         
             let alert = UIAlertController(title: "CONFIRM", message: "Some Data missing!!", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "CONFIRM", style: .default) { (alertAction) in
-//                        self.dismiss(animated: true, completion: nil)
-                    self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
+                
+                self.dataDictionary["CardHolder"] = self.cardHolderName.text!
+                self.dataDictionary["Month_CC"] = self.monthDetail.text!
+                self.dataDictionary["Year_CC"] = self.yearDetail.text!
+                self.dataDictionary["CreditCard"] = self.creditCardNumber.text!
+                self.dataDictionary["CVC"] = self.cvcNumber.text!
+                self.dataDictionary["Bill"] = self.totalAmount.text!
+                
+                print("**********************")
+                print(self.dataDictionary)
+                print("**********************")
+
+                
+//                self.present( UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: nil)
+                
+                self.present(UIStoryboard(name: "Function", bundle: nil).instantiateViewController(withIdentifier: "Function_First_View") as UIViewController, animated: true, completion: {
+                    self.dbRef = Database.database().reference()
+                    self.dbRef.child("Booking").childByAutoId().setValue(self.dataDictionary)
+                })
 
             }
             let cancelAction = UIAlertAction(title: "CANCEL", style: .default, handler: nil)

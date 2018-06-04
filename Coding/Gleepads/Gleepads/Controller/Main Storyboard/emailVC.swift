@@ -67,6 +67,7 @@ class emailVC: UIViewController {
             if error == nil{
                
                 // *** update database node "USER-PROFILE" ***
+//                user?.displayName = self.fName
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Fname").setValue(self.fName!)
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Lname").setValue(self.lName!)
                 self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Email").setValue(Auth.auth().currentUser?.email)

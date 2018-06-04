@@ -47,8 +47,11 @@ class ProfileVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         
+            self.fullName = (Auth.auth().currentUser?.displayName)
+
+     
+       
         
-self.fullName = (Auth.auth().currentUser?.displayName)!
  
         // ********** USER VALUE ****************
         dbRef = Database.database().reference()
@@ -56,11 +59,15 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
         dbHandle = dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).observe(.value, with: { (SnapShot) in
             if  SnapShot != nil {
                
-            
+                
                 self.userValue = SnapShot.value as! [String : String]
                 
+                let first = self.userValue["User_Fname"]!
+                let last = self.userValue["User_Lname"]!
                 
-                
+                self.fullName = first + " " + last
+                print(self.fullName)
+
                     
                 let url = self.userValue["ProfileImage_Url"]!
                 
@@ -71,18 +78,7 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
                 print("********* 1 **************")
                 print(self.profileURL)
                 
-//                let fileUrl = profileURL as! String
-//                print("fileUrl:\(fileUrl)")
-//                let url = URL(string: fileUrl)
-//                print("url: \(url!)")
-//                let data = NSData(contentsOf: url!)
-//                print("data: \(data)")
-//
-//
-//                let picture = UIImage(data: data as! Data)
-//                print("picture:\(picture)")
-//                    self.ProfileImage = picture!
-                
+
                 
                 
                 
@@ -93,7 +89,6 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
             }
           self.profileTableView.reloadData()
         })
-//        self.ProfileImage = UIImage(named: "Add-image")
 
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -153,7 +148,8 @@ self.fullName = (Auth.auth().currentUser?.displayName)!
             
             cell.selectionStyle = UITableViewCellSelectionStyle.none
 
-            cell.TitleLabel.text = dataArray[indexPath.row].Title
+//            cell.TitleLabel.text = dataArray[indexPath.row].Title
+            cell.TitleLabel.text = self.fullName
             cell.subTitleLabel.text = dataArray[indexPath.row].Sub_Title
             
             

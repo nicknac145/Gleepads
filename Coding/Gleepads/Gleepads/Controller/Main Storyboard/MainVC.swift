@@ -27,7 +27,7 @@ class MainVC: UIViewController,GIDSignInUIDelegate,GIDSignInDelegate {
     @IBOutlet weak var Phrase_Label: UILabel!
     
     
-    
+    var dbHandle : DatabaseHandle!
     var dbRef : DatabaseReference!
     
     override func viewDidLoad() {
@@ -191,6 +191,9 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                     
                     self.dbRef = Database.database().reference()
                     
+            
+                    
+
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Fname").setValue(fName)
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Lname").setValue(lName)
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_Email").setValue(Auth.auth().currentUser?.email)
@@ -200,6 +203,7 @@ bottomLabel.font = UIFont(name: "BebasNeue-Regular", size: 14.0)
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("User_DOB").setValue("")
                     
                     self.dbRef.child("User_Profile").child((Auth.auth().currentUser?.uid)!).child("ProfileImage_Url").setValue("")
+                    
 
                 }
 
